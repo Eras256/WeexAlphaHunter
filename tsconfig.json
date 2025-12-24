@@ -1,0 +1,20 @@
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "types": [
+            "node",
+            "prettier"
+        ],
+        "paths": {
+            "@wah/core": [
+                "./packages/core/src/index.ts"
+            ]
+        }
+    },
+    "include": [
+        "scripts/**/*.ts",
+        "hardhat.config.js",
+        "packages/core/src/**/*.ts"
+    ]
+}

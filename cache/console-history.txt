@@ -1,0 +1,10 @@
+.exit
+console.log("Signer:", signer.address);
+const [signer] = await ethers.getSigners();
+const tv = TV.attach("0x0f294e979eF7FdEc5bf0f137658828ee4cD0c3dC");
+const TV = await ethers.getContractFactory("TradeVerifier");
+console.log("Is Authorized:", isAuth);
+console.log("Contract Owner:", contractOwner);
+const [owner] = await ethers.getSigners();, isAuth);
+console.log("Contract Owner:", contractOwner);
+const [owner] = await ethers.getSigners();

@@ -1,0 +1,56 @@
+{
+    "name": "w-alpha-hunter",
+    "version": "2.0.0",
+    "type": "module",
+    "private": true,
+    "packageManager": "pnpm@8.15.0",
+    "description": "WEEX Alpha Awakens Hackathon Submission",
+    "workspaces": [
+        "packages/*",
+        "apps/*"
+    ],
+    "scripts": {
+        "bootstrap": "powershell -ExecutionPolicy Bypass -File scripts/ps/01_bootstrap.ps1",
+        "pipeline": "powershell -ExecutionPolicy Bypass -File scripts/ps/02_run_pipeline.ps1",
+        "proof": "powershell -ExecutionPolicy Bypass -File scripts/ps/03_generate_proofkit.ps1",
+        "scan": "powershell -ExecutionPolicy Bypass -File scripts/ps/06_leak_scan.ps1",
+        "backtest:run": "pnpm --filter @wah/engine-backtest start",
+        "ai:generate": "pnpm --filter @wah/engine-backtest ai:gen",
+        "compliance:test-api": "pnpm --filter @wah/engine-compliance test-api",
+        "dev:web": "pnpm --filter web dev",
+        "build:web": "pnpm --filter web build",
+        "test": "vitest",
+        "compile:contracts": "hardhat compile",
+        "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+        "deploy:base-sepolia": "hardhat run scripts/deploy.js --network baseSepolia",
+        "verify:sepolia": "hardhat run scripts/verify.js --network sepolia",
+        "verify:base-sepolia": "hardhat run scripts/verify.js --network baseSepolia"
+    },
+    "devDependencies": {
+        "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
+        "@nomicfoundation/hardhat-ethers": "^3.0.0",
+        "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+        "@nomicfoundation/hardhat-verify": "^2.0.0",
+        "@openzeppelin/contracts": "^5.0.0",
+        "@types/node": "^20.10.0",
+        "@types/prettier": "^3.0.0",
+        "@wah/core": "workspace:*",
+        "dotenv": "^16.4.5",
+        "ethers": "^6.10.0",
+        "hardhat": "^2.22.0",
+        "md-to-pdf": "^5.2.4",
+        "pnpm": "^8.15.0",
+        "prettier": "^3.2.5",
+        "tsx": "4.19.0",
+        "typescript": "^5.3.3",
+        "vitest": "^1.2.0"
+    },
+    "engines": {
+        "node": ">=20.0.0"
+    },
+    "pnpm": {
+        "overrides": {
+            "tsx": "4.19.0"
+        }
+    }
+}

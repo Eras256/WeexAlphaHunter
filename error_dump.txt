@@ -1,0 +1,14 @@
+[dotenv@17.2.3] injecting env (24) from .env.local -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+[dotenv@17.2.3] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+Error HHE15: Invalid config:
+	* Config error in config.networks.sepolia.type: Invalid discriminator value. Expected 'http' | 'edr-simulated'
+	* Config error in config.networks.baseSepolia.type: Invalid discriminator value. Expected 'http' | 'edr-simulated'
+	* Config error in config.networks.base.type: Invalid discriminator value. Expected 'http' | 'edr-simulated'
+
+HardhatError: HHE15: Invalid config:
+	* Config error in config.networks.sepolia.type: Invalid discriminator value. Expected 'http' | 'edr-simulated'
+	* Config error in config.networks.baseSepolia.type: Invalid discriminator value. Expected 'http' | 'edr-simulated'
+	* Config error in config.networks.base.type: Invalid discriminator value. Expected 'http' | 'edr-simulated'
+    at HardhatRuntimeEnvironmentImplementation.create (C:\Users\vaios\OneDrive\Documentos\DaAps\AHunter\node_modules\.pnpm\hardhat@3.1.0\node_modules\hardhat\src\internal\core\hre.ts:99:13)
+    at async main (C:\Users\vaios\OneDrive\Documentos\DaAps\AHunter\node_modules\.pnpm\hardhat@3.1.0\node_modules\hardhat\src\internal\cli\main.ts:158:17)
+    at async file:///C:/Users/vaios/OneDrive/Documentos/DaAps/AHunter/node_modules/.pnpm/hardhat@3.1.0/node_modules/hardhat/dist/src/cli.js:21:1

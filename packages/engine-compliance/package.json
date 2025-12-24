@@ -1,0 +1,16 @@
+{
+    "name": "@wah/engine-compliance",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "test-api": "tsx src/generator.ts"
+    },
+    "dependencies": {
+        "@wah/core": "*",
+        "axios": "^1.6.0",
+        "yargs": "^17.7.0"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0"
+    }
+}

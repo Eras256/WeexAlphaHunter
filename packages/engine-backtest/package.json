@@ -1,0 +1,27 @@
+{
+    "name": "@wah/engine-backtest",
+    "version": "1.0.0",
+    "main": "dist/index.js",
+    "type": "module",
+    "scripts": {
+        "build": "tsc -b",
+        "start": "tsx src/index.ts",
+        "ai:gen": "tsx src/ai-generator.ts",
+        "ai:analyze": "tsx src/market-analyzer.ts",
+        "onchain:demo": "tsx src/onchain-demo.ts",
+        "test:gemini": "tsx src/test-gemini.ts"
+    },
+    "dependencies": {
+        "@wah/core": "*",
+        "csv-parse": "^5.5.3",
+        "csv-stringify": "^6.4.5",
+        "date-fns": "^3.3.1",
+        "papaparse": "^5.4.1",
+        "yargs": "^17.7.2"
+    },
+    "devDependencies": {
+        "@types/minimatch": "^6.0.0",
+        "@types/papaparse": "^5.3.14",
+        "@types/yargs": "^17.0.32"
+    }
+}

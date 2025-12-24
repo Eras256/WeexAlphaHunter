@@ -1,0 +1,42 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+.turbo
+.next
+out
+
+# Python
+.venv
+__pycache__
+
+# Environment variables (NEVER commit these!)
+.env
+.env.local
+.env.example
+*.env
+
+# Data and artifacts
+data/
+artifacts/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Lock files
+package-lock.json
+
+# Documentation (exclude all .md except README.md)
+*.md
+!README.md
