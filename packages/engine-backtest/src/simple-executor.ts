@@ -82,14 +82,14 @@ export async function runTradeExecutor() {
                 logger.info(`  🎉 Trade Verified on Base Sepolia! TX: ${txHash}`);
 
                 // Wait to avoid rate limits
-                await sleep(5000);
+                await sleep(10000);
 
             } catch (error: any) {
                 logger.error(`Loop Error: ${error.message}`);
-                await sleep(5000);
+                await sleep(20000);
             }
         }
-        await sleep(2000);
+        await sleep(15000);
     }
 }
 

@@ -6,8 +6,6 @@ const MODEL_FALLBACK_CHAIN = [
     'gemini-2.5-flash-lite',       // Principal (fastest & confirmed functional)
     'gemini-2.5-flash',            // Fallback 1
     'gemini-2.5-pro',              // Fallback 2 (most capable)
-    'gemini-1.5-flash',            // Fallback 3 (stable)
-    'gemini-1.5-pro',              // Fallback 4 (legacy stable)
 ] as const;
 
 export interface GeminiConfig {
