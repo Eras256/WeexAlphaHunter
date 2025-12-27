@@ -1,14 +1,21 @@
 {
     "compilerOptions": {
         "outDir": "dist",
-        "rootDir": "src",
+        "rootDir": "../..",
         "skipLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "@wah/engine-compliance/*": [
+                "../engine-compliance/src/*"
+            ]
+        },
         "types": [
             "node"
         ]
     },
     "extends": "../../tsconfig.base.json",
     "include": [
-        "src/**/*"
+        "src/**/*",
+        "../engine-compliance/src/**/*"
     ]
 }
