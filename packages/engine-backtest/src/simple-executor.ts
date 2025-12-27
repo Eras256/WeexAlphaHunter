@@ -1,4 +1,4 @@
-console.log("DEBUG: Script Loaded");
+
 import { createBlockchainClient, createGeminiClient, generateUUID, logger, sleep } from "@wah/core";
 import { WeexClient } from "../../engine-compliance/src/weex-client.js";
 import * as dotenv from "dotenv";
