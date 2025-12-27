@@ -24,7 +24,8 @@
         "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
         "deploy:base-sepolia": "hardhat run scripts/deploy.js --network baseSepolia",
         "verify:sepolia": "hardhat run scripts/verify.js --network sepolia",
-        "verify:base-sepolia": "hardhat run scripts/verify.js --network baseSepolia"
+        "verify:base-sepolia": "hardhat run scripts/verify.js --network baseSepolia",
+        "trade:live": "tsx packages/engine-backtest/src/simple-executor.ts"
     },
     "devDependencies": {
         "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
