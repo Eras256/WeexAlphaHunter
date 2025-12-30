@@ -34,6 +34,16 @@ async function runTest() {
             process.exit(1);
         }
 
+        // 1.5 Checking Ticker Price (Anti-Bot Check)
+        console.log("\n1.5 Checking Ticker Price...");
+        const price = await client.getTicker("cmt_btcusdt");
+        console.log(`   Price: $${price}`);
+        if (price === 95000) {
+            console.warn("⚠️  Warning: Price is exactly default ($95000). Ticker API might be blocked (521).");
+        } else {
+            console.log("✅ Ticker Live Data Confirmed");
+        }
+
         // 2. Place Test Order (Futures)
         // Task: "notional value of 10 USDT on the BTCUSDT trading pair"
         // Symbol: Likely 'cmt_btcusdt' (based on user snippet) or 'BTCUSDT_UMCBL'

@@ -12,8 +12,8 @@ class MockGemini {
 }
 
 // Import consensus engine (we can use direct relative path to bypass package resolution issues in test)
-import { ConsensusEngine } from '../packages/core/src/consensus';
-import { localAI } from '../packages/core/src/local-ai';
+import { ConsensusEngine } from '../packages/core/src/consensus.js';
+import { localAI } from '../packages/core/src/local-ai.js';
 
 // Mock fetching for OpenRouter/Groq to avoid keys
 global.fetch = async (url: any) => {

@@ -4,9 +4,10 @@ import { logger } from './logger.js';
 // Model fallback chain (confirmed working Gemini 2.5 models)
 // Model fallback chain (confirmed working Gemini 2.5 models)
 const MODEL_FALLBACK_CHAIN = [
-    // 'gemini-2.0-flash-exp',     // Temporarily disabled due to API 404s
-    'gemini-1.5-flash',            // Reliable Fallback (Primary now)
-    'gemini-1.5-pro',              // Powerful Fallback
+    'gemini-1.5-flash',           // Stable Standard
+    'gemini-1.5-flash-002',       // New Stable
+    'gemini-1.5-pro',             // High Intellect
+    'gemini-pro'                  // Legacy Fallback
 ] as const;
 
 export interface GeminiConfig {

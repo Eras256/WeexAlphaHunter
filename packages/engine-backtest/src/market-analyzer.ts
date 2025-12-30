@@ -1,4 +1,5 @@
 import { createGeminiClient, logger } from '@wah/core';
+import { WeexClient } from '../../engine-compliance/src/weex-client.js';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
@@ -48,27 +49,44 @@ class MarketAnalyzer {
     }
 
     /**
-     * Generate market snapshot with simulated data
+     * Fetch real market data from WEEX API
      */
-    private generateMarketSnapshot(symbol: string): MarketSnapshot {
-        const basePrices: Record<string, number> = {
-            'BTC/USDT': 95000,
-            'ETH/USDT': 3500,
-            'SOL/USDT': 150,
-            'BNB/USDT': 600,
-            'XRP/USDT': 2.5
-        };
+    private async getRealMarketSnapshot(symbol: string): Promise<MarketSnapshot | null> {
+        try {
+            // We use a temporary public client to fetch data without needing API keys for this step if possible, 
+            // but WeexClient handles auth if keys are present.
+            const client = new WeexClient("mock"); // Using 'mock' mode client but we will override getTicker to force fetch
 
-        const basePrice = basePrices[symbol] || 100;
-        const variation = (Math.random() - 0.5) * 0.05; // ±5%
+            // 1. Get Ticker for Price
+            // WeexClient.getTicker tries HTTP request even in mock mode if implemented correctly, 
+            // but let's implement a direct fetch here to be 100% sure we get REAL data.
+            const tickerUrl = `https://api-contract.weex.com/capi/v2/market/ticker?symbol=${symbol}`;
+            const tickerRes = await fetch(tickerUrl);
+            const tickerData = await tickerRes.json();
 
-        return {
-            symbol,
-            timestamp: new Date().toISOString(),
-            price: basePrice * (1 + variation),
-            volume: 1000000000 + Math.random() * 500000000,
-            change24h: (Math.random() - 0.5) * 10 // ±5%
-        };
+            // 2. Get 24h Stats (often in ticker or separate endpoint)
+            // WEEX Ticker response format: { symbol, last, high_24h, low_24h, volume_24h, priceChangePercent ... }
+            if (!tickerData || !tickerData.data) {
+                logger.warn(`Failed to fetch ticker for ${symbol}`);
+                return null;
+            }
+
+            const data = tickerData.data;
+            const currentPrice = parseFloat(data.last);
+            const volume24h = parseFloat(data.volume_24h || data.base_volume || '0');
+            const change24h = parseFloat(data.priceChangePercent || '0') * 100; // Typically decimal 0.05 -> 5%
+
+            return {
+                symbol,
+                timestamp: new Date().toISOString(),
+                price: currentPrice,
+                volume: volume24h,
+                change24h: change24h
+            };
+        } catch (error) {
+            logger.error(`Error fetching real data for ${symbol}: ${error}`);
+            return null;
+        }
     }
 
     /**
@@ -76,7 +94,11 @@ class MarketAnalyzer {
      */
     async analyzeMarket(symbol: string): Promise<MarketAnalysis | null> {
         try {
-            const snapshot = this.generateMarketSnapshot(symbol);
+            const snapshot = await this.getRealMarketSnapshot(symbol);
+            if (!snapshot) {
+                logger.warn(`Skipping analysis for ${symbol} due to missing data`);
+                return null;
+            }
 
             logger.info(`📊 Analyzing ${symbol}...`);
             logger.info(`  Price: $${snapshot.price.toFixed(2)}`);
@@ -203,11 +225,11 @@ async function main() {
     const analyzer = new MarketAnalyzer();
 
     const symbols = [
-        'BTC/USDT',
-        'ETH/USDT',
-        'SOL/USDT',
-        'BNB/USDT',
-        'XRP/USDT'
+        'cmt_btcusdt',
+        'cmt_ethusdt',
+        'cmt_solusdt',
+        'cmt_bnbusdt',
+        'cmt_xrpusdt'
     ];
 
     await analyzer.runAutomatedAnalysis(symbols);

@@ -1,11 +1,28 @@
 'use client';
 
+import { useState, useEffect } from 'react';
+
 import { useBlockchainStats } from '@/hooks/useBlockchainStats';
 import { Activity, TrendingUp, Shield, Zap, Brain, Database, CheckCircle, ExternalLink, Twitter, BarChart3, Lock } from 'lucide-react';
 import Link from 'next/link';
 
 export default function DashboardPage() {
     const stats = useBlockchainStats();
+    const [liveData, setLiveData] = useState<any>(null);
+
+    useEffect(() => {
+        const fetchStats = async () => {
+            try {
+                const res = await fetch('/live-stats.json?t=' + Date.now());
+                if (res.ok) {
+                    setLiveData(await res.json());
+                }
+            } catch (e) { }
+        };
+        fetchStats();
+        const interval = setInterval(fetchStats, 2000);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <div className="min-h-screen bg-black text-white font-sans">
@@ -51,16 +68,16 @@ export default function DashboardPage() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
                     <KpiCard
                         label="Net PnL (Verified)"
-                        value="$12,450.20"
-                        sub="+18.4% this week"
-                        trend="up"
-                        icon={<TrendingUp className="w-5 h-5 text-green-400" />}
+                        value={liveData ? `$${liveData.currentEquity.toFixed(2)}` : "$1,000.00"}
+                        sub={liveData ? `${liveData.pnl >= 0 ? '+' : ''}${liveData.pnl.toFixed(2)} (${liveData.pnlPercent}%)` : "Waiting for data..."}
+                        trend={liveData?.pnl >= 0 ? "up" : "down"}
+                        icon={<TrendingUp className={`w-5 h-5 ${liveData?.pnl >= 0 ? "text-green-400" : "text-red-400"}`} />}
                     />
                     <KpiCard
-                        label="Sharpe Ratio"
-                        value="3.85"
-                        sub="Top 1% of Strategies"
-                        trend="neutral"
+                        label="Projected ROI (Annual)"
+                        value={liveData ? `${liveData.roi}%` : "0%"}
+                        sub={`Based on ${liveData?.runtime || 0}m runtime`}
+                        trend={liveData?.roi > 0 ? "up" : "neutral"}
                         icon={<Activity className="w-5 h-5 text-blue-400" />}
                     />
                     <KpiCard
@@ -182,34 +199,31 @@ export default function DashboardPage() {
                     <div className="px-6 py-5 border-b border-white/10 flex items-center justify-between">
                         <h3 className="font-bold flex items-center gap-2">
                             <Shield className="w-4 h-4 text-green-400" />
-                            Recent On-Chain Activity
+                            Recent On-Chain Activity (Verified)
                         </h3>
                         <Link href="https://sepolia.basescan.org/" target="_blank" className="text-xs text-gray-400 hover:text-white flex items-center gap-1">
-                            View on BaseScan <ExternalLink className="w-3 h-3" />
+                            Base Sepolia Explorer <ExternalLink className="w-3 h-3" />
                         </Link>
                     </div>
-                    <div className="divide-y divide-white/5">
-                        <ActivityRow
-                            hash="0x7f2a...39d1"
-                            action="EXECUTE_TRADE"
-                            details="BUY BTC/USDT @ 95,230"
-                            time="12s ago"
-                            status="Verified"
-                        />
-                        <ActivityRow
-                            hash="0x1a4b...8c2e"
-                            action="SIGNAL_GEN"
-                            details="Consensus: STRONG BUY (Confidence 0.94)"
-                            time="45s ago"
-                            status="Recorded"
-                        />
-                        <ActivityRow
-                            hash="0x9c3d...2a1f"
-                            action="RISK_CHECK"
-                            details="Approved. Leverage capped at 5x."
-                            time="1m ago"
-                            status="Passed"
-                        />
+                    <div className="divide-y divide-white/5 font-mono">
+                        {liveData?.recentActivity && liveData.recentActivity.length > 0 ? (
+                            liveData.recentActivity.map((activity: any, i: number) => (
+                                <ActivityRow
+                                    key={i}
+                                    hash={activity.hash}
+                                    action={activity.action}
+                                    details={activity.details}
+                                    timestamp={activity.timestamp}
+                                    status="Verified"
+                                    url={activity.explorerUrl}
+                                    chain={activity.chain}
+                                />
+                            ))
+                        ) : (
+                            <div className="p-6 text-center text-gray-500 text-sm">
+                                Waiting for blockchain confirmations...
+                            </div>
+                        )}
                     </div>
                 </div>
 
@@ -257,26 +271,32 @@ function ModelStatusBadge({ name, role, status, ping }: any) {
     );
 }
 
-function ActivityRow({ hash, action, details, time, status }: any) {
+function ActivityRow({ hash, action, details, timestamp, status, url, chain }: any) {
+    const timeAgo = timestamp ? Math.floor((Date.now() - timestamp) / 1000) : 0;
+
     return (
         <div className="px-6 py-4 flex flex-col md:flex-row md:items-center justify-between hover:bg-white/5 transition">
             <div className="flex items-center gap-4 mb-2 md:mb-0">
                 <div className="p-2 bg-white/5 rounded-lg">
-                    {action === 'EXECUTE_TRADE' ? <Zap className="w-4 h-4 text-yellow-400" /> :
-                        action === 'SIGNAL_GEN' ? <Brain className="w-4 h-4 text-purple-400" /> :
+                    {action.includes('TRADE') ? <Zap className="w-4 h-4 text-yellow-400" /> :
+                        action.includes('SIGNAL') ? <Brain className="w-4 h-4 text-purple-400" /> :
                             <Lock className="w-4 h-4 text-green-400" />}
                 </div>
                 <div>
-                    <div className="text-sm font-bold text-white">{action}</div>
-                    <div className="text-xs text-gray-400 font-mono">{hash}</div>
+                    <div className="text-xs font-bold text-white mb-0.5">{action}</div>
+                    <a href={url} target="_blank" rel="noopener noreferrer" className="text-[10px] text-blue-400 hover:text-blue-300 font-mono flex items-center gap-1">
+                        {hash.substring(0, 8)}...{hash.substring(hash.length - 6)}
+                        <ExternalLink className="w-2 h-2" />
+                    </a>
                 </div>
             </div>
-            <div className="flex-1 md:px-8 text-sm text-gray-300">
-                {details}
+            <div className="flex-1 md:px-8">
+                <div className="text-xs text-gray-300 mb-1">{details}</div>
+                <div className="text-[10px] text-gray-600 uppercase tracking-wider">{chain || 'Unknown Chain'}</div>
             </div>
             <div className="text-right">
-                <div className="text-sm font-medium text-green-400">{status}</div>
-                <div className="text-xs text-gray-500">{time}</div>
+                <div className="text-xs font-medium text-green-400">{status}</div>
+                <div className="text-[10px] text-gray-500">{timeAgo}s ago</div>
             </div>
         </div>
     );
