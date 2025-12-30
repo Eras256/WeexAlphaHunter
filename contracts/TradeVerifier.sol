@@ -17,6 +17,7 @@ contract TradeVerifier is Ownable, ReentrancyGuard {
         bytes32 tradeHash;          // Keccak256 hash of trade details
         bytes32 aiDecisionHash;     // Keccak256 hash of AI decision
         string symbol;              // Trading pair (e.g., "BTC/USDT")
+        string exchangeOrderId;     // e.g. "Weex-12345" for direct verification
         uint256 timestamp;          // Block timestamp when proof was submitted
         address submitter;          // Address that submitted the proof
         uint256 price;              // Trade execution price (scaled by 1e8)
@@ -51,6 +52,7 @@ contract TradeVerifier is Ownable, ReentrancyGuard {
         bytes32 indexed tradeHash,
         bytes32 indexed aiDecisionHash,
         string symbol,
+        string exchangeOrderId,
         uint256 price,
         uint256 quantity,
         bool isBuy,
@@ -89,6 +91,7 @@ contract TradeVerifier is Ownable, ReentrancyGuard {
      * @param _tradeHash Unique hash identifying the trade
      * @param _aiDecisionHash Hash of the AI decision that led to this trade
      * @param _symbol Trading pair symbol
+     * @param _exchangeOrderId The ID from the exchange (WEEX)
      * @param _price Execution price (scaled by 1e8)
      * @param _quantity Trade quantity (scaled by 1e8)
      * @param _isBuy True for BUY, false for SELL
@@ -98,6 +101,7 @@ contract TradeVerifier is Ownable, ReentrancyGuard {
         bytes32 _tradeHash,
         bytes32 _aiDecisionHash,
         string memory _symbol,
+        string memory _exchangeOrderId,
         uint256 _price,
         uint256 _quantity,
         bool _isBuy,
@@ -112,6 +116,7 @@ contract TradeVerifier is Ownable, ReentrancyGuard {
             tradeHash: _tradeHash,
             aiDecisionHash: _aiDecisionHash,
             symbol: _symbol,
+            exchangeOrderId: _exchangeOrderId,
             timestamp: block.timestamp,
             submitter: msg.sender,
             price: _price,
@@ -132,6 +137,7 @@ contract TradeVerifier is Ownable, ReentrancyGuard {
             _tradeHash,
             _aiDecisionHash,
             _symbol,
+            _exchangeOrderId,
             _price,
             _quantity,
             _isBuy,
@@ -175,6 +181,7 @@ contract TradeVerifier is Ownable, ReentrancyGuard {
         bytes32[] memory _tradeHashes,
         bytes32[] memory _aiDecisionHashes,
         string[] memory _symbols,
+        string[] memory _exchangeOrderIds,
         uint256[] memory _prices,
         uint256[] memory _quantities,
         bool[] memory _isBuy,
@@ -183,6 +190,7 @@ contract TradeVerifier is Ownable, ReentrancyGuard {
         require(
             _tradeHashes.length == _aiDecisionHashes.length &&
             _tradeHashes.length == _symbols.length &&
+            _tradeHashes.length == _exchangeOrderIds.length &&
             _tradeHashes.length == _prices.length &&
             _tradeHashes.length == _quantities.length &&
             _tradeHashes.length == _isBuy.length &&
@@ -199,6 +207,7 @@ contract TradeVerifier is Ownable, ReentrancyGuard {
                 tradeHash: _tradeHashes[i],
                 aiDecisionHash: _aiDecisionHashes[i],
                 symbol: _symbols[i],
+                exchangeOrderId: _exchangeOrderIds[i],
                 timestamp: block.timestamp,
                 submitter: msg.sender,
                 price: _prices[i],
@@ -214,6 +223,7 @@ contract TradeVerifier is Ownable, ReentrancyGuard {
                 _tradeHashes[i],
                 _aiDecisionHashes[i],
                 _symbols[i],
+                _exchangeOrderIds[i],
                 _prices[i],
                 _quantities[i],
                 _isBuy[i],

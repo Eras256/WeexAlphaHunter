@@ -125,6 +125,7 @@ async function runOnChainDemo() {
                     tradeId,
                     aiDecisionId,
                     symbol,
+                    exchangeOrderId: `DEMO-${Date.now()}`,
                     price,
                     qty,
                     side: action,

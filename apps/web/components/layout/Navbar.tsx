@@ -17,8 +17,8 @@ export default function Navbar() {
             icon: <Cpu className="w-4 h-4 mr-2" />,
             items: [
                 { name: "Dashboard", href: "/dashboard" },
-                { name: "AI Engine (GEMINI)", href: "/platform/ai-engine" },
-                { name: "AI Tools", href: "/ai-tools" },
+                { name: "UNUM AI Engine", href: "/platform/ai-engine", badge: "6 Models" },
+                { name: "AI Tools & Analytics", href: "/ai-tools" },
                 { name: "Trading Strategies", href: "/platform/strategies" },
                 { name: "WXT Tokenomics", href: "/platform/tokenomics" },
             ],
@@ -27,9 +27,10 @@ export default function Navbar() {
             title: "Ecosystem",
             icon: <Shield className="w-4 h-4 mr-2" />,
             items: [
-                { name: "Base Layer 2", href: "/ecosystem/base-layer-2" },
-                { name: "Partner Network", href: "/ecosystem/partners" },
-                { name: "Compliance Verifier", href: "/ecosystem/compliance" },
+                { name: "Architecture (L1/L2)", href: "/ecosystem/base-layer-2" },
+                { name: "WEEX Integration", href: "/ecosystem/partners", badge: "Live" },
+                { name: "Compliance & Proofs", href: "/ecosystem/compliance" },
+                { name: "X (Twitter) Social", href: "/ecosystem/social", badge: "New" },
             ],
         },
         {
@@ -39,6 +40,7 @@ export default function Navbar() {
                 { name: "Documentation", href: "/resources/docs" },
                 { name: "API Reference", href: "/resources/api" },
                 { name: "Hackathon Proofs", href: "/resources/hackathon-proofs" },
+                { name: "Live Performance", href: "/resources/performance", badge: "Real-time" },
             ],
         },
         {
@@ -97,9 +99,14 @@ export default function Navbar() {
                                                 <Link
                                                     key={subItem.name}
                                                     href={subItem.href}
-                                                    className="block px-3 py-2 text-sm text-gray-400 hover:bg-white/5 hover:text-white rounded-md transition-colors"
+                                                    className="block px-3 py-2 text-sm text-gray-400 hover:bg-white/5 hover:text-white rounded-md transition-colors flex items-center justify-between group"
                                                 >
-                                                    {subItem.name}
+                                                    <span>{subItem.name}</span>
+                                                    {subItem.badge && (
+                                                        <span className="ml-2 px-2 py-0.5 text-xs font-semibold rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 border border-purple-500/30 group-hover:from-purple-500/30 group-hover:to-pink-500/30 transition-all">
+                                                            {subItem.badge}
+                                                        </span>
+                                                    )}
                                                 </Link>
                                             ))}
                                         </div>

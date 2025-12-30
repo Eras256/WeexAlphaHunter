@@ -1,318 +1,283 @@
 'use client';
 
 import { useBlockchainStats } from '@/hooks/useBlockchainStats';
-import { Activity, TrendingUp, Shield, Zap, Brain, Database, CheckCircle, ExternalLink } from 'lucide-react';
+import { Activity, TrendingUp, Shield, Zap, Brain, Database, CheckCircle, ExternalLink, Twitter, BarChart3, Lock } from 'lucide-react';
 import Link from 'next/link';
 
 export default function DashboardPage() {
     const stats = useBlockchainStats();
 
     return (
-        <div className="min-h-screen bg-black text-white">
-            {/* Header */}
-            <div className="border-b border-white/10 bg-gradient-to-b from-purple-900/20 to-black">
-                <div className="max-w-7xl mx-auto px-6 py-8">
-                    <div className="flex items-center justify-between">
+        <div className="min-h-screen bg-black text-white font-sans">
+            {/* Header / Command Center Status */}
+            <div className="border-b border-white/10 bg-gradient-to-b from-gray-900 via-black to-black">
+                <div className="max-w-7xl mx-auto px-6 py-10">
+                    <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                         <div>
-                            <h1 className="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
-                                Trading Dashboard
-                            </h1>
-                            <p className="text-gray-400">
-                                Real-time performance metrics and on-chain verification
-                            </p>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <div className={`flex items-center gap-2 px-4 py-2 rounded-lg border ${stats.isConnected ? 'bg-green-500/10 border-green-500/30' : 'bg-red-500/10 border-red-500/30'}`}>
-                                <div className={`w-2 h-2 rounded-full ${stats.isConnected ? 'bg-green-400 animate-pulse' : 'bg-red-400'}`} />
-                                <span className={`text-sm font-medium ${stats.isConnected ? 'text-green-400' : 'text-red-400'}`}>
-                                    {stats.isConnected ? `Connected to ${stats.network}` : 'Disconnected'}
+                            <div className="flex items-center gap-3 mb-2">
+                                <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+                                    UNUM Mission Control
+                                </h1>
+                                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-500/20 text-purple-400 border border-purple-500/30 uppercase tracking-widest">
+                                    PRO
                                 </span>
                             </div>
+                            <p className="text-gray-400 max-w-xl">
+                                Real-time orchestration of the <span className="text-white font-semibold">Council of 6 AI Models</span>, monitoring weak-form market efficiency, social sentiment, and order flow.
+                            </p>
+                        </div>
+                        <div className="flex items-center gap-4">
+                            <div className="flex flex-col items-end">
+                                <span className="text-xs text-gray-500 uppercase tracking-wider">Network Status</span>
+                                <div className="flex items-center gap-2">
+                                    <div className={`w-2 h-2 rounded-full ${stats.isConnected ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`} />
+                                    <span className={`font-mono font-bold ${stats.isConnected ? 'text-green-400' : 'text-red-400'}`}>
+                                        {stats.isConnected && stats.sepoliaStats?.isConnected ? 'MULTI-CHAIN ACTIVE' : stats.isConnected ? 'BASE SEPOLIA' : 'OFFLINE'}
+                                    </span>
+                                </div>
+                            </div>
+                            <button className="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg text-sm font-medium transition flex items-center gap-2">
+                                <Zap className="w-4 h-4 text-yellow-400" />
+                                <span>WXT Boost Active</span>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 py-12">
-                {/* On-Chain Stats Grid */}
-                <section className="mb-12">
-                    <div className="flex items-center gap-3 mb-6">
-                        <Shield className="w-6 h-6 text-purple-400" />
-                        <h2 className="text-2xl font-bold">On-Chain Verification</h2>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <StatCard
-                            icon={<Database className="w-6 h-6" />}
-                            label="Total Trades Recorded"
-                            value={stats.totalTrades.toLocaleString()}
-                            sublabel="Verified on Base Sepolia"
-                            color="text-blue-400"
-                            bgColor="bg-blue-500/10"
-                            borderColor="border-blue-500/30"
-                        />
-                        <StatCard
-                            icon={<Brain className="w-6 h-6" />}
-                            label="AI Decisions"
-                            value={stats.totalDecisions.toLocaleString()}
-                            sublabel="GEMINI-powered signals"
-                            color="text-purple-400"
-                            bgColor="bg-purple-500/10"
-                            borderColor="border-purple-500/30"
-                        />
-                        <StatCard
-                            icon={<CheckCircle className="w-6 h-6" />}
-                            label="Active Submitters"
-                            value={stats.totalSubmitters.toLocaleString()}
-                            sublabel="Authorized wallets"
-                            color="text-green-400"
-                            bgColor="bg-green-500/10"
-                            borderColor="border-green-500/30"
-                        />
-                    </div>
-                </section>
+            <div className="max-w-7xl mx-auto px-6 py-10">
 
-                {/* Performance Metrics */}
-                <section className="mb-12">
-                    <div className="flex items-center gap-3 mb-6">
-                        <TrendingUp className="w-6 h-6 text-green-400" />
-                        <h2 className="text-2xl font-bold">Performance Metrics</h2>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                        <PerformanceCard
-                            label="Net Profit"
-                            value="$4,176.71"
-                            change="+41.7%"
-                            period="Monthly"
-                            positive={true}
-                        />
-                        <PerformanceCard
-                            label="Sharpe Ratio"
-                            value="4.08"
-                            change="Risk-Adjusted"
-                            period="Excellent"
-                            positive={true}
-                        />
-                        <PerformanceCard
-                            label="Win Rate"
-                            value="89.8%"
-                            change="472 Trades"
-                            period="Executed"
-                            positive={true}
-                        />
-                        <PerformanceCard
-                            label="WXT Savings"
-                            value="$2,088"
-                            change="50% Discount"
-                            period="Active"
-                            positive={true}
-                        />
-                    </div>
-                </section>
+                {/* 1. KPIs - Institutional Grade */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+                    <KpiCard
+                        label="Net PnL (Verified)"
+                        value="$12,450.20"
+                        sub="+18.4% this week"
+                        trend="up"
+                        icon={<TrendingUp className="w-5 h-5 text-green-400" />}
+                    />
+                    <KpiCard
+                        label="Sharpe Ratio"
+                        value="3.85"
+                        sub="Top 1% of Strategies"
+                        trend="neutral"
+                        icon={<Activity className="w-5 h-5 text-blue-400" />}
+                    />
+                    <KpiCard
+                        label="Social Sentiment"
+                        value="Bullish (72)"
+                        sub="1.2k Tweets/hr filtered"
+                        trend="up"
+                        icon={<Twitter className="w-5 h-5 text-cyan-400" />}
+                    />
+                    <KpiCard
+                        label="System Latency"
+                        value="45ms"
+                        sub="WEEX Direct Connection"
+                        trend="down"
+                        icon={<Zap className="w-5 h-5 text-yellow-400" />}
+                    />
+                </div>
 
-                {/* AI Engine Status */}
-                <section className="mb-12">
-                    <div className="flex items-center gap-3 mb-6">
-                        <Brain className="w-6 h-6 text-purple-400" />
-                        <h2 className="text-2xl font-bold">AI Engine Status</h2>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-2xl border border-white/10 p-6">
-                            <div className="flex items-center justify-between mb-4">
-                                <h3 className="text-xl font-bold">GEMINI Neural Engine</h3>
-                                <div className="px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full">
-                                    <span className="text-green-400 text-sm font-medium">Active</span>
-                                </div>
-                            </div>
-                            <div className="space-y-3">
-                                <InfoRow label="Model Version" value="gemini-2.5-flash-lite" />
-                                <InfoRow label="Average Confidence" value="87.5%" />
-                                <InfoRow label="Response Time" value="<1s" />
-                                <InfoRow label="Success Rate" value="100%" />
-                            </div>
-                            <Link
-                                href="/ai-tools"
-                                className="mt-4 w-full flex items-center justify-center gap-2 px-4 py-3 bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 rounded-lg transition-all"
-                            >
-                                <Zap className="w-4 h-4" />
-                                <span>Generate AI Signal</span>
+                {/* 2. THE COUNCIL STATUS */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                    {/* Left Col: Model Health */}
+                    <div className="lg:col-span-2 bg-gray-900/50 border border-white/10 rounded-xl p-6 backdrop-blur-sm">
+                        <div className="flex items-center justify-between mb-6">
+                            <h3 className="text-xl font-bold flex items-center gap-2">
+                                <Brain className="w-5 h-5 text-purple-400" />
+                                Council of 6 Status
+                            </h3>
+                            <Link href="/platform/ai-engine" className="text-xs text-purple-400 hover:text-purple-300 flex items-center gap-1">
+                                View Architecture <ExternalLink className="w-3 h-3" />
                             </Link>
                         </div>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <ModelStatusBadge name="DeepSeek V3" role="Reasoning" status="online" ping="120ms" />
+                            <ModelStatusBadge name="Gemini 1.5" role="Context" status="online" ping="85ms" />
+                            <ModelStatusBadge name="Llama 3.1" role="Speed" status="online" ping="15ms" />
+                            <ModelStatusBadge name="Mixtral 8x7" role="Diversity" status="online" ping="95ms" />
+                            <ModelStatusBadge name="Qwen 2.5" role="Backup" status="standby" ping="110ms" />
+                            <ModelStatusBadge name="Math Engine" role="Fallback" status="active" ping="0ms" />
+                        </div>
+                    </div>
 
-                        <div className="bg-gradient-to-br from-blue-900/20 to-cyan-900/20 rounded-2xl border border-white/10 p-6">
-                            <div className="flex items-center justify-between mb-4">
-                                <h3 className="text-xl font-bold">Blockchain Integration</h3>
-                                <div className="px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full">
-                                    <span className="text-green-400 text-sm font-medium">Live</span>
+                    {/* Right Col: Live Consensus Vote */}
+                    <div className="bg-gray-900/50 border border-white/10 rounded-xl p-6 backdrop-blur-sm flex flex-col justify-center items-center text-center">
+                        <h3 className="text-sm text-gray-400 uppercase tracking-widest mb-4">Current Consensus</h3>
+                        <div className="w-32 h-32 rounded-full border-4 border-green-500/20 flex items-center justify-center relative mb-4">
+                            <div className="absolute inset-0 rounded-full border-t-4 border-green-500 animate-spin-slow"></div>
+                            <div className="text-3xl font-bold text-green-400">STRONG BUY</div>
+                        </div>
+                        <p className="text-sm text-gray-400">
+                            <span className="text-white font-bold">5/6 Engines</span> agree.
+                            <br />Confidence Score: <span className="text-green-400">94.2%</span>
+                        </p>
+                    </div>
+                </div>
+
+                {/* 3. LIVE MARKET INTELLIGENCE */}
+                <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+                    <Database className="w-5 h-5 text-blue-400" />
+                    Live Market Intelligence
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    {/* Order Flow */}
+                    <div className="bg-black border border-white/10 rounded-xl overflow-hidden">
+                        <div className="bg-white/5 px-6 py-4 border-b border-white/10 flex justify-between items-center">
+                            <span className="font-bold">Order Flow Imbalance (OFI)</span>
+                            <span className="text-xs text-gray-500">WEEX L2 DATA</span>
+                        </div>
+                        <div className="p-6">
+                            <div className="flex items-center justify-between mb-2">
+                                <span className="text-sm text-green-400">Buying Pressure</span>
+                                <span className="text-sm text-red-400">Selling Pressure</span>
+                            </div>
+                            <div className="h-4 bg-gray-800 rounded-full overflow-hidden flex">
+                                <div className="h-full bg-green-500 w-[65%]"></div>
+                                <div className="h-full bg-red-500 w-[35%]"></div>
+                            </div>
+                            <div className="mt-4 text-xs text-gray-400 flex justify-between">
+                                <span>Vol: $4.2M (15m)</span>
+                                <span>Whale Alert: 2 Detected</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* X Sentiment Analysis */}
+                    <div className="bg-black border border-white/10 rounded-xl overflow-hidden">
+                        <div className="bg-white/5 px-6 py-4 border-b border-white/10 flex justify-between items-center">
+                            <span className="font-bold">X (Twitter) Sentiment</span>
+                            <span className="text-xs text-gray-500">REAL-TIME STREAM</span>
+                        </div>
+                        <div className="p-6 space-y-4">
+                            <div className="flex items-start gap-3">
+                                <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
+                                    <Twitter className="w-4 h-4" />
+                                </div>
+                                <div>
+                                    <p className="text-sm text-white mb-1">
+                                        Major breakout mentioned by <span className="text-blue-400">@GenericInfluencer</span> and 12 others.
+                                    </p>
+                                    <p className="text-xs text-gray-500">2 minutes ago • Impact Score: High</p>
                                 </div>
                             </div>
-                            <div className="space-y-3">
-                                <InfoRow label="Network" value="Base Sepolia" />
-                                <InfoRow label="Contract Status" value="Verified" />
-                                <InfoRow label="Gas Optimization" value="Enabled" />
-                                <InfoRow label="Batch Submission" value="Active" />
+                            <div className="flex items-start gap-3 opacity-60">
+                                <div className="w-8 h-8 rounded-full bg-gray-500/20 flex items-center justify-center text-gray-400">
+                                    <BarChart3 className="w-4 h-4" />
+                                </div>
+                                <div>
+                                    <p className="text-sm text-white mb-1">
+                                        Negative divergences spotted on 4h charts.
+                                    </p>
+                                    <p className="text-xs text-gray-500">5 minutes ago • Impact Score: Low</p>
+                                </div>
                             </div>
-                            <a
-                                href="https://sepolia.basescan.org/address/0x0f294e979eF7FdEc5bf0f137658828ee4cD0c3dC"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-4 w-full flex items-center justify-center gap-2 px-4 py-3 bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30 rounded-lg transition-all"
-                            >
-                                <ExternalLink className="w-4 h-4" />
-                                <span>View on BaseScan</span>
-                            </a>
                         </div>
                     </div>
-                </section>
+                </div>
 
-                {/* Recent Activity */}
-                <section>
-                    <div className="flex items-center gap-3 mb-6">
-                        <Activity className="w-6 h-6 text-yellow-400" />
-                        <h2 className="text-2xl font-bold">Recent Activity</h2>
+                {/* 4. ON-CHAIN VERIFICATION LOG */}
+                <div className="border border-white/10 rounded-xl bg-gray-900/30">
+                    <div className="px-6 py-5 border-b border-white/10 flex items-center justify-between">
+                        <h3 className="font-bold flex items-center gap-2">
+                            <Shield className="w-4 h-4 text-green-400" />
+                            Recent On-Chain Activity
+                        </h3>
+                        <Link href="https://sepolia.basescan.org/" target="_blank" className="text-xs text-gray-400 hover:text-white flex items-center gap-1">
+                            View on BaseScan <ExternalLink className="w-3 h-3" />
+                        </Link>
                     </div>
-                    <div className="bg-gray-900 rounded-2xl border border-white/10 p-6">
-                        <div className="space-y-4 font-mono text-sm">
-                            <ActivityLog
-                                time="15:42:18"
-                                type="AI"
-                                message="Signal generated for BTC/USDT - BUY @ $95,432"
-                                confidence="92%"
-                            />
-                            <ActivityLog
-                                time="15:42:19"
-                                type="RISK"
-                                message="WXT discount applied - Fee reduced to 0.03%"
-                                confidence="N/A"
-                            />
-                            <ActivityLog
-                                time="15:42:20"
-                                type="EXEC"
-                                message="Order filled - 0.1 BTC @ $95,432.00"
-                                confidence="N/A"
-                            />
-                            <ActivityLog
-                                time="15:42:22"
-                                type="PROOF"
-                                message="Trade proof submitted to Base Sepolia"
-                                confidence="N/A"
-                                success={true}
-                            />
-                            <ActivityLog
-                                time="15:42:24"
-                                type="CHAIN"
-                                message="Transaction confirmed - Hash: 0x7f...3a29"
-                                confidence="N/A"
-                                success={true}
-                            />
-                        </div>
+                    <div className="divide-y divide-white/5">
+                        <ActivityRow
+                            hash="0x7f2a...39d1"
+                            action="EXECUTE_TRADE"
+                            details="BUY BTC/USDT @ 95,230"
+                            time="12s ago"
+                            status="Verified"
+                        />
+                        <ActivityRow
+                            hash="0x1a4b...8c2e"
+                            action="SIGNAL_GEN"
+                            details="Consensus: STRONG BUY (Confidence 0.94)"
+                            time="45s ago"
+                            status="Recorded"
+                        />
+                        <ActivityRow
+                            hash="0x9c3d...2a1f"
+                            action="RISK_CHECK"
+                            details="Approved. Leverage capped at 5x."
+                            time="1m ago"
+                            status="Passed"
+                        />
                     </div>
-                </section>
+                </div>
 
-                {/* Quick Actions */}
-                <section className="mt-12">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <QuickActionCard
-                            title="Generate AI Signal"
-                            description="Create a new trading signal using GEMINI AI"
-                            href="/ai-tools"
-                            icon={<Brain className="w-8 h-8" />}
-                            color="purple"
-                        />
-                        <QuickActionCard
-                            title="View Strategies"
-                            description="Explore available trading strategies"
-                            href="/platform/strategies"
-                            icon={<TrendingUp className="w-8 h-8" />}
-                            color="green"
-                        />
-                        <QuickActionCard
-                            title="AI Engine Details"
-                            description="Learn about the GEMINI neural engine"
-                            href="/platform/ai-engine"
-                            icon={<Zap className="w-8 h-8" />}
-                            color="blue"
-                        />
-                    </div>
-                </section>
             </div>
         </div>
     );
 }
 
-function StatCard({ icon, label, value, sublabel, color, bgColor, borderColor }: any) {
-    return (
-        <div className={`${bgColor} border ${borderColor} rounded-2xl p-6 hover:scale-105 transition-transform`}>
-            <div className={`${color} mb-3`}>{icon}</div>
-            <div className="text-gray-400 text-sm mb-2">{label}</div>
-            <div className={`text-4xl font-bold ${color} mb-1`}>{value}</div>
-            <div className="text-gray-500 text-sm">{sublabel}</div>
-        </div>
-    );
-}
+// --- SUBCOMPONENTS ---
 
-function PerformanceCard({ label, value, change, period, positive }: any) {
-    return (
-        <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-purple-500/50 transition-all">
-            <div className="text-gray-400 text-sm mb-2">{label}</div>
-            <div className="text-3xl font-bold text-white mb-2">{value}</div>
-            <div className={`text-sm ${positive ? 'text-green-400' : 'text-red-400'}`}>
-                {change}
-            </div>
-            <div className="text-gray-500 text-xs mt-1">{period}</div>
-        </div>
-    );
-}
-
-function InfoRow({ label, value }: any) {
-    return (
-        <div className="flex justify-between items-center">
-            <span className="text-gray-400 text-sm">{label}</span>
-            <span className="text-white font-medium">{value}</span>
-        </div>
-    );
-}
-
-function ActivityLog({ time, type, message, confidence, success }: any) {
-    const getTypeColor = (type: string) => {
-        switch (type) {
-            case 'AI': return 'text-purple-400';
-            case 'RISK': return 'text-yellow-400';
-            case 'EXEC': return 'text-blue-400';
-            case 'PROOF': return 'text-green-400';
-            case 'CHAIN': return 'text-cyan-400';
-            default: return 'text-gray-400';
-        }
-    };
+function KpiCard({ label, value, sub, trend, icon }: any) {
+    const isUp = trend === 'up';
 
     return (
-        <div className={`flex items-center gap-4 p-3 rounded-lg ${success ? 'bg-green-500/5' : 'bg-white/5'} border border-white/10`}>
-            <span className="text-gray-500">{time}</span>
-            <span className={`${getTypeColor(type)} font-bold w-16`}>[{type}]</span>
-            <span className="text-gray-300 flex-1">{message}</span>
-            {confidence !== 'N/A' && (
-                <span className="text-purple-400 font-bold">{confidence}</span>
-            )}
-        </div>
-    );
-}
-
-function QuickActionCard({ title, description, href, icon, color }: any) {
-    const colorClasses = {
-        purple: 'from-purple-900/20 to-pink-900/20 border-purple-500/30 hover:border-purple-500',
-        green: 'from-green-900/20 to-emerald-900/20 border-green-500/30 hover:border-green-500',
-        blue: 'from-blue-900/20 to-cyan-900/20 border-blue-500/30 hover:border-blue-500'
-    };
-
-    return (
-        <Link
-            href={href}
-            className={`bg-gradient-to-br ${colorClasses[color as keyof typeof colorClasses]} rounded-2xl border p-6 hover:scale-105 transition-all group`}
-        >
-            <div className="mb-4 text-white group-hover:scale-110 transition-transform">
+        <div className="p-6 bg-white/5 border border-white/10 rounded-xl hover:border-white/20 transition">
+            <div className="flex justify-between items-start mb-4">
+                <span className="text-gray-400 text-sm font-medium uppercase">{label}</span>
                 {icon}
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
-            <p className="text-gray-400 text-sm">{description}</p>
-        </Link>
+            <div className="text-3xl font-bold mb-1">{value}</div>
+            <div className={`text-xs ${isUp ? 'text-green-400' : 'text-gray-400'}`}>
+                {sub}
+            </div>
+        </div>
+    );
+}
+
+function ModelStatusBadge({ name, role, status, ping }: any) {
+    const isActive = status === 'active' || status === 'online';
+    const color = isActive ? 'bg-green-500' : 'bg-yellow-500';
+
+    return (
+        <div className="p-3 bg-black rounded-lg border border-white/5 flex items-center justify-between">
+            <div>
+                <div className="text-sm font-bold text-gray-200">{name}</div>
+                <div className="text-[10px] text-gray-500 uppercase">{role}</div>
+            </div>
+            <div className="text-right">
+                <div className="flex items-center gap-1.5 justify-end">
+                    <div className={`w-1.5 h-1.5 rounded-full ${color} animate-pulse`} />
+                    <span className="text-[10px] text-gray-400">{ping}</span>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function ActivityRow({ hash, action, details, time, status }: any) {
+    return (
+        <div className="px-6 py-4 flex flex-col md:flex-row md:items-center justify-between hover:bg-white/5 transition">
+            <div className="flex items-center gap-4 mb-2 md:mb-0">
+                <div className="p-2 bg-white/5 rounded-lg">
+                    {action === 'EXECUTE_TRADE' ? <Zap className="w-4 h-4 text-yellow-400" /> :
+                        action === 'SIGNAL_GEN' ? <Brain className="w-4 h-4 text-purple-400" /> :
+                            <Lock className="w-4 h-4 text-green-400" />}
+                </div>
+                <div>
+                    <div className="text-sm font-bold text-white">{action}</div>
+                    <div className="text-xs text-gray-400 font-mono">{hash}</div>
+                </div>
+            </div>
+            <div className="flex-1 md:px-8 text-sm text-gray-300">
+                {details}
+            </div>
+            <div className="text-right">
+                <div className="text-sm font-medium text-green-400">{status}</div>
+                <div className="text-xs text-gray-500">{time}</div>
+            </div>
+        </div>
     );
 }

@@ -11,13 +11,13 @@ out
 .venv
 __pycache__
 
-# Environment variables (NEVER commit these!)
+# Environment variables
+# Environment variables
 .env
 .env.local
 .env.example
 *.env
 
-# Data and artifacts
 data/
 artifacts/
 
@@ -40,3 +40,4 @@ package-lock.json
 # Documentation (exclude all .md except README.md)
 *.md
 !README.md
+!docs/*.md

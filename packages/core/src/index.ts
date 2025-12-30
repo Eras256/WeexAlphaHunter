@@ -3,3 +3,7 @@ export * from './logger.js';
 export * from './utils.js';
 export * from './blockchain.js';
 export * from './gemini.js';
+export * from './consensus.js';
+export * from './twitter.js';
+export * from './local-ai.js';
+export * from './neural-ai.js';

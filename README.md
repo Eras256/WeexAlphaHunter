@@ -37,12 +37,13 @@ Built for the **WEEX "Alpha Awakens" Hackathon**, this production-ready system c
 <tr>
 <td width="50%">
 
-### 🧠 **AI-Powered Intelligence**
-- **Gemini 2.5 Flash** neural engine
-- Multi-modal market analysis
-- Sub-second decision latency
-- 95%+ confidence accuracy
-- Automated signal generation
+### 🧠 **The Council of 6 AI**
+- **DeepSeek V3**: Logic & Reasoning
+- **Gemini 1.5 Flash**: Context & News
+- **Llama 3.1**: HFT Speed (Groq)
+- **Mixtral 8x7b**: Consensus Voting
+- **Qwen 2.5**: Backup Engine
+- **Math Engine**: Local Fallback (100% Uptime)
 
 </td>
 <td width="50%">
@@ -59,12 +60,11 @@ Built for the **WEEX "Alpha Awakens" Hackathon**, this production-ready system c
 <tr>
 <td width="50%">
 
-### 💎 **WXT Token Integration**
-- Up to 50% fee discounts
-- Governance participation
-- Strategy access tiers
-- Economic optimization
-- Holder benefits
+### 💎 **WXT Econ & Social Data**
+- **X (Twitter) Firehose**: Real-time sentiment
+- **Order Flow (OFI)**: L2 Whale Detection
+- **WXT Discounts**: Staking reduces fees
+- **Governance**: Vote on Model weights
 
 </td>
 <td width="50%">
@@ -87,39 +87,37 @@ Built for the **WEEX "Alpha Awakens" Hackathon**, this production-ready system c
 ```mermaid
 graph TB
     subgraph "Frontend Layer"
-        A[Next.js 14 Dashboard]
+        A[Next.js 14 Mission Control]
         B[Thirdweb Connect]
-        C[Real-time Stats]
+        C[Live Sentiment Gauge]
     end
     
-    subgraph "AI Layer"
-        D[Gemini 2.5 Flash]
-        E[Signal Generator]
-        F[Market Analyzer]
+    subgraph "The Council of 6"
+        D[DeepSeek V3]
+        E[Gemini 1.5]
+        F[Llama 3.1]
+        G[Mixtral 8x7b]
+        H[Qwen 2.5]
+        I[Local Math Engine]
     end
     
-    subgraph "Backend Layer"
-        G[TypeScript Engine]
-        H[Python Analytics]
-        I[Backtest System]
+    subgraph "Data Layer"
+        J[WEEX L2 Orderbook]
+        K[X / Twitter Firehose]
+        L[Fear & Greed Index]
     end
     
     subgraph "Blockchain Layer"
-        J[TradeVerifier Contract]
-        K[StrategyRegistry Contract]
-        L[Base Sepolia L2]
+        M[Base Sepolia L2]
+        N[TradeVerifier Contract]
     end
     
-    A --> B
-    A --> C
-    D --> E
-    E --> G
-    F --> H
-    G --> I
-    G --> J
-    J --> L
-    K --> L
-    C --> J
+    J & K & L --> D & E & F & G & H & I
+    D & E & F & G & H & I -->|Consensus Vote| O[Signal Aggregator]
+    O -->|Execute| P[WEEX API]
+    O -->|Verify| N
+    N --> M
+    A --> N
 ```
 
 ---

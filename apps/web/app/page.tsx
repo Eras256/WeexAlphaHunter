@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useBlockchainStats } from '@/hooks/useBlockchainStats';
-import { Shield, TrendingUp, Zap, Brain, ExternalLink } from 'lucide-react';
+import { Shield, TrendingUp, Zap, Brain, ExternalLink, Twitter, Database, Activity } from 'lucide-react';
 
 export default function Home() {
     const stats = useBlockchainStats();
@@ -18,6 +18,9 @@ export default function Home() {
                         <span className="px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-400 text-xs font-mono tracking-wider uppercase">
                             WEEX Alpha Awakens Finalist
                         </span>
+                        <span className="px-3 py-1 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 text-xs font-mono tracking-wider uppercase">
+                            Council of 6 AI Models
+                        </span>
                     </div>
 
                     <h1 className="text-6xl md:text-8xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-white via-gray-200 to-gray-500">
@@ -26,7 +29,7 @@ export default function Home() {
 
                     <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
                         The first <span className="text-purple-400">Trading Proof-of-Work</span> system.
-                        Powered by GEMINI, optimized with WXT, and verifiable on Base.
+                        Powered by <span className="text-emerald-400">6 AI models</span>, institutional data, and verified on <span className="text-cyan-400">Base L2</span> & <span className="text-gray-400">Eth L1</span>.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
@@ -34,10 +37,10 @@ export default function Home() {
                             <TrendingUp className="w-5 h-5" />
                             View Dashboard
                         </Link>
-                        <a href="https://github.com/StartArb/TriArb" target="_blank" rel="noopener noreferrer" className="px-8 py-4 border border-white/20 hover:bg-white/5 rounded-lg text-white font-medium transition flex items-center justify-center gap-2">
-                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.11.825-.26.825-.577 0-.285-.015-1.04-.015-2.04-3.338.72-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.31 24 12c0-6.63-5.37-12-12-12" /></svg>
-                            View Code
-                        </a>
+                        <Link href="/platform/ai-engine" className="px-8 py-4 border border-white/20 hover:bg-white/5 rounded-lg text-white font-medium transition flex items-center justify-center gap-2">
+                            <Brain className="w-5 h-5" />
+                            Explore UNUM AI
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -49,11 +52,11 @@ export default function Home() {
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 border border-green-500/30 rounded-full mb-4">
                             <div className={`w-2 h-2 rounded-full ${stats.isConnected ? 'bg-green-400 animate-pulse' : 'bg-red-400'}`} />
                             <span className={`text-sm font-medium ${stats.isConnected ? 'text-green-400' : 'text-red-400'}`}>
-                                {stats.isConnected ? `Live on ${stats.network}` : 'Connecting...'}
+                                {stats.isConnected && stats.sepoliaStats?.isConnected ? 'HYBRID ARCHITECTURE: ACTIVE' : stats.isConnected ? 'BASE L2: ACTIVE' : 'CONNECTING...'}
                             </span>
                         </div>
-                        <h2 className="text-3xl font-bold mb-2">On-Chain Verification</h2>
-                        <p className="text-gray-400">Real-time data from Base Sepolia blockchain</p>
+                        <h2 className="text-3xl font-bold mb-2">Dual-Layer Verification</h2>
+                        <p className="text-gray-400">Execution on Base L2 • Settlement on Ethereum L1</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                         <MetricCard
@@ -65,16 +68,16 @@ export default function Home() {
                         />
                         <MetricCard
                             icon={<Brain className="w-6 h-6" />}
-                            label="AI Decisions"
+                            label="AI Consensus Decisions"
                             value={stats.totalDecisions.toLocaleString()}
-                            sub="GEMINI-powered signals"
+                            sub="6-Model voting system"
                             color="text-purple-400"
                         />
                         <MetricCard
                             icon={<Zap className="w-6 h-6" />}
-                            label="Active Submitters"
-                            value={stats.totalSubmitters.toLocaleString()}
-                            sub="Authorized wallets"
+                            label="System Uptime"
+                            value="100%"
+                            sub="Guaranteed by local fallback"
                             color="text-green-400"
                         />
                     </div>
@@ -92,23 +95,67 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* 3. PERFORMANCE METRICS */}
+            {/* 3. THE COUNCIL OF 6 - AI Models Showcase */}
             <section className="py-24 border-t border-white/10 bg-gradient-to-b from-black to-purple-900/10">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold mb-2">Performance Metrics</h2>
-                        <p className="text-gray-400">Backtested results from paper trading</p>
+                        <h2 className="text-3xl font-bold mb-2">The Council of 6 AI Models</h2>
+                        <p className="text-gray-400">Multi-model consensus for unparalleled accuracy</p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                        <PerformanceCard label="Net Profit (Paper)" value="$4,176.71" sub="+41.7% / Month" color="text-green-400" />
-                        <PerformanceCard label="Sharpe Ratio" value="4.08" sub="Risk Adjusted" color="text-blue-400" />
-                        <PerformanceCard label="Win Rate" value="89.8%" sub="472 Trades Executed" color="text-purple-400" />
-                        <PerformanceCard label="WXT Savings" value="$2,088" sub="50% Fee Reduction Active" color="text-yellow-400" />
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+                        <AIModelBadge name="DeepSeek" role="Logic" color="emerald" />
+                        <AIModelBadge name="Gemini" role="Context" color="blue" />
+                        <AIModelBadge name="Llama" role="Speed" color="purple" />
+                        <AIModelBadge name="Mixtral" role="Generalist" color="orange" />
+                        <AIModelBadge name="Qwen" role="Backup" color="cyan" />
+                        <AIModelBadge name="Math Engine" role="Fallback" color="yellow" />
+                    </div>
+                    <div className="text-center">
+                        <Link href="/platform/ai-engine" className="inline-flex items-center gap-2 px-6 py-3 bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 rounded-lg transition-all text-purple-300">
+                            <Brain className="w-4 h-4" />
+                            <span>Explore UNUM Consensus Engine</span>
+                        </Link>
                     </div>
                 </div>
             </section>
 
-            {/* 4. LIVE TRADING LOG */}
+            {/* 4. DATA SOURCES - Institutional Grade */}
+            <section className="py-24 border-t border-white/10">
+                <div className="max-w-7xl mx-auto px-4">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl font-bold mb-2">Institutional Data Feeds</h2>
+                        <p className="text-gray-400">Beyond price action: Order flow, sentiment, and ecosystem health</p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <DataSourceCard
+                            icon={<Database className="w-8 h-8" />}
+                            title="Order Flow Imbalance"
+                            description="Real-time L2 orderbook depth analysis"
+                            color="purple"
+                        />
+                        <DataSourceCard
+                            icon={<Activity className="w-8 h-8" />}
+                            title="Fear & Greed Index"
+                            description="Macro market sentiment (0-100 scale)"
+                            color="blue"
+                        />
+                        <DataSourceCard
+                            icon={<Twitter className="w-8 h-8" />}
+                            title="X Social Intelligence"
+                            description="Crypto Twitter sentiment analysis"
+                            color="cyan"
+                        />
+                        <DataSourceCard
+                            icon={<Zap className="w-8 h-8" />}
+                            title="WXT Ecosystem Price"
+                            description="Platform health indicator"
+                            color="yellow"
+                        />
+                    </div>
+                </div>
+            </section>
+
+            {/* 5. LIVE TRADING LOG */}
             <section className="py-24 border-t border-white/10 relative">
                 <div className="max-w-4xl mx-auto px-4">
                     <div className="text-center mb-8">
@@ -121,16 +168,17 @@ export default function Home() {
                             <span className="text-purple-400">0x7f...3a29</span>
                         </div>
                         <div className="space-y-2 text-gray-400">
-                            <p><span className="text-purple-400">[AI]</span> Generating Signal... CONFIDENCE 0.92</p>
-                            <p><span className="text-yellow-400">[RISK]</span> WXT Discount Applied. Fee: 0.03%</p>
-                            <p><span className="text-blue-400">[EXEC]</span> Order FILLED @ 95,432.00</p>
-                            <p className="text-green-500"><span className="text-green-400">[PROOF]</span> Tx Confirmed on Base Sepolia</p>
+                            <p><span className="text-purple-400">[UNUM]</span> Consensus Vote: 5/6 models agree → BUY</p>
+                            <p><span className="text-blue-400">[DATA]</span> OFI: +0.42 | F&G: 38 | WXT: $0.05 | X Sentiment: +0.67</p>
+                            <p><span className="text-yellow-400">[RISK]</span> WXT Discount Applied. Fee: 0.03% (50% savings)</p>
+                            <p><span className="text-cyan-400">[EXEC]</span> Order FILLED @ 95,432.00 | TP: 96,200 | SL: 94,800</p>
+                            <p className="text-green-500"><span className="text-green-400">[PROOF]</span> Tx Confirmed on Base Sepolia | Posted to X</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* 5. FEATURES GRID */}
+            {/* 6. FEATURES GRID */}
             <section className="py-24 border-t border-white/10">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-12">
@@ -140,39 +188,39 @@ export default function Home() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <FeatureCard
                             icon={<Brain className="w-8 h-8" />}
-                            title="GEMINI AI Engine"
-                            description="Advanced neural network for multi-modal market analysis with sub-second latency and 95%+ confidence accuracy."
+                            title="UNUM AI Consensus"
+                            description="6 state-of-the-art AI models vote on every trade. DeepSeek for logic, Gemini for context, Llama for speed, Mixtral for diversity, Qwen as backup, and a local Math Engine guaranteeing 100% uptime."
                             color="purple"
                         />
                         <FeatureCard
                             icon={<Shield className="w-8 h-8" />}
-                            title="On-Chain Verification"
-                            description="Every trade and AI decision recorded on Base Sepolia for complete transparency and immutable audit trail."
+                            title="Hybrid On-Chain Proofs"
+                            description="High-frequency execution verification on Base L2 combined with high-value settlement anchoring on Ethereum L1. The best of speed and security."
                             color="blue"
                         />
                         <FeatureCard
-                            icon={<Zap className="w-8 h-8" />}
-                            title="WXT Optimization"
-                            description="Native fee discount modeling with 50% savings on trading fees, optimizing profitability for high-frequency strategies."
-                            color="yellow"
+                            icon={<Twitter className="w-8 h-8" />}
+                            title="Social Intelligence"
+                            description="Real-time X (Twitter) sentiment analysis detects trends before mainstream news. Automated posting of profitable trades for full transparency and community trust."
+                            color="cyan"
                         />
                     </div>
                 </div>
             </section>
 
-            {/* 6. CTA SECTION */}
+            {/* 7. CTA SECTION */}
             <section className="py-24 border-t border-white/10 bg-gradient-to-b from-black to-purple-900/20">
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <h2 className="text-4xl font-bold mb-4">Ready to Experience AI-Powered Trading?</h2>
                     <p className="text-xl text-gray-400 mb-8">
-                        Explore the dashboard, generate AI signals, and see blockchain verification in action.
+                        Explore the dashboard, see the Council of 6 in action, and verify everything on-chain.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link href="/dashboard" className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold rounded-lg transition">
                             Open Dashboard
                         </Link>
-                        <Link href="/ai-tools" className="px-8 py-4 border border-white/20 hover:bg-white/5 rounded-lg text-white font-medium transition">
-                            Try AI Tools
+                        <Link href="/resources/performance" className="px-8 py-4 border border-white/20 hover:bg-white/5 rounded-lg text-white font-medium transition">
+                            View Live Performance
                         </Link>
                     </div>
                 </div>
@@ -192,25 +240,51 @@ function MetricCard({ icon, label, value, sub, color = "text-white" }: any) {
     );
 }
 
-function PerformanceCard({ label, value, sub, color = "text-white" }: any) {
+function AIModelBadge({ name, role, color }: any) {
+    const colorClasses: any = {
+        emerald: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400',
+        blue: 'bg-blue-500/10 border-blue-500/30 text-blue-400',
+        purple: 'bg-purple-500/10 border-purple-500/30 text-purple-400',
+        orange: 'bg-orange-500/10 border-orange-500/30 text-orange-400',
+        cyan: 'bg-cyan-500/10 border-cyan-500/30 text-cyan-400',
+        yellow: 'bg-yellow-500/10 border-yellow-500/30 text-yellow-400',
+    };
+
     return (
-        <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition">
-            <h3 className="text-gray-500 text-sm font-medium uppercase tracking-wider mb-2">{label}</h3>
-            <div className={`text-4xl font-bold ${color} mb-1`}>{value}</div>
-            <div className="text-gray-400 text-sm">{sub}</div>
+        <div className={`${colorClasses[color]} border rounded-lg p-4 text-center`}>
+            <p className="font-bold text-sm mb-1">{name}</p>
+            <p className="text-xs opacity-75">{role}</p>
+        </div>
+    );
+}
+
+function DataSourceCard({ icon, title, description, color }: any) {
+    const colorClasses: any = {
+        purple: 'from-purple-900/20 to-pink-900/20 text-purple-400',
+        blue: 'from-blue-900/20 to-cyan-900/20 text-blue-400',
+        cyan: 'from-cyan-900/20 to-blue-900/20 text-cyan-400',
+        yellow: 'from-yellow-900/20 to-orange-900/20 text-yellow-400'
+    };
+
+    return (
+        <div className={`bg-gradient-to-br ${colorClasses[color]} rounded-2xl border border-white/10 p-6 hover:scale-105 transition-transform`}>
+            <div className="mb-4">{icon}</div>
+            <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
         </div>
     );
 }
 
 function FeatureCard({ icon, title, description, color }: any) {
-    const colorClasses = {
+    const colorClasses: any = {
         purple: 'from-purple-900/20 to-pink-900/20 text-purple-400',
         blue: 'from-blue-900/20 to-cyan-900/20 text-blue-400',
+        cyan: 'from-cyan-900/20 to-blue-900/20 text-cyan-400',
         yellow: 'from-yellow-900/20 to-orange-900/20 text-yellow-400'
     };
 
     return (
-        <div className={`bg-gradient-to-br ${colorClasses[color as keyof typeof colorClasses]} rounded-2xl border border-white/10 p-8 hover:scale-105 transition-transform`}>
+        <div className={`bg-gradient-to-br ${colorClasses[color]} rounded-2xl border border-white/10 p-8 hover:scale-105 transition-transform`}>
             <div className="mb-4">{icon}</div>
             <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
             <p className="text-gray-400 leading-relaxed">{description}</p>

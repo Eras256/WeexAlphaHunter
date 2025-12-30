@@ -12,16 +12,6 @@ contract StrategyRegistry is Ownable, ReentrancyGuard {
     
     // ============ Structs ============
     
-    struct Strategy {
-        bytes32 strategyHash;       // Unique identifier
-        string name;                // Strategy name
-        string description;         // Strategy description
-        address creator;            // Address that registered the strategy
-        uint256 createdAt;          // Registration timestamp
-        bool isActive;              // Whether strategy is currently active
-        StrategyPerformance performance;
-    }
-    
     struct StrategyPerformance {
         uint256 totalTrades;        // Total number of trades executed
         uint256 winningTrades;      // Number of profitable trades
@@ -29,6 +19,17 @@ contract StrategyRegistry is Ownable, ReentrancyGuard {
         uint256 lastUpdated;        // Last performance update timestamp
         uint16 sharpeRatio;         // Sharpe ratio (scaled by 100)
         uint16 maxDrawdown;         // Maximum drawdown percentage (scaled by 100)
+    }
+
+    struct Strategy {
+        bytes32 strategyHash;       // Unique identifier
+        string name;                // Strategy name
+        string description;         // Strategy description
+        address creator;            // Address that registered the strategy
+        uint256 createdAt;          // Registration timestamp
+        bool isActive;              // Whether strategy is currently active
+        bool audited;               // Whether strategy has been audited by platform
+        StrategyPerformance performance;
     }
     
     // ============ State Variables ============
@@ -58,6 +59,11 @@ contract StrategyRegistry is Ownable, ReentrancyGuard {
         bytes32 indexed strategyHash,
         bool isActive
     );
+
+    event StrategyAuditStatusChanged(
+        bytes32 indexed strategyHash,
+        bool audited
+    );
     
     // ============ Constructor ============
     
@@ -84,6 +90,7 @@ contract StrategyRegistry is Ownable, ReentrancyGuard {
             creator: msg.sender,
             createdAt: block.timestamp,
             isActive: true,
+            audited: false,
             performance: StrategyPerformance({
                 totalTrades: 0,
                 winningTrades: 0,
@@ -142,6 +149,15 @@ contract StrategyRegistry is Ownable, ReentrancyGuard {
         
         strategies[_strategyHash].isActive = _isActive;
         emit StrategyStatusChanged(_strategyHash, _isActive);
+    }
+
+    /**
+     * @dev Toggle strategy audit status (Only Owner)
+     */
+    function setStrategyAuditStatus(bytes32 _strategyHash, bool _audited) external onlyOwner {
+        require(strategies[_strategyHash].createdAt != 0, "Strategy not found");
+        strategies[_strategyHash].audited = _audited;
+        emit StrategyAuditStatusChanged(_strategyHash, _audited);
     }
     
     // ============ View Functions ============

@@ -12,7 +12,7 @@ const STRATEGY_REGISTRY_ADDRESS = process.env.NEXT_PUBLIC_BASE_SEPOLIA_STRATEGY_
 // Let's check the contract file first to be 100% sure.
 // Wait, I should read the contract file first.
 const ABI = [
-    "function getStrategy(bytes32 _strategyHash) external view returns (tuple(bytes32 strategyHash, string name, string description, address creator, uint256 createdAt, bool isActive, tuple(uint256 totalTrades, uint256 winningTrades, int256 totalPnL, uint256 lastUpdated, uint16 sharpeRatio, uint16 maxDrawdown) performance))"
+    "function getStrategy(bytes32 _strategyHash) external view returns (tuple(bytes32 strategyHash, string name, string description, address creator, uint256 createdAt, bool isActive, bool audited, tuple(uint256 totalTrades, uint256 winningTrades, int256 totalPnL, uint256 lastUpdated, uint16 sharpeRatio, uint16 maxDrawdown) performance))"
 ];
 
 export interface StrategyData {
@@ -22,6 +22,7 @@ export interface StrategyData {
     creator: string;
     createdAt: number;
     isActive: boolean;
+    audited: boolean;
     performance: {
         totalTrades: number;
         winningTrades: number;
@@ -56,7 +57,7 @@ export function useStrategies() {
 
                 // Get logs for StrategyRegistered
                 const currentBlock = await provider.getBlockNumber();
-                const fromBlock = currentBlock - 50000; // Search last 50k blocks approx
+                const fromBlock = Math.max(0, currentBlock - 50000); // Search last 50k blocks approx
 
                 const filter = contract.filters.StrategyRegistered();
                 const events = await contract.queryFilter(filter, fromBlock);
@@ -83,6 +84,7 @@ export function useStrategies() {
                             creator: data.creator,
                             createdAt: Number(data.createdAt) * 1000,
                             isActive: data.isActive,
+                            audited: data.audited,
                             performance: {
                                 totalTrades,
                                 winningTrades,

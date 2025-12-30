@@ -6,17 +6,18 @@ dotenv.config();
 
 // Contract ABIs (simplified - only the functions we need)
 const TRADE_VERIFIER_ABI = [
-    "function submitTradeProof(bytes32 _tradeHash, bytes32 _aiDecisionHash, string memory _symbol, uint256 _price, uint256 _quantity, bool _isBuy, uint16 _aiConfidence) external",
+    "function submitTradeProof(bytes32 _tradeHash, bytes32 _aiDecisionHash, string memory _symbol, string memory _exchangeOrderId, uint256 _price, uint256 _quantity, bool _isBuy, uint16 _aiConfidence) external",
     "function recordAIDecision(bytes32 _decisionHash, string memory _reasoning, uint16 _confidence) external",
-    "function verifyTradeProof(bytes32 _tradeHash) external view returns (tuple(bytes32 tradeHash, bytes32 aiDecisionHash, string symbol, uint256 timestamp, address submitter, uint256 price, uint256 quantity, bool isBuy, uint16 aiConfidence))",
+    "function verifyTradeProof(bytes32 _tradeHash) external view returns (tuple(bytes32 tradeHash, bytes32 aiDecisionHash, string symbol, string exchangeOrderId, uint256 timestamp, address submitter, uint256 price, uint256 quantity, bool isBuy, uint16 aiConfidence))",
     "function getStats() external view returns (uint256 totalTrades, uint256 totalDecisions, uint256 totalSubmitters)",
-    "function batchSubmitTradeProofs(bytes32[] memory _tradeHashes, bytes32[] memory _aiDecisionHashes, string[] memory _symbols, uint256[] memory _prices, uint256[] memory _quantities, bool[] memory _isBuy, uint16[] memory _aiConfidences) external"
+    "function batchSubmitTradeProofs(bytes32[] memory _tradeHashes, bytes32[] memory _aiDecisionHashes, string[] memory _symbols, string[] memory _exchangeOrderIds, uint256[] memory _prices, uint256[] memory _quantities, bool[] memory _isBuy, uint16[] memory _aiConfidences) external"
 ];
 
 const STRATEGY_REGISTRY_ABI = [
     "function registerStrategy(bytes32 _strategyHash, string memory _name, string memory _description) external",
     "function updateStrategyPerformance(bytes32 _strategyHash, uint256 _totalTrades, uint256 _winningTrades, int256 _totalPnL, uint16 _sharpeRatio, uint16 _maxDrawdown) external",
-    "function getStrategy(bytes32 _strategyHash) external view returns (tuple(bytes32 strategyHash, string name, string description, address creator, uint256 createdAt, bool isActive, tuple(uint256 totalTrades, uint256 winningTrades, int256 totalPnL, uint256 lastUpdated, uint16 sharpeRatio, uint16 maxDrawdown) performance))",
+    "function setStrategyAuditStatus(bytes32 _strategyHash, bool _audited) external",
+    "function getStrategy(bytes32 _strategyHash) external view returns (tuple(bytes32 strategyHash, string name, string description, address creator, uint256 createdAt, bool isActive, bool audited, tuple(uint256 totalTrades, uint256 winningTrades, int256 totalPnL, uint256 lastUpdated, uint16 sharpeRatio, uint16 maxDrawdown) performance))",
     "function getWinRate(bytes32 _strategyHash) external view returns (uint16)"
 ];
 
@@ -67,6 +68,7 @@ export class BlockchainClient {
         tradeId: string;
         aiDecisionId: string;
         symbol: string;
+        exchangeOrderId: string;
         price: number;
         qty: number;
         side: 'BUY' | 'SELL';
@@ -89,6 +91,7 @@ export class BlockchainClient {
                 tradeHash,
                 aiDecisionHash,
                 trade.symbol,
+                trade.exchangeOrderId,
                 priceScaled,
                 qtyScaled,
                 isBuy,
@@ -144,6 +147,7 @@ export class BlockchainClient {
         tradeId: string;
         aiDecisionId: string;
         symbol: string;
+        exchangeOrderId: string;
         price: number;
         qty: number;
         side: 'BUY' | 'SELL';
@@ -153,6 +157,7 @@ export class BlockchainClient {
             const tradeHashes = trades.map(t => ethers.keccak256(ethers.toUtf8Bytes(t.tradeId)));
             const aiDecisionHashes = trades.map(t => ethers.keccak256(ethers.toUtf8Bytes(t.aiDecisionId)));
             const symbols = trades.map(t => t.symbol);
+            const exchangeOrderIds = trades.map(t => t.exchangeOrderId);
             const prices = trades.map(t => Math.floor(t.price * 1e8));
             const quantities = trades.map(t => Math.floor(t.qty * 1e8));
             const isBuyArray = trades.map(t => t.side === 'BUY');
@@ -164,6 +169,7 @@ export class BlockchainClient {
                 tradeHashes,
                 aiDecisionHashes,
                 symbols,
+                exchangeOrderIds,
                 prices,
                 quantities,
                 isBuyArray,
@@ -192,6 +198,7 @@ export class BlockchainClient {
                 tradeHash: proof.tradeHash,
                 aiDecisionHash: proof.aiDecisionHash,
                 symbol: proof.symbol,
+                exchangeOrderId: proof.exchangeOrderId,
                 timestamp: Number(proof.timestamp),
                 submitter: proof.submitter,
                 price: Number(proof.price) / 1e8,

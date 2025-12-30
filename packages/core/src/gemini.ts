@@ -2,10 +2,11 @@ import { GoogleGenerativeAI, GenerativeModel } from '@google/generative-ai';
 import { logger } from './logger.js';
 
 // Model fallback chain (confirmed working Gemini 2.5 models)
+// Model fallback chain (confirmed working Gemini 2.5 models)
 const MODEL_FALLBACK_CHAIN = [
-    'gemini-2.5-flash-lite',       // Principal (fastest & confirmed functional)
-    'gemini-2.5-flash',            // Fallback 1
-    'gemini-2.5-pro',              // Fallback 2 (most capable)
+    // 'gemini-2.0-flash-exp',     // Temporarily disabled due to API 404s
+    'gemini-1.5-flash',            // Reliable Fallback (Primary now)
+    'gemini-1.5-pro',              // Powerful Fallback
 ] as const;
 
 export interface GeminiConfig {

@@ -33,6 +33,11 @@ const nextConfig = {
     eslint: {
         ignoreDuringBuilds: true,
     },
+    env: {
+        NEXT_PUBLIC_SEPOLIA_RPC_URL: process.env.NEXT_PUBLIC_SEPOLIA_RPC_URL,
+        NEXT_PUBLIC_SEPOLIA_TRADE_VERIFIER_ADDRESS: process.env.NEXT_PUBLIC_SEPOLIA_TRADE_VERIFIER_ADDRESS,
+        NEXT_PUBLIC_SEPOLIA_STRATEGY_REGISTRY_ADDRESS: process.env.NEXT_PUBLIC_SEPOLIA_STRATEGY_REGISTRY_ADDRESS,
+    },
 };
 
 module.exports = nextConfig;

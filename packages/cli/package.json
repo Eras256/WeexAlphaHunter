@@ -1,0 +1,28 @@
+{
+    "name": "@wah/cli",
+    "version": "0.1.0",
+    "description": "WAlphaHunter CLI Tool - Control your Hybrid AI Trading Node",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "bin": {
+        "wah": "./bin/wah.js"
+    },
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsc -w",
+        "start": "node bin/wah.js"
+    },
+    "dependencies": {
+        "@wah/core": "workspace:*",
+        "commander": "^11.1.0",
+        "chalk": "^4.1.2",
+        "inquirer": "^8.2.5",
+        "ora": "^5.4.1",
+        "dotenv": "^16.3.1"
+    },
+    "devDependencies": {
+        "@types/node": "^20.10.0",
+        "@types/inquirer": "^9.0.7",
+        "typescript": "^5.3.3"
+    }
+}

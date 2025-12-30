@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "C:\\Users\\vaios\\OneDrive\\Documentos\\DaAps\\AHunter\\contracts\\StrategyRegistry.sol": {
-      "lastModificationDate": 1766381828075,
-      "contentHash": "bb5d9d1bba6cacbd25d4b5b7562097e4",
+      "lastModificationDate": 1767053700940,
+      "contentHash": "62685ec98692546327b750578f7a7ae6",
       "sourceName": "contracts/StrategyRegistry.sol",
       "solcConfig": {
         "version": "0.8.20",
@@ -151,8 +151,8 @@
       ]
     },
     "C:\\Users\\vaios\\OneDrive\\Documentos\\DaAps\\AHunter\\contracts\\TradeVerifier.sol": {
-      "lastModificationDate": 1766381801902,
-      "contentHash": "ec82ebbd91a4772ccf76f72bcfddd698",
+      "lastModificationDate": 1767053549664,
+      "contentHash": "3310144cbbe85d0623afd86b0ccb6bdc",
       "sourceName": "contracts/TradeVerifier.sol",
       "solcConfig": {
         "version": "0.8.20",
