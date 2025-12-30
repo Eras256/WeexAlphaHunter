@@ -200,6 +200,9 @@ importers:
       papaparse:
         specifier: ^5.4.1
         version: 5.5.3
+      twitter-api-v2:
+        specifier: ^1.15.0
+        version: 1.28.0
       yargs:
         specifier: ^17.7.2
         version: 17.7.2
