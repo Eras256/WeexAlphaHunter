@@ -12,7 +12,7 @@ import {
 // We extend the preset to keep internal config (multicall, etc) but override RPC
 export const baseSepolia: Chain = {
     ...baseSepoliaPreset,
-    rpc: "https://base-sepolia.drpc.org",
+    rpc: "https://sepolia.base.org",
     // Explicit icon to ensure it shows in UI
     icon: {
         url: "https://avatars.githubusercontent.com/u/108554348?s=200&v=4",
