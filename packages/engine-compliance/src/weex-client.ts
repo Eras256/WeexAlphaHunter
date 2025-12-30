@@ -369,11 +369,11 @@ export class WeexClient {
         try {
             const endpoint = "/capi/v2/order/uploadAiLog";
             const body = {
-                orderId: data.orderId || "",
+                orderId: data.orderId || null,
                 stage: data.stage,
                 model: data.model,
-                input: JSON.stringify(data.input),
-                output: JSON.stringify(data.output),
+                input: data.input,
+                output: data.output,
                 explanation: data.explanation.substring(0, 1000)
             };
 
