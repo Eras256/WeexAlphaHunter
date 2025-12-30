@@ -65,7 +65,7 @@ export default function Home() {
                             icon={<Shield className="w-6 h-6" />}
                             label="Total Trades Verified"
                             value={stats.totalTrades.toLocaleString()}
-                            sub="Recorded on Base Sepolia"
+                            sub="Recorded on Base Sepolia & Eth L1"
                             color="text-blue-400"
                         />
                         <MetricCard

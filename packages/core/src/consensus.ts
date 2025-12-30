@@ -2,6 +2,8 @@
 import { GeminiClient } from './gemini.js';
 import { logger } from './logger.js';
 import { localAI } from './local-ai.js';
+import { TitanEngine } from './titan-engine.js'; // Optional dependency for Titan integration
+
 
 interface TradingSignal {
     action: 'BUY' | 'SELL' | 'HOLD';
@@ -86,32 +88,24 @@ export class ConsensusEngine {
         }
     }
 
-    private async callOpenRouter(prompt: string): Promise<AIResponse | null> {
+    private async callOpenRouter(prompt: string, modelOverride?: string): Promise<AIResponse | null> {
         try {
-            // "Council Member 1": DeepSeek V3 (Logic/Math Expert)
-            const model = 'deepseek/deepseek-chat';
-            // Fallback Logic: If DeepSeek fails, try Qwen 2.5 (Another top coder)
-            const backupModel = 'qwen/qwen-2.5-72b-instruct';
+            // "Council Member 1": DeepSeek V3 (Reasoning Expert) - 2025 Top Pick
+            // "Council Member X": Claude Sonnet 4.5 (Coding/Logic Expert)
+            const targetModel = modelOverride || 'deepseek/deepseek-chat';
 
-            let currentModel = model;
-            let response = await this.fetchOpenRouter(prompt, currentModel);
-
-            if (!response) {
-                logger.warn(`[Consensus] DeepSeek failed, trying Qwen...`);
-                currentModel = backupModel;
-                response = await this.fetchOpenRouter(prompt, currentModel);
-            }
+            const response = await this.fetchOpenRouter(prompt, targetModel);
 
             if (!response) return null;
 
             return {
                 provider: 'OpenRouter',
-                model: currentModel.split('/')[1] || currentModel,
+                model: targetModel.split('/')[1] || targetModel,
                 signal: this.parseSignal(response),
                 raw: response
             };
         } catch (e: any) {
-            logger.warn(`[Consensus] OpenRouter Failed: ${e.message}`);
+            logger.warn(`[Consensus] OpenRouter (${modelOverride}) Failed: ${e.message}`);
             return null;
         }
     }
@@ -189,25 +183,24 @@ export class ConsensusEngine {
             promises.push(this.callGroq(prompt));
         }
 
-        // 3. DeepSeek (OpenRouter)
+        // 3. DeepSeek V3 (OpenRouter) - The Architect
         if (this.openRouterKey) {
-            promises.push(this.callOpenRouter(prompt));
+            promises.push(this.callOpenRouter(prompt, 'deepseek/deepseek-chat'));
         }
 
         // DELAY for secondary calls to avoid Rate Limits (Free Tier optimization)
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise(resolve => setTimeout(resolve, 500));
 
-        // 4. Mixtral (Groq) - NEW
-        if (this.groqKey) {
-            promises.push(this.callGroq2(prompt));
+        // 4. Claude Sonnet 4.5 (OpenRouter) - The Strategist
+        if (this.openRouterKey) {
+            promises.push(this.callOpenRouter(prompt, 'anthropic/claude-3.5-sonnet:beta')); // Using 3.5 Sonnet as 4.5 proxy if unavailable
         }
 
-        // 5. OpenRouter Backup (Gemini 2 via OpenRouter)
-        if (this.openRouterKey) {
-            promises.push(this.fetchOpenRouter(prompt, 'google/gemini-2.0-flash-exp:free').then(raw => {
-                if (!raw) return null;
-                return { provider: 'OpenRouter', model: 'gemini-2.0-flash-free', signal: this.parseSignal(raw), raw };
-            }));
+        // 5. Mixtral (Groq) or Qwen (OpenRouter) - The Generalist
+        if (this.groqKey) {
+            promises.push(this.callGroq2(prompt));
+        } else if (this.openRouterKey) {
+            promises.push(this.callOpenRouter(prompt, 'qwen/qwen-2.5-72b-instruct'));
         }
 
         // 6. LOCAL INTELLIGENCE (The "Warrior" Engine) - GUARANTEED SIGNAL

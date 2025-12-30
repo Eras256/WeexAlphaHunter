@@ -16,6 +16,7 @@
     "extends": "../../tsconfig.base.json",
     "include": [
         "src/**/*",
-        "../engine-compliance/src/**/*"
+        "../engine-compliance/src/**/*",
+        "../core/src/**/*"
     ]
 }

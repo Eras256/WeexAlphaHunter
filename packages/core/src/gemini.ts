@@ -4,8 +4,9 @@ import { logger } from './logger.js';
 // Model fallback chain (confirmed working Gemini 2.5 models)
 // Model fallback chain (confirmed working Gemini 2.5 models)
 const MODEL_FALLBACK_CHAIN = [
-    'gemini-1.5-flash',           // Stable Standard
-    'gemini-1.5-flash-002',       // New Stable
+    'gemini-1.5-flash',           // Stable Standard - PRIORITIZED for reliability
+    'gemini-2.0-flash-exp',       // Cutting edge (prone to rate limits)
+    'gemini-1.5-flash-8b',        // Fast
     'gemini-1.5-pro',             // High Intellect
     'gemini-pro'                  // Legacy Fallback
 ] as const;
@@ -60,6 +61,14 @@ export class GeminiClient {
         // Try each model in the fallback chain
         for (const modelName of MODEL_FALLBACK_CHAIN) {
             try {
+                // Add explicit delay if we are retrying after a rate limit
+                // We reduce this to a short pause because we are switching models, and quotas are often per-model.
+                if (lastError?.message?.includes('429')) {
+                    logger.warn('Rate Limit hit on previous model. Switching to next model...');
+                    // Short pause to allow system to breathe, but not block trading
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                }
+
                 logger.info(`Attempting to generate content with model: ${modelName}`);
 
                 const model = this.genAI.getGenerativeModel({
@@ -87,7 +96,8 @@ export class GeminiClient {
                 logger.warn(`Model ${modelName} failed: ${error.message}`);
 
                 // If it's a quota/permission error, try next model
-                if (error.message?.includes('quota') ||
+                if (error.message?.includes('429') ||
+                    error.message?.includes('quota') ||
                     error.message?.includes('permission') ||
                     error.message?.includes('not found')) {
                     continue;

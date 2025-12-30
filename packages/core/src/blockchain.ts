@@ -239,7 +239,7 @@ export class BlockchainClient {
     }): Promise<string> {
         try {
             const strategyHash = ethers.keccak256(
-                ethers.toUtf8Bytes(`${strategy.name}-${Date.now()}`)
+                ethers.toUtf8Bytes(strategy.name)
             );
 
             logger.info(`Registering strategy "${strategy.name}" to blockchain...`);

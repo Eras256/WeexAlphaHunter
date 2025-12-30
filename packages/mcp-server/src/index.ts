@@ -11,6 +11,8 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
+type CallToolRequest = z.infer<typeof CallToolRequestSchema>;
+
 // Initialize The Council (Consensus Engine)
 const geminiClient = new GeminiClient();
 const consensusEngine = createConsensusEngine(geminiClient);
@@ -62,7 +64,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
 /**
  * Tool Execution
  */
-server.setRequestHandler(CallToolRequestSchema, async (request) => {
+server.setRequestHandler(CallToolRequestSchema, async (request: CallToolRequest) => {
     if (request.params.name === "get_market_consensus") {
         // Validate arguments safely
         const args = request.params.arguments as any;

@@ -152,6 +152,35 @@ export class WeexClient {
     }
 
     /**
+     * Get Open Orders
+     * Endpoint: /capi/v2/order/open_orders (Assumed standard)
+     */
+    async getOpenOrders(symbol: string): Promise<any[]> {
+        if (this.mode === 'mock') return [];
+
+        try {
+            // Try snake_case first
+            let endpoint = `/capi/v2/order/open_orders?symbol=${symbol}&pageIndex=1&pageSize=50`;
+            try {
+                const response = await this.sendSignedRequest('GET', endpoint);
+                return response.data?.data?.list || response.data?.data || [];
+            } catch (e1: any) {
+                // If 404, try camelCase
+                if (e1.response && e1.response.status === 404) {
+                    logger.warn(`[WEEX] open_orders 404, trying camelCase openOrders...`);
+                    endpoint = `/capi/v2/order/openOrders?symbol=${symbol}&pageIndex=1&pageSize=50`;
+                    const response = await this.sendSignedRequest('GET', endpoint);
+                    return response.data?.data?.list || response.data?.data || [];
+                }
+                throw e1;
+            }
+        } catch (error: any) {
+            logger.warn(`[WEEX] Get Open Orders Failed: ${error.message}`);
+            return [];
+        }
+    }
+
+    /**
      * Cancel an order
      */
     async cancelOrder(symbol: string, orderId: string) {
