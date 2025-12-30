@@ -67,25 +67,63 @@ export default function PerformancePage() {
                 </div>
 
                 {/* Network Status */}
-                <div className="bg-gray-900 rounded-2xl p-8 mb-16 border border-white/10">
-                    <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                        <Database className="text-cyan-400" />
-                        Network Status
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="flex items-center justify-between p-4 bg-white/5 rounded-lg">
-                            <div>
-                                <p className="text-sm text-gray-400">Blockchain Network</p>
-                                <p className="text-lg font-bold">{stats.network || "Base Sepolia"}</p>
-                            </div>
-                            <CheckCircle className="w-6 h-6 text-green-400" />
+                {/* Network Status - Dual Chain Display */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    {/* Layer 2: Base Sepolia */}
+                    <div className="bg-gradient-to-br from-blue-900/40 to-black rounded-2xl p-8 border border-blue-500/30 shadow-lg shadow-blue-500/10">
+                        <div className="flex items-center justify-between mb-6">
+                            <h2 className="text-2xl font-bold flex items-center gap-3">
+                                <Database className="text-blue-400" />
+                                Layer 2 (Base)
+                            </h2>
+                            <span className="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full border border-blue-500/30">PRIMARY</span>
                         </div>
-                        <div className="flex items-center justify-between p-4 bg-white/5 rounded-lg">
-                            <div>
-                                <p className="text-sm text-gray-400">Connection Status</p>
-                                <p className="text-lg font-bold">{stats.isConnected ? "CONNECTED" : "CONNECTING..."}</p>
+
+                        <div className="space-y-4">
+                            <div className="flex justify-between items-center p-4 bg-white/5 rounded-lg border border-white/5">
+                                <span className="text-gray-400">Status</span>
+                                <div className="flex items-center gap-2">
+                                    <span className={`w-2 h-2 rounded-full ${stats.isConnected ? 'bg-green-500' : 'bg-yellow-500'} animate-pulse`}></span>
+                                    <span className="font-bold">{stats.isConnected ? "CONNECTED" : "SYNCING"}</span>
+                                </div>
                             </div>
-                            <div className={`w-3 h-3 rounded-full ${stats.isConnected ? 'bg-green-500' : 'bg-yellow-500'} animate-pulse`}></div>
+                            <div className="flex justify-between items-center p-4 bg-white/5 rounded-lg border border-white/5">
+                                <span className="text-gray-400">Total Trades</span>
+                                <span className="text-xl font-mono text-blue-400">{stats.isConnected ? stats.totalTrades : "---"}</span>
+                            </div>
+                            <div className="flex justify-between items-center p-4 bg-white/5 rounded-lg border border-white/5">
+                                <span className="text-gray-400">AI Decisions</span>
+                                <span className="text-xl font-mono text-blue-400">{stats.isConnected ? stats.totalDecisions : "---"}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Layer 1: Ethereum Sepolia */}
+                    <div className="bg-gradient-to-br from-purple-900/40 to-black rounded-2xl p-8 border border-purple-500/30 shadow-lg shadow-purple-500/10">
+                        <div className="flex items-center justify-between mb-6">
+                            <h2 className="text-2xl font-bold flex items-center gap-3">
+                                <Shield className="text-purple-400" />
+                                Layer 1 (Ethereum)
+                            </h2>
+                            <span className="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full border border-purple-500/30">SETTLEMENT</span>
+                        </div>
+
+                        <div className="space-y-4">
+                            <div className="flex justify-between items-center p-4 bg-white/5 rounded-lg border border-white/5">
+                                <span className="text-gray-400">Status</span>
+                                <div className="flex items-center gap-2">
+                                    <span className={`w-2 h-2 rounded-full ${stats.sepoliaStats?.isConnected ? 'bg-green-500' : 'bg-yellow-500'} animate-pulse`}></span>
+                                    <span className="font-bold">{stats.sepoliaStats?.isConnected ? "CONNECTED" : "SYNCING"}</span>
+                                </div>
+                            </div>
+                            <div className="flex justify-between items-center p-4 bg-white/5 rounded-lg border border-white/5">
+                                <span className="text-gray-400">Total Trades</span>
+                                <span className="text-xl font-mono text-purple-400">{stats.sepoliaStats?.isConnected ? stats.sepoliaStats?.totalTrades : "---"}</span>
+                            </div>
+                            <div className="flex justify-between items-center p-4 bg-white/5 rounded-lg border border-white/5">
+                                <span className="text-gray-400">AI Decisions</span>
+                                <span className="text-xl font-mono text-purple-400">{stats.sepoliaStats?.isConnected ? stats.sepoliaStats?.totalDecisions : "---"}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
