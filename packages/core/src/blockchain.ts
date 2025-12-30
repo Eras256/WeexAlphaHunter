@@ -83,7 +83,7 @@ export class BlockchainClient {
             const priceScaled = Math.floor(trade.price * 1e8); // Scale to 8 decimals
             const qtyScaled = Math.floor(trade.qty * 1e8);
             const isBuy = trade.side === 'BUY';
-            const confidenceScaled = Math.floor(trade.aiConfidence * 10000); // 0-1 to 0-10000
+            const confidenceScaled = Math.min(10000, Math.floor(trade.aiConfidence * 100)); // 0-100 to 0-10000
 
             logger.info(`Submitting trade proof for ${trade.tradeId} to blockchain...`);
 
@@ -95,7 +95,8 @@ export class BlockchainClient {
                 priceScaled,
                 qtyScaled,
                 isBuy,
-                confidenceScaled
+                confidenceScaled,
+                { gasLimit: 500000 }
             );
 
             logger.info(`Transaction sent: ${tx.hash}`);
@@ -120,14 +121,15 @@ export class BlockchainClient {
     }): Promise<string> {
         try {
             const decisionHash = ethers.keccak256(ethers.toUtf8Bytes(decision.decisionId));
-            const confidenceScaled = Math.floor(decision.confidence * 10000);
+            const confidenceScaled = Math.min(10000, Math.floor(decision.confidence * 100)); // 0-100 to 0-10000
 
             logger.info(`Recording AI decision ${decision.decisionId} to blockchain...`);
 
             const tx = await this.tradeVerifier.recordAIDecision(
                 decisionHash,
                 decision.reasoning,
-                confidenceScaled
+                confidenceScaled,
+                { gasLimit: 500000 }
             );
 
             const receipt = await tx.wait();

@@ -157,16 +157,19 @@ export class WeexClient {
 
     /**
      * Get Real-time Ticker Price
+     * ALWAYS tries real API first for accurate market data, even in mock mode.
      */
     async getTicker(symbol: string) {
-        if (this.mode === 'mock') return 95000.00;
-
         try {
+            // Always try real API for market data (safe: read-only)
             const endpoint = `/capi/v2/market/ticker?symbol=${symbol}`;
-            const response = await this.sendSignedRequest('GET', endpoint);
-            return parseFloat(response.data.last);
+            const response = await axios.get(`${this.baseUrl}${endpoint}`, { timeout: 5000 });
+            if (response.data && response.data.data) {
+                return parseFloat(response.data.data.last || response.data.data.price || 95000);
+            }
+            return 95000.00;
         } catch (error: any) {
-            logger.error(`[WEEX] Get Ticker Failed: ${error.message}`);
+            logger.warn(`[WEEX] Ticker API unavailable, using fallback price.`);
             return 95000.00; // Fallback
         }
     }

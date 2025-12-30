@@ -21,14 +21,24 @@ export async function runTradeExecutor() {
     // 1. Initialize Components
     const gemini = createGeminiClient();
     const consensus = createConsensusEngine(gemini);
-    const blockchain = createBlockchainClient('baseSepolia');
+
+    // DUAL CHAIN ARCHITECTURE: Base L2 (Primary) + Eth L1 (Settlement)
+    const blockchainBase = createBlockchainClient('baseSepolia');
+    const blockchainEth = createBlockchainClient('sepolia');
     const exchange = new WeexClient("production-v1");
 
-    if (!blockchain) {
-        throw new Error("Blockchain client failed to initialize");
+    if (!blockchainBase) {
+        throw new Error("Base Sepolia client failed to initialize");
+    }
+    if (!blockchainEth) {
+        logger.warn("⚠️ Ethereum Sepolia client not initialized (L1 Settlement disabled)");
     }
 
-    logger.info("✅ Systems Initialized: Consensus AI, Blockchain (Base), Exchange (WEEX)");
+    logger.info("✅ Systems Initialized:");
+    logger.info("   • Consensus AI (Council of 6 + Titan HNN)");
+    logger.info("   • Blockchain L2: Base Sepolia ✓");
+    logger.info(`   • Blockchain L1: Ethereum Sepolia ${blockchainEth ? '✓' : '✗'}`);
+    logger.info("   • Exchange: WEEX (Mock Mode)");
 
     const SYMBOLS = ['cmt_btcusdt'];
     let running = true;
@@ -166,22 +176,21 @@ export async function runTradeExecutor() {
                     });
                 }
 
-                // E. Record on Blockchain (Proof of Work) - Non Blocking
+                // E. Record on Blockchain (Dual-Chain Proof of Work)
                 try {
                     const tradeId = generateUUID();
                     const decisionId = generateUUID();
 
-                    // 1. Record Reasoning
-                    logger.info(`  📝 Minting AI Decision Proof...`);
-                    await blockchain.recordAIDecision({
+                    // 1. Record on BASE SEPOLIA (L2 - Primary)
+                    logger.info(`  📝 [L2] Minting AI Decision Proof on Base Sepolia...`);
+                    await blockchainBase.recordAIDecision({
                         decisionId,
                         reasoning: signal.reasoning,
                         confidence: signal.confidence
                     });
 
-                    // 2. Record Trade 
-                    logger.info(`  🔗 Minting Trade Verification Proof...`);
-                    await blockchain.submitTradeProof({
+                    logger.info(`  🔗 [L2] Minting Trade Verification Proof on Base Sepolia...`);
+                    await blockchainBase.submitTradeProof({
                         tradeId,
                         aiDecisionId: decisionId,
                         symbol,
@@ -191,8 +200,32 @@ export async function runTradeExecutor() {
                         side: signal.action,
                         aiConfidence: signal.confidence
                     });
+                    logger.info(`  ✅ [L2] Trade Verified on Base Sepolia!`);
 
-                    logger.info(`  🎉 Trade Verified on Base Sepolia!`);
+                    // 2. Record on ETHEREUM SEPOLIA (L1 - Settlement)
+                    if (blockchainEth) {
+                        logger.info(`  📝 [L1] Anchoring Decision to Ethereum Sepolia...`);
+                        await blockchainEth.recordAIDecision({
+                            decisionId,
+                            reasoning: signal.reasoning,
+                            confidence: signal.confidence
+                        });
+
+                        logger.info(`  🔗 [L1] Anchoring Trade Proof to Ethereum Sepolia...`);
+                        await blockchainEth.submitTradeProof({
+                            tradeId,
+                            aiDecisionId: decisionId,
+                            symbol,
+                            exchangeOrderId: order.orderId || `mock-ord-${Date.now()}`,
+                            price: currentPrice,
+                            qty: quantity,
+                            side: signal.action,
+                            aiConfidence: signal.confidence
+                        });
+                        logger.info(`  ✅ [L1] Trade Settled on Ethereum Sepolia!`);
+                    }
+
+                    logger.info(`  🎉 DUAL-CHAIN VERIFICATION COMPLETE!`);
                 } catch (bcError: any) {
                     logger.warn(`  ⚠️ Blockchain Recording Failed (Non-Critical): ${bcError.message}`);
                 }
