@@ -38,23 +38,23 @@ export function useBlockchainStats() {
 
     useEffect(() => {
         const fetchStats = async () => {
-            // 1. Fetch from Base Sepolia (Primary)
+            // 1. Fetch from Base Sepolia (Primary) - NEW CONTRACT
             let baseData = { totalTrades: 0, totalDecisions: 0, totalSubmitters: 0 };
             let baseConnected = false;
             try {
-                const rpcUrl = process.env.NEXT_PUBLIC_BASE_RPC_URL || "https://sepolia.base.org";
-                const tradeVerifierAddress = process.env.NEXT_PUBLIC_BASE_SEPOLIA_TRADE_VERIFIER_ADDRESS;
-                if (tradeVerifierAddress) {
-                    const provider = new ethers.JsonRpcProvider(rpcUrl);
-                    const contract = new ethers.Contract(tradeVerifierAddress, TRADE_VERIFIER_ABI, provider);
-                    const data = await contract.getStats();
-                    baseData = {
-                        totalTrades: Number(data.totalTrades),
-                        totalDecisions: Number(data.totalDecisions),
-                        totalSubmitters: Number(data.totalSubmitters)
-                    };
-                    baseConnected = true;
-                }
+                const rpcUrl = "https://sepolia.base.org";
+                // NEW DEPLOYED CONTRACT (2025-12-30)
+                const tradeVerifierAddress = "0x9b8d4e3E7Ecf9Bb1F1039fc83E518069dB38281d";
+
+                const provider = new ethers.JsonRpcProvider(rpcUrl);
+                const contract = new ethers.Contract(tradeVerifierAddress, TRADE_VERIFIER_ABI, provider);
+                const data = await contract.getStats();
+                baseData = {
+                    totalTrades: Number(data.totalTrades),
+                    totalDecisions: Number(data.totalDecisions),
+                    totalSubmitters: Number(data.totalSubmitters)
+                };
+                baseConnected = true;
             } catch (err) { console.error("Base fetch failed", err); }
 
             // 2. Fetch from Eth Sepolia (Secondary)
