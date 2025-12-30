@@ -79,26 +79,28 @@ export default function TokenomicsPage() {
                         <BarChart className="w-6 h-6 text-green-400" />
                         Staking Tiers
                     </h2>
-                    <div className="border border-white/10 rounded-2xl overflow-hidden">
-                        <div className="grid grid-cols-4 bg-white/5 border-b border-white/10 p-4 font-bold text-gray-400 text-sm uppercase text-center">
-                            <div>Tier</div>
-                            <div>Holdings (WXT)</div>
-                            <div>Maker/Taker Rebate</div>
-                            <div>AI Models</div>
-                        </div>
-                        {[
-                            { name: "Plankton", amt: "0", rebate: "0% / 0%", ai: "3 (Basic)" },
-                            { name: "Dolphin", amt: "> 10,000", rebate: "10% / 5%", ai: "4 (+Llama)" },
-                            { name: "Shark", amt: "> 50,000", rebate: "30% / 15%", ai: "5 (+DeepSeek)" },
-                            { name: "Whale", amt: "> 250,000", rebate: "50% / 25%", ai: "6 (Full Council)" },
-                        ].map((tier, i) => (
-                            <div key={i} className="grid grid-cols-4 p-4 border-b border-white/5 text-center hover:bg-white/5 transition">
-                                <div className="font-bold text-white">{tier.name}</div>
-                                <div className="font-mono text-gray-400">{tier.amt}</div>
-                                <div className="text-green-400">{tier.rebate}</div>
-                                <div className="text-purple-400">{tier.ai}</div>
+                    <div className="border border-white/10 rounded-2xl overflow-hidden overflow-x-auto">
+                        <div className="min-w-[600px]">
+                            <div className="grid grid-cols-4 bg-white/5 border-b border-white/10 p-4 font-bold text-gray-400 text-sm uppercase text-center">
+                                <div>Tier</div>
+                                <div>Holdings (WXT)</div>
+                                <div>Maker/Taker Rebate</div>
+                                <div>AI Models</div>
                             </div>
-                        ))}
+                            {[
+                                { name: "Plankton", amt: "0", rebate: "0% / 0%", ai: "3 (Basic)" },
+                                { name: "Dolphin", amt: "> 10,000", rebate: "10% / 5%", ai: "4 (+Llama)" },
+                                { name: "Shark", amt: "> 50,000", rebate: "30% / 15%", ai: "5 (+DeepSeek)" },
+                                { name: "Whale", amt: "> 250,000", rebate: "50% / 25%", ai: "6 (Full Council)" },
+                            ].map((tier, i) => (
+                                <div key={i} className="grid grid-cols-4 p-4 border-b border-white/5 text-center hover:bg-white/5 transition">
+                                    <div className="font-bold text-white">{tier.name}</div>
+                                    <div className="font-mono text-gray-400">{tier.amt}</div>
+                                    <div className="text-green-400">{tier.rebate}</div>
+                                    <div className="text-purple-400">{tier.ai}</div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
 
