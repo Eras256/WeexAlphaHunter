@@ -27,9 +27,11 @@ export default function Home() {
                         WAlphaHunter
                     </h1>
 
-                    <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                        The first <span className="text-purple-400">Trading Proof-of-Work</span> system.
-                        Powered by <span className="text-emerald-400">6 AI models</span>, institutional data, and verified on <span className="text-cyan-400">Base L2</span> & <span className="text-gray-400">Eth L1</span>.
+                    <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                        The world's first <span className="text-purple-400 font-bold">Trading Proof-of-Work</span> system.
+                        Powered by the <span className="text-emerald-400 font-bold">Titan Hybrid Neural Network</span> (HNN) & Council of 6 Consensus.
+                        <br className="hidden md:block" />
+                        Executed on <span className="text-cyan-400 font-bold">Base L2</span>. Settled on <span className="text-gray-300 font-bold">Ethereum L1</span>.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
@@ -155,7 +157,81 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* 5. LIVE TRADING LOG */}
+            {/* 5. DEVELOPER TOOLS - CLI & MCP (NEW) */}
+            <section className="py-24 border-t border-white/10 bg-black">
+                <div className="max-w-7xl mx-auto px-4">
+                    <div className="text-center mb-16">
+                        <div className="inline-block py-1 px-3 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-sm font-mono tracking-wider mb-4">
+                            FOR AGENTS & HUMANS
+                        </div>
+                        <h2 className="text-3xl md:text-5xl font-bold mb-4">Command The Alpha</h2>
+                        <p className="text-gray-400 max-w-2xl mx-auto">
+                            Control the neural engine directly from your terminal or integrate it into your own AI agents via MCP protocol.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        {/* WAH CLI */}
+                        <div className="bg-[#0c0c0c] rounded-xl border border-white/10 overflow-hidden shadow-2xl">
+                            <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-white/5">
+                                <div className="flex gap-1.5">
+                                    <div className="w-3 h-3 rounded-full bg-red-500" />
+                                    <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                                    <div className="w-3 h-3 rounded-full bg-green-500" />
+                                </div>
+                                <span className="ml-2 text-xs text-gray-400 font-mono">user@wah-cli: ~</span>
+                            </div>
+                            <div className="p-6 font-mono text-sm space-y-4">
+                                <div>
+                                    <p className="text-gray-500 mb-2"># Install the CLI tool</p>
+                                    <p className="text-green-400">$ npm install -g @wah/cli</p>
+                                </div>
+                                <div>
+                                    <p className="text-gray-500 mb-2"># Ask Titan for analysis</p>
+                                    <p className="text-green-400">$ wah ask BTC/USDT -p 67500</p>
+                                    <div className="mt-2 text-gray-300 opacity-80 pl-4 border-l-2 border-purple-500">
+                                        <p>🦁 Titan Neural Engine: ONLINE</p>
+                                        <p>🧠 Council Consensus: BUY (88% Confidence)</p>
+                                        <p>📊 Reason: RSI Oversold + Whale Accumulation on Base L2</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* MCP SERVER */}
+                        <div className="bg-[#0c0c0c] rounded-xl border border-white/10 overflow-hidden shadow-2xl relative">
+                            <div className="absolute top-0 right-0 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                                AGENT READY
+                            </div>
+                            <div className="p-8">
+                                <div className="flex justify-center mb-6">
+                                    <Database className="w-16 h-16 text-purple-400" />
+                                </div>
+                                <h3 className="text-2xl font-bold mb-2 text-white">Model Context Protocol (MCP)</h3>
+                                <p className="text-gray-400 mb-6">
+                                    Connect WAlphaHunter's "Council of 6" brain directly to Claude, Cursor, or any LLM-based agent. Expose professional trading tools to your local AI.
+                                </p>
+                                <ul className="space-y-3 font-mono text-sm text-gray-300 mb-8">
+                                    <li className="flex gap-2 text-green-400">
+                                        <span>✓</span> <span>get_market_consensus()</span>
+                                    </li>
+                                    <li className="flex gap-2 text-green-400">
+                                        <span>✓</span> <span>verify_proof_on_base()</span>
+                                    </li>
+                                    <li className="flex gap-2 text-green-400">
+                                        <span>✓</span> <span>fetch_social_sentiment()</span>
+                                    </li>
+                                </ul>
+                                <button className="w-full py-3 rounded-lg border border-purple-500/30 bg-purple-500/10 text-purple-300 font-bold hover:bg-purple-500/20 transition">
+                                    View MCP Documentation
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 6. LIVE TRADING LOG */}
             <section className="py-24 border-t border-white/10 relative">
                 <div className="max-w-4xl mx-auto px-4">
                     <div className="text-center mb-8">
