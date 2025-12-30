@@ -121,7 +121,7 @@ export default function Navbar() {
                         {client && (
                             <ConnectButton
                                 client={client}
-                                chains={[base, baseSepolia, ethereum, sepolia]}
+                                chains={[baseSepolia, base, sepolia, ethereum]}
                                 theme={"dark"}
                                 connectModal={{
                                     size: "compact",
@@ -132,9 +132,11 @@ export default function Navbar() {
                                     label: "Connect Wallet",
                                 }}
                                 detailsButton={{
-                                    displayBalanceToken: {
-                                        84532: "0x0000000000000000000000000000000000000000", // Native Token
-                                    }
+                                    style: { minWidth: "140px" }
+                                }}
+                                accountAbstraction={{
+                                    chain: baseSepolia,
+                                    sponsorGas: false
                                 }}
                             />
                         )}
