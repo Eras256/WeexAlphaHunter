@@ -204,7 +204,7 @@ This project was built for the [WEEX Alpha Awakens Hackathon](https://dorahacks.
 
 ## 📜 License
 
-MIT © 2024 WAlphaHunter
+MIT © 2026 WAlphaHunter
 
 ---
 
