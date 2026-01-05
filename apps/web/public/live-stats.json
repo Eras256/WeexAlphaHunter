@@ -1,12 +1,302 @@
 {
   "initialEquity": 2100.02718191,
-  "currentEquity": 1955.07265346,
+  "currentEquity": 1955.08171554,
   "pnl": -144.95,
-  "pnlPercent": -6.9025,
-  "roi": "-129815.10",
-  "runtime": 27.9,
-  "timestamp": 1767595241039,
+  "pnlPercent": -6.9021,
+  "roi": "-53509.65",
+  "runtime": 67.8,
+  "timestamp": 1767597631962,
   "recentActivity": [
+    {
+      "hash": "0x6fdb575e825a6cca259a349b9e6d9c71466e5b21e06f91e815c1b5adec70039f",
+      "action": "MATH_EXEC",
+      "details": "BUY BTCUSDT",
+      "timestamp": 1767597602617,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x6fdb575e825a6cca259a349b9e6d9c71466e5b21e06f91e815c1b5adec70039f",
+      "strategy": "L2 Order Flow Scalper",
+      "pnl": 0
+    },
+    {
+      "hash": "0x0712f7538e7b1d9e794df64f02aa04ee89a316d77efb47d4786ebc6b9a9f66c0",
+      "action": "MATH_EXEC",
+      "details": "SELL ETHUSDT",
+      "timestamp": 1767597586364,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x0712f7538e7b1d9e794df64f02aa04ee89a316d77efb47d4786ebc6b9a9f66c0",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0xad626eb0949e346a712de556158f3a3aa5a872bdc0b71b77d5d766ac1eb05b84",
+      "action": "MATH_EXEC",
+      "details": "BUY SOLUSDT",
+      "timestamp": 1767597574448,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xad626eb0949e346a712de556158f3a3aa5a872bdc0b71b77d5d766ac1eb05b84",
+      "strategy": "L2 Order Flow Scalper",
+      "pnl": 0
+    },
+    {
+      "hash": "0x09b688a11dc5cb41e736f959f522514889222d1a9110147395753f596bbff38b",
+      "action": "MATH_EXEC",
+      "details": "BUY BTCUSDT",
+      "timestamp": 1767597456436,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x09b688a11dc5cb41e736f959f522514889222d1a9110147395753f596bbff38b",
+      "strategy": "L2 Order Flow Scalper",
+      "pnl": 0
+    },
+    {
+      "hash": "0x110fa35e6c20d383777968d4ab8d50c26f0174a21c446dbe89af9c30c8b69ce0",
+      "action": "MATH_EXEC",
+      "details": "SELL ETHUSDT",
+      "timestamp": 1767597428786,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x110fa35e6c20d383777968d4ab8d50c26f0174a21c446dbe89af9c30c8b69ce0",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0xd5af02f55ea3a2847544776f10b9c531a7d57a140e5e71d50648d683841ed422",
+      "action": "MATH_EXEC",
+      "details": "BUY BTCUSDT",
+      "timestamp": 1767597322355,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xd5af02f55ea3a2847544776f10b9c531a7d57a140e5e71d50648d683841ed422",
+      "strategy": "L2 Order Flow Scalper",
+      "pnl": 0
+    },
+    {
+      "hash": "0x268ad6b04dc5da45e58a15a738c6cbf6909f06b42bc4709873f7572f38848ea9",
+      "action": "MATH_EXEC",
+      "details": "SELL ETHUSDT",
+      "timestamp": 1767597305775,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x268ad6b04dc5da45e58a15a738c6cbf6909f06b42bc4709873f7572f38848ea9",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0x5d58a89a1b83a100fd7f69d958d8e52a85bc6b67250f36c5ec815b92d14be5dd",
+      "action": "MATH_EXEC",
+      "details": "SELL SOLUSDT",
+      "timestamp": 1767597285221,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x5d58a89a1b83a100fd7f69d958d8e52a85bc6b67250f36c5ec815b92d14be5dd",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0xa1aac285d6e9cc14d0a7ebc388a896174abee050858b1a42fb40a71d61e83af0",
+      "action": "MATH_EXEC",
+      "details": "SELL ETHUSDT",
+      "timestamp": 1767597174446,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xa1aac285d6e9cc14d0a7ebc388a896174abee050858b1a42fb40a71d61e83af0",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0x48ec2b46be0b397f975761ef0b069e1696685fa6fb7fad05445746334fbbb69f",
+      "action": "MATH_EXEC",
+      "details": "SELL SOLUSDT",
+      "timestamp": 1767597086436,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x48ec2b46be0b397f975761ef0b069e1696685fa6fb7fad05445746334fbbb69f",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0xd56b43ef29feba2222e72c484891e30e037266187583e62aedadad45d0785410",
+      "action": "MATH_EXEC",
+      "details": "SELL ETHUSDT",
+      "timestamp": 1767596971129,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xd56b43ef29feba2222e72c484891e30e037266187583e62aedadad45d0785410",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0xbef61f9d7969dc4316b262400366ab827364ee25c3a2790677d4423a596b12d3",
+      "action": "MATH_EXEC",
+      "details": "SELL SOLUSDT",
+      "timestamp": 1767596891065,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xbef61f9d7969dc4316b262400366ab827364ee25c3a2790677d4423a596b12d3",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0xa52ed12ff66d5455cf94b3dbe53838e722537326d1b707cfe94cbefd5ee1ecd0",
+      "action": "MATH_EXEC",
+      "details": "SELL ETHUSDT",
+      "timestamp": 1767596790491,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xa52ed12ff66d5455cf94b3dbe53838e722537326d1b707cfe94cbefd5ee1ecd0",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0x3d19452f07b61212a5bfc01fb6719810afd04acad4fac1c853bc6290a7e4d971",
+      "action": "MATH_EXEC",
+      "details": "SELL SOLUSDT",
+      "timestamp": 1767596763209,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x3d19452f07b61212a5bfc01fb6719810afd04acad4fac1c853bc6290a7e4d971",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0x7d281827897b30518e04fd7d12dfd8800528f3563b222d02fab9742f81c75a78",
+      "action": "MATH_EXEC",
+      "details": "SELL SOLUSDT",
+      "timestamp": 1767596642779,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x7d281827897b30518e04fd7d12dfd8800528f3563b222d02fab9742f81c75a78",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0xa834684c039d33704f5278adbbd51b23ff1bb759ca06e030ee7ea3d2502a5ffc",
+      "action": "MATH_EXEC",
+      "details": "SELL ETHUSDT",
+      "timestamp": 1767596633822,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xa834684c039d33704f5278adbbd51b23ff1bb759ca06e030ee7ea3d2502a5ffc",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0x08a81bc03b69d5e9827b98fd851447c3ce5f73e2aa1bcdc9320ad1e3ec2af530",
+      "action": "MATH_EXEC",
+      "details": "SELL ETHUSDT",
+      "timestamp": 1767596464044,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x08a81bc03b69d5e9827b98fd851447c3ce5f73e2aa1bcdc9320ad1e3ec2af530",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0x7d2e2e93d98674f498e8014fa9d56eddfad8b2e70ff58507bbc03185bf293a07",
+      "action": "MATH_EXEC",
+      "details": "SELL SOLUSDT",
+      "timestamp": 1767596443708,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x7d2e2e93d98674f498e8014fa9d56eddfad8b2e70ff58507bbc03185bf293a07",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0x9c95eceab0f9ea5f94ba2a660e3517c2e3fb6c5687d99f1c1bee6b4e24da32d7",
+      "action": "MATH_EXEC",
+      "details": "SELL SOLUSDT",
+      "timestamp": 1767596318755,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x9c95eceab0f9ea5f94ba2a660e3517c2e3fb6c5687d99f1c1bee6b4e24da32d7",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0xeec0a5ac0b86caf24ca37f69a3abe664ac6cf729bebf3e50803256a39d29db0e",
+      "action": "MATH_EXEC",
+      "details": "SELL ETHUSDT",
+      "timestamp": 1767596309777,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xeec0a5ac0b86caf24ca37f69a3abe664ac6cf729bebf3e50803256a39d29db0e",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0xf822491c215bfee1a6f73c3eb019d957a066757e4686eb857410e0df76f44ce8",
+      "action": "MATH_EXEC",
+      "details": "SELL BTCUSDT",
+      "timestamp": 1767596195324,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xf822491c215bfee1a6f73c3eb019d957a066757e4686eb857410e0df76f44ce8",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0xbd166e6a621e18aa3d01aec0ec8e920cf272a7c0c69ff1794da825f80ad37dce",
+      "action": "MATH_EXEC",
+      "details": "SELL ETHUSDT",
+      "timestamp": 1767596070338,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xbd166e6a621e18aa3d01aec0ec8e920cf272a7c0c69ff1794da825f80ad37dce",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0x5101a36bcd29e1bc31bc89a188412c3257ce48424db775b70c00d3e1a9b7ac6c",
+      "action": "MATH_EXEC",
+      "details": "SELL SOLUSDT",
+      "timestamp": 1767596001971,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x5101a36bcd29e1bc31bc89a188412c3257ce48424db775b70c00d3e1a9b7ac6c",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0x2fb11795663a93f81191622d6fd9f094e584d7e67f685acfad0159a28d0c0f71",
+      "action": "MATH_EXEC",
+      "details": "SELL ETHUSDT",
+      "timestamp": 1767595893990,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x2fb11795663a93f81191622d6fd9f094e584d7e67f685acfad0159a28d0c0f71",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0x29f6637fe35a2c6d4836ade3dcfb8afe3cfb7a87e0a84012db9b3f8ca7ac4f79",
+      "action": "MATH_EXEC",
+      "details": "SELL ETHUSDT",
+      "timestamp": 1767595761657,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x29f6637fe35a2c6d4836ade3dcfb8afe3cfb7a87e0a84012db9b3f8ca7ac4f79",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0xd695d10e60a069590d0667f36f6219335630ca39b8ddb006643063c5641320f4",
+      "action": "MATH_EXEC",
+      "details": "SELL SOLUSDT",
+      "timestamp": 1767595700043,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xd695d10e60a069590d0667f36f6219335630ca39b8ddb006643063c5641320f4",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0xc070e6a4ad2883a457da3ff4ee4af5f64975a5a2d9828d9f8b315ac5007e73d7",
+      "action": "MATH_EXEC",
+      "details": "SELL ETHUSDT",
+      "timestamp": 1767595646162,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xc070e6a4ad2883a457da3ff4ee4af5f64975a5a2d9828d9f8b315ac5007e73d7",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0xb021c24b75be0c71de5676a09b9e5ba29aa0469a312241c04d85444f7e077de7",
+      "action": "MATH_EXEC",
+      "details": "BUY BTCUSDT",
+      "timestamp": 1767595395689,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xb021c24b75be0c71de5676a09b9e5ba29aa0469a312241c04d85444f7e077de7",
+      "strategy": "L2 Order Flow Scalper",
+      "pnl": 0
+    },
+    {
+      "hash": "0x057609ce76db7bbfa9cb68214c8d844cff7fc51bc6694bd6ee3229a42400a7e0",
+      "action": "MATH_EXEC",
+      "details": "SELL ETHUSDT",
+      "timestamp": 1767595356297,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x057609ce76db7bbfa9cb68214c8d844cff7fc51bc6694bd6ee3229a42400a7e0",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
     {
       "hash": "0x346fa80f1a7818ae33bf0611a52e0256ffd2dd9ee185ca470bca73cf8f948f7b",
       "action": "MATH_EXEC",
@@ -3187,135 +3477,162 @@
   ],
   "marketData": {
     "symbol": "cmt_solusdt",
-    "price": 135.31,
+    "price": 135.27,
     "depth": {
       "asks": [
-        [
-          "135.32",
-          "2481.7"
-        ],
-        [
-          "135.33",
-          "2973.3"
-        ],
-        [
-          "135.34",
-          "2417.7"
-        ],
-        [
-          "135.36",
-          "2471.5"
-        ],
-        [
-          "135.37",
-          "4537.5"
-        ],
-        [
-          "135.39",
-          "2632.8"
-        ],
-        [
-          "135.40",
-          "2693.0"
-        ],
-        [
-          "135.42",
-          "453.6"
-        ],
-        [
-          "135.44",
-          "512.1"
-        ],
-        [
-          "135.45",
-          "548.6"
-        ],
-        [
-          "135.47",
-          "520.0"
-        ],
-        [
-          "135.49",
-          "490.0"
-        ],
-        [
-          "135.50",
-          "1.6"
-        ],
-        [
-          "135.51",
-          "506.5"
-        ],
-        [
-          "135.52",
-          "496.7"
-        ]
-      ],
-      "bids": [
-        [
-          "135.31",
-          "2853.1"
-        ],
-        [
-          "135.30",
-          "2855.9"
-        ],
-        [
-          "135.28",
-          "2675.6"
-        ],
         [
           "135.27",
           "2463.7"
         ],
         [
-          "135.26",
-          "2611.7"
+          "135.29",
+          "2762.8"
         ],
         [
-          "135.24",
-          "2403.8"
+          "135.30",
+          "2578.3"
+        ],
+        [
+          "135.32",
+          "2463.9"
+        ],
+        [
+          "135.34",
+          "2700.9"
+        ],
+        [
+          "135.36",
+          "2690.6"
+        ],
+        [
+          "135.38",
+          "429.5"
+        ],
+        [
+          "135.40",
+          "2416.4"
+        ],
+        [
+          "135.41",
+          "2581.0"
+        ],
+        [
+          "135.42",
+          "2446.3"
+        ],
+        [
+          "135.43",
+          "489.3"
+        ],
+        [
+          "135.45",
+          "500.0"
+        ],
+        [
+          "135.46",
+          "326.9"
+        ],
+        [
+          "135.47",
+          "551.4"
+        ],
+        [
+          "135.48",
+          "547.6"
+        ]
+      ],
+      "bids": [
+        [
+          "135.26",
+          "2580.7"
+        ],
+        [
+          "135.25",
+          "2996.5"
+        ],
+        [
+          "135.23",
+          "2736.0"
         ],
         [
           "135.22",
-          "2705.5"
+          "2937.7"
+        ],
+        [
+          "135.21",
+          "2597.0"
         ],
         [
           "135.20",
-          "2866.3"
+          "524.7"
         ],
         [
-          "135.19",
-          "2629.0"
+          "135.18",
+          "2458.5"
         ],
         [
           "135.17",
-          "2916.1"
+          "457.7"
+        ],
+        [
+          "135.16",
+          "324.5"
         ],
         [
           "135.15",
-          "2964.9"
+          "438.4"
         ],
         [
-          "135.14",
-          "569.5"
+          "135.13",
+          "293.5"
         ],
         [
           "135.12",
-          "381.4"
+          "447.5"
         ],
         [
           "135.11",
-          "544.4"
+          "504.5"
         ],
         [
           "135.09",
-          "299.9"
+          "443.3"
+        ],
+        [
+          "135.07",
+          "372.9"
         ]
       ],
-      "timestamp": "1767595238187"
+      "timestamp": "1767597629028"
     },
     "candles": [
+      [
+        "1767510900000",
+        "133.84",
+        "133.91",
+        "133.61",
+        "133.82",
+        "31914.1",
+        "4270213.347"
+      ],
+      [
+        "1767510000000",
+        "133.70",
+        "133.95",
+        "133.59",
+        "133.84",
+        "39672.8",
+        "5308667.609"
+      ],
+      [
+        "1767509100000",
+        "133.82",
+        "133.98",
+        "133.62",
+        "133.70",
+        "36414.2",
+        "4873738.828"
+      ],
       [
         "1767508200000",
         "134.36",
@@ -3333,33 +3650,6 @@
         "134.36",
         "33202.2",
         "4467999.911"
-      ],
-      [
-        "1767506400000",
-        "134.50",
-        "134.75",
-        "134.30",
-        "134.52",
-        "29488.4",
-        "3966944.327"
-      ],
-      [
-        "1767505500000",
-        "134.27",
-        "134.50",
-        "134.24",
-        "134.50",
-        "24407.9",
-        "3280341.254"
-      ],
-      [
-        "1767504600000",
-        "134.46",
-        "134.54",
-        "134.22",
-        "134.27",
-        "25390.4",
-        "3411869.485"
       ]
     ]
   },
@@ -3367,7 +3657,7 @@
     "symbol": "cmt_solusdt",
     "action": "HOLD",
     "confidence": 0.5,
-    "reasoning": "RSI Strong (55.2), Trend Bullish, Orders: Slight Sell, Math Neutral",
-    "timestamp": 1767595240025
+    "reasoning": "Trend Bullish, Math Neutral",
+    "timestamp": 1767597630955
   }
 }
