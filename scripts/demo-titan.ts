@@ -1,7 +1,7 @@
 
 // Import LocalIntelligence from core
 // Note: Relative path hacking due to script location
-import { localAI } from '../packages/core/src/local-ai';
+import { localAI } from "../packages/core/src/local-ai.js"; // Import our
 
 // Mock sleep function
 const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));

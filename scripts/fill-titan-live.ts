@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import * as dotenv from "dotenv";
-import { localAI } from "../packages/core/src/local-ai"; // Import our new Titan Brain
+import { localAI } from "../packages/core/src/local-ai.js"; // Import our new Titan Brain
 
 dotenv.config({ path: '.env.local' });
 dotenv.config();

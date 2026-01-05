@@ -1,4 +1,4 @@
-import { logger, sleep } from '@wah/core';
+import { logger, sleep } from '../../core/src/index.js';
 import axios from 'axios';
 import crypto from 'crypto';
 
@@ -108,24 +108,29 @@ export class WeexClient {
     /**
      * Get Order Book Depth
      * Endpoint: /capi/v2/market/depth
+     * Limit supports only 15 or 200
      */
-    async getDepth(symbol: string, limit: number = 20): Promise<{ asks: string[][], bids: string[][] }> {
+    async getDepth(symbol: string, limit: number = 15): Promise<{ asks: string[][], bids: string[][] }> {
+        // WEEX only supports limit 15 or 200
+        const validLimit = (limit === 200) ? 200 : 15;
+
         if (this.mode === 'mock') {
-            // Return mock depth
             return {
-                asks: Array(limit).fill(0).map((_, i) => [(95000 + i * 10).toString(), (Math.random() * 2).toString()]),
-                bids: Array(limit).fill(0).map((_, i) => [(95000 - i * 10).toString(), (Math.random() * 2).toString()])
+                asks: Array(validLimit).fill(0).map((_, i) => [(95000 + i * 10).toString(), (Math.random() * 2).toString()]),
+                bids: Array(validLimit).fill(0).map((_, i) => [(95000 - i * 10).toString(), (Math.random() * 2).toString()])
             };
         }
 
         try {
-            const endpoint = `/capi/v2/market/depth?symbol=${symbol}&limit=${limit}`;
+            // Ensure symbol is formatted correctly (usually consistent casing matters)
+            const endpoint = `/capi/v2/market/depth?symbol=${symbol}&limit=${validLimit}`;
             const response = await this.sendSignedRequest('GET', endpoint);
-            // Response: { asks: [[price, qty], ...], bids: [...] }
             return response.data;
         } catch (error: any) {
-            logger.error(`[WEEX] Get Depth Failed: ${error.message}`);
-            // Return empty structure on failure to prevent crash
+            logger.error(`[WEEX] Get Depth Failed for ${symbol}: ${error.message}`);
+            if (axios.isAxiosError(error) && error.response) {
+                logger.error(`   Details: ${JSON.stringify(error.response.data)}`);
+            }
             return { asks: [], bids: [] };
         }
     }
@@ -201,6 +206,97 @@ export class WeexClient {
     }
 
     /**
+     * Cancel All Orders (Crucial for resetting state/clearing 200 limit)
+     * Endpoint: /capi/v2/order/cancelAllOrders
+     */
+    async cancelAllOrders(symbol: string, cancelOrderType: 'normal' | 'plan' = 'normal') {
+        if (this.mode === 'mock') return { result: true }; // Mock success
+
+        try {
+            const endpoint = "/capi/v2/order/cancelAllOrders";
+            const body = {
+                symbol,
+                cancelOrderType
+            };
+
+            logger.info(`[WEEX] Canceling ALL ${cancelOrderType} orders for ${symbol}...`);
+            const response = await this.sendSignedRequest('POST', endpoint, body);
+
+            // Log raw response for debugging if needed
+            // logger.info(`[WEEX] Cancel All Response: ${JSON.stringify(response.data)}`);
+
+            return response.data;
+        } catch (error: any) {
+            // Don't throw for Cancel All, just log warning, as it might fail if no orders exist
+            logger.warn(`[WEEX] Cancel All Orders Failed for ${symbol}: ${error.message}`);
+            if (axios.isAxiosError(error) && error.response) {
+                logger.warn(`   Details: ${JSON.stringify(error.response.data)}`);
+            }
+            return null;
+        }
+    }
+
+    /**
+     * Upload AI Analysis Log (REQUIRED FOR HACKATHON COMPLIANCE)
+     * Endpoint: /capi/v2/order/uploadAiLog
+     */
+    async uploadAiLog(data: {
+        orderId?: string,
+        stage: string,
+        model: string,
+        input: any,
+        output: any,
+        explanation: string
+    }) {
+        if (this.mode === 'mock') {
+            logger.info(`[MOCK] Would upload AI Log for Order ${data.orderId}: ${data.explanation}`);
+            return { code: "00000", msg: "success" };
+        }
+
+        try {
+            const endpoint = "/capi/v2/order/uploadAiLog";
+
+            // Validate required fields
+            if (!data.stage || !data.model || !data.input || !data.output || !data.explanation) {
+                logger.warn("[WEEX] AI Log Upload skipped: Missing required fields.");
+                return;
+            }
+
+            // Ensure explanation is under 1000 chars
+            if (data.explanation.length > 999) {
+                data.explanation = data.explanation.substring(0, 996) + "...";
+            }
+
+            const body = {
+                orderId: data.orderId || null,
+                stage: data.stage,
+                model: data.model,
+                input: data.input,
+                output: data.output,
+                explanation: data.explanation
+            };
+
+            logger.info(`[WEEX] Uploading AI Log for Order ${data.orderId || 'Planning'}...`);
+            const response = await this.sendSignedRequest('POST', endpoint, body);
+
+            if (response.data?.code === '00000') {
+                logger.info(`[WEEX] ✅ AI Log Uploaded Successfully!`);
+            } else {
+                logger.warn(`[WEEX] AI Log Upload Response: ${JSON.stringify(response.data)}`);
+            }
+
+            return response.data;
+        } catch (error: any) {
+            logger.error(`[WEEX] AI Log Upload Failed: ${error.message}`);
+            if (axios.isAxiosError(error) && error.response) {
+                logger.error(`   Details: ${JSON.stringify(error.response.data)}`);
+            }
+            // Don't throw, as this is non-critical for the trade itself (though critical for hackathon)
+            return null;
+        }
+    }
+
+    /**
      * Get Real-time Ticker Price
      * ALWAYS tries real API first for accurate market data, even in mock mode.
      */
@@ -230,8 +326,10 @@ export class WeexClient {
             try {
                 const responseV2 = await axios.get(`${this.baseUrl}${endpointV2}`, { timeout: 5000, headers });
 
-                if (responseV2.data && responseV2.data.data) {
-                    const price = parseFloat(responseV2.data.data.last || responseV2.data.data.price);
+                // Check unwrapped (docs example) or wrapped in data
+                const dataV2 = responseV2.data.data || responseV2.data;
+                if (dataV2) {
+                    const price = parseFloat(dataV2.last || dataV2.market_price || dataV2.price);
                     if (!isNaN(price) && price > 0) return price;
                 }
             } catch (e2) {
@@ -258,8 +356,11 @@ export class WeexClient {
                         return parseFloat(responseSpot.data.data[0].close);
                     }
                 }
-            } catch (e3) {
-                logger.warn(`[WEEX] Spot API Backup Failed: ${(e3 as Error).message}`);
+            } catch (e3: any) {
+                // Suppress ENOTFOUND to avoid noise, only log real errors
+                if (!e3.message.includes('ENOTFOUND')) {
+                    logger.warn(`[WEEX] Spot API Backup Failed: ${e3.message}`);
+                }
             }
 
             // 4. Fallback to External Oracle (Binance) as last resort
@@ -379,42 +480,53 @@ export class WeexClient {
     }
 
     /**
-     * Upload AI Log (Critical for Hackathon Compliance)
-     * Endpoint: /capi/v2/order/uploadAiLog
+     * Get Open Positions
+     * Endpoint: /capi/v2/spr/position/openPosition
      */
-    async uploadAiLog(data: {
-        orderId?: string;
-        stage: string;
-        model: string;
-        input: any;
-        output: any;
-        explanation: string;
-    }) {
-        if (this.mode === 'mock') {
-            logger.info("[MOCK] Uploading AI Log...");
-            return { result: true };
-        }
+    async getOpenPositions(symbol: string): Promise<any[]> {
+        if (this.mode === 'mock') return [];
 
         try {
-            const endpoint = "/capi/v2/order/uploadAiLog";
-            const body = {
-                orderId: data.orderId || null,
-                stage: data.stage,
-                model: data.model,
-                input: data.input,
-                output: data.output,
-                explanation: data.explanation.substring(0, 1000)
-            };
-
-            logger.info(`[WEEX] Uploading AI Log for Order ${body.orderId}...`);
-            const response = await this.sendSignedRequest('POST', endpoint, body);
-            logger.info(`[WEEX] AI Log Upload Success: ${JSON.stringify(response.data)}`);
-            return response.data;
+            const endpoint = `/capi/v2/spr/position/openPosition?symbol=${symbol}`;
+            const response = await this.sendSignedRequest('GET', endpoint);
+            return response.data || [];
         } catch (error: any) {
-            logger.error(`[WEEX] Upload AI Log Failed: ${error.message}`);
-            return null;
+            // Suppress 404/521 errors (endpoint not available) to avoid noise
+            if (!error.message.includes('404') && !error.message.includes('521')) {
+                logger.warn(`[WEEX] Get Positions Failed: ${error.message}`);
+            }
+            return [];
         }
     }
+
+    /**
+     * Set Leverage
+     * Endpoint: /capi/v1/perpetual/account/setLeverage
+     */
+    async setLeverage(symbol: string, leverage: number): Promise<boolean> {
+        if (this.mode === 'mock') return true;
+
+        try {
+            const endpoint = "/capi/v1/perpetual/account/setLeverage";
+            // Set for both Long (1) and Short (2) sides just in case
+            const bodyLong = { symbol, leverage: leverage.toString(), side: '1' };
+            const bodyShort = { symbol, leverage: leverage.toString(), side: '2' };
+
+            await this.sendSignedRequest('POST', endpoint, bodyLong);
+            await this.sendSignedRequest('POST', endpoint, bodyShort);
+
+            logger.info(`[WEEX] Leverage set to ${leverage}x for ${symbol}`);
+            return true;
+        } catch (error: any) {
+            // Suppress 521 (server unavailable) - not critical
+            if (!error.message.includes('521')) {
+                logger.warn(`[WEEX] Set Leverage Warning: ${error.message}`);
+            }
+            return false;
+        }
+    }
+
+
 
     /**
      * Generates WEEX V1 Signature

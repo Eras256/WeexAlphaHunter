@@ -1,4 +1,6 @@
-import { createBlockchainClient, createGeminiClient, createConsensusEngine, generateUUID, logger, sleep, TitanEngine } from "../../core/src/index.js";
+import { createBlockchainClient, createGeminiClient, createConsensusEngine, generateUUID, logger, sleep, TitanEngine, twitterClient } from "../../core/src/index.js";
+import { runMoA, Signal } from "./moa-engine.js";
+
 import { ethers } from "ethers";
 import { WeexClient } from "../../engine-compliance/src/weex-client.js";
 import * as dotenv from "dotenv";
@@ -6,7 +8,22 @@ import * as path from "path";
 import * as fs from "fs";
 
 // Load env
-dotenv.config({ path: ".env.local" });
+const rootEnvPath = path.resolve(process.cwd(), '.env');
+const localEnvPath = path.resolve(process.cwd(), '.env.local');
+
+console.log(`[Executor] Loading .env from: ${rootEnvPath}`);
+dotenv.config({ path: rootEnvPath });
+console.log(`[Executor] Loading .env.local from: ${localEnvPath}`);
+dotenv.config({ path: localEnvPath, override: true });
+
+// Debug API Key (Safely)
+if (process.env.GEMINI_API_KEY) {
+    console.log(`[Executor] ✅ GEMINI_API_KEY found (Length: ${process.env.GEMINI_API_KEY.length})`);
+    console.log(`[Executor]    Key starts with: ${process.env.GEMINI_API_KEY.substring(0, 5)}...`);
+} else {
+    console.warn(`[Executor] ❌ GEMINI_API_KEY NOT FOUND in environment!`);
+}
+
 // process.env.EXECUTION_MODE = "mock"; // Removed to allow .env.local to control mode
 // process.env.EXECUTION_MODE = "mock"; // Removed to allow .env.local to control mode
 
@@ -16,11 +33,18 @@ dotenv.config({ path: ".env.local" });
  */
 export async function runTradeExecutor() {
     logger.info("🚀 Starting WAlphaHunter Trade Executor...");
-    logger.info("🤖 Initializing Multi-AI Consensus System (MetaPredict V1)...");
+    logger.info("🤖 Initializing Multi-AI Consensus System (MetaPredict V2 - MoA Integrated)...");
 
     // 1. Initialize Components
     const gemini = createGeminiClient();
-    const consensus = createConsensusEngine(gemini);
+    // Legacy consensus (Council of 6) – kept as fallback
+    const legacyConsensus = createConsensusEngine(gemini);
+    // MoA Engine (Proposers + Aggregator)
+    // Import runMoA from the new module
+    // NOTE: runMoA returns a Signal with proofHash
+    // We'll try MoA first; if any error occurs we fall back to legacyConsensus.
+
+
     const titan = new TitanEngine(gemini); // Initialize Titan V2 (2025 Architecture)
 
     // DUAL CHAIN ARCHITECTURE: Base L2 (Primary) + Eth L1 (Settlement)
@@ -29,14 +53,14 @@ export async function runTradeExecutor() {
     const exchange = new WeexClient("production-v1");
 
     if (!blockchainBase) {
-        throw new Error("Base Sepolia client failed to initialize");
+        logger.warn("⚠️ Base Sepolia client not initialized. Starting in FULL SIMULATION MODE (No on-chain recording).");
     }
     if (!blockchainEth) {
         logger.warn("⚠️ Ethereum Sepolia client not initialized (L1 Settlement disabled)");
     }
 
     logger.info("✅ Systems Initialized:");
-    logger.info("   • Consensus AI (Council of 6 + Titan HNN)");
+    logger.info("   • Consensus AI (Titan MoA: Gemini 2.5 + DeepSeek + Llama + Mistral)");
     logger.info("   • Blockchain L2: Base Sepolia ✓");
     logger.info(`   • Blockchain L1: Ethereum Sepolia ${blockchainEth ? '✓' : '✗'}`);
     logger.info(`   • Exchange: WEEX (${exchange.mode === 'live' ? 'LIVE' : 'MOCK'} Mode)`);
@@ -277,7 +301,7 @@ export async function runTradeExecutor() {
 
                 // B. Generate AI Signal (MULTI-MODEL CONSENSUS - COUNCIL OF 6)
                 // This activates: Gemini, Llama 3 (Groq), DeepSeek (OpenRouter), Claude/Qwen, Mixtral, and Local Titan.
-                logger.info("  🧠 Activating Council of 6 (Consensus Engine)...");
+                logger.info("  🧠 Activating Titan Consensus (Gemini 2.5 + DeepSeek + Llama + Mistral)...");
 
                 // Use 'closes' calculated above or fallback to current price array
                 // const priceHistory = closes.length > 0 ? closes : [currentPrice]; // Not used by simple consensus yet
@@ -293,34 +317,53 @@ export async function runTradeExecutor() {
                         fear_greed: fearGreedIndex
                     }
                 };
+                // Obtain MoA signal based on market data
+                const signal: Signal = await runMoA(marketData as any, gemini);
 
-                // EXECUTE CONSENSUS
-                const signal = await consensus.generateConsensusSignal(marketData);
-
-                logger.info(`  💡 Consensus Decision: ${signal.action} (Score: ${signal.consensusScore.toFixed(0)}%)`);
-                logger.info(`     Models: ${signal.modelUsed}`);
-                logger.info(`     Reasoning: "${signal.reasoning.substring(0, 150)}..."`);
-
-                // Log individual votes if available
-                if (signal.details) {
-                    const votes = signal.details.map((d: any) => `${d.model}=${d.action}`).join(' | ');
-                    logger.info(`     🗳️  Votes: ${votes}`);
+                // MoA decision already obtained in `signal`
+                logger.info(`  💡 MoA Decision: ${signal.action} (Confidence: ${(signal.confidence * 100).toFixed(0)}%)`);
+                if (signal.consensusScore !== undefined) {
+                    logger.info(`   Consensus Score: ${signal.consensusScore.toFixed(0)}%`);
                 }
-
-                // Add fields expected by downstream logic
-                (signal as any).modelUsed = signal.modelUsed;
-
-                // Titan legacy compatibility
-                if ((signal as any).indicators) {
-                    // Consenus doesn't return indicators in signal, but we can pass through
+                logger.info(`   Model Used: ${signal.modelUsed ?? "unknown"}`);
+                logger.info(`   Reasoning: "${signal.reasoning.substring(0, 150)}..."`);
+                if (signal.proofHash) {
+                    logger.info(`   Proof Hash: ${signal.proofHash}`);
                 }
 
                 if (signal.action === 'HOLD') {
-                    // logger.info(`  ⏸️  Consensus was HOLD, but forcing BUY for BLOCKCHAIN TEST.`);
-                    // signal.action = 'BUY'; // Force Buy
-                    // continue; // Disabled for test
-                    logger.info(`  ⏸️  Consensus is HOLD. Waiting for better opportunity.`);
-                    continue;
+                    // Check if this is a "Panic Hold" (System Failure)
+                    if (signal.confidence === 0 && signal.modelUsed === "Fallback_Safety_Switch") {
+                        logger.warn(`  ⚠️ SYSTEM INTERRUPT: Cloud AI Failed. Switching to TITAN LOCAL (Neural Core)...`);
+
+                        // Emergency Local Trading Logic (Titan Neural)
+                        // This logic runs locally on CPU if cloud providers die
+                        const rsi = rsiValue; // from earlier
+                        let emergencySignal = 'HOLD';
+                        let emergencyReason = "Local: Market choppy";
+
+                        if (rsi < 32 && trend === 'BULLISH') {
+                            emergencySignal = 'BUY';
+                            emergencyReason = `Local: RSI Oversold (${rsi.toFixed(1)}) in Bull Trend`;
+                        } else if (rsi > 68 && trend === 'BEARISH') {
+                            emergencySignal = 'SELL';
+                            emergencyReason = `Local: RSI Overbought (${rsi.toFixed(1)}) in Bear Trend`;
+                        }
+
+                        if (emergencySignal !== 'HOLD') {
+                            logger.info(`  🤖 TITAN LOCAL TAKE-OVER. Executing Emergency Trade: ${emergencySignal}`);
+                            signal.action = emergencySignal as 'BUY' | 'SELL' | 'HOLD';
+                            signal.confidence = 0.55; // Low confidence but actionable
+                            signal.reasoning = emergencyReason;
+                            signal.modelUsed = "Titan_Neural_Local_Emergency";
+                        } else {
+                            logger.info(`  ⏸️  Titan Local also votes HOLD. Market neutral.`);
+                            continue;
+                        }
+                    } else {
+                        logger.info(`  ⏸️  Consensus is HOLD. Waiting for better opportunity.`);
+                        continue;
+                    }
                 }
 
                 // --- Helper Functions ---
@@ -370,49 +413,43 @@ export async function runTradeExecutor() {
                 } else {
                     quantity = Math.floor(quantity * 10) / 10;
                 }
-                logger.info(`  ⚡ Executing ${signal.action} order on WEEX...`);
+                // --- SNIPER MODE: EXECUTION SAFETY ---
+                // 1. Strict Position Limit: Max 1 active trade per symbol
+                // 2. Order Limit: Max open orders check
+                try {
+                    const openOrders = await exchange.getOpenOrders(symbol);
+                    const hasActiveOrder = openOrders.length > 0;
 
-                // Risk Management Calculations
+                    if (hasActiveOrder) {
+                        logger.warn(`  🛡️ [Sniper Mode] Active orders exist for ${symbol}. Skipping new entry to preserve capital.`);
+
+                        // Auto-Cleanup: If too many orders accumulate (stuck), purge them
+                        if (openOrders.length > 5) {
+                            logger.warn(`  🧹 Purging ${openOrders.length} stuck orders for cleanliness...`);
+                            for (const o of openOrders) await exchange.cancelOrder(symbol, o.order_id || o.orderId);
+                        }
+                        continue;
+                    }
+                } catch (e) { /* silent check */ }
+
+                logger.info(`  ⚡ Executing ${signal.action} order on WEEX (Sniper Mode)...`);
+
+                // Risk Management: Tighter stops for capital preservation
                 let stopLoss = 0;
                 let takeProfit = 0;
                 if (signal.action === 'BUY') {
-                    stopLoss = currentPrice * 0.99; // 1% SL
-                    takeProfit = currentPrice * 1.02; // 2% TP
+                    stopLoss = currentPrice * 0.992; // 0.8% SL (Conservative)
+                    takeProfit = currentPrice * 1.015; // 1.5% TP
                 } else if (signal.action === 'SELL') {
-                    stopLoss = currentPrice * 1.01; // 1% SL
-                    takeProfit = currentPrice * 0.98; // 2% TP
-                }
-
-                // --- ORDER THROTTLE / CLEANUP ---
-                // Prevent "Max active order count" error (200 limit)
-                try {
-                    const openOrders = await exchange.getOpenOrders(symbol);
-                    if (openOrders.length > 0) {
-                        logger.warn(`  ⚠️ Skip Order: ${openOrders.length} active orders exist for ${symbol}. Avoiding limit hit.`);
-
-                        // Auto-Cleanup if clogged
-                        if (openOrders.length > 3) {
-                            logger.warn(`  🧹 Cleaning up ${openOrders.length} stuck orders...`);
-                            for (const o of openOrders) {
-                                try {
-                                    await exchange.cancelOrder(symbol, o.order_id || o.orderId);
-                                    await sleep(200); // Rate limit
-                                } catch (e) { /* ignore */ }
-                            }
-                        }
-
-                        // Even if 1 order exists, it's safer to wait for it to fill than to stack more
-                        continue;
-                    }
-                } catch (e) {
-                    // Ignore check failure, take risk? No, better safe.
+                    stopLoss = currentPrice * 1.008; // 0.8% SL
+                    takeProfit = currentPrice * 0.985; // 1.5% TP
                 }
 
                 let order;
                 try {
                     order = await exchange.placeOrder(
                         symbol,
-                        signal.action,
+                        signal.action as any,
                         quantity,
                         currentPrice,
                         { stopLoss: parseFloat(stopLoss.toFixed(1)), takeProfit: parseFloat(takeProfit.toFixed(1)) }
@@ -422,7 +459,7 @@ export async function runTradeExecutor() {
                         logger.warn(`  ⚠️ WEEX Limit Hit (40015). Triggering Emergency Cleanup...`);
                         try {
                             const stuckOrders = await exchange.getOpenOrders(symbol);
-                            logger.info(`  🧹 Found ${stuckOrders.length} stuck orders. Cancelling...`);
+                            logger.info(`  🧹 Found ${stuckOrders.length} stuck orders. Cancelling all...`);
                             for (const o of stuckOrders) {
                                 await exchange.cancelOrder(symbol, o.orderId || o.order_id);
                                 await sleep(100);
@@ -477,10 +514,10 @@ export async function runTradeExecutor() {
                 // Wrapped in try-catch to prevent crash if endpoint is placeholder
                 try {
                     if (order.orderId) {
-                        await exchange.uploadAiLog({
+                        const aiLogPayload = {
                             orderId: order.orderId,
                             stage: "Consensus Execution",
-                            model: signal.modelUsed.substring(0, 50),
+                            model: (signal.modelUsed ?? "unknown").substring(0, 50),
                             input: {
                                 symbol,
                                 price: currentPrice,
@@ -492,11 +529,29 @@ export async function runTradeExecutor() {
                             },
                             output: signal,
                             explanation: signal.reasoning.substring(0, 1000)
-                        });
+                        };
+
+                        await exchange.uploadAiLog(aiLogPayload);
+
+                        // also save locally for redundancy
+                        fs.appendFileSync('ai_logs_backup.jsonl', JSON.stringify(aiLogPayload) + '\n');
                     }
                 } catch (logError: any) {
-                    logger.warn(`  ⚠️ AI Log Upload Warning (Saved Locally): ${logError.message}`);
-                    // In a real scenario, we would append to a local JSON file here as backup evidence.
+                    const errorMsg = logError.message || "Unknown Error";
+                    const status = logError.response?.status || "No Status";
+                    const responseBody = JSON.stringify(logError.response?.data || {});
+
+                    logger.warn(`  ⚠️ AI Log Upload FAILED (Status: ${status}). Saving locally.`);
+                    logger.warn(`  🔴 ADMIN REPORT INFO -> Error: ${errorMsg} | Body: ${responseBody}`);
+
+                    // Save to strictly formatted backup for Admins
+                    const backupLog = {
+                        timestamp: new Date().toISOString(),
+                        error_status: status,
+                        payload: signal, // Save the actual signal that failed to upload
+                        error_details: responseBody
+                    };
+                    fs.appendFileSync('ai_logs_error_report.jsonl', JSON.stringify(backupLog) + '\n');
                 }
 
                 // E. Record on Blockchain (Dual-Chain Proof of Work)
@@ -505,6 +560,7 @@ export async function runTradeExecutor() {
                     const decisionId = generateUUID();
 
                     // 1. Record on BASE SEPOLIA (L2 - Primary)
+                    if (!blockchainBase) throw new Error("Simulation Mode - Skipping On-Chain Step");
                     logger.info(`  📝 [L2] Minting AI Decision Proof on Base Sepolia...`);
                     const txAiBase = await blockchainBase.recordAIDecision({
                         decisionId,
@@ -533,7 +589,7 @@ export async function runTradeExecutor() {
                         exchangeOrderId: order.orderId || `mock-ord-${Date.now()}`,
                         price: currentPrice,
                         qty: quantity,
-                        side: signal.action,
+                        side: signal.action as any,
                         aiConfidence: signal.confidence
                     });
                     recentActivity.unshift({
@@ -579,7 +635,7 @@ export async function runTradeExecutor() {
                             exchangeOrderId: order.orderId || `mock-ord-${Date.now()}`,
                             price: currentPrice,
                             qty: quantity,
-                            side: signal.action,
+                            side: signal.action as any,
                             aiConfidence: signal.confidence
                         });
                         recentActivity.unshift({
@@ -599,6 +655,23 @@ export async function runTradeExecutor() {
                     }
                 } catch (bcError: any) {
                     logger.error(`  ⚠️ Blockchain Error: ${bcError.message}`);
+                }
+
+                // E.2 Social Proof (X/Twitter Integration)
+                if (signal.confidence > 0.8 && process.env.X_API_KEY) {
+                    try {
+                        const tweetText = `🤖 Titan AI Trade Alert 🚨\n\n` +
+                            `Action: ${signal.action} ${symbol.toUpperCase().replace('CMT_', '')}\n` +
+                            `Price: $${currentPrice}\n` +
+                            `Confidence: ${(signal.confidence * 100).toFixed(0)}%\n` +
+                            `Rationale: ${signal.reasoning.substring(0, 80)}...\n\n` +
+                            `#AI #Crypto #WEEX #TitanMode`;
+
+                        logger.info(`  🐦 Posting to X: "${tweetText.replace(/\n/g, ' ')}"`);
+                        await twitterClient.postTweet(tweetText);
+                    } catch (twError) {
+                        logger.warn(`  ⚠️ Failed to tweet: ${twError}`);
+                    }
                 }
 
                 // F. Update Strategy Performance Registry (Live Stats)

@@ -3,11 +3,11 @@ import { logger } from './logger.js';
 
 // Model fallback chain (confirmed working Gemini 2.5 models)
 // Model fallback chain (confirmed working Gemini 2.5 models)
+// Model fallback chain (Updated for Jan 2026 Stability)
 const MODEL_FALLBACK_CHAIN = [
-    'gemini-1.5-flash',           // Stable Standard - PRIORITIZED for reliability
-    'gemini-2.0-flash-exp',       // Cutting edge (prone to rate limits)
-    'gemini-1.5-flash-8b',        // Fast
-    'gemini-1.5-pro',             // High Intellect
+    'gemini-1.5-flash-8b',        // Fast & Cheap (High Throughput)
+    'gemini-2.0-flash-exp',       // 2.0 Experimental (Often Rate Limited)
+    'gemini-1.5-flash',           // Standard 1.5
     'gemini-pro'                  // Legacy Fallback
 ] as const;
 
@@ -64,9 +64,9 @@ export class GeminiClient {
                 // Add explicit delay if we are retrying after a rate limit
                 // We reduce this to a short pause because we are switching models, and quotas are often per-model.
                 if (lastError?.message?.includes('429')) {
-                    logger.warn('Rate Limit hit on previous model. Switching to next model...');
+                    logger.warn('Rate Limit hit on previous model. Switching to next model (cooling down)...');
                     // Short pause to allow system to breathe, but not block trading
-                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    await new Promise(resolve => setTimeout(resolve, 12000));
                 }
 
                 logger.info(`Attempting to generate content with model: ${modelName}`);

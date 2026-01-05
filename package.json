@@ -26,9 +26,11 @@
         "verify:sepolia": "hardhat run scripts/verify.js --network sepolia",
         "verify:base-sepolia": "hardhat run scripts/verify.js --network baseSepolia",
         "trade:live": "tsx packages/engine-backtest/src/simple-executor.ts",
+        "trade:titan": "tsx packages/engine-backtest/src/titan-executor.ts",
         "register:strategies": "tsx packages/engine-backtest/src/register-strategies.ts"
     },
     "devDependencies": {
+        "@google/generative-ai": "^0.24.1",
         "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
         "@nomicfoundation/hardhat-ethers": "^3.0.0",
         "@nomicfoundation/hardhat-toolbox": "^5.0.0",
@@ -37,7 +39,7 @@
         "@types/node": "^20.10.0",
         "@types/prettier": "^3.0.0",
         "@wah/core": "workspace:*",
-        "dotenv": "^16.4.5",
+        "dotenv": "^16.6.1",
         "ethers": "^6.10.0",
         "hardhat": "^2.22.0",
         "md-to-pdf": "^5.2.4",
@@ -54,5 +56,9 @@
         "overrides": {
             "tsx": "4.19.0"
         }
+    },
+    "dependencies": {
+        "axios": "^1.6.0",
+        "twitter-api-v2": "^1.15.0"
     }
 }

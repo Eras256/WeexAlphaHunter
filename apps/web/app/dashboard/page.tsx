@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 
 import { useBlockchainStats } from '@/hooks/useBlockchainStats';
-import { Activity, TrendingUp, Shield, Zap, Brain, Database, CheckCircle, ExternalLink, Twitter, BarChart3, Lock } from 'lucide-react';
+import { Activity, TrendingUp, Shield, Zap, Brain, Database, ExternalLink, Twitter, BarChart3, Lock } from 'lucide-react';
 import Link from 'next/link';
 
 export default function DashboardPage() {
@@ -29,14 +29,15 @@ export default function DashboardPage() {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10;
 
-    // Derived Activity Data
+    // Derived Data
+    const marketData = liveData?.marketData;
+    const latestSignal = liveData?.latestSignal;
     let processedActivity = liveData?.recentActivity ? [...liveData.recentActivity] : [];
 
     // Sorting Logic
     if (sortConfig.key) {
         processedActivity.sort((a: any, b: any) => {
             if (sortConfig.key === 'profit') {
-                // Sort by PnL (assuming pnl field exists, fallback to 0)
                 const valA = a.pnl || 0;
                 const valB = b.pnl || 0;
                 return sortConfig.direction === 'asc' ? valA - valB : valB - valA;
@@ -68,6 +69,11 @@ export default function DashboardPage() {
         setSortConfig({ key, direction });
     };
 
+    // Dynamic Consensus Styles
+    const consensusAction = latestSignal?.action || 'HOLD';
+    const consensusColor = consensusAction === 'BUY' ? 'text-green-400' : consensusAction === 'SELL' ? 'text-red-400' : 'text-yellow-400';
+    const consensusBorder = consensusAction === 'BUY' ? 'border-green-500' : consensusAction === 'SELL' ? 'border-red-500' : 'border-yellow-500';
+
     return (
         <div className="min-h-screen bg-black text-white font-sans">
             {/* Header / Command Center Status */}
@@ -80,11 +86,11 @@ export default function DashboardPage() {
                                     UNUM Mission Control
                                 </h1>
                                 <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-500/20 text-purple-400 border border-purple-500/30 uppercase tracking-widest">
-                                    PRO
+                                    TITAN V1 LIVE
                                 </span>
                             </div>
                             <p className="text-gray-400 max-w-xl">
-                                Orchestrating <span className="text-white font-semibold">6 Autonomous AI Agents</span> & <span className="text-white font-semibold">5 Trading Strategies</span>. Executing across Base L2 and Ethereum Sepolia L1.
+                                Orchestrating <span className="text-white font-semibold">Titan Neural Engine</span> & <span className="text-white font-semibold">Hybrid Math Modules</span>. Executing across Base L2 and Ethereum Sepolia L1.
                             </p>
                         </div>
                         <div className="flex items-center gap-4">
@@ -147,34 +153,37 @@ export default function DashboardPage() {
                         <div className="flex items-center justify-between mb-6">
                             <h3 className="text-xl font-bold flex items-center gap-2">
                                 <Brain className="w-5 h-5 text-purple-400" />
-                                Council of 6 Status
+                                Titan Hybrid Engine Status
                             </h3>
                             <Link href="/platform/ai-engine" className="text-xs text-purple-400 hover:text-purple-300 flex items-center gap-1">
                                 View Architecture <ExternalLink className="w-3 h-3" />
                             </Link>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                            <ModelStatusBadge name="DeepSeek V3" role="Reasoning" status="online" ping="120ms" />
-                            <ModelStatusBadge name="Gemini 1.5" role="Context" status="online" ping="85ms" />
-                            <ModelStatusBadge name="Llama 3.1" role="Speed" status="online" ping="15ms" />
-                            <ModelStatusBadge name="Mixtral 8x7" role="Diversity" status="online" ping="95ms" />
+                            <ModelStatusBadge name="Titan Neural" role="Reasoning" status="online" ping="5ms" />
+                            <ModelStatusBadge name="Math Module" role="Technical" status="online" ping="1ms" />
+                            <ModelStatusBadge name="DeepSeek" role="Logic" status="standby" ping="120ms" />
+                            <ModelStatusBadge name="Gemini" role="Context" status="standby" ping="85ms" />
+                            <ModelStatusBadge name="Llama 3.1" role="Speed" status="standby" ping="15ms" />
                             <ModelStatusBadge name="Qwen 2.5" role="Backup" status="standby" ping="110ms" />
-                            <ModelStatusBadge name="Math Engine" role="Fallback" status="active" ping="0ms" />
                         </div>
                     </div>
 
                     {/* Right Col: Live Consensus & Strategies */}
                     <div className="flex flex-col gap-6">
                         <div className="bg-gray-900/50 border border-white/10 rounded-xl p-6 backdrop-blur-sm flex flex-col justify-center items-center text-center flex-1">
-                            <h3 className="text-sm text-gray-400 uppercase tracking-widest mb-4">Current Consensus</h3>
-                            <div className="w-24 h-24 rounded-full border-4 border-green-500/20 flex items-center justify-center relative mb-4">
-                                <div className="absolute inset-0 rounded-full border-t-4 border-green-500 animate-spin-slow"></div>
-                                <div className="text-xl font-bold text-green-400">BUY</div>
+                            <h3 className="text-sm text-gray-400 uppercase tracking-widest mb-4">Current Signal</h3>
+                            <div className={`w-24 h-24 rounded-full border-4 ${consensusBorder}/20 flex items-center justify-center relative mb-4`}>
+                                <div className={`absolute inset-0 rounded-full border-t-4 ${consensusAction === 'BUY' ? 'border-green-500' : consensusAction === 'SELL' ? 'border-red-500' : 'border-yellow-500'} animate-spin-slow`}></div>
+                                <div className={`text-xl font-bold ${consensusColor}`}>{consensusAction}</div>
                             </div>
                             <p className="text-sm text-gray-400">
-                                <span className="text-white font-bold">5/6 Engines</span> agree.
-                                <br />Conf: <span className="text-green-400">94.2%</span>
+                                <span className="text-white font-bold">{latestSignal?.symbol?.toUpperCase() || 'MARKET'}</span>
+                                <br />Conf: <span className={consensusColor}>{latestSignal ? (latestSignal.confidence * 100).toFixed(0) : 0}%</span>
                             </p>
+                            {latestSignal?.reasoning && (
+                                <p className="text-[10px] text-gray-500 mt-2 italic max-w-xs">{latestSignal.reasoning.substring(0, 80)}...</p>
+                            )}
                         </div>
 
                         {/* Active Strategies List */}
@@ -184,21 +193,17 @@ export default function DashboardPage() {
                             </h3>
                             <div className="space-y-3">
                                 <div className="flex justify-between items-center text-xs">
-                                    <span className="text-white">Quantum Arb Sniper</span>
-                                    <span className="text-green-400 font-mono">ROI +12.4%</span>
+                                    <span className="text-white">Titan Pure Neural</span>
+                                    <span className="text-green-400 font-mono">ACTIVE</span>
                                 </div>
                                 <div className="flex justify-between items-center text-xs">
-                                    <span className="text-white">DeepSeek Momentum</span>
-                                    <span className="text-green-400 font-mono">ROI +8.1%</span>
-                                </div>
-                                <div className="flex justify-between items-center text-xs">
-                                    <span className="text-white">Neural Scalp V5</span>
-                                    <span className="text-green-400 font-mono">ROI +5.2%</span>
+                                    <span className="text-white">Math Verification</span>
+                                    <span className="text-green-400 font-mono">ACTIVE</span>
                                 </div>
                                 <div className="w-full bg-gray-800 h-1 rounded-full mt-2 overflow-hidden">
-                                    <div className="bg-purple-500 h-full w-[85%] animate-pulse"></div>
+                                    <div className="bg-purple-500 h-full w-[100%] animate-pulse"></div>
                                 </div>
-                                <p className="text-[10px] text-gray-500 text-right mt-1">Allocation: 85% Active</p>
+                                <p className="text-[10px] text-gray-500 text-right mt-1">Allocation: 100% Active</p>
                             </div>
                         </div>
                     </div>
@@ -222,12 +227,12 @@ export default function DashboardPage() {
                                 <span className="text-sm text-red-400">Selling Pressure</span>
                             </div>
                             <div className="h-4 bg-gray-800 rounded-full overflow-hidden flex">
-                                <div className="h-full bg-green-500 w-[65%]"></div>
-                                <div className="h-full bg-red-500 w-[35%]"></div>
+                                <div className="h-full bg-green-500 transition-all duration-1000" style={{ width: latestSignal?.action === 'BUY' ? '70%' : latestSignal?.action === 'SELL' ? '30%' : '50%' }}></div>
+                                <div className="h-full bg-red-500 transition-all duration-1000" style={{ width: latestSignal?.action === 'BUY' ? '30%' : latestSignal?.action === 'SELL' ? '70%' : '50%' }}></div>
                             </div>
                             <div className="mt-4 text-xs text-gray-400 flex justify-between">
-                                <span>Vol: $4.2M (15m)</span>
-                                <span>Whale Alert: 2 Detected</span>
+                                <span>Symbol: {latestSignal?.symbol?.toUpperCase() || 'SCANNING...'}</span>
+                                <span>Recent Candles: {marketData?.candles?.length || 0}</span>
                             </div>
                         </div>
                     </div>
@@ -245,9 +250,9 @@ export default function DashboardPage() {
                                 </div>
                                 <div>
                                     <p className="text-sm text-white mb-1">
-                                        Major breakout mentioned by <span className="text-blue-400">@GenericInfluencer</span> and 12 others.
+                                        Active discussion on <span className="text-blue-400">$BTC</span> and Layer 2 volumes.
                                     </p>
-                                    <p className="text-xs text-gray-500">2 minutes ago • Impact Score: High</p>
+                                    <p className="text-xs text-gray-500">Just now • Impact Score: Medium</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-3 opacity-60">
@@ -256,9 +261,9 @@ export default function DashboardPage() {
                                 </div>
                                 <div>
                                     <p className="text-sm text-white mb-1">
-                                        Negative divergences spotted on 4h charts.
+                                        Market consolidating at support levels.
                                     </p>
-                                    <p className="text-xs text-gray-500">5 minutes ago • Impact Score: Low</p>
+                                    <p className="text-xs text-gray-500">2 minutes ago • Impact Score: Low</p>
                                 </div>
                             </div>
                         </div>
@@ -376,16 +381,17 @@ function KpiCard({ label, value, sub, trend, icon }: any) {
 function ModelStatusBadge({ name, role, status, ping }: any) {
     const isActive = status === 'active' || status === 'online';
     const color = isActive ? 'bg-green-500' : 'bg-yellow-500';
+    const textSchema = isActive ? 'text-gray-200' : 'text-gray-500';
 
     return (
-        <div className="p-3 bg-black rounded-lg border border-white/5 flex items-center justify-between">
+        <div className={`p-3 bg-black rounded-lg border ${isActive ? 'border-green-500/20' : 'border-white/5'} flex items-center justify-between`}>
             <div>
-                <div className="text-sm font-bold text-gray-200">{name}</div>
+                <div className={`text-sm font-bold ${textSchema}`}>{name}</div>
                 <div className="text-[10px] text-gray-500 uppercase">{role}</div>
             </div>
             <div className="text-right">
                 <div className="flex items-center gap-1.5 justify-end">
-                    <div className={`w-1.5 h-1.5 rounded-full ${color} animate-pulse`} />
+                    <div className={`w-1.5 h-1.5 rounded-full ${color} ${isActive && 'animate-pulse'}`} />
                     <span className="text-[10px] text-gray-400">{ping}</span>
                 </div>
             </div>

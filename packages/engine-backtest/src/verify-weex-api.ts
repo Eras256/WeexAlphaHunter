@@ -62,9 +62,30 @@ async function runTest() {
         console.log("   Order ID:", order.orderId);
         console.log("   Full Response:", JSON.stringify(order, null, 2));
 
-        // 3. Cancel Order
+        // 3. Upload AI Log (CRITICAL FOR HACKATHON)
+        console.log("\n3️⃣  Testing AI Log Upload (Compliance Check)...");
+        const aiLog = {
+            orderId: order.orderId,
+            stage: "API_TEST",
+            model: "TITAN_V1",
+            input: JSON.stringify({ price: 95000, signal: "BUY" }),
+            output: JSON.stringify({ action: "BUY", confidence: 0.99 }),
+            explanation: "API Connectivity Test for Hackathon Compliance"
+        };
+
+        const logResult = await client.uploadAiLog(aiLog);
+
+        if (logResult) {
+            console.log("✅ AI Log Uploaded Successfully!");
+        } else {
+            console.log("⚠️ AI Log Upload Failed (Check 521 Error below if applicable)");
+            console.log("   NOTE: If you see Error 521, your IP might be whitelisted for TRADING but not for LOGS.");
+            console.log("   Take a screenshot of this error to share with admins.");
+        }
+
+        // 4. Cancel Order
         if (order.orderId) {
-            console.log(`\n3️⃣  Canceling Order ${order.orderId}...`);
+            console.log(`\n4️⃣  Canceling Order ${order.orderId}...`);
             const cancel = await client.cancelOrder("cmt_btcusdt", order.orderId);
             console.log("✅ Order Cancelled!");
             console.log("   Response:", JSON.stringify(cancel, null, 2));
@@ -73,8 +94,8 @@ async function runTest() {
         }
 
         console.log("\n-----------------------------------------");
-        console.log("🎉 ALL WEEX API TESTS PASSED!");
-        console.log("   Take a screenshot of this output for your hackathon submission.");
+        console.log("🎉 VERIFICATION SEQUENCE COMPLETE");
+        console.log("   Take a screenshot of this entire output for your hackathon submission.");
 
     } catch (error: any) {
         console.error("\n❌ API Test Failed:", error.message);

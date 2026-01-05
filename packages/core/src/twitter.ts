@@ -1,13 +1,4 @@
-// import { TwitterApi } from 'twitter-api-v2';
-// Mock library to bypass missing dependency
-class TwitterApi {
-    constructor(config: any) { }
-    v2 = {
-        me: async () => ({ data: {} }),
-        tweet: async (...args: any[]) => ({ data: { id: 'mock' } }),
-        search: async (...args: any[]) => ({ data: [] })
-    }
-}
+import { TwitterApi } from 'twitter-api-v2';
 import { logger } from './logger.js';
 
 export class TwitterClient {
@@ -73,4 +64,18 @@ export class TwitterClient {
     }
 }
 
-export const twitterClient = new TwitterClient();
+// Singleton lazy instance
+let twitterInstance: TwitterClient | null = null;
+
+export function getTwitterClient(): TwitterClient {
+    if (!twitterInstance) {
+        twitterInstance = new TwitterClient();
+    }
+    return twitterInstance;
+}
+
+export const twitterClient = {
+    postTweet: async (text: string) => getTwitterClient().postTweet(text),
+    getMe: async () => getTwitterClient().getMe(),
+    searchRecent: async (query: string) => getTwitterClient().searchRecent(query)
+};

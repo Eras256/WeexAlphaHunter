@@ -1,0 +1,19 @@
+
+> w-alpha-hunter@2.0.0 trade:live C:\DaAps\AlphaHunter
+> tsx packages/engine-backtest/src/simple-executor.ts
+
+[32minfo[39m: 🧠 Titan Native Brain loaded from disk. {"timestamp":"2025-12-30T23:08:34.843Z"}
+[33mwarn[39m: ⚠️ Missing X API Credentials in .env.local {"timestamp":"2025-12-30T23:08:34.844Z"}
+[32minfo[39m: 🚀 Starting WAlphaHunter Trade Executor... {"timestamp":"2025-12-30T23:08:34.872Z"}
+[32minfo[39m: 🤖 Initializing Multi-AI Consensus System (MetaPredict V1)... {"timestamp":"2025-12-30T23:08:34.872Z"}
+[33mwarn[39m: GEMINI_API_KEY not configured. AI features will be limited. {"timestamp":"2025-12-30T23:08:34.872Z"}
+[33mwarn[39m: Blockchain client not configured for baseSepolia. Please set environment variables. {"timestamp":"2025-12-30T23:08:34.872Z"}
+[33mwarn[39m: Blockchain client not configured for sepolia. Please set environment variables. {"timestamp":"2025-12-30T23:08:34.873Z"}
+[32minfo[39m: Initialized WEEX Client in [MOCK] mode. URL: https://api-contract.weex.com {"timestamp":"2025-12-30T23:08:34.873Z"}
+FATAL ERROR: Error: Base Sepolia client failed to initialize
+    at runTradeExecutor (C:\DaAps\AlphaHunter\packages\engine-backtest\src\simple-executor.ts:32:15)
+    at <anonymous> (C:\DaAps\AlphaHunter\packages\engine-backtest\src\simple-executor.ts:690:1)
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+ ELIFECYCLE  Command failed with exit code 1.

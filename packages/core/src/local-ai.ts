@@ -109,31 +109,40 @@ export class LocalIntelligence {
         const imbalance = indicators.OrderImbalance || 0;
         const fg = indicators.FearGreed || 50;
 
+        // Result Score
         let score = 0;
         const reasons: string[] = [];
 
-        // RSI Logic
-        if (rsi < 30) { score += 3; reasons.push(`RSI Oversold (${rsi})`); }
-        else if (rsi > 70) { score -= 3; reasons.push(`RSI Overbought (${rsi})`); }
+        // RSI Logic (Relaxed for Demo)
+        if (rsi < 30) { score += 3; reasons.push(`RSI Oversold (${rsi.toFixed(1)})`); }
+        else if (rsi < 45) { score += 2; reasons.push(`RSI Weak (${rsi.toFixed(1)})`); }
+        else if (rsi > 70) { score -= 3; reasons.push(`RSI Overbought (${rsi.toFixed(1)})`); }
+        else if (rsi > 55) { score -= 2; reasons.push(`RSI Strong (${rsi.toFixed(1)})`); }
 
         // Trend Logic
         if (trend === 1) { score += 1; reasons.push("Trend Bullish"); }
         else if (trend === -1) { score -= 1; reasons.push("Trend Bearish"); }
 
-        // Imbalance
-        if (imbalance > 0.3) { score += 2; reasons.push("Orders: Buy Pressure"); }
-        else if (imbalance < -0.3) { score -= 2; reasons.push("Orders: Sell Pressure"); }
+        // Imbalance (Sensitive)
+        if (imbalance > 0.15) { score += 2; reasons.push("Orders: Buy Pressure"); }
+        else if (imbalance > 0.05) { score += 1; reasons.push("Orders: Slight Buy"); }
+        else if (imbalance < -0.15) { score -= 2; reasons.push("Orders: Sell Pressure"); }
+        else if (imbalance < -0.05) { score -= 1; reasons.push("Orders: Slight Sell"); }
 
-        // Decision
+        // Decision (Threshold lowered to 3)
         let action = 'HOLD';
         let confidence = 0.5;
 
-        if (score >= 4) {
+        // Bias towards Trend if RSI is neutral
+        if (reasons.includes("Trend Bullish") && score >= 2) score += 1; // Boost Bullish Trend
+        if (reasons.includes("Trend Bearish") && score <= -2) score -= 1; // Boost Bearish Trend
+
+        if (score >= 3) {
             action = 'BUY';
-            confidence = Math.min(0.5 + (score * 0.1), 0.95);
-        } else if (score <= -4) {
+            confidence = Math.min(0.6 + (score * 0.1), 0.95);
+        } else if (score <= -3) {
             action = 'SELL';
-            confidence = Math.min(0.5 + (Math.abs(score) * 0.1), 0.95);
+            confidence = Math.min(0.6 + (Math.abs(score) * 0.1), 0.95);
         } else {
             reasons.push("Math Neutral");
         }
