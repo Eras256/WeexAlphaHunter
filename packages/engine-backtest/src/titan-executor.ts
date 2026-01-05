@@ -370,14 +370,22 @@ export async function runTitanExecutor() {
         try {
             const pnl = currentEquity - initialEquity;
             const pnlPercent = ((currentEquity - initialEquity) / initialEquity) * 100;
-            const durationMin = (Date.now() - startTime) / 60000;
+            const durationMin = Math.max((Date.now() - startTime) / 60000, 1);
+            let projectedRoi = (pnlPercent / durationMin) * 525600;
+
+            // Cap illogical ROI for short durations (e.g. > 1,000,000%)
+            if (projectedRoi > 1000000) projectedRoi = 999999;
+
+            const roiVal = isFinite(projectedRoi) ? projectedRoi.toFixed(2) : "0.00";
+
+            // console.log(`   📊 Stats Update: PnL=${pnl.toFixed(2)} | ROI=${roiVal}%`);
 
             const stats = {
                 initialEquity: initialEquity,
                 currentEquity: currentEquity,
                 pnl: parseFloat(pnl.toFixed(2)),
                 pnlPercent: parseFloat(pnlPercent.toFixed(4)),
-                roi: ((pnlPercent / durationMin) * 525600).toFixed(2), // Annualized ROI estimate
+                roi: roiVal, // Annualized ROI estimate
                 runtime: parseFloat(durationMin.toFixed(1)),
                 timestamp: Date.now(),
                 recentActivity: recentActivity,

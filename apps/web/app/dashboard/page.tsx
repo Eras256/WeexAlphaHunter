@@ -125,8 +125,8 @@ export default function DashboardPage() {
                     />
                     <KpiCard
                         label="Projected ROI (Annual)"
-                        value={liveData ? `${liveData.roi}%` : "0%"}
-                        sub={`Based on ${liveData?.runtime || 0}m runtime`}
+                        value={liveData ? `${Number(liveData.roi).toFixed(2)}%` : "0%"}
+                        sub={`Based on ${liveData?.runtime ? liveData.runtime.toFixed(1) : 0}m runtime`}
                         trend={liveData?.roi > 0 ? "up" : "neutral"}
                         icon={<Activity className="w-5 h-5 text-blue-400" />}
                     />
