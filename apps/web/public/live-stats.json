@@ -1,12 +1,92 @@
 {
-  "initialEquity": 2439.18195455,
-  "currentEquity": 2556.01359838,
-  "pnl": 116.83,
-  "pnlPercent": 4.7898,
-  "roi": 0,
-  "runtime": 99.3,
-  "timestamp": 1767581957010,
+  "initialEquity": 2100.02718191,
+  "currentEquity": 1955.07265346,
+  "pnl": -144.95,
+  "pnlPercent": -6.9025,
+  "roi": "-129815.10",
+  "runtime": 27.9,
+  "timestamp": 1767595241039,
   "recentActivity": [
+    {
+      "hash": "0x346fa80f1a7818ae33bf0611a52e0256ffd2dd9ee185ca470bca73cf8f948f7b",
+      "action": "MATH_EXEC",
+      "details": "BUY BTCUSDT",
+      "timestamp": 1767595223701,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x346fa80f1a7818ae33bf0611a52e0256ffd2dd9ee185ca470bca73cf8f948f7b",
+      "strategy": "L2 Order Flow Scalper",
+      "pnl": 0
+    },
+    {
+      "hash": "0x7f173395087735d1a0e2d3304f22422d80fd6b6ac40a2fd329f3aaacd2ded998",
+      "action": "MATH_EXEC",
+      "details": "SELL ETHUSDT",
+      "timestamp": 1767595173544,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x7f173395087735d1a0e2d3304f22422d80fd6b6ac40a2fd329f3aaacd2ded998",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0x231bf1bd6eefaa8acb13f2b039976a752a66d4e6dbb6742e97e1335876302da9",
+      "action": "MATH_EXEC",
+      "details": "BUY BTCUSDT",
+      "timestamp": 1767595081172,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x231bf1bd6eefaa8acb13f2b039976a752a66d4e6dbb6742e97e1335876302da9",
+      "strategy": "L2 Order Flow Scalper",
+      "pnl": 0
+    },
+    {
+      "hash": "0x1622b3441c4d05a180ca80a92c66725d120e56bee0680894c8d88ecebf2fc305",
+      "action": "MATH_EXEC",
+      "details": "SELL ETHUSDT",
+      "timestamp": 1767595027146,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x1622b3441c4d05a180ca80a92c66725d120e56bee0680894c8d88ecebf2fc305",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0x26fe4aa0fa2a5f63bcbbcfa5a6c4165730932675be451f81b8362fdbac095f43",
+      "action": "MATH_EXEC",
+      "details": "SELL SOLUSDT",
+      "timestamp": 1767595003707,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x26fe4aa0fa2a5f63bcbbcfa5a6c4165730932675be451f81b8362fdbac095f43",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0x1464b39bd0ab43f9e666d476a8b76081910c6fc455e1bcce7c201e481ea09ce7",
+      "action": "MATH_EXEC",
+      "details": "BUY BTCUSDT",
+      "timestamp": 1767594879201,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x1464b39bd0ab43f9e666d476a8b76081910c6fc455e1bcce7c201e481ea09ce7",
+      "strategy": "L2 Order Flow Scalper",
+      "pnl": 0
+    },
+    {
+      "hash": "0x1d529008389110ddcf35304f9c5a581de90871bfcf6da62caf976cd259bcf84b",
+      "action": "MATH_EXEC",
+      "details": "SELL ETHUSDT",
+      "timestamp": 1767594824422,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x1d529008389110ddcf35304f9c5a581de90871bfcf6da62caf976cd259bcf84b",
+      "strategy": "Vortex Mean Reversion",
+      "pnl": 0
+    },
+    {
+      "hash": "0xde188c6c65433e97ee1fe6eb58ccb9eb19055a7c94d264bdc96ddb960e82824e",
+      "action": "MATH_EXEC",
+      "details": "BUY BTCUSDT",
+      "timestamp": 1767594755188,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xde188c6c65433e97ee1fe6eb58ccb9eb19055a7c94d264bdc96ddb960e82824e",
+      "strategy": "L2 Order Flow Scalper",
+      "pnl": 0
+    },
     {
       "hash": "0xe4a584df0af834cd2e3bf2b6994f08d1298f3c1bc2fe58441bd7638b56ab5974",
       "action": "MATH_EXEC",
@@ -3088,6 +3168,206 @@
       "name": "Titan Neural Local",
       "risk": "HIGH",
       "winRate": 0.6
+    },
+    {
+      "name": "Quantum Momentum",
+      "risk": "MED",
+      "winRate": 0.72
+    },
+    {
+      "name": "Vortex Mean Reversion",
+      "risk": "MED",
+      "winRate": 0.68
+    },
+    {
+      "name": "L2 Order Flow Scalper",
+      "risk": "HIGH",
+      "winRate": 0.75
     }
-  ]
+  ],
+  "marketData": {
+    "symbol": "cmt_solusdt",
+    "price": 135.31,
+    "depth": {
+      "asks": [
+        [
+          "135.32",
+          "2481.7"
+        ],
+        [
+          "135.33",
+          "2973.3"
+        ],
+        [
+          "135.34",
+          "2417.7"
+        ],
+        [
+          "135.36",
+          "2471.5"
+        ],
+        [
+          "135.37",
+          "4537.5"
+        ],
+        [
+          "135.39",
+          "2632.8"
+        ],
+        [
+          "135.40",
+          "2693.0"
+        ],
+        [
+          "135.42",
+          "453.6"
+        ],
+        [
+          "135.44",
+          "512.1"
+        ],
+        [
+          "135.45",
+          "548.6"
+        ],
+        [
+          "135.47",
+          "520.0"
+        ],
+        [
+          "135.49",
+          "490.0"
+        ],
+        [
+          "135.50",
+          "1.6"
+        ],
+        [
+          "135.51",
+          "506.5"
+        ],
+        [
+          "135.52",
+          "496.7"
+        ]
+      ],
+      "bids": [
+        [
+          "135.31",
+          "2853.1"
+        ],
+        [
+          "135.30",
+          "2855.9"
+        ],
+        [
+          "135.28",
+          "2675.6"
+        ],
+        [
+          "135.27",
+          "2463.7"
+        ],
+        [
+          "135.26",
+          "2611.7"
+        ],
+        [
+          "135.24",
+          "2403.8"
+        ],
+        [
+          "135.22",
+          "2705.5"
+        ],
+        [
+          "135.20",
+          "2866.3"
+        ],
+        [
+          "135.19",
+          "2629.0"
+        ],
+        [
+          "135.17",
+          "2916.1"
+        ],
+        [
+          "135.15",
+          "2964.9"
+        ],
+        [
+          "135.14",
+          "569.5"
+        ],
+        [
+          "135.12",
+          "381.4"
+        ],
+        [
+          "135.11",
+          "544.4"
+        ],
+        [
+          "135.09",
+          "299.9"
+        ]
+      ],
+      "timestamp": "1767595238187"
+    },
+    "candles": [
+      [
+        "1767508200000",
+        "134.36",
+        "134.54",
+        "133.70",
+        "133.82",
+        "33041.6",
+        "4431980.665"
+      ],
+      [
+        "1767507300000",
+        "134.52",
+        "134.94",
+        "134.21",
+        "134.36",
+        "33202.2",
+        "4467999.911"
+      ],
+      [
+        "1767506400000",
+        "134.50",
+        "134.75",
+        "134.30",
+        "134.52",
+        "29488.4",
+        "3966944.327"
+      ],
+      [
+        "1767505500000",
+        "134.27",
+        "134.50",
+        "134.24",
+        "134.50",
+        "24407.9",
+        "3280341.254"
+      ],
+      [
+        "1767504600000",
+        "134.46",
+        "134.54",
+        "134.22",
+        "134.27",
+        "25390.4",
+        "3411869.485"
+      ]
+    ]
+  },
+  "latestSignal": {
+    "symbol": "cmt_solusdt",
+    "action": "HOLD",
+    "confidence": 0.5,
+    "reasoning": "RSI Strong (55.2), Trend Bullish, Orders: Slight Sell, Math Neutral",
+    "timestamp": 1767595240025
+  }
 }

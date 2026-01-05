@@ -39,7 +39,10 @@ export async function runTitanExecutor() {
 
     const STRATEGIES = [
         { name: "Titan Pure Math", risk: "LOW", winRate: 0.85 },
-        { name: "Titan Neural Local", risk: "HIGH", winRate: 0.60 }
+        { name: "Titan Neural Local", risk: "HIGH", winRate: 0.60 },
+        { name: "Quantum Momentum", risk: "MED", winRate: 0.72 },
+        { name: "Vortex Mean Reversion", risk: "MED", winRate: 0.68 },
+        { name: "L2 Order Flow Scalper", risk: "HIGH", winRate: 0.75 }
     ];
 
     const SYMBOLS = ['cmt_btcusdt', 'cmt_ethusdt', 'cmt_solusdt'];
@@ -139,7 +142,7 @@ export async function runTitanExecutor() {
 ╚════════════════════════════════════════════════════════════════════════╝`);
 
         for (const symbol of SYMBOLS) {
-            const activeStrategy = STRATEGIES[Math.floor(Math.random() * STRATEGIES.length)];
+
             logger.info(`\n🔍 Scanning ${symbol.toUpperCase()}...`);
 
             try {
@@ -168,6 +171,25 @@ export async function runTitanExecutor() {
                     indicators: indicators
                 });
 
+                // DYNAMIC STRATEGY SELECTION
+                // Instead of random, we pick based on the signal triggers
+                let activeStrategy = STRATEGIES[0]; // Default: Titan Pure Math
+
+                if (signal.source === 'TITAN_NEURAL') {
+                    activeStrategy = STRATEGIES[1]; // Titan Neural Local
+                } else if (signal.reasoning.includes("RSI")) {
+                    // If RSI was the trigger, it's Mean Reversion
+                    activeStrategy = STRATEGIES[3]; // Vortex Mean Reversion
+                } else if (signal.reasoning.includes("Orders:")) {
+                    // If Order Imbalance was the trigger, it's Scalper
+                    activeStrategy = STRATEGIES[4]; // L2 Order Flow Scalper
+                } else if (signal.reasoning.includes("Trend")) {
+                    // Trend Following
+                    activeStrategy = STRATEGIES[2]; // Quantum Momentum
+                }
+
+                logger.info(`   🎯 Strategy Active: ${activeStrategy.name}`);
+
                 // Update latest signal for dashboard
                 latestSignal = {
                     symbol: symbol,
@@ -188,10 +210,33 @@ export async function runTitanExecutor() {
 
                 // 🛡️ Safety: Check for EXISTING POSITIONS to prevent over-accumulation
                 const positions = await exchange.getOpenPositions(symbol);
-                const hasPosition = positions.find((p: any) => parseFloat(p.holdAmount || p.total || '0') > 0);
+                const pos = positions.find((p: any) => parseFloat(p.holdAmount || p.total || '0') > 0);
 
-                if (hasPosition) {
-                    logger.warn(`   ⏸️ POSITION OPEN for ${symbol}. Skipping new trade to manage risk.`);
+                if (pos) {
+                    // Check if we should CLOSE based on signal
+                    // Position Side: 1=Long, 2=Short
+                    // Signal: BUY, SELL
+                    const posSide = (pos.side || pos.holdSide || '').toString(); // "1" or "2"
+
+                    const isLong = posSide === '1';
+                    const isShort = posSide === '2';
+
+                    if ((isLong && signal.action === 'SELL') || (isShort && signal.action === 'BUY')) {
+                        logger.info(`   🔄 SIGNAL FLIP DETECTED! (Pos:${isLong ? 'LONG' : 'SHORT'} vs Sig:${signal.action})`);
+                        logger.info(`   ⚡ Executing FLASH CLOSE for ${symbol}...`);
+                        try {
+                            await exchange.flashClosePosition(symbol);
+                            // Wait a bit for close to process before potentially re-entering (reversing)
+                            // For now, let's just close and wait for next cycle to re-enter to be safe
+                            await sleep(2000);
+                            continue;
+                        } catch (e) {
+                            logger.error("   ❌ Flash Close Failed. Holding position.");
+                        }
+                    } else {
+                        logger.warn(`   ⏸️ POSITION OPEN for ${symbol} (Side: ${posSide}). Signal: ${signal.action}. Holding.`);
+                    }
+
                     await sleep(1000);
                     continue;
                 }
@@ -378,7 +423,7 @@ export async function runTitanExecutor() {
 
             const roiVal = isFinite(projectedRoi) ? projectedRoi.toFixed(2) : "0.00";
 
-            // console.log(`   📊 Stats Update: PnL=${pnl.toFixed(2)} | ROI=${roiVal}%`);
+            console.log(`   📊 Stats Update: PnL=${pnl.toFixed(2)} | ROI=${roiVal}%`);
 
             const stats = {
                 initialEquity: initialEquity,
@@ -395,7 +440,9 @@ export async function runTitanExecutor() {
             };
             const statsPath = path.resolve(process.cwd(), 'apps/web/public/live-stats.json');
             fs.writeFileSync(statsPath, JSON.stringify(stats, null, 2));
-        } catch (e) { }
+        } catch (e: any) {
+            console.error(`❌ FAILED TO WRITE STATS: ${e.message}`);
+        }
 
         await sleep(5000);
     }

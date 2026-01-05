@@ -237,6 +237,37 @@ export class WeexClient {
     }
 
     /**
+     * Flash Close Position
+     * Uses the /capi/v2/order/closePositions endpoint (Bypasses some WAF blocks on placeOrder)
+     */
+    async flashClosePosition(symbol: string) {
+        if (this.mode === 'mock') {
+            logger.info(`[MOCK] Flash Closed Position for ${symbol}`);
+            return { success: true };
+        }
+
+        try {
+            const endpoint = "/capi/v2/order/closePositions";
+            const body = {
+                symbol,
+                client_oid: `flash_${Date.now()}`
+            };
+
+            logger.info(`[WEEX] ⚡ FLASH CLOSING position for ${symbol}...`);
+            const response = await this.sendSignedRequest('POST', endpoint, body);
+
+            logger.info(`[WEEX] Flash Close Response: ${JSON.stringify(response.data)}`);
+            return response.data;
+        } catch (error: any) {
+            logger.error(`[WEEX] Flash Close Failed for ${symbol}: ${error.message}`);
+            if (axios.isAxiosError(error) && error.response) {
+                logger.error(`   Details: ${JSON.stringify(error.response.data)}`);
+            }
+            throw error;
+        }
+    }
+
+    /**
      * Upload AI Analysis Log (REQUIRED FOR HACKATHON COMPLIANCE)
      * Endpoint: /capi/v2/order/uploadAiLog
      */

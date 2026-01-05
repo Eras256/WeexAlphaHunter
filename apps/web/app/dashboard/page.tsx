@@ -187,24 +187,40 @@ export default function DashboardPage() {
                         </div>
 
                         {/* Active Strategies List */}
-                        <div className="bg-gray-900/50 border border-white/10 rounded-xl p-6 backdrop-blur-sm flex-1">
+                        <div className="bg-gray-900/50 border border-white/10 rounded-xl p-6 backdrop-blur-sm flex-1 flex flex-col">
                             <h3 className="text-sm text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
                                 <Activity className="w-4 h-4 text-purple-400" /> Active Strategies
                             </h3>
-                            <div className="space-y-3">
-                                <div className="flex justify-between items-center text-xs">
-                                    <span className="text-white">Titan Pure Neural</span>
-                                    <span className="text-green-400 font-mono">ACTIVE</span>
-                                </div>
-                                <div className="flex justify-between items-center text-xs">
-                                    <span className="text-white">Math Verification</span>
-                                    <span className="text-green-400 font-mono">ACTIVE</span>
-                                </div>
-                                <div className="w-full bg-gray-800 h-1 rounded-full mt-2 overflow-hidden">
-                                    <div className="bg-purple-500 h-full w-[100%] animate-pulse"></div>
-                                </div>
-                                <p className="text-[10px] text-gray-500 text-right mt-1">Allocation: 100% Active</p>
+                            <div className="space-y-3 flex-1 overflow-y-auto max-h-[160px] pr-2 custom-scrollbar">
+                                {liveData?.activeStrategiesList ? (
+                                    liveData.activeStrategiesList.map((strat: any, idx: number) => (
+                                        <div key={idx} className="flex justify-between items-center text-xs group hover:bg-white/5 p-1.5 rounded transition">
+                                            <span className="text-white font-medium">{strat.name}</span>
+                                            <div className="text-right">
+                                                <span className={`text-[10px] uppercase font-bold px-1.5 py-0.5 rounded ${strat.risk === 'HIGH' ? 'bg-red-500/20 text-red-400' : strat.risk === 'MED' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-green-500/20 text-green-400'}`}>
+                                                    {strat.risk} RISK
+                                                </span>
+                                            </div>
+                                        </div>
+                                    ))
+                                ) : (
+                                    // Fallback / Loading State
+                                    <>
+                                        <div className="flex justify-between items-center text-xs">
+                                            <span className="text-white">Titan Pure Neural</span>
+                                            <span className="text-green-400 font-mono">ACTIVE</span>
+                                        </div>
+                                        <div className="flex justify-between items-center text-xs">
+                                            <span className="text-white">Math Verification</span>
+                                            <span className="text-green-400 font-mono">ACTIVE</span>
+                                        </div>
+                                    </>
+                                )}
                             </div>
+                            <div className="w-full bg-gray-800 h-1 rounded-full mt-4 overflow-hidden">
+                                <div className="bg-purple-500 h-full w-[100%] animate-pulse"></div>
+                            </div>
+                            <p className="text-[10px] text-gray-500 text-right mt-1">Allocation: Dynamic / AI Managed</p>
                         </div>
                     </div>
                 </div>
