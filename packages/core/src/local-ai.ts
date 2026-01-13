@@ -113,38 +113,40 @@ export class LocalIntelligence {
         let score = 0;
         const reasons: string[] = [];
 
-        // RSI Logic (Relaxed for Demo)
-        if (rsi < 30) { score += 3; reasons.push(`RSI Oversold (${rsi.toFixed(1)})`); }
-        else if (rsi < 45) { score += 2; reasons.push(`RSI Weak (${rsi.toFixed(1)})`); }
-        else if (rsi > 70) { score -= 3; reasons.push(`RSI Overbought (${rsi.toFixed(1)})`); }
-        else if (rsi > 55) { score -= 2; reasons.push(`RSI Strong (${rsi.toFixed(1)})`); }
+        // RSI Logic (Stricter for "Sniper Mode")
+        if (rsi < 25) { score += 4; reasons.push(`RSI Collapsed (${rsi.toFixed(1)})`); } // Extreme Oversold
+        else if (rsi < 30) { score += 2; reasons.push(`RSI Oversold (${rsi.toFixed(1)})`); }
+        else if (rsi > 75) { score -= 4; reasons.push(`RSI Sky High (${rsi.toFixed(1)})`); }
+        else if (rsi > 70) { score -= 2; reasons.push(`RSI Overbought (${rsi.toFixed(1)})`); }
 
-        // Trend Logic
+        // Trend Logic (The "Iron Rule")
         if (trend === 1) { score += 1; reasons.push("Trend Bullish"); }
-        else if (trend === -1) { score -= 1; reasons.push("Trend Bearish"); }
+        else if (trend === -1) { score -= 2; reasons.push("Trend Bearish"); } // Heavily penalize fighting the trend
 
-        // Imbalance (Sensitive)
-        if (imbalance > 0.15) { score += 2; reasons.push("Orders: Buy Pressure"); }
-        else if (imbalance > 0.05) { score += 1; reasons.push("Orders: Slight Buy"); }
-        else if (imbalance < -0.15) { score -= 2; reasons.push("Orders: Sell Pressure"); }
-        else if (imbalance < -0.05) { score -= 1; reasons.push("Orders: Slight Sell"); }
+        // Imbalance (Require stronger signals)
+        if (imbalance > 0.30) { score += 2; reasons.push("Orders: Strong Buy Wall"); }
+        else if (imbalance < -0.30) { score -= 2; reasons.push("Orders: Strong Sell Wall"); }
 
-        // Decision (Threshold lowered to 3)
+        // Decision (Threshold raised to 4 for safer entries)
         let action = 'HOLD';
         let confidence = 0.5;
 
-        // Bias towards Trend if RSI is neutral
-        if (reasons.includes("Trend Bullish") && score >= 2) score += 1; // Boost Bullish Trend
-        if (reasons.includes("Trend Bearish") && score <= -2) score -= 1; // Boost Bearish Trend
+        // SAFETY FILTER: Never BUY in Bearish Trend unless RSI is screaming cheap
+        if (reasons.includes("Trend Bearish") && score > 0) {
+            if (rsi > 28) {
+                score = 0; // Nullify buy signal
+                reasons.push("[SAFETY] Trend Filter Block");
+            }
+        }
 
-        if (score >= 3) {
+        if (score >= 4) {
             action = 'BUY';
-            confidence = Math.min(0.6 + (score * 0.1), 0.95);
-        } else if (score <= -3) {
+            confidence = Math.min(0.7 + (score * 0.05), 0.99);
+        } else if (score <= -4) {
             action = 'SELL';
-            confidence = Math.min(0.6 + (Math.abs(score) * 0.1), 0.95);
+            confidence = Math.min(0.7 + (Math.abs(score) * 0.05), 0.99);
         } else {
-            reasons.push("Math Neutral");
+            reasons.push("Wait for Setup");
         }
 
         return { action, confidence, reasoning: reasons.join(', ') };

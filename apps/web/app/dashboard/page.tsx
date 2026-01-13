@@ -86,7 +86,7 @@ export default function DashboardPage() {
                                     UNUM Mission Control
                                 </h1>
                                 <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-500/20 text-purple-400 border border-purple-500/30 uppercase tracking-widest">
-                                    TITAN V1 LIVE
+                                    TITAN V2 NEURO-SYMBOLIC
                                 </span>
                             </div>
                             <p className="text-gray-400 max-w-xl">
@@ -153,31 +153,63 @@ export default function DashboardPage() {
                         <div className="flex items-center justify-between mb-6">
                             <h3 className="text-xl font-bold flex items-center gap-2">
                                 <Brain className="w-5 h-5 text-purple-400" />
-                                Titan Hybrid Engine Status
+                                Titan Neuro-Symbolic Architecture
                             </h3>
                             <Link href="/platform/ai-engine" className="text-xs text-purple-400 hover:text-purple-300 flex items-center gap-1">
-                                View Architecture <ExternalLink className="w-3 h-3" />
+                                View Whitepaper <ExternalLink className="w-3 h-3" />
                             </Link>
                         </div>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                            <ModelStatusBadge name="Titan Neural" role="Reasoning" status="online" ping="5ms" />
-                            <ModelStatusBadge name="Math Module" role="Technical" status="online" ping="1ms" />
-                            <ModelStatusBadge name="DeepSeek" role="Logic" status="standby" ping="120ms" />
-                            <ModelStatusBadge name="Gemini" role="Context" status="standby" ping="85ms" />
-                            <ModelStatusBadge name="Llama 3.1" role="Speed" status="online" ping="15ms" />
-                            <ModelStatusBadge name="Qwen 2.5" role="Backup" status="standby" ping="110ms" />
+
+                        {/* Cognitive Layer (AI) */}
+                        <div className="mb-6">
+                            <h4 className="text-xs text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                                <Zap className="w-3 h-3 text-orange-400" /> Cognitive Layer (Groq LPU Acceleration)
+                            </h4>
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                <ModelStatusBadge name="Llama 3.1 8B" role="Strategist" status="online" ping="12ms" />
+                                <ModelStatusBadge name="DeepSeek Math" role="Quant Logic" status="online" ping="145ms" />
+                                <ModelStatusBadge name="Mistral Large" role="Risk Guardian" status="online" ping="138ms" />
+                                <ModelStatusBadge name="Titan Neural" role="Local Fallback" status="online" ping="1ms" />
+                                <ModelStatusBadge name="MoA Consensus" role="Aggregator" status="online" ping="45ms" />
+                                <ModelStatusBadge name="Gemini 1.5" role="Context" status="standby" ping="88ms" />
+                            </div>
                         </div>
 
-                        <div className="mt-6 pt-6 border-t border-white/5">
-                            <h4 className="text-xs text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                                <Zap className="w-3 h-3 text-orange-400" />
-                                Active Groq LPU Swarm (Llama 3.1)
+                        {/* Deterministic Layer (Logic) */}
+                        <div className="pt-4 border-t border-white/5">
+                            <h4 className="text-xs text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                                <Shield className="w-3 h-3 text-cyan-400" /> Neuro-Symbolic Safety Layer
                             </h4>
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                <ModelStatusBadge name="Quant Agent" role="Technical" status="online" ping="142ms" />
-                                <ModelStatusBadge name="Macro Strategy" role="Strategic" status="online" ping="138ms" />
-                                <ModelStatusBadge name="Risk Guardian" role="Safety" status="online" ping="145ms" />
-                                <ModelStatusBadge name="MoA Consensus" role="Aggregator" status="online" ping="155ms" />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="p-3 bg-cyan-900/10 border border-cyan-500/30 rounded-lg flex items-center justify-between">
+                                    <div className="flex items-center gap-3">
+                                        <div className="p-2 bg-cyan-500/20 rounded">
+                                            <Lock className="w-4 h-4 text-cyan-400" />
+                                        </div>
+                                        <div>
+                                            <div className="text-sm font-bold text-white">Symbolic Logic Engine</div>
+                                            <div className="text-[10px] text-gray-400">Prolog Validation Rules</div>
+                                        </div>
+                                    </div>
+                                    <div className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-bold rounded uppercase">
+                                        Active
+                                    </div>
+                                </div>
+
+                                <div className="p-3 bg-blue-900/10 border border-blue-500/30 rounded-lg flex items-center justify-between">
+                                    <div className="flex items-center gap-3">
+                                        <div className="p-2 bg-blue-500/20 rounded">
+                                            <Database className="w-4 h-4 text-blue-400" />
+                                        </div>
+                                        <div>
+                                            <div className="text-sm font-bold text-white">Dual-Chain Audit</div>
+                                            <div className="text-[10px] text-gray-400">Base L2 + Eth L1 Anchoring</div>
+                                        </div>
+                                    </div>
+                                    <div className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs font-bold rounded uppercase">
+                                        Live
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -419,7 +451,7 @@ export default function DashboardPage() {
                 </div>
 
             </div>
-        </div>
+        </div >
     );
 }
 

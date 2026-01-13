@@ -1,4 +1,5 @@
 import { OpenRouterClient } from '../../core/src/openrouter-client.js';
+import { symbolicGuardrails } from '../../core/src/symbolic-guardrails.js';
 import { GroqClient } from '../../core/src/groq-client.js';
 // Gemini import removed/unused
 import { keccak256 } from 'ethers';
@@ -136,23 +137,27 @@ Instructions:
         };
     } catch (e) {
         // Fallback if aggregator fails - Simple Majority Vote of Local + Strategy
+        // Fallback if aggregator fails - Check for partial consensus
         const localAction = p.local?.action || 'HOLD';
+        const strategyMissing = !p.strategy; // If Groq failed completely
         const strategyAction = p.strategy?.action || 'HOLD';
 
-        // If Logic and Strategy agree, go with it
-        if (localAction !== 'HOLD' && localAction === strategyAction) {
+        // Logic: Execute if Local & Strategy agree, OR if Strategy is dead (Offline Mode)
+        if (localAction !== 'HOLD' && (localAction === strategyAction || strategyMissing)) {
             return {
                 action: localAction,
-                confidence: 0.75,
-                reasoning: `Titan Aggegator Offline. Fallback Consensus: Local (${localAction}) + Strategy (${strategyAction}) matched.`,
-                modelUsed: "Titan_Fallback_V2"
+                confidence: strategyMissing ? 0.55 : 0.75, // Lower confidence if flying blind
+                reasoning: strategyMissing
+                    ? `Titan Offline Mode: Executing Neural Core (Local) signal ${localAction} as Groq is unreachable.`
+                    : `Titan Aggregator Offline. Fallback Consensus: Local (${localAction}) + Strategy (${strategyAction}) matched.`,
+                modelUsed: strategyMissing ? "Titan_Local_Solo" : "Titan_Fallback_V2"
             };
         }
 
         return {
             action: 'HOLD',
             confidence: 0,
-            reasoning: "Aggregator connection failed and no majority consensus found.",
+            reasoning: "Aggregator connection failed and insufficient consensus for fallback.",
             modelUsed: "Titan_Fallback_Safety"
         };
     }

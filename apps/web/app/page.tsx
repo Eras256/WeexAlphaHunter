@@ -13,35 +13,36 @@ export default function Home() {
             <section className="relative h-[90vh] flex flex-col items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/40 via-black to-black z-0" />
 
-                <div className="z-10 text-center space-y-6 max-w-4xl px-4">
+                <div className="z-10 text-center space-y-6 max-w-5xl px-4">
                     <div className="flex items-center justify-center gap-3 mb-4">
                         <span className="px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-400 text-xs font-mono tracking-wider uppercase">
                             WEEX Alpha Awakens Finalist
                         </span>
-                        <span className="px-3 py-1 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 text-xs font-mono tracking-wider uppercase">
-                            Council of 6 AI Models
+                        <span className="px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-mono tracking-wider uppercase">
+                            Neuro-Symbolic Architecture
+                        </span>
+                        <span className="px-3 py-1 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-xs font-mono tracking-wider uppercase">
+                            Groq LPU Acceleration
                         </span>
                     </div>
 
                     <h1 className="text-6xl md:text-8xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-white via-gray-200 to-gray-500">
-                        WAlphaHunter
+                        WAlphaHunter V2
                     </h1>
 
                     <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                        The world's first <span className="text-purple-400 font-bold">Trading Proof-of-Work</span> system.
-                        Powered by the <span className="text-emerald-400 font-bold">Titan Hybrid Neural Network</span> (HNN) & Council of 6 Consensus.
-                        <br className="hidden md:block" />
-                        Executed on <span className="text-cyan-400 font-bold">Base L2</span>. Settled on <span className="text-gray-300 font-bold">Ethereum L1</span>.
+                        The world's first <span className="text-purple-400 font-bold">Unstoppable Financial Agent</span>.
+                        Combines <span className="text-emerald-400 font-bold">Groq-Powered LLMs</span> (Speed) with <span className="text-cyan-400 font-bold">Symbolic Logic</span> (Safety) and <span className="text-blue-400 font-bold">OpML Blockchain Audit</span> (Trust).
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
                         <Link href="/dashboard" className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold rounded-lg transition flex items-center justify-center gap-2">
                             <TrendingUp className="w-5 h-5" />
-                            View Dashboard
+                            Launch Mission Control
                         </Link>
                         <Link href="/platform/ai-engine" className="px-8 py-4 border border-white/20 hover:bg-white/5 rounded-lg text-white font-medium transition flex items-center justify-center gap-2">
                             <Brain className="w-5 h-5" />
-                            Explore UNUM AI
+                            Read Architecture Whitepaper
                         </Link>
                     </div>
                 </div>
@@ -54,32 +55,32 @@ export default function Home() {
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 border border-green-500/30 rounded-full mb-4">
                             <div className={`w-2 h-2 rounded-full ${stats.isConnected ? 'bg-green-400 animate-pulse' : 'bg-red-400'}`} />
                             <span className={`text-sm font-medium ${stats.isConnected ? 'text-green-400' : 'text-red-400'}`}>
-                                {stats.isConnected && stats.sepoliaStats?.isConnected ? 'HYBRID ARCHITECTURE: ACTIVE' : stats.isConnected ? 'BASE L2: ACTIVE' : 'CONNECTING...'}
+                                {stats.isConnected && stats.sepoliaStats?.isConnected ? 'HYBRID NET: ONLINE' : 'CONNECTING...'}
                             </span>
                         </div>
-                        <h2 className="text-3xl font-bold mb-2">Dual-Layer Verification</h2>
-                        <p className="text-gray-400">Execution on Base L2 • Settlement on Ethereum L1</p>
+                        <h2 className="text-3xl font-bold mb-2">Dual-Chain Proof of Inference (OpML)</h2>
+                        <p className="text-gray-400">High-Frequency Verification (Base L2) + Final Settlement Anchoring (Ethereum L1)</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                         <MetricCard
                             icon={<Shield className="w-6 h-6" />}
-                            label="Total Trades Verified"
+                            label="Trades Verified (L2)"
                             value={stats.totalTrades.toLocaleString()}
-                            sub="Recorded on Base Sepolia & Eth L1"
+                            sub="Base Sepolia (Latency < 2s)"
                             color="text-blue-400"
                         />
                         <MetricCard
                             icon={<Brain className="w-6 h-6" />}
-                            label="AI Consensus Decisions"
-                            value={stats.totalDecisions.toLocaleString()}
-                            sub="6-Model voting system"
-                            color="text-purple-400"
+                            label="Logic Gates Passed"
+                            value={(stats.totalDecisions * 4).toLocaleString()}
+                            sub="Neuro-Symbolic Validation"
+                            color="text-cyan-400"
                         />
                         <MetricCard
                             icon={<Zap className="w-6 h-6" />}
-                            label="System Uptime"
-                            value="100%"
-                            sub="Guaranteed by local fallback"
+                            label="Inference Speed"
+                            value="820 t/s"
+                            sub="Groq LPU Cluster (Real-time)"
                             color="text-green-400"
                         />
                     </div>
@@ -91,32 +92,47 @@ export default function Home() {
                             className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all"
                         >
                             <ExternalLink className="w-4 h-4" />
-                            <span>View Contract on BaseScan</span>
+                            <span>Verify Contract on BaseScan</span>
                         </a>
                     </div>
                 </div>
             </section>
 
-            {/* 3. THE COUNCIL OF 6 - AI Models Showcase */}
+            {/* 3. THE COGNITIVE TRIAD - AI Models Showcase */}
             <section className="py-24 border-t border-white/10 bg-gradient-to-b from-black to-purple-900/10">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold mb-2">The Council of 6 AI Models</h2>
-                        <p className="text-gray-400">Multi-model consensus for unparalleled accuracy</p>
+                        <h2 className="text-3xl font-bold mb-2">The Cognitive Triad (Mixture-of-Agents)</h2>
+                        <p className="text-gray-400">Collaborative intelligence powered by specialized agents</p>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
-                        <AIModelBadge name="DeepSeek" role="Logic" color="emerald" />
-                        <AIModelBadge name="Gemini" role="Context" color="blue" />
-                        <AIModelBadge name="Llama" role="Speed" color="purple" />
-                        <AIModelBadge name="Mixtral" role="Generalist" color="orange" />
-                        <AIModelBadge name="Qwen" role="Backup" color="cyan" />
-                        <AIModelBadge name="Math Engine" role="Fallback" color="yellow" />
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                        <div className="bg-emerald-900/10 border border-emerald-500/20 p-6 rounded-xl text-center hover:border-emerald-500/50 transition">
+                            <h3 className="text-xl font-bold text-emerald-400 mb-1">DeepSeek Math</h3>
+                            <p className="text-xs uppercase tracking-widest text-gray-500 mb-4">Quantitative Logic Engine</p>
+                            <p className="text-sm text-gray-300">Specialized in numerical precision, greeks calculation, and probability arbitrage.</p>
+                        </div>
+                        <div className="bg-purple-900/10 border border-purple-500/20 p-6 rounded-xl text-center hover:border-purple-500/50 transition transform scale-105 shadow-xl">
+                            <h3 className="text-xl font-bold text-purple-400 mb-1">Llama 3 Instruct</h3>
+                            <p className="text-xs uppercase tracking-widest text-gray-500 mb-4">Strategic Orchestrator</p>
+                            <p className="text-sm text-gray-300">Synthesizes data, directs the debate, and makes the final execution decision.</p>
+                        </div>
+                        <div className="bg-orange-900/10 border border-orange-500/20 p-6 rounded-xl text-center hover:border-orange-500/50 transition">
+                            <h3 className="text-xl font-bold text-orange-400 mb-1">Mistral Large</h3>
+                            <p className="text-xs uppercase tracking-widest text-gray-500 mb-4">Risk & Context</p>
+                            <p className="text-sm text-gray-300">Analyzes long-context market sentiment and macro-economic tail risks.</p>
+                        </div>
                     </div>
-                    <div className="text-center">
-                        <Link href="/platform/ai-engine" className="inline-flex items-center gap-2 px-6 py-3 bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 rounded-lg transition-all text-purple-300">
-                            <Brain className="w-4 h-4" />
-                            <span>Explore UNUM Consensus Engine</span>
-                        </Link>
+
+                    {/* Logic Layer Badge */}
+                    <div className="max-w-lg mx-auto bg-cyan-900/20 border border-cyan-500/40 p-4 rounded-lg flex items-center justify-between">
+                        <div className="flex items-center gap-4">
+                            <Shield className="w-8 h-8 text-cyan-400" />
+                            <div className="text-left">
+                                <h4 className="font-bold text-cyan-400">Symbolic Logic Guardrails</h4>
+                                <p className="text-xs text-gray-400">Deterministic Prolog Engine blocks all unsafe actions</p>
+                            </div>
+                        </div>
+                        <div className="h-2 w-2 bg-cyan-400 rounded-full animate-pulse"></div>
                     </div>
                 </div>
             </section>
@@ -264,20 +280,20 @@ export default function Home() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <FeatureCard
                             icon={<Brain className="w-8 h-8" />}
-                            title="UNUM AI Consensus"
-                            description="6 state-of-the-art AI models vote on every trade. DeepSeek for logic, Gemini for context, Llama for speed, Mixtral for diversity, Qwen as backup, and a local Math Engine guaranteeing 100% uptime."
+                            title="Neuro-Symbolic Architecture"
+                            description="Combines the creativity of LLMs (Llama, DeepSeek) with the absolute safety of Symbolic Logic (Prolog). The system 'thinks' creatively but acts deterministically."
                             color="purple"
                         />
                         <FeatureCard
                             icon={<Shield className="w-8 h-8" />}
-                            title="Hybrid On-Chain Proofs"
-                            description="High-frequency execution verification on Base L2 combined with high-value settlement anchoring on Ethereum L1. The best of speed and security."
+                            title="Dual-Chain OpML Audit"
+                            description="Every AI decision is cryptographically verified. Execution on Base L2 for speed, settlement on Ethereum L1 for immutable trust. Zero trust required."
                             color="blue"
                         />
                         <FeatureCard
-                            icon={<Twitter className="w-8 h-8" />}
-                            title="Social Intelligence"
-                            description="Real-time X (Twitter) sentiment analysis detects trends before mainstream news. Automated posting of profitable trades for full transparency and community trust."
+                            icon={<Zap className="w-8 h-8" />}
+                            title="Groq LPU Acceleration"
+                            description="Inference at 800+ tokens/second allows for real-time Multi-Agent Debate. The system debates, critiques, and refines strategies in milliseconds."
                             color="cyan"
                         />
                     </div>

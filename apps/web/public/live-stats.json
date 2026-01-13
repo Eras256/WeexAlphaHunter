@@ -1,697 +1,297 @@
 {
-  "initialEquity": 994.06768961,
-  "currentEquity": 994.98657739,
-  "pnl": 0.92,
-  "pnlPercent": 0.0924,
-  "roi": 1724.41,
-  "runtime": 28.2,
-  "timestamp": 1768267469625,
+  "initialEquity": 988.99659119,
+  "currentEquity": 985.70359535,
+  "pnl": -3.29,
+  "pnlPercent": -0.333,
+  "roi": -15348,
+  "runtime": 11.4,
+  "timestamp": 1768275518306,
   "recentActivity": [
     {
-      "hash": "0x6124ccaa25cdbd795d88b8913076dbcf280ff6a97af2baa52c88acfb1e1f53ca",
+      "hash": "0x72f925f4dfa2ae736de5f41ad01e01db87771fef6e338f49da67145b1ab3308a",
       "action": "SETTLE_TRADE",
       "details": "L1 Verified: BUY BTCUSDT",
-      "timestamp": 1768267460139,
+      "timestamp": 1768275354447,
       "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x6124ccaa25cdbd795d88b8913076dbcf280ff6a97af2baa52c88acfb1e1f53ca",
-      "strategy": "Gemini Sentiment",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x72f925f4dfa2ae736de5f41ad01e01db87771fef6e338f49da67145b1ab3308a",
+      "strategy": "Quantum Arbitrage Sniper",
       "pnl": 0
     },
     {
-      "hash": "0x899ce4131a8afdad60b225a89dfb97d984c218d7dc772c702423691264c8a28f",
+      "hash": "0x84cb590e622c572fbec784409b7d0d9db4ed01c2f281687d3de74e24125b16ba",
       "action": "ANCHOR_DECISION",
       "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1768267435101,
+      "timestamp": 1768275321266,
       "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x899ce4131a8afdad60b225a89dfb97d984c218d7dc772c702423691264c8a28f",
-      "strategy": "Gemini Sentiment",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x84cb590e622c572fbec784409b7d0d9db4ed01c2f281687d3de74e24125b16ba",
+      "strategy": "Quantum Arbitrage Sniper",
       "pnl": 0
     },
     {
-      "hash": "0x6c811f500570c9cc8c6a498e1162d7c532c7c1373ab461000b29bc3500b7de38",
+      "hash": "0x2889bcbc88d963500985f55ffee1d311242978cc8f2a0064dfd708fbf05d60a9",
       "action": "EXECUTE_TRADE",
-      "details": "BUY BTCUSDT @ 91368.8",
-      "timestamp": 1768267426240,
+      "details": "BUY BTCUSDT @ 91332.8",
+      "timestamp": 1768275304193,
       "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x6c811f500570c9cc8c6a498e1162d7c532c7c1373ab461000b29bc3500b7de38",
-      "strategy": "Gemini Sentiment",
-      "pnl": -97.66
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x2889bcbc88d963500985f55ffee1d311242978cc8f2a0064dfd708fbf05d60a9",
+      "strategy": "Quantum Arbitrage Sniper",
+      "pnl": 37.16
     },
     {
-      "hash": "0xf006f7c68e3af0ac58ba8a1d1382862bcbbdc4d2f402e1c7058c4dcab533bedb",
+      "hash": "0x112adbe5af899bcf34353d8d251af420485041962bf499d2f0b82c6a978f7575",
       "action": "SIGNAL_GEN",
       "details": "Consensus: BUY (Confidence 0.6%)",
-      "timestamp": 1768267421440,
+      "timestamp": 1768275299325,
       "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xf006f7c68e3af0ac58ba8a1d1382862bcbbdc4d2f402e1c7058c4dcab533bedb",
-      "strategy": "Gemini Sentiment",
-      "pnl": 0
-    },
-    {
-      "hash": "0x314135f69afb42953702704a7b4db386f66c0e8a93ee63b49b26cac2660324cb",
-      "action": "SETTLE_TRADE",
-      "details": "L1 Verified: BUY BTCUSDT",
-      "timestamp": 1768267373213,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x314135f69afb42953702704a7b4db386f66c0e8a93ee63b49b26cac2660324cb",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x112adbe5af899bcf34353d8d251af420485041962bf499d2f0b82c6a978f7575",
       "strategy": "Quantum Arbitrage Sniper",
       "pnl": 0
     },
     {
-      "hash": "0xdf84ccb9c530ea595bd57c8dfbb0cf030d7a9416a0ce9e4963b1fc4fe6a7fc2b",
-      "action": "ANCHOR_DECISION",
-      "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1768267360413,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0xdf84ccb9c530ea595bd57c8dfbb0cf030d7a9416a0ce9e4963b1fc4fe6a7fc2b",
-      "strategy": "Quantum Arbitrage Sniper",
-      "pnl": 0
-    },
-    {
-      "hash": "0xf0507b44af38ba7e2384552830761798326b5d97d9f6741d9b8ff9e4d2a9b6fb",
-      "action": "EXECUTE_TRADE",
-      "details": "BUY BTCUSDT @ 91372.8",
-      "timestamp": 1768267335257,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xf0507b44af38ba7e2384552830761798326b5d97d9f6741d9b8ff9e4d2a9b6fb",
-      "strategy": "Quantum Arbitrage Sniper",
-      "pnl": 89.81
-    },
-    {
-      "hash": "0x0d0d5414e3ec5ec9f3ddcab656a0a27df9dbf9037f12b57c7f41a69c1e8d909c",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: BUY (Confidence 0.54%)",
-      "timestamp": 1768267334679,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x0d0d5414e3ec5ec9f3ddcab656a0a27df9dbf9037f12b57c7f41a69c1e8d909c",
-      "strategy": "Quantum Arbitrage Sniper",
-      "pnl": 0
-    },
-    {
-      "hash": "0xb061112e1a349efbc67040f69bf9914b83f7c60ca420979657cca8409952612e",
-      "action": "SETTLE_TRADE",
-      "details": "L1 Verified: BUY ETHUSDT",
-      "timestamp": 1768267279774,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0xb061112e1a349efbc67040f69bf9914b83f7c60ca420979657cca8409952612e",
-      "strategy": "MetaPredict V1",
-      "pnl": 0
-    },
-    {
-      "hash": "0x751bc998cb7fc5a88823774c55a7c6443b56b017c393c6830c482a4021db04fd",
-      "action": "ANCHOR_DECISION",
-      "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1768267266988,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x751bc998cb7fc5a88823774c55a7c6443b56b017c393c6830c482a4021db04fd",
-      "strategy": "MetaPredict V1",
-      "pnl": 0
-    },
-    {
-      "hash": "0x341a388770355d6df7c0180c8afc3c6352682fab142f02564049ee82833c3740",
-      "action": "EXECUTE_TRADE",
-      "details": "BUY ETHUSDT @ 3107.83",
-      "timestamp": 1768267258160,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x341a388770355d6df7c0180c8afc3c6352682fab142f02564049ee82833c3740",
-      "strategy": "MetaPredict V1",
-      "pnl": -61.09
-    },
-    {
-      "hash": "0x7b8bd7efec955c94cbf6f896ab414bb038bc1f3a5a749ae7df9946f5d5ded8ae",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: BUY (Confidence 0.75%)",
-      "timestamp": 1768267257564,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x7b8bd7efec955c94cbf6f896ab414bb038bc1f3a5a749ae7df9946f5d5ded8ae",
-      "strategy": "MetaPredict V1",
-      "pnl": 0
-    },
-    {
-      "hash": "0x1f42e4dbff14f84223a22b11288b428cab5cd55db8f42e2a48807b3938545800",
-      "action": "SETTLE_TRADE",
-      "details": "L1 Verified: BUY ETHUSDT",
-      "timestamp": 1768267208757,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x1f42e4dbff14f84223a22b11288b428cab5cd55db8f42e2a48807b3938545800",
-      "strategy": "Neural Scalp V5",
-      "pnl": 0
-    },
-    {
-      "hash": "0xde6f325fb5f35755496b09333fddc68d719c2b55b4b5ebf041ad2fbe239eae22",
-      "action": "ANCHOR_DECISION",
-      "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1768267191898,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0xde6f325fb5f35755496b09333fddc68d719c2b55b4b5ebf041ad2fbe239eae22",
-      "strategy": "Neural Scalp V5",
-      "pnl": 0
-    },
-    {
-      "hash": "0x2e55494618a010d39523cfdf661932855744f1f5b7b33c2e365b7a3b56a44572",
-      "action": "EXECUTE_TRADE",
-      "details": "BUY ETHUSDT @ 3105.59",
-      "timestamp": 1768267166718,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x2e55494618a010d39523cfdf661932855744f1f5b7b33c2e365b7a3b56a44572",
-      "strategy": "Neural Scalp V5",
-      "pnl": -85.9
-    },
-    {
-      "hash": "0x7b25912c573d2644de0d9139b5d0482641a12a59c40c6f4a34e4f50ad53ec04f",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: BUY (Confidence 0.64%)",
-      "timestamp": 1768267161963,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x7b25912c573d2644de0d9139b5d0482641a12a59c40c6f4a34e4f50ad53ec04f",
-      "strategy": "Neural Scalp V5",
-      "pnl": 0
-    },
-    {
-      "hash": "0x3cddc4f2f484733c03ab055a68e2da57deafdc6ca9b891e80b19e9ddfe2ba153",
-      "action": "SETTLE_TRADE",
-      "details": "L1 Verified: SELL ETHUSDT",
-      "timestamp": 1768267096964,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x3cddc4f2f484733c03ab055a68e2da57deafdc6ca9b891e80b19e9ddfe2ba153",
-      "strategy": "Gemini Sentiment",
-      "pnl": 0
-    },
-    {
-      "hash": "0xad64105407914a91d6597e36b29493dbc6af6fed4edddb14f9112b3bebca37a7",
-      "action": "ANCHOR_DECISION",
-      "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1768267086534,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0xad64105407914a91d6597e36b29493dbc6af6fed4edddb14f9112b3bebca37a7",
-      "strategy": "Gemini Sentiment",
-      "pnl": 0
-    },
-    {
-      "hash": "0x5c9e2cd52b5fcd7501f33a7644a829f92ab84059a506907acf3adaead623d65b",
-      "action": "EXECUTE_TRADE",
-      "details": "SELL ETHUSDT @ 3109.57",
-      "timestamp": 1768267073601,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x5c9e2cd52b5fcd7501f33a7644a829f92ab84059a506907acf3adaead623d65b",
-      "strategy": "Gemini Sentiment",
-      "pnl": -53.34
-    },
-    {
-      "hash": "0x9bbb66dc1379e817e8a843fb8c739ab4a5720647d528f332407c37b945e1ec66",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: SELL (Confidence 0.7%)",
-      "timestamp": 1768267068758,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x9bbb66dc1379e817e8a843fb8c739ab4a5720647d528f332407c37b945e1ec66",
-      "strategy": "Gemini Sentiment",
-      "pnl": 0
-    },
-    {
-      "hash": "0x5871dc8bfc6030f0a0bb91113990cb5ea985e8a8be427140ce0d4f6a0b494faf",
-      "action": "SETTLE_TRADE",
-      "details": "L1 Verified: BUY BTCUSDT",
-      "timestamp": 1768267016449,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x5871dc8bfc6030f0a0bb91113990cb5ea985e8a8be427140ce0d4f6a0b494faf",
-      "strategy": "DeepSeek Momentum Alpha",
-      "pnl": 0
-    },
-    {
-      "hash": "0x951ac8c5a51aea59287abe17721fd10010d00936d0ef6388e66cde1e94c683c1",
-      "action": "ANCHOR_DECISION",
-      "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1768267001813,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x951ac8c5a51aea59287abe17721fd10010d00936d0ef6388e66cde1e94c683c1",
-      "strategy": "DeepSeek Momentum Alpha",
-      "pnl": 0
-    },
-    {
-      "hash": "0x11b687d94b3bedf4c97382f614da1a7ce7172dd1749cd66e1f735f5cbd5db13c",
-      "action": "EXECUTE_TRADE",
-      "details": "BUY BTCUSDT @ 91395.8",
-      "timestamp": 1768266983973,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x11b687d94b3bedf4c97382f614da1a7ce7172dd1749cd66e1f735f5cbd5db13c",
-      "strategy": "DeepSeek Momentum Alpha",
-      "pnl": 50.49
-    },
-    {
-      "hash": "0x2d8c8514f566d5fd297e2eb8df0c0267747ae595d0e81e47a02c5f8fdd238ec5",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: BUY (Confidence 0.6%)",
-      "timestamp": 1768266979192,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x2d8c8514f566d5fd297e2eb8df0c0267747ae595d0e81e47a02c5f8fdd238ec5",
-      "strategy": "DeepSeek Momentum Alpha",
-      "pnl": 0
-    },
-    {
-      "hash": "0x6b0f70944ec691b0885b5934ca101910ab1c26424b1d23e93a62dd6f0abd65c3",
-      "action": "SETTLE_TRADE",
-      "details": "L1 Verified: BUY BTCUSDT",
-      "timestamp": 1768266920530,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x6b0f70944ec691b0885b5934ca101910ab1c26424b1d23e93a62dd6f0abd65c3",
-      "strategy": "MetaPredict V1",
-      "pnl": 0
-    },
-    {
-      "hash": "0xc1a8dc7c24a3788eb3cc485f20a64e59e311fb40ba9469956a70f45daf8d458d",
-      "action": "ANCHOR_DECISION",
-      "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1768266895516,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0xc1a8dc7c24a3788eb3cc485f20a64e59e311fb40ba9469956a70f45daf8d458d",
-      "strategy": "MetaPredict V1",
-      "pnl": 0
-    },
-    {
-      "hash": "0x50d9882e3e8cb561feabede5abe86cc58198b93b69b6bcb64a4804c102230f13",
-      "action": "EXECUTE_TRADE",
-      "details": "BUY BTCUSDT @ 91414.6",
-      "timestamp": 1768266878523,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x50d9882e3e8cb561feabede5abe86cc58198b93b69b6bcb64a4804c102230f13",
-      "strategy": "MetaPredict V1",
-      "pnl": -51.5
-    },
-    {
-      "hash": "0x1c0192c82df3f5ea4c95f7eac00a358a33381488916e209e36cc26f6b4f06c2c",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: BUY (Confidence 0.71%)",
-      "timestamp": 1768266873769,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x1c0192c82df3f5ea4c95f7eac00a358a33381488916e209e36cc26f6b4f06c2c",
-      "strategy": "MetaPredict V1",
-      "pnl": 0
-    },
-    {
-      "hash": "0x10f881dedc665a320c7ad5d0e155488c0fefebe3697455b7bd0bdc4fd7c90727",
-      "action": "SETTLE_TRADE",
-      "details": "L1 Verified: BUY ETHUSDT",
-      "timestamp": 1768266714114,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x10f881dedc665a320c7ad5d0e155488c0fefebe3697455b7bd0bdc4fd7c90727",
-      "strategy": "Gemini Sentiment",
-      "pnl": 0
-    },
-    {
-      "hash": "0x036c66106ec560d95f0ce22b746931bbe7c241f75d2aa27908f351e0eb82b1a1",
-      "action": "ANCHOR_DECISION",
-      "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1768266689076,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x036c66106ec560d95f0ce22b746931bbe7c241f75d2aa27908f351e0eb82b1a1",
-      "strategy": "Gemini Sentiment",
-      "pnl": 0
-    },
-    {
-      "hash": "0xd6d6e180f2b803f2ee5d1be72c6328efce8afe037e7f48b11324d253a7f21c83",
-      "action": "EXECUTE_TRADE",
-      "details": "BUY ETHUSDT @ 3110.54",
-      "timestamp": 1768266680228,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xd6d6e180f2b803f2ee5d1be72c6328efce8afe037e7f48b11324d253a7f21c83",
-      "strategy": "Gemini Sentiment",
-      "pnl": -31.5
-    },
-    {
-      "hash": "0xddcb6028dc93fa6aaad3c928e5cf126107185fd2a1752abaa1f3bcbc0eaaa71c",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: BUY (Confidence 0.75%)",
-      "timestamp": 1768266679643,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xddcb6028dc93fa6aaad3c928e5cf126107185fd2a1752abaa1f3bcbc0eaaa71c",
-      "strategy": "Gemini Sentiment",
-      "pnl": 0
-    },
-    {
-      "hash": "0x4da26594f53f8e02dee38327c8ce00bc41d6bc1758485b688e01b608d69ceff1",
-      "action": "SETTLE_TRADE",
-      "details": "L1 Verified: BUY ETHUSDT",
-      "timestamp": 1768266559713,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x4da26594f53f8e02dee38327c8ce00bc41d6bc1758485b688e01b608d69ceff1",
-      "strategy": "Neural Scalp V5",
-      "pnl": 0
-    },
-    {
-      "hash": "0x5e99806619fd01f557356a1136fff223f73a433f28663619fff534824f4cf27b",
-      "action": "ANCHOR_DECISION",
-      "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1768266546924,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x5e99806619fd01f557356a1136fff223f73a433f28663619fff534824f4cf27b",
-      "strategy": "Neural Scalp V5",
-      "pnl": 0
-    },
-    {
-      "hash": "0x0d396724b664432476b13252fb919b3230e3029ecc498ea3a3ede2cf95652610",
-      "action": "EXECUTE_TRADE",
-      "details": "BUY ETHUSDT @ 3111.75",
-      "timestamp": 1768266525845,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x0d396724b664432476b13252fb919b3230e3029ecc498ea3a3ede2cf95652610",
-      "strategy": "Neural Scalp V5",
-      "pnl": 54.77
-    },
-    {
-      "hash": "0x01a6109c8b067bc0be55c8d4b21bce3c51cef7c4968f115b02612d537f4b5b9a",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: BUY (Confidence 0.5%)",
-      "timestamp": 1768266525282,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x01a6109c8b067bc0be55c8d4b21bce3c51cef7c4968f115b02612d537f4b5b9a",
-      "strategy": "Neural Scalp V5",
-      "pnl": 0
-    },
-    {
-      "hash": "0x04af6f9b594b194ed99561341b99ddecbe07310e987590275b2d194f7b2e4391",
-      "action": "SETTLE_TRADE",
-      "details": "L1 Verified: BUY BTCUSDT",
-      "timestamp": 1768266484290,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x04af6f9b594b194ed99561341b99ddecbe07310e987590275b2d194f7b2e4391",
-      "strategy": "Neural Scalp V5",
-      "pnl": 0
-    },
-    {
-      "hash": "0x22c96aafaa8df12df5aeb565a01782a40c7af5609b722fcacb70ad1516f99412",
-      "action": "ANCHOR_DECISION",
-      "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1768266451124,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x22c96aafaa8df12df5aeb565a01782a40c7af5609b722fcacb70ad1516f99412",
-      "strategy": "Neural Scalp V5",
-      "pnl": 0
-    },
-    {
-      "hash": "0xd64a1e664011f9d27103a5aea97c0b5b2faffbfd262ce5f84b7734a250fcfe94",
-      "action": "EXECUTE_TRADE",
-      "details": "BUY BTCUSDT @ 91448",
-      "timestamp": 1768266442260,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xd64a1e664011f9d27103a5aea97c0b5b2faffbfd262ce5f84b7734a250fcfe94",
-      "strategy": "Neural Scalp V5",
-      "pnl": -54.22
-    },
-    {
-      "hash": "0xc5d2f1b692ee23b9f9c57e51c56a6218dea90016943a909c75946e547f67fe75",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: BUY (Confidence 0.7%)",
-      "timestamp": 1768266437455,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xc5d2f1b692ee23b9f9c57e51c56a6218dea90016943a909c75946e547f67fe75",
-      "strategy": "Neural Scalp V5",
-      "pnl": 0
-    },
-    {
-      "hash": "0x05b7a4a6d8cb9046b015706dbe82ead97d21c1fa5bb7da0f530e41dae72bfa05",
-      "action": "SETTLE_TRADE",
-      "details": "L1 Verified: SELL ETHUSDT",
-      "timestamp": 1768266378372,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x05b7a4a6d8cb9046b015706dbe82ead97d21c1fa5bb7da0f530e41dae72bfa05",
-      "strategy": "MetaPredict V1",
-      "pnl": 0
-    },
-    {
-      "hash": "0x49eea12dd6ae6a34308355d6c6e91ac8ccb0484d7ce26f815b124b756fb140cd",
-      "action": "ANCHOR_DECISION",
-      "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1768266365884,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x49eea12dd6ae6a34308355d6c6e91ac8ccb0484d7ce26f815b124b756fb140cd",
-      "strategy": "MetaPredict V1",
-      "pnl": 0
-    },
-    {
-      "hash": "0x737d57953cede6a0aa8b4af01e244de816553bf320d77c2ba2b3d9f9cb6441a4",
-      "action": "EXECUTE_TRADE",
-      "details": "SELL ETHUSDT @ 3108",
-      "timestamp": 1768266355537,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x737d57953cede6a0aa8b4af01e244de816553bf320d77c2ba2b3d9f9cb6441a4",
-      "strategy": "MetaPredict V1",
-      "pnl": -46.32
-    },
-    {
-      "hash": "0x660aa91268882821840d7eaad0e19872060f84102a57aa20dc4ddb7bba590de5",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: SELL (Confidence 0.7%)",
-      "timestamp": 1768266350716,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x660aa91268882821840d7eaad0e19872060f84102a57aa20dc4ddb7bba590de5",
-      "strategy": "MetaPredict V1",
-      "pnl": 0
-    },
-    {
-      "hash": "0x7029220581a6f02fa9e3678df681b6d96d098a0fedaa3a61e5f02d010f79ca22",
-      "action": "SETTLE_TRADE",
-      "details": "L1 Verified: SELL BTCUSDT",
-      "timestamp": 1768266306017,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x7029220581a6f02fa9e3678df681b6d96d098a0fedaa3a61e5f02d010f79ca22",
-      "strategy": "MetaPredict V1",
-      "pnl": 0
-    },
-    {
-      "hash": "0x6961dd3e337e948be7f8c9bf8f8c98097d36f08746fca25644fb90021c3409d5",
-      "action": "ANCHOR_DECISION",
-      "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1768266285070,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x6961dd3e337e948be7f8c9bf8f8c98097d36f08746fca25644fb90021c3409d5",
-      "strategy": "MetaPredict V1",
-      "pnl": 0
-    },
-    {
-      "hash": "0x9d5c70c4d251f69f927215f33cbdf4906cf23c6a7a801366f3eaa629e6bd9b95",
-      "action": "EXECUTE_TRADE",
-      "details": "SELL BTCUSDT @ 91359.2",
-      "timestamp": 1768266255830,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x9d5c70c4d251f69f927215f33cbdf4906cf23c6a7a801366f3eaa629e6bd9b95",
-      "strategy": "MetaPredict V1",
-      "pnl": 86.63
-    },
-    {
-      "hash": "0x5de01aeb80a6988c75def33fe1d52e068fdaa88552ee6a71b334867a2e85965c",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: SELL (Confidence 0.8%)",
-      "timestamp": 1768266255251,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x5de01aeb80a6988c75def33fe1d52e068fdaa88552ee6a71b334867a2e85965c",
-      "strategy": "MetaPredict V1",
-      "pnl": 0
-    },
-    {
-      "hash": "0x5368c58aa1ea7f97ff9e6a868cfc8daaab25ebbdef34660ec78c03fed183917a",
-      "action": "SETTLE_TRADE",
-      "details": "L1 Verified: BUY BTCUSDT",
-      "timestamp": 1768266198311,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x5368c58aa1ea7f97ff9e6a868cfc8daaab25ebbdef34660ec78c03fed183917a",
-      "strategy": "MetaPredict V1",
-      "pnl": 0
-    },
-    {
-      "hash": "0x8506ce45aa98ef6482b7d171b9ba90ffffd6047290a2491743f6658667782701",
-      "action": "ANCHOR_DECISION",
-      "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1768266173306,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x8506ce45aa98ef6482b7d171b9ba90ffffd6047290a2491743f6658667782701",
-      "strategy": "MetaPredict V1",
-      "pnl": 0
-    },
-    {
-      "hash": "0x9000879ae5904215632b2ae2de43aeaec5e114c38eeb869a6512caa62f222e6a",
-      "action": "EXECUTE_TRADE",
-      "details": "BUY BTCUSDT @ 91430",
-      "timestamp": 1768266152207,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x9000879ae5904215632b2ae2de43aeaec5e114c38eeb869a6512caa62f222e6a",
-      "strategy": "MetaPredict V1",
-      "pnl": 94.5
-    },
-    {
-      "hash": "0x2c02b76e472253c7dd28ce2740a75225f231314fd721204b091d7cec90a121ba",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: BUY (Confidence 0.7%)",
-      "timestamp": 1768266147353,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x2c02b76e472253c7dd28ce2740a75225f231314fd721204b091d7cec90a121ba",
-      "strategy": "MetaPredict V1",
-      "pnl": 0
-    },
-    {
-      "hash": "0xf0ba83618cad2f79d43c5cadb8496d4ac8c0383533c37fe0a8d47563dc03e4f9",
+      "hash": "0xc7626099417254cc6fad6f19c1d2fb25cd70e2ad4a603457b52bd14cf14a9c65",
       "action": "SETTLE_TRADE",
       "details": "L1 Verified: BUY SOLUSDT",
-      "timestamp": 1768266067782,
+      "timestamp": 1768275255788,
       "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0xf0ba83618cad2f79d43c5cadb8496d4ac8c0383533c37fe0a8d47563dc03e4f9",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0xc7626099417254cc6fad6f19c1d2fb25cd70e2ad4a603457b52bd14cf14a9c65",
       "strategy": "MetaPredict V1",
       "pnl": 0
     },
     {
-      "hash": "0x094f32872870ae3c153e04ad63cae7c934df9625b9909a3db80920e46c0018ca",
+      "hash": "0xeb4325bcdfc7b6a7c0cc55d86e4dcaa03a11587cecb115aea8096708f62acf2c",
       "action": "ANCHOR_DECISION",
       "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1768266054994,
+      "timestamp": 1768275247047,
       "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x094f32872870ae3c153e04ad63cae7c934df9625b9909a3db80920e46c0018ca",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0xeb4325bcdfc7b6a7c0cc55d86e4dcaa03a11587cecb115aea8096708f62acf2c",
       "strategy": "MetaPredict V1",
       "pnl": 0
     },
     {
-      "hash": "0x733f1cb350926edf2b5a9eab1cc504fbd269762210eb68085689c30b2ebfbca0",
+      "hash": "0xb848e668f0998ca267e47d826b95a174cd02858772de7ac570c17a111bc8d655",
       "action": "EXECUTE_TRADE",
-      "details": "BUY SOLUSDT @ 139.25",
-      "timestamp": 1768266046158,
+      "details": "BUY SOLUSDT @ 138.32",
+      "timestamp": 1768275230089,
       "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x733f1cb350926edf2b5a9eab1cc504fbd269762210eb68085689c30b2ebfbca0",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xb848e668f0998ca267e47d826b95a174cd02858772de7ac570c17a111bc8d655",
       "strategy": "MetaPredict V1",
-      "pnl": 40.86
+      "pnl": -25.53
     },
     {
-      "hash": "0xf6408c7b5167c81dc30a52912b51539efed3b2148386d31abb1dc5a51f3b553a",
+      "hash": "0x08116b79b1862b1fed296e7bcc39af757a16ca09be382f378c85bb2f7576a89d",
       "action": "SIGNAL_GEN",
-      "details": "Consensus: BUY (Confidence 0.6%)",
-      "timestamp": 1768266041422,
+      "details": "Consensus: BUY (Confidence 0.42%)",
+      "timestamp": 1768275229488,
       "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xf6408c7b5167c81dc30a52912b51539efed3b2148386d31abb1dc5a51f3b553a",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x08116b79b1862b1fed296e7bcc39af757a16ca09be382f378c85bb2f7576a89d",
       "strategy": "MetaPredict V1",
       "pnl": 0
     },
     {
-      "hash": "0xa7d60ca0ba96ea16fbe04e8d5ec5bbda3e57ca115b864d3fa9ca19a26da06e19",
-      "action": "SETTLE_TRADE",
-      "details": "L1 Verified: SELL SOLUSDT",
-      "timestamp": 1768265995291,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0xa7d60ca0ba96ea16fbe04e8d5ec5bbda3e57ca115b864d3fa9ca19a26da06e19",
-      "strategy": "DeepSeek Momentum Alpha",
-      "pnl": 0
-    },
-    {
-      "hash": "0xdd44f5f9bce611d702f2ebb5d06857005b207b287924ef37d78079a8e435b537",
-      "action": "ANCHOR_DECISION",
-      "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1768265982508,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0xdd44f5f9bce611d702f2ebb5d06857005b207b287924ef37d78079a8e435b537",
-      "strategy": "DeepSeek Momentum Alpha",
-      "pnl": 0
-    },
-    {
-      "hash": "0x57cf754cbe6b1f85df71394768ba0667d3b84f0631891a3d65295c6611488f8c",
-      "action": "EXECUTE_TRADE",
-      "details": "SELL SOLUSDT @ 139.26",
-      "timestamp": 1768265961424,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x57cf754cbe6b1f85df71394768ba0667d3b84f0631891a3d65295c6611488f8c",
-      "strategy": "DeepSeek Momentum Alpha",
-      "pnl": 39.76
-    },
-    {
-      "hash": "0x6d231411960cdfbe5cdf4224cfb37cfc57ae7906a3c9e8e15cc0bd7104aeba32",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: SELL (Confidence 0.85%)",
-      "timestamp": 1768265960832,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x6d231411960cdfbe5cdf4224cfb37cfc57ae7906a3c9e8e15cc0bd7104aeba32",
-      "strategy": "DeepSeek Momentum Alpha",
-      "pnl": 0
-    },
-    {
-      "hash": "0x1b7be23ef3ec9b81a22f8a6f78b5e55552491f81c0e2de6f7d2339b4eb080800",
+      "hash": "0x6badf50e6a4c79cecbbfafa257f0fc1ce12764dd370c5d0983bcc44308269541",
       "action": "SETTLE_TRADE",
       "details": "L1 Verified: BUY BTCUSDT",
-      "timestamp": 1768265934505,
+      "timestamp": 1768275198613,
       "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x1b7be23ef3ec9b81a22f8a6f78b5e55552491f81c0e2de6f7d2339b4eb080800",
-      "strategy": "MetaPredict V1",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x6badf50e6a4c79cecbbfafa257f0fc1ce12764dd370c5d0983bcc44308269541",
+      "strategy": "DeepSeek Momentum Alpha",
       "pnl": 0
     },
     {
-      "hash": "0x721f4e5e495d08a7e92f14ad0ddd080567d013c732e55a671848d409bff17b4d",
+      "hash": "0xfaf38ab5140917e3de43eaf56686d9929e31c1556d5de65394dff33ec9d6d754",
       "action": "ANCHOR_DECISION",
       "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1768265909505,
+      "timestamp": 1768275185841,
       "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x721f4e5e495d08a7e92f14ad0ddd080567d013c732e55a671848d409bff17b4d",
-      "strategy": "MetaPredict V1",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0xfaf38ab5140917e3de43eaf56686d9929e31c1556d5de65394dff33ec9d6d754",
+      "strategy": "DeepSeek Momentum Alpha",
       "pnl": 0
     },
     {
-      "hash": "0x4e8797e35b41224fad56a18156b7dcd510ff249dd5d1426b0be3ff2e059889aa",
+      "hash": "0x3a9d11df90062fb69ec20f7677f5e5b88a485ea8ad9f4aaae4c86f8a31b89b8d",
       "action": "EXECUTE_TRADE",
-      "details": "BUY BTCUSDT @ 91451",
-      "timestamp": 1768265896595,
+      "details": "BUY BTCUSDT @ 91363.3",
+      "timestamp": 1768275177010,
       "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x4e8797e35b41224fad56a18156b7dcd510ff249dd5d1426b0be3ff2e059889aa",
-      "strategy": "MetaPredict V1",
-      "pnl": -86.65
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x3a9d11df90062fb69ec20f7677f5e5b88a485ea8ad9f4aaae4c86f8a31b89b8d",
+      "strategy": "DeepSeek Momentum Alpha",
+      "pnl": 32.48
     },
     {
-      "hash": "0x70aef0dae08dba6699289ef7a64c01a1ce5b783dd5b2d7d6bc8c0042ce3b09d9",
+      "hash": "0x0b514fbc378c129f0dcf5be544ee864f714d0e161dcad5c6a9b6eb22cb6aee88",
       "action": "SIGNAL_GEN",
-      "details": "Consensus: BUY (Confidence 0.6%)",
-      "timestamp": 1768265891766,
+      "details": "Consensus: BUY (Confidence 0.63%)",
+      "timestamp": 1768275172186,
       "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x70aef0dae08dba6699289ef7a64c01a1ce5b783dd5b2d7d6bc8c0042ce3b09d9",
-      "strategy": "MetaPredict V1",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x0b514fbc378c129f0dcf5be544ee864f714d0e161dcad5c6a9b6eb22cb6aee88",
+      "strategy": "DeepSeek Momentum Alpha",
       "pnl": 0
     },
     {
-      "hash": "0xf4120f88b4b64e2c6101f886002dc65c3ddcfa9cdaa976f4f0c83accc2bb04c1",
+      "hash": "0x823c18c8d730641d86c338e77ec23d673c2e9dcb459a4b75d783f640a33afe45",
       "action": "SETTLE_TRADE",
-      "details": "L1 Verified: SELL BTCUSDT",
-      "timestamp": 1768265826358,
+      "details": "L1 Verified: SELL SOLUSDT",
+      "timestamp": 1768275089304,
       "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0xf4120f88b4b64e2c6101f886002dc65c3ddcfa9cdaa976f4f0c83accc2bb04c1",
-      "strategy": "Quantum Arbitrage Sniper",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x823c18c8d730641d86c338e77ec23d673c2e9dcb459a4b75d783f640a33afe45",
+      "strategy": "Neural Scalp V5",
       "pnl": 0
     },
     {
-      "hash": "0x83ebc98223a2c79bd66c25d295ad3a26ee4d4fd808f2b4b4fa475dbe2aeaac3a",
+      "hash": "0x251d9d35b6f775d67ad7d5cf5e8537ed1c1fda0087502e6da6694f70625b57cf",
       "action": "ANCHOR_DECISION",
       "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1768265801355,
+      "timestamp": 1768275076533,
       "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x83ebc98223a2c79bd66c25d295ad3a26ee4d4fd808f2b4b4fa475dbe2aeaac3a",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x251d9d35b6f775d67ad7d5cf5e8537ed1c1fda0087502e6da6694f70625b57cf",
+      "strategy": "Neural Scalp V5",
+      "pnl": 0
+    },
+    {
+      "hash": "0x4fc40ad5cedd7a49b468c599addffe238dfb1a8d2f640e98d41adb6ba7ecd63b",
+      "action": "EXECUTE_TRADE",
+      "details": "SELL SOLUSDT @ 138.48",
+      "timestamp": 1768275047316,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x4fc40ad5cedd7a49b468c599addffe238dfb1a8d2f640e98d41adb6ba7ecd63b",
+      "strategy": "Neural Scalp V5",
+      "pnl": 52.18
+    },
+    {
+      "hash": "0xfe951f58c56a360c3622f5bc9c46a7b0e7821b066fa2f2b21fb57954b9e8aa89",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: SELL (Confidence 0.85%)",
+      "timestamp": 1768275046733,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xfe951f58c56a360c3622f5bc9c46a7b0e7821b066fa2f2b21fb57954b9e8aa89",
+      "strategy": "Neural Scalp V5",
+      "pnl": 0
+    },
+    {
+      "hash": "0x24511ed8064d4eb496da263a7dcb755396bf5b388d3a25b53227d6234d1c4dd6",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: BUY BTCUSDT",
+      "timestamp": 1768275007869,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x24511ed8064d4eb496da263a7dcb755396bf5b388d3a25b53227d6234d1c4dd6",
+      "strategy": "DeepSeek Momentum Alpha",
+      "pnl": 0
+    },
+    {
+      "hash": "0xa8aab26df85099b5c7e90e34269723998e15b31ee58457426867ab40eed17c83",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768274995078,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0xa8aab26df85099b5c7e90e34269723998e15b31ee58457426867ab40eed17c83",
+      "strategy": "DeepSeek Momentum Alpha",
+      "pnl": 0
+    },
+    {
+      "hash": "0x59a360ce4d0defddb5b768bb66e97c94c75bdab8b3b747c3a2aa460561258659",
+      "action": "EXECUTE_TRADE",
+      "details": "BUY BTCUSDT @ 91356",
+      "timestamp": 1768274986234,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x59a360ce4d0defddb5b768bb66e97c94c75bdab8b3b747c3a2aa460561258659",
+      "strategy": "DeepSeek Momentum Alpha",
+      "pnl": 15.6
+    },
+    {
+      "hash": "0x4f3b0f4874593e0eabd90a4074567d48948f47d34f330bcaad447c724cb2944f",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: BUY (Confidence 0.65%)",
+      "timestamp": 1768274981452,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x4f3b0f4874593e0eabd90a4074567d48948f47d34f330bcaad447c724cb2944f",
+      "strategy": "DeepSeek Momentum Alpha",
+      "pnl": 0
+    },
+    {
+      "hash": "0xfe83c519df41398efba7db5d0878d2c4a9d5aec8c53fa6e4f6700a9f06a79343",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: BUY ETHUSDT",
+      "timestamp": 1768274935097,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0xfe83c519df41398efba7db5d0878d2c4a9d5aec8c53fa6e4f6700a9f06a79343",
       "strategy": "Quantum Arbitrage Sniper",
       "pnl": 0
     },
     {
-      "hash": "0x5f3d2ff0990f2f0f0cad1afa982e4154f2f34728d762260328c176170a3fcd08",
-      "action": "EXECUTE_TRADE",
-      "details": "SELL BTCUSDT @ 91352.1",
-      "timestamp": 1768265784369,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x5f3d2ff0990f2f0f0cad1afa982e4154f2f34728d762260328c176170a3fcd08",
+      "hash": "0xc3de4b0c5445489cd3f6783911c034883ef7ef55bf0b16a9261c4293e7b8f559",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768274922329,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0xc3de4b0c5445489cd3f6783911c034883ef7ef55bf0b16a9261c4293e7b8f559",
       "strategy": "Quantum Arbitrage Sniper",
-      "pnl": 46.03
+      "pnl": 0
     },
     {
-      "hash": "0x93d33b41592c29b2a482dc4210826bc8b5cdfb9c5701f111b8021c08b216a0ed",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: SELL (Confidence 0.6%)",
-      "timestamp": 1768265783785,
+      "hash": "0xb66d2eee2a1295f1e550e0de4dc86c43ac4edf5cee47f793c7c939a8c9aab215",
+      "action": "EXECUTE_TRADE",
+      "details": "BUY ETHUSDT @ 3113.04",
+      "timestamp": 1768274905342,
       "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x93d33b41592c29b2a482dc4210826bc8b5cdfb9c5701f111b8021c08b216a0ed",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xb66d2eee2a1295f1e550e0de4dc86c43ac4edf5cee47f793c7c939a8c9aab215",
       "strategy": "Quantum Arbitrage Sniper",
+      "pnl": -51.26
+    },
+    {
+      "hash": "0x9a024e7245b66ba8fb7f625eb82f1473b3ee8999b0fcc1f0ef35bbdc8ffd4551",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: BUY (Confidence 0.7%)",
+      "timestamp": 1768274904731,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x9a024e7245b66ba8fb7f625eb82f1473b3ee8999b0fcc1f0ef35bbdc8ffd4551",
+      "strategy": "Quantum Arbitrage Sniper",
+      "pnl": 0
+    },
+    {
+      "hash": "0xeb1d1723ba6fac37064639a7b12f0fa27bd5e86b184ee44127b3ff603e186158",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: BUY BTCUSDT",
+      "timestamp": 1768274873895,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0xeb1d1723ba6fac37064639a7b12f0fa27bd5e86b184ee44127b3ff603e186158",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x39eab69b833cd446141fe9c913a6aa473be91a5fd2b8a34f719f608bfd0580d3",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768274865178,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x39eab69b833cd446141fe9c913a6aa473be91a5fd2b8a34f719f608bfd0580d3",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x15780b801f7e10d9cb3ee373f99623d89e7b73af9e899756c82f6e85d8d38f92",
+      "action": "EXECUTE_TRADE",
+      "details": "BUY BTCUSDT @ 91369.7",
+      "timestamp": 1768274844071,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x15780b801f7e10d9cb3ee373f99623d89e7b73af9e899756c82f6e85d8d38f92",
+      "strategy": "MetaPredict V1",
+      "pnl": 77.79
+    },
+    {
+      "hash": "0xf6f14870134f3594f4422026f7d74feb9f6eff55ac8e9591b16794559f2cc765",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: BUY (Confidence 0.9%)",
+      "timestamp": 1768274843416,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xf6f14870134f3594f4422026f7d74feb9f6eff55ac8e9591b16794559f2cc765",
+      "strategy": "MetaPredict V1",
       "pnl": 0
     },
     {
       "hash": "0x7f2a...39d1",
       "action": "EXECUTE_TRADE",
       "details": "BUY BTC/USDT @ 95,230",
-      "timestamp": 1768265767534,
+      "timestamp": 1768274822537,
       "chain": "Base Sepolia",
       "explorerUrl": "https://sepolia.basescan.org/"
     },
@@ -699,7 +299,7 @@
       "hash": "0x1a4b...8c2e",
       "action": "SIGNAL_GEN",
       "details": "Consensus: STRONG BUY (Confidence 0.94)",
-      "timestamp": 1768265734534,
+      "timestamp": 1768274789537,
       "chain": "Base Sepolia",
       "explorerUrl": "https://sepolia.basescan.org/"
     },
@@ -707,7 +307,7 @@
       "hash": "0x5e2d...9f1a",
       "action": "L1_ANCHOR",
       "details": "Settlement on Ethereum",
-      "timestamp": 1768265749534,
+      "timestamp": 1768274804537,
       "chain": "Ethereum Sepolia",
       "explorerUrl": "https://sepolia.etherscan.io/"
     },
@@ -715,41 +315,9 @@
       "hash": "0x9c3d...2a1f",
       "action": "RISK_CHECK",
       "details": "Approved. Leverage capped at 5x.",
-      "timestamp": 1768265719534,
+      "timestamp": 1768274774537,
       "chain": "Internal",
       "explorerUrl": "#"
-    }
-  ],
-  "activeStrategy": {
-    "name": "Gemini Sentiment",
-    "risk": "MEDIUM",
-    "winRate": 0.6
-  },
-  "activeStrategiesList": [
-    {
-      "name": "MetaPredict V1",
-      "risk": "MEDIUM",
-      "winRate": 0.65
-    },
-    {
-      "name": "Quantum Arbitrage Sniper",
-      "risk": "LOW",
-      "winRate": 0.92
-    },
-    {
-      "name": "DeepSeek Momentum Alpha",
-      "risk": "HIGH",
-      "winRate": 0.45
-    },
-    {
-      "name": "Neural Scalp V5",
-      "risk": "HIGH",
-      "winRate": 0.55
-    },
-    {
-      "name": "Gemini Sentiment",
-      "risk": "MEDIUM",
-      "winRate": 0.6
     }
   ]
 }
