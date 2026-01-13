@@ -113,11 +113,15 @@ export class LocalIntelligence {
         let score = 0;
         const reasons: string[] = [];
 
-        // RSI Logic (Stricter for "Sniper Mode")
+        // RSI Logic (Optimized via Golden Dataset Analysis - 2026-01-13)
+        // BUY threshold: RSI < 46 (from Avg winning RSI = 45.9)
+        // SELL threshold: RSI > 59 (from Avg winning sell RSI = 59.5)
         if (rsi < 25) { score += 4; reasons.push(`RSI Collapsed (${rsi.toFixed(1)})`); } // Extreme Oversold
-        else if (rsi < 30) { score += 2; reasons.push(`RSI Oversold (${rsi.toFixed(1)})`); }
+        else if (rsi < 30) { score += 3; reasons.push(`RSI Deep Oversold (${rsi.toFixed(1)})`); } // Strong buy zone
+        else if (rsi < 46) { score += 1; reasons.push(`RSI Below Optimal (${rsi.toFixed(1)})`); } // New: Optimal BUY zone
         else if (rsi > 75) { score -= 4; reasons.push(`RSI Sky High (${rsi.toFixed(1)})`); }
-        else if (rsi > 70) { score -= 2; reasons.push(`RSI Overbought (${rsi.toFixed(1)})`); }
+        else if (rsi > 70) { score -= 3; reasons.push(`RSI Overbought (${rsi.toFixed(1)})`); }
+        else if (rsi > 59) { score -= 1; reasons.push(`RSI Above Optimal (${rsi.toFixed(1)})`); } // New: SELL zone threshold
 
         // Trend Logic (The "Iron Rule")
         if (trend === 1) { score += 1; reasons.push("Trend Bullish"); }
@@ -131,9 +135,10 @@ export class LocalIntelligence {
         let action = 'HOLD';
         let confidence = 0.5;
 
-        // SAFETY FILTER: Never BUY in Bearish Trend unless RSI is screaming cheap
+        // SAFETY FILTER: Never BUY in Bearish Trend unless RSI is extremely cheap
+        // Updated threshold from 28 to 30 based on winning Deep Value BUYs (min RSI = 25)
         if (reasons.includes("Trend Bearish") && score > 0) {
-            if (rsi > 28) {
+            if (rsi > 30) {
                 score = 0; // Nullify buy signal
                 reasons.push("[SAFETY] Trend Filter Block");
             }

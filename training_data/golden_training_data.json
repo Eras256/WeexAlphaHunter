@@ -1,0 +1,2185 @@
+{
+  "generated": "2026-01-13T20:15:20.806Z",
+  "stats": {
+    "goldExamples": 48,
+    "silverExamples": 107,
+    "totalTrainingExamples": 155
+  },
+  "patterns": {
+    "sniperSell": 0,
+    "deepValueBuy": 6,
+    "momentumBuy": 17
+  },
+  "examples": [
+    {
+      "input": {
+        "rsi": 59.5,
+        "trend": -1,
+        "price": 91304,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.78
+      },
+      "quality": "GOLD",
+      "reasoning": "Final verdict: Prioritizing signal direction from Quantitative Analyst (DeepSeek) and Neural Core (Local) for a 'SELL' action, considering the compromise between the confidence levels of agents supporting 'SELL' and 'BUY'."
+    },
+    {
+      "input": {
+        "rsi": 59.5,
+        "trend": -1,
+        "price": 91290.9,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.775
+      },
+      "quality": "GOLD",
+      "reasoning": "Bearish trend and negative imbalance indicate a potential sell opportunity, but given the undefined RSI, it's likely that the RSI will be high, suggesting overbought conditions. Local algorithm calculated score -0.30 based on RSI undefined."
+    },
+    {
+      "input": {
+        "rsi": 59.5,
+        "trend": -1,
+        "price": 91359.8,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Final verdict: SELL action is recommended by the Quantitative Analyst with high confidence, and the Risk Manager's cautionary note is considered."
+    },
+    {
+      "input": {
+        "rsi": 56.15,
+        "trend": 1,
+        "price": 3103.91,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Risk Manager's caution and Strategic Analyst's bullish trend suggest a favorable market condition for buying."
+    },
+    {
+      "input": {
+        "rsi": 58.9,
+        "trend": -1,
+        "price": 91247.4,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.76
+      },
+      "quality": "GOLD",
+      "reasoning": "A majority of agents (Quantitative Analyst and Neural Core) recommend a SELL signal, while the Strategic Analyst suggests caution but does not explicitly recommend a SELL. The Risk Manager's HOLD signal is respected due to the undefined RSI, which may indicate high volatility."
+    },
+    {
+      "input": {
+        "rsi": 63.41,
+        "trend": -1,
+        "price": 91282.2,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.8
+      },
+      "quality": "GOLD",
+      "reasoning": "Risk Manager's signal of extreme caution with a 'SELL' action takes precedence over abstained vote and 'HOLD' action from other agents."
+    },
+    {
+      "input": {
+        "rsi": 63.41,
+        "trend": -1,
+        "price": 91288.6,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.85
+      },
+      "quality": "GOLD",
+      "reasoning": "Quantitative Analyst's bearish sentiment and slight bias towards selling outweighs Risk Manager's caution due to undefined RSI. The bearish trend and imbalance support the decision to SELL."
+    },
+    {
+      "input": {
+        "rsi": 67.51,
+        "trend": -1,
+        "price": 139.26,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.85
+      },
+      "quality": "GOLD",
+      "reasoning": "Based on the current BEARISH trend and high imbalance (0.6976379889804172), it is likely that the price will continue to fall."
+    },
+    {
+      "input": {
+        "rsi": 56.85,
+        "trend": 1,
+        "price": 3108,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Based on the prioritized signals from Quantitative Analyst and Neural Core, along with Risk Manager's moderate caution, we recommend selling the asset."
+    },
+    {
+      "input": {
+        "rsi": 58.95,
+        "trend": 1,
+        "price": 91448,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Final verdict: The 'Strategic Analyst' vote with a confidence score of 0.7 and 'bullish trend' reasoning is prioritized over the abstained votes from 'Quantitative Analyst' and 'Risk Manager' for the decision to BUY."
+    },
+    {
+      "input": {
+        "rsi": 58.95,
+        "trend": 1,
+        "price": 91414.6,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.71
+      },
+      "quality": "GOLD",
+      "reasoning": "Risk Manager's strong BUY signal (80% confidence) outweighs the other models' neutral votes."
+    },
+    {
+      "input": {
+        "rsi": 50.4,
+        "trend": 1,
+        "price": 3105.22,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.8
+      },
+      "quality": "GOLD",
+      "reasoning": "Majority of non-abstaining agents (Strategic Analyst and Neural Core) voted to BUY, and the Risk Manager's caution signal is not extreme."
+    },
+    {
+      "input": {
+        "rsi": 50.4,
+        "trend": 1,
+        "price": 3099.96,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.86
+      },
+      "quality": "GOLD",
+      "reasoning": "The majority of the agents recommend a BUY action, prioritizing the signal direction from the Quantitative Analyst (DeepSeek) and Neural Core (Local). Although the Risk Manager and Strategic Analyst have some concerns, the overall consensus points towards a buying opportunity."
+    },
+    {
+      "input": {
+        "rsi": 61.25,
+        "trend": -1,
+        "price": 138.63,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.78
+      },
+      "quality": "GOLD",
+      "reasoning": "Consensus decision based on Quantitative Analyst (DeepSeek) and Neural Core (Local) signals, with Risk Manager's cautionary signal factored in."
+    },
+    {
+      "input": {
+        "rsi": 58.96,
+        "trend": -1,
+        "price": 91062.4,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.75
+      },
+      "quality": "GOLD",
+      "reasoning": "Quantitative Analyst's sell signal with high confidence is prioritized, while Risk Manager's cautionary hold is respected."
+    },
+    {
+      "input": {
+        "rsi": 58.96,
+        "trend": -1,
+        "price": 91095.4,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Based on the prioritized votes from the Quantitative Analyst and Neural Core, the majority of votes suggest a SELL action. However, the Strategic Analyst's BUY vote is also considered to ensure a balanced decision."
+    },
+    {
+      "input": {
+        "rsi": 54.88,
+        "trend": -1,
+        "price": 3096.58,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.74
+      },
+      "quality": "GOLD",
+      "reasoning": "Final verdict: Given the prioritized agents' signals and the Risk Manager's cautionary signal, the market is likely to decline."
+    },
+    {
+      "input": {
+        "rsi": 58.96,
+        "trend": -1,
+        "price": 91119.7,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Based on the consensus of the Quantitative Analyst (DeepSeek) and Neural Core (Local), with support from the Risk Manager (Mistral), a SELL action is warranted."
+    },
+    {
+      "input": {
+        "rsi": 57.73,
+        "trend": -1,
+        "price": 91149.8,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Quantitative Analyst (DeepSeek) and Neural Core (Local) both recommend a SELL action due to bearish trend and undefined RSI, with moderate to high confidence."
+    },
+    {
+      "input": {
+        "rsi": 51.91,
+        "trend": 1,
+        "price": 3102.24,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Majority consensus from Quantitative Analyst (DeepSeek) and Neural Core (Local Algo) with caution from Risk Manager (Mistral)."
+    },
+    {
+      "input": {
+        "rsi": 51.91,
+        "trend": 1,
+        "price": 3104.83,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "GOLD",
+      "reasoning": "Two analysts provided a BUY signal with a moderate to high confidence, while the Quantitative Analyst abstained and the Neural Core's HOLD signal was ignored due to the Risk Manager's BUY signal."
+    },
+    {
+      "input": {
+        "rsi": 49.48,
+        "trend": 1,
+        "price": 91265.7,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Majority of analysts suggest a BUY action, with highest confidence from Strategic Analyst."
+    },
+    {
+      "input": {
+        "rsi": 49.48,
+        "trend": 1,
+        "price": 91250.7,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Prioritizing Risk Manager's decision due to higher confidence score and BUY recommendation, while considering lower confidence HOLD recommendations from Neural Core and Strategic Analyst."
+    },
+    {
+      "input": {
+        "rsi": 49.48,
+        "trend": 1,
+        "price": 91369.7,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.9
+      },
+      "quality": "GOLD",
+      "reasoning": "Weighted voting system indicates a strong consensus for a BUY signal. The 'Strategic Analyst' and 'Risk Manager' signals are prioritized, while the 'Neural Core' is considered for caution. The 'Quantitative Analyst' abstained from voting."
+    },
+    {
+      "input": {
+        "rsi": 42.64,
+        "trend": 1,
+        "price": 3113.04,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Respected the signal direction of the Risk Manager (Mistral) due to extreme caution."
+    },
+    {
+      "input": {
+        "rsi": 59.34,
+        "trend": -1,
+        "price": 138.48,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.85
+      },
+      "quality": "GOLD",
+      "reasoning": "The majority of agents agree on a bearish trend, with the Quantitative Analyst and Neural Core indicating a strong downward pressure. Although the Strategic Analyst expresses uncertainty, the Quantitative Analyst's high confidence in a sell signal takes precedence."
+    },
+    {
+      "input": {
+        "rsi": 59.34,
+        "trend": -1,
+        "price": 138.29,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.8
+      },
+      "quality": "GOLD",
+      "reasoning": "Based on the prioritized votes from Quantitative Analyst (DeepSeek) and Neural Core (Local), the final verdict is to SELL, indicating a bearish market trend and cautionary signals."
+    },
+    {
+      "input": {
+        "rsi": 47.28,
+        "trend": 1,
+        "price": 91282,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "GOLD",
+      "reasoning": "The Risk Manager and Strategic Analyst suggest a BUY, while the Neural Core suggests a HOLD. The Quantitative Analyst abstained. Considering the confidence scores, the final decision is to execute a BUY."
+    },
+    {
+      "input": {
+        "rsi": 57.14,
+        "trend": -1,
+        "price": 138.53,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "The prioritized Quantitative Analyst (DeepSeek) recommends a SELL action due to the BEARISH trend and imbalance ratio, while the Neural Core (Local) also recommends a HOLD. To resolve the conflict, I give more weight to the Quantitative Analyst's signal direction."
+    },
+    {
+      "input": {
+        "rsi": 55.69,
+        "trend": -1,
+        "price": 138.72,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.8
+      },
+      "quality": "GOLD",
+      "reasoning": "Risk Manager's signal takes precedence, indicating a favorable market condition despite concerns from other agents."
+    },
+    {
+      "input": {
+        "rsi": 57.34,
+        "trend": -1,
+        "price": 138.43,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.75
+      },
+      "quality": "GOLD",
+      "reasoning": "High confidence SELL signals from Quantitative Analyst (DeepSeek) and Neural Core (Local Algo) outweigh Risk Manager's caution."
+    },
+    {
+      "input": {
+        "rsi": 57.34,
+        "trend": -1,
+        "price": 138.35,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Quantitative Analyst (DeepSeek) and Neural Core (Local) recommend a SELL action, prioritized for signal direction."
+    },
+    {
+      "input": {
+        "rsi": 47.79,
+        "trend": 1,
+        "price": 91324.6,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.8
+      },
+      "quality": "GOLD",
+      "reasoning": "Majority opinion from Risk Manager and Strategic Analyst, and abstention from Quantitative Analyst considered as a neutral vote."
+    },
+    {
+      "input": {
+        "rsi": 55.27,
+        "trend": 1,
+        "price": 138.98,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "The majority of the models recommend a BUY action, and their moderate confidence levels are balanced by the cautionary votes from the Strategic Analyst and Risk Manager."
+    },
+    {
+      "input": {
+        "rsi": 36.03,
+        "trend": 1,
+        "price": 3126.95,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.8
+      },
+      "quality": "GOLD",
+      "reasoning": "All three models are signaling a 'BUY' action, with a consensus score of 80 based on the confidence scores."
+    },
+    {
+      "input": {
+        "rsi": 48.19,
+        "trend": 1,
+        "price": 139.23,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.76
+      },
+      "quality": "GOLD",
+      "reasoning": "Mixed signals from Quantitative Analyst and Neural Core, but Risk Manager's cautionary BUY action takes precedence."
+    },
+    {
+      "input": {
+        "rsi": 48.19,
+        "trend": 1,
+        "price": 138.87,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.725
+      },
+      "quality": "GOLD",
+      "reasoning": "Quantitative Analyst's BUY recommendation with high confidence and Risk Manager's BUY recommendation override Neural Core's HOLD recommendation due to undefined RSI."
+    },
+    {
+      "input": {
+        "rsi": 44.74,
+        "trend": 1,
+        "price": 91704.8,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Majority vote from Strategic Analyst and Risk Manager suggests a BUY action, despite caution from Neural Core."
+    },
+    {
+      "input": {
+        "rsi": 32.88,
+        "trend": 1,
+        "price": 93677,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "BUY decision based on cautious bullish trend and moderate F&G value, with high confidence from Risk Manager."
+    },
+    {
+      "input": {
+        "rsi": 44.85,
+        "trend": 1,
+        "price": 143.55,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "BULLISH trend and high confidence BUY signals from Risk Manager and Neural Core outweigh HOLD signal from Strategic Analyst, but Quantitative Analyst abstained."
+    },
+    {
+      "input": {
+        "rsi": 44.85,
+        "trend": 1,
+        "price": 143.78,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "The market is in a bullish trend with a significant imbalance of 0.2514519767683717, indicating a strong buying pressure. Although the RSI value is undefined, the current price of 143.78 and the overall market conditions suggest a bullish sentiment."
+    },
+    {
+      "input": {
+        "rsi": 30.16,
+        "trend": 1,
+        "price": 93490.3,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Quantitative Analyst (DeepSeek) suggests a strong buy signal, while Risk Manager (Mistral) indicates caution and Neural Core (Local Algo) recommends holding. Considering these signals, a moderate buy decision is made."
+    },
+    {
+      "input": {
+        "rsi": 27.56,
+        "trend": 1,
+        "price": 3200.82,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Based on the Risk Manager's decision and confidence score, and considering the abstained Quantitative Analyst and neutral Neural Core."
+    },
+    {
+      "input": {
+        "rsi": 27.56,
+        "trend": 1,
+        "price": 3193.03,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.73
+      },
+      "quality": "GOLD",
+      "reasoning": "The Quantitative Analyst (DeepSeek) and the Risk Manager recommend BUY, while the Neural Core (Local) recommends HOLD. Based on the weighted average of the confidence scores, we decide to execute a BUY."
+    },
+    {
+      "input": {
+        "rsi": 49.7,
+        "trend": 1,
+        "price": 143.41,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Majority signal direction from Quantitative Analyst and Neural Core with caution from Risk Manager. Undefined RSI value indicates a potential buying opportunity."
+    },
+    {
+      "input": {
+        "rsi": 49.7,
+        "trend": 1,
+        "price": 143.48,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.8
+      },
+      "quality": "GOLD",
+      "reasoning": "Risk Manager's higher confidence decision and Quantitative Analyst and Neural Core's aligned moderate confidence recommendations balance out to a BUY action, with caution due to undefined RSI values."
+    },
+    {
+      "input": {
+        "rsi": 33.43,
+        "trend": 1,
+        "price": 93987.5,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Combined recommendation from Quantitative Analyst (DeepSeek Math) and Neural Core (Local Algo) results in a BUY action with a confidence level of 70%."
+    },
+    {
+      "input": {
+        "rsi": 25.02,
+        "trend": 1,
+        "price": 3204.98,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Respected Risk Manager's decision with cautionary views from other agents"
+    },
+    {
+      "input": {
+        "rsi": 59.5,
+        "trend": -1,
+        "price": 91217.3,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Risk Manager and Strategic Analyst voted to SELL with moderate confidence, while Neural Core abstained from voting."
+    },
+    {
+      "input": {
+        "rsi": 59.5,
+        "trend": -1,
+        "price": 91362.4,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.8
+      },
+      "quality": "SILVER",
+      "reasoning": "The consensus engine prioritized the signal direction of the 'Quantitative Analyst' and 'Neural Core', but took into account the Risk Manager's caution. The final decision is a SELL action with a moderate confidence level."
+    },
+    {
+      "input": {
+        "rsi": 59.5,
+        "trend": -1,
+        "price": 91290.8,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.8
+      },
+      "quality": "SILVER",
+      "reasoning": "Following Risk Manager's extreme caution signal due to high confidence and bearish trend."
+    },
+    {
+      "input": {
+        "rsi": 63.39,
+        "trend": -1,
+        "price": 91326.4,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.68
+      },
+      "quality": "SILVER",
+      "reasoning": "Risk Manager's cautionary signal ('SELL') prioritized over other signals, considering Quantitative Analyst's abstention and Neural Core's HOLD signal."
+    },
+    {
+      "input": {
+        "rsi": 63.39,
+        "trend": 1,
+        "price": 91406.1,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.5
+      },
+      "quality": "SILVER",
+      "reasoning": "Majority vote from Strategic Analyst and Risk Manager, adjusted confidence score considering abstained vote from Quantitative Analyst and HOLD from Neural Core."
+    },
+    {
+      "input": {
+        "rsi": 66.84,
+        "trend": -1,
+        "price": 139.13,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.675
+      },
+      "quality": "SILVER",
+      "reasoning": "The 'Quantitative Analyst' (DeepSeek) and 'Neural Core' (Local) have prioritized a sell action, and the 'Risk Manager' (Mistral) has voted to HOLD with caution. The final decision is to SELL, with a consensus score of 57.5 and a confidence of 0.675."
+    },
+    {
+      "input": {
+        "rsi": 58.9,
+        "trend": 1,
+        "price": 91430.3,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Quantitative Analyst and Risk Manager voted to BUY, while the Neural Core voted to HOLD due to undefined RSI data. Given the moderate confidence levels, we prioritize the Quantitative Analyst's signal direction and respect the Neural Core's warning sign."
+    },
+    {
+      "input": {
+        "rsi": 56.99,
+        "trend": 1,
+        "price": 3103.3,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.64
+      },
+      "quality": "SILVER",
+      "reasoning": "Based on the prioritized agent votes, the Risk Manager's high confidence in a BUY, and the majority HOLD recommendations from the Quantitative Analyst and Neural Core, the final verdict is a BUY with moderate confidence."
+    },
+    {
+      "input": {
+        "rsi": 58.9,
+        "trend": -1,
+        "price": 91343.4,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Based on the cautious BUY suggestion from the Quantitative Analyst and the Risk Manager's recommendation, the TITAN investment consensus engine decides to execute a BUY position with moderate confidence."
+    },
+    {
+      "input": {
+        "rsi": 61.57,
+        "trend": 1,
+        "price": 3101.11,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Combined signals from 'Quantitative Analyst' and 'Neural Core' indicate a 'BUY' action, while 'Risk Manager' also signals a 'BUY' action without indicating extreme caution."
+    },
+    {
+      "input": {
+        "rsi": 63.41,
+        "trend": -1,
+        "price": 91341.3,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Bearish trend and cautionary approach from Strategic Analyst and Risk Manager, with undefined RSI values indicating potential over-sold conditions."
+    },
+    {
+      "input": {
+        "rsi": 61.57,
+        "trend": 1,
+        "price": 3105.98,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.63
+      },
+      "quality": "SILVER",
+      "reasoning": "Prioritized votes from 'Quantitative Analyst' and 'Neural Core' advise a cautious BUY due to uncertain RSI values and high imbalance, while 'Risk Manager' signals a BUY. Final decision is a cautious BUY."
+    },
+    {
+      "input": {
+        "rsi": 63.41,
+        "trend": 1,
+        "price": 91451,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Based on the prioritized votes from Risk Manager and Neural Core, and abstention of Quantitative Analyst, the final verdict is a BUY decision with a moderate level of confidence."
+    },
+    {
+      "input": {
+        "rsi": 67.86,
+        "trend": -1,
+        "price": 139.25,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Override 'Neural Core' HOLD due to 'Risk Manager' BUY decision, with consideration for 'Strategic Analyst' caution."
+    },
+    {
+      "input": {
+        "rsi": 58.95,
+        "trend": 1,
+        "price": 91430,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "SILVER",
+      "reasoning": "Strategic Analyst's BUY signal with moderate confidence, prioritized over Risk Manager's HOLD signal and abstaining Quantitative and Neural Core analysts."
+    },
+    {
+      "input": {
+        "rsi": 58.95,
+        "trend": 1,
+        "price": 91359.2,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.8
+      },
+      "quality": "SILVER",
+      "reasoning": "Quantitative Analyst's high confidence in a reversal and undefined RSI data indicate a potential market correction."
+    },
+    {
+      "input": {
+        "rsi": 56.85,
+        "trend": 1,
+        "price": 3111.75,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.5
+      },
+      "quality": "SILVER",
+      "reasoning": "Based on the votes from the Strategic Analyst and Risk Manager, with consideration for the abstention from the Quantitative Analyst and Neural Core."
+    },
+    {
+      "input": {
+        "rsi": 56.85,
+        "trend": 1,
+        "price": 3110.54,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggegator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 56.23,
+        "trend": 1,
+        "price": 91395.8,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "The Risk Manager's BUY signal takes precedence over the HOLD signals from the Strategic Analyst and Neural Core, considering the undefined RSI value."
+    },
+    {
+      "input": {
+        "rsi": 50.4,
+        "trend": 1,
+        "price": 3109.57,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.7
+      },
+      "quality": "SILVER",
+      "reasoning": "The Risk Manager's SELL decision is respected due to its higher confidence level and clear indication of caution, while the Quantitative Analyst and Neural Core indicate a more neutral stance."
+    },
+    {
+      "input": {
+        "rsi": 50.4,
+        "trend": 1,
+        "price": 3105.59,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.64
+      },
+      "quality": "SILVER",
+      "reasoning": "Risk Manager's bullish trend and undefined RSI outweighed the Neural Core's HOLD signal, while the Strategic Analyst's moderate BUY signal adds support."
+    },
+    {
+      "input": {
+        "rsi": 50.4,
+        "trend": 1,
+        "price": 3107.83,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggegator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 56.23,
+        "trend": 1,
+        "price": 91372.8,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.54
+      },
+      "quality": "SILVER",
+      "reasoning": "Strategic Analyst's strong BUY signal and weighted average confidence score above 0.5, while respecting Risk Manager's caution on high volatility."
+    },
+    {
+      "input": {
+        "rsi": 56.23,
+        "trend": 1,
+        "price": 91368.8,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Based on the overall consensus, the market is considered undervalued, and the BULLISH trend suggests an upward movement, making it a good time to buy. However, the RSI is undefined, and the 'Neural Core' voted to HOLD, indicating a need for caution."
+    },
+    {
+      "input": {
+        "rsi": 50.4,
+        "trend": 1,
+        "price": 3104.15,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Given the current bullish trend and the undefined RSI value, the market is likely to continue rising in the short term. However, the 'Neural Core' recommendation to HOLD due to caution suggests that the market may be overbought or oversold. The final verdict is a BUY action with moderate confidence."
+    },
+    {
+      "input": {
+        "rsi": 53.48,
+        "trend": 1,
+        "price": 91297.8,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.66
+      },
+      "quality": "SILVER",
+      "reasoning": "Majority of agents recommend a BUY action with moderate confidence, but 'Neural Core' vote is taken into account as it provides a signal direction"
+    },
+    {
+      "input": {
+        "rsi": 50.19,
+        "trend": 1,
+        "price": 3099,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Majority vote in favor of buying, with the abstained vote not contributing to the signal direction."
+    },
+    {
+      "input": {
+        "rsi": 53.48,
+        "trend": -1,
+        "price": 91154.8,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Based on the Strategic Analyst's higher confidence and the overall consensus, we decide to BUY. However, we also consider the cautious approach suggested by the Neural Core (Local) and the Quantitative Analyst's abstain."
+    },
+    {
+      "input": {
+        "rsi": 53.48,
+        "trend": -1,
+        "price": 91089.8,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.4
+      },
+      "quality": "SILVER",
+      "reasoning": "Risk Manager's signal (BUY) with moderate confidence (0.4) prevails due to Quantitative Analyst and Neural Core abstention."
+    },
+    {
+      "input": {
+        "rsi": 50.19,
+        "trend": -1,
+        "price": 3092.85,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Considering the cautious buy signal from the Quantitative Analyst, the HOLD from the Neutral Core (with undefined RSI), and the caution from the Risk Manager, a balanced decision is made to execute a BUY with moderate confidence."
+    },
+    {
+      "input": {
+        "rsi": 61.25,
+        "trend": -1,
+        "price": 138.55,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.8
+      },
+      "quality": "SILVER",
+      "reasoning": "Risk Manager's caution signal takes precedence, citing uncertainty surrounding RSI and unclear F&G metric."
+    },
+    {
+      "input": {
+        "rsi": 54.88,
+        "trend": -1,
+        "price": 3096.87,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.55
+      },
+      "quality": "SILVER",
+      "reasoning": "Conflict between 'Neural Core (Local Algo)' and 'Risk Manager (Mistral)' signals, but 'Strategic Analyst (Llama 3 70B)' has higher confidence."
+    },
+    {
+      "input": {
+        "rsi": 46.14,
+        "trend": 1,
+        "price": 3100.48,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "The Quantitative Analyst and Neural Core signaled neutral and HOLD, respectively. The Risk Manager and Strategic Analyst recommended a buy with moderate confidence levels. Considering these factors, the final verdict is to buy with a moderate confidence level."
+    },
+    {
+      "input": {
+        "rsi": 51.91,
+        "trend": 1,
+        "price": 3103.87,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.65
+      },
+      "quality": "SILVER",
+      "reasoning": "Quantitative Analyst and Neural Core voted to BUY, with the Neural Core's reasoning based on RSI. Risk Manager did not signal extreme caution."
+    },
+    {
+      "input": {
+        "rsi": 57.73,
+        "trend": -1,
+        "price": 91165.3,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.65
+      },
+      "quality": "SILVER",
+      "reasoning": "Based on the cautious approach from prioritized models and the Risk Manager, a SELL decision is made. The undefined RSI and slight imbalance in the market indicate potential downtrend."
+    },
+    {
+      "input": {
+        "rsi": 57.73,
+        "trend": -1,
+        "price": 91165.5,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.83
+      },
+      "quality": "SILVER",
+      "reasoning": "The Quantitative Analyst's high confidence score in recommending a SELL, combined with the Neural Core's HOLD recommendation and the bearish market trend, indicate a potential short-term sell opportunity."
+    },
+    {
+      "input": {
+        "rsi": 62.72,
+        "trend": -1,
+        "price": 137.85,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.65
+      },
+      "quality": "SILVER",
+      "reasoning": "Quantitative Analyst's signal direction prioritized, with consideration for extreme caution from Risk Manager, and the overall lower confidence of the other models."
+    },
+    {
+      "input": {
+        "rsi": 42.64,
+        "trend": 1,
+        "price": 3108.62,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 42.64,
+        "trend": 1,
+        "price": 3107.66,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.68
+      },
+      "quality": "SILVER",
+      "reasoning": "The Risk Manager and the Strategic Analyst both signal a BUY, while the Quantitative Analyst is ABSTAIN and the Neural Core signals a HOLD."
+    },
+    {
+      "input": {
+        "rsi": 42.64,
+        "trend": 1,
+        "price": 3110.08,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 62.96,
+        "trend": -1,
+        "price": 138.59,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.7
+      },
+      "quality": "SILVER",
+      "reasoning": "Final verdict: Prioritizing caution over holding, respecting Risk Manager's decision and Quantitative Analyst's SELL signal."
+    },
+    {
+      "input": {
+        "rsi": 49.48,
+        "trend": 1,
+        "price": 91356,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.65
+      },
+      "quality": "SILVER",
+      "reasoning": "Majority of agents suggest a buy action with moderate confidence. Abstention by Quantitative Analyst and Neural Core is considered in the consensus score calculation."
+    },
+    {
+      "input": {
+        "rsi": 48.41,
+        "trend": 1,
+        "price": 91363.3,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.63
+      },
+      "quality": "SILVER",
+      "reasoning": "Majority of analysts recommended a BUY action, with the Strategic Analyst having the highest confidence score."
+    },
+    {
+      "input": {
+        "rsi": 59.34,
+        "trend": -1,
+        "price": 138.32,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.42
+      },
+      "quality": "SILVER",
+      "reasoning": "The Risk Manager and Strategic Analyst's signals, despite the Quantitative Analyst's abstention and the Neural Core's HOLD signal, suggest a potential buying opportunity."
+    },
+    {
+      "input": {
+        "rsi": 48.41,
+        "trend": 1,
+        "price": 91332.8,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Given the bullish trend and moderate F&G score, the 'Risk Manager' recommends a BUY. However, the 'Quantitative Analyst' and 'Neural Core' signal caution, recommending a HOLD. To strike a balance, the final decision is a BUY with a lower confidence score."
+    },
+    {
+      "input": {
+        "rsi": 42.82,
+        "trend": 1,
+        "price": 3113.87,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.5
+      },
+      "quality": "SILVER",
+      "reasoning": "BUY recommended by Strategic Analyst and Risk Manager, with caution from Risk Manager and abstention from Quantitative Analyst."
+    },
+    {
+      "input": {
+        "rsi": 47.28,
+        "trend": 1,
+        "price": 91265.1,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.5
+      },
+      "quality": "SILVER",
+      "reasoning": "The 'Strategic Analyst' vote to BUY with moderate confidence, combined with the 'Neural Core' neutral vote and abstentions from the 'Quantitative Analyst' and 'Risk Manager', results in a moderate consensus to BUY with a confidence of 0.5."
+    },
+    {
+      "input": {
+        "rsi": 47.28,
+        "trend": 1,
+        "price": 91265.1,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Consensus decision based on Quantitative Analyst (DeepSeek) and Neural Core (Local) votes."
+    },
+    {
+      "input": {
+        "rsi": 47.28,
+        "trend": 1,
+        "price": 91380.7,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Risk Manager's signal prioritized due to high confidence, with consideration for undefined RSI data."
+    },
+    {
+      "input": {
+        "rsi": 33.53,
+        "trend": 1,
+        "price": 3116.69,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Buy signals from Quantitative Analyst and Neural Core prioritized, Risk Manager's buy signal considered, Strategic Analyst's cautionary signal disregarded."
+    },
+    {
+      "input": {
+        "rsi": 42.35,
+        "trend": 1,
+        "price": 91360.5,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.65
+      },
+      "quality": "SILVER",
+      "reasoning": "Cautionary votes from the Quantitative Analyst and Neural Core are respected, but the Risk Manager's BUY vote prevails."
+    },
+    {
+      "input": {
+        "rsi": 33.53,
+        "trend": 1,
+        "price": 3117.68,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Prioritizing the BUY signals from Neural Core and Strategic Analyst, while respecting the cautionary HOLD signal from Risk Manager."
+    },
+    {
+      "input": {
+        "rsi": 33.53,
+        "trend": 1,
+        "price": 3118.33,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 44.1,
+        "trend": 1,
+        "price": 91430,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Risk Manager's buy signal takes precedence over cautionary holds from other analysts, indicating a moderate confidence in the decision."
+    },
+    {
+      "input": {
+        "rsi": 44.1,
+        "trend": 1,
+        "price": 91441.2,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.5
+      },
+      "quality": "SILVER",
+      "reasoning": "Conflict between abstaining Quantitative Analyst and other analysts. Risk Manager suggests BUY with low confidence, while the Strategic Analyst suggests BUY with higher confidence. The Neural Core suggests HOLD. The final decision is a BUY with relatively low confidence."
+    },
+    {
+      "input": {
+        "rsi": 55.69,
+        "trend": 1,
+        "price": 138.88,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.635
+      },
+      "quality": "SILVER",
+      "reasoning": "Prioritized signal direction from Quantitative Analyst (DeepSeek) and Neural Core (Local) with consensus score calculated from their confidence levels."
+    },
+    {
+      "input": {
+        "rsi": 34,
+        "trend": 1,
+        "price": 3116.69,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "The Strategic Analyst recommends a BUY action with a 70% confidence level, while the Neural Core suggests a HOLD action with a 60% confidence level. However, the Risk Manager expresses caution, and we respect this by reducing the overall confidence score. We will execute the BUY action recommended by the Strategic Analyst."
+    },
+    {
+      "input": {
+        "rsi": 34,
+        "trend": 1,
+        "price": 3117.79,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.65
+      },
+      "quality": "SILVER",
+      "reasoning": "Final verdict: BUY. Risk Manager's caution with a higher confidence level takes precedence, but overall market conditions favor a buy decision."
+    },
+    {
+      "input": {
+        "rsi": 44.1,
+        "trend": 1,
+        "price": 91432.4,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "SILVER",
+      "reasoning": "Based on the Quantitative Analyst's abstention, the Strategic Analyst's caution due to undefined RSI, and the Risk Manager's confident BUY signal."
+    },
+    {
+      "input": {
+        "rsi": 44.1,
+        "trend": 1,
+        "price": 91416.1,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Moderate buying signals from Strategic Analyst and Risk Manager, with no extreme caution signals from other analysts."
+    },
+    {
+      "input": {
+        "rsi": 43.91,
+        "trend": 1,
+        "price": 91431.9,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Risk Manager's decision took precedence over conflicting signals. Quantitative Analyst abstained, and Neural Core recommended a HOLD. Strategic Analyst's conflicting signals were also considered."
+    },
+    {
+      "input": {
+        "rsi": 36.98,
+        "trend": 1,
+        "price": 3111.95,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 36.98,
+        "trend": 1,
+        "price": 3113.85,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Final verdict is a BUY based on combined votes from Strategic Analyst and Risk Manager, with explicit 'BUY' recommendation from Risk Manager."
+    },
+    {
+      "input": {
+        "rsi": 36.98,
+        "trend": 1,
+        "price": 3114.91,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "SILVER",
+      "reasoning": "Bullish trend and neutral to fearful F&G index suggest a potential pullback. Riding the wave with a cautious approach."
+    },
+    {
+      "input": {
+        "rsi": 43.91,
+        "trend": 1,
+        "price": 91339.4,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.64
+      },
+      "quality": "SILVER",
+      "reasoning": "Both Quantitative Analyst (DeepSeek) and Neural Core (Local) recommend a BUY action with moderate confidence. Risk Manager (Mistral) suggests caution, but does not override the consensus."
+    },
+    {
+      "input": {
+        "rsi": 36.98,
+        "trend": 1,
+        "price": 3114.6,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.675
+      },
+      "quality": "SILVER",
+      "reasoning": "Based on the prioritized analysts (Neural Core and Strategic Analyst), the consensus is to execute a BUY action, despite the undefined RSI value. The Quantitative Analyst abstained from making a recommendation."
+    },
+    {
+      "input": {
+        "rsi": 43.91,
+        "trend": 1,
+        "price": 91329.9,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.65
+      },
+      "quality": "SILVER",
+      "reasoning": "BUY signal from Quantitative Analyst and Neural Core prioritized over Risk Manager's caution. Final decision made with moderate confidence."
+    },
+    {
+      "input": {
+        "rsi": 55.27,
+        "trend": 1,
+        "price": 138.76,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.62
+      },
+      "quality": "SILVER",
+      "reasoning": "Based on the signal direction from the Neural Core (Local Algo) and moderate confidence scores from the Strategic Analyst (Llama 3 70B) and Risk Manager (Mistral), the final verdict is to BUY."
+    },
+    {
+      "input": {
+        "rsi": 55.27,
+        "trend": 1,
+        "price": 138.76,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "The consensus engine prioritized the signals from Quantitative Analyst (DeepSeek) and Neural Core (Local). Although Quantitative Analyst suggested a cautious 'HOLD' due to undefined RSI conditions, Neural Core's confidence in 'BUY' tipped the balance. A cautious approach was taken to reflect the uncertainty."
+    },
+    {
+      "input": {
+        "rsi": 55.27,
+        "trend": 1,
+        "price": 138.78,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.63
+      },
+      "quality": "SILVER",
+      "reasoning": "Majority of analysts recommend BUY action, prioritizing signal direction from Llama 3 70B, Mistral, and Local Algo."
+    },
+    {
+      "input": {
+        "rsi": 55.27,
+        "trend": 1,
+        "price": 138.84,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Majority of voting analysts decided to BUY, with Strategic Analyst and Risk Manager voting for BUY and abstained votes from Quantitative Analyst and Neural Core."
+    },
+    {
+      "input": {
+        "rsi": 47.79,
+        "trend": 1,
+        "price": 91468.3,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Risk Manager recommendation prevails with Strategic Analyst holding due to uncertainty."
+    },
+    {
+      "input": {
+        "rsi": 55.27,
+        "trend": 1,
+        "price": 139.06,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 44.74,
+        "trend": 1,
+        "price": 91475.8,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Majority vote from Strategic Analyst and Risk Manager; cautious approach due to abstention from Quantitative Analyst and Neural Core."
+    },
+    {
+      "input": {
+        "rsi": 36.03,
+        "trend": 1,
+        "price": 3125.98,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.67
+      },
+      "quality": "SILVER",
+      "reasoning": "Based on the prioritized agent votes, we decide to buy. The Quantitative Analyst and Neural Core suggest a cautious approach, while the Risk Manager signals a BUY with high confidence."
+    },
+    {
+      "input": {
+        "rsi": 36.03,
+        "trend": 1,
+        "price": 3127.22,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.65
+      },
+      "quality": "SILVER",
+      "reasoning": "Risk Manager's moderate confidence in a bullish trend and undefined RSI overcame Quantitative Analyst's HOLD signal. Final verdict: a cautious buy decision."
+    },
+    {
+      "input": {
+        "rsi": 48.19,
+        "trend": 1,
+        "price": 139.38,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.65
+      },
+      "quality": "SILVER",
+      "reasoning": "TITAN consensus engine decided to proceed with a BUY order, balancing the conflicting signals from the analysts. The undefined RSI value is a concern, but the Risk Manager's BUY recommendation and the Neural Core's calculated score of 0.50 tip the scales in favor of a BUY."
+    },
+    {
+      "input": {
+        "rsi": 45.36,
+        "trend": 1,
+        "price": 140.08,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 31.29,
+        "trend": 1,
+        "price": 140.2,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 31.44,
+        "trend": 1,
+        "price": 3194.96,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.65
+      },
+      "quality": "SILVER",
+      "reasoning": "Bullish trend and F&G indicator support continued upward momentum, despite undefined RSI value. Risk Manager's buy signal was prioritized."
+    },
+    {
+      "input": {
+        "rsi": 31.44,
+        "trend": 1,
+        "price": 3194.28,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Risk Manager and Neural Core suggest a BUY action, despite lack of RSI status. Quantitative Analyst's abstain does not affect the decision."
+    },
+    {
+      "input": {
+        "rsi": 31.44,
+        "trend": 1,
+        "price": 3193.63,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 32.88,
+        "trend": 1,
+        "price": 93515.4,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.475
+      },
+      "quality": "SILVER",
+      "reasoning": "Final verdict: Risk Manager's decision takes precedence, with a weighted average consensus score of 65 and an average confidence of 0.475."
+    },
+    {
+      "input": {
+        "rsi": 31.44,
+        "trend": 1,
+        "price": 3196.3,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 30.16,
+        "trend": 1,
+        "price": 93599.9,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": -1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Risk Manager signals extreme caution, prioritized over other agents."
+    },
+    {
+      "input": {
+        "rsi": 44.85,
+        "trend": 1,
+        "price": 143.28,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Risk Manager suggests a BUY decision, but caution is recommended due to undefined RSI and market uncertainty."
+    },
+    {
+      "input": {
+        "rsi": 44.85,
+        "trend": 1,
+        "price": 143.29,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.65
+      },
+      "quality": "SILVER",
+      "reasoning": "Prioritizing Quantitative Analyst and Neural Core signals, with caution from Risk Manager overridden due to weighted consensus score above 0.5."
+    },
+    {
+      "input": {
+        "rsi": 29.42,
+        "trend": 1,
+        "price": 3199.78,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Neutral Core's 'BUY' signal prioritized over Risk Manager's caution, while considering Quantitative Analyst's abstention."
+    },
+    {
+      "input": {
+        "rsi": 28.38,
+        "trend": 1,
+        "price": 93463.8,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.55
+      },
+      "quality": "SILVER",
+      "reasoning": "Majority vote from Strategic Analyst and Risk Manager; however, caution due to Risk Manager's concerns."
+    },
+    {
+      "input": {
+        "rsi": 28.38,
+        "trend": 1,
+        "price": 93473.4,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.9333
+      },
+      "quality": "SILVER",
+      "reasoning": "Strong buying signals from Strategic Analyst and Risk Manager, with caution from Neural Core."
+    },
+    {
+      "input": {
+        "rsi": 27.56,
+        "trend": 1,
+        "price": 3191.3,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Given conflicting signals from Quantitative Analyst and Neural Core, prioritizing Risk Manager's recommendation to respect extreme caution and market trend."
+    },
+    {
+      "input": {
+        "rsi": 28.38,
+        "trend": 1,
+        "price": 93562.5,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.65
+      },
+      "quality": "SILVER",
+      "reasoning": "Majority of agents signaled to BUY, with the Quantitative Analyst abstaining and the Neural Core signaling to HOLD."
+    },
+    {
+      "input": {
+        "rsi": 27.56,
+        "trend": 1,
+        "price": 3193.05,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.65
+      },
+      "quality": "SILVER",
+      "reasoning": "Final verdict: The 'Strategic Analyst' and 'Risk Manager' models suggest a cautious buy with a moderate confidence score. The 'Quantitative Analyst' and 'Neural Core' abstained and held respectively."
+    },
+    {
+      "input": {
+        "rsi": 33.78,
+        "trend": 1,
+        "price": 93522.1,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.65
+      },
+      "quality": "SILVER",
+      "reasoning": "Bullish trend and a moderate imbalance of 0.023751524922430035 indicate a potential buying opportunity. Local algorithm calculated score 0.30 was used to support the decision."
+    },
+    {
+      "input": {
+        "rsi": 49.7,
+        "trend": 1,
+        "price": 143.23,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 49.7,
+        "trend": 1,
+        "price": 143.27,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 33.78,
+        "trend": 1,
+        "price": 93703.9,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "BUY signal with caution due to undefined RSI and risk assessment. Prioritizing Risk Manager's cautious approach."
+    },
+    {
+      "input": {
+        "rsi": 33.78,
+        "trend": 1,
+        "price": 93651,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.63
+      },
+      "quality": "SILVER",
+      "reasoning": "Considering the Quantitative Analyst's minor imbalance in favor of sellers and the Risk Manager's BUY action with higher confidence, we will prioritize the Risk Manager's recommendation."
+    },
+    {
+      "input": {
+        "rsi": 49.7,
+        "trend": 1,
+        "price": 143.59,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 33.78,
+        "trend": 1,
+        "price": 93772.2,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.65
+      },
+      "quality": "SILVER",
+      "reasoning": "Quantitative Analyst abstained, Neural Core suggested caution, but Risk Manager and Strategic Analyst recommended a BUY strategy with caution."
+    },
+    {
+      "input": {
+        "rsi": 49.7,
+        "trend": 1,
+        "price": 143.66,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Bullish trend with undefined RSI suggests a potential buying opportunity."
+    },
+    {
+      "input": {
+        "rsi": 46.54,
+        "trend": 1,
+        "price": 143.79,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6333
+      },
+      "quality": "SILVER",
+      "reasoning": "The majority of the agents agree on a 'BUY' decision, but with caution due to the undefined RSI value."
+    },
+    {
+      "input": {
+        "rsi": 33.07,
+        "trend": 1,
+        "price": 3208.22,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Buy decision due to Risk Manager's recommendation and Strategic Analyst's optimism, despite Neural Core's caution."
+    },
+    {
+      "input": {
+        "rsi": 46.54,
+        "trend": 1,
+        "price": 143.86,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "The majority of analysts suggest a 'BUY' action, despite the undefined RSI value. This decision is made with moderate confidence due to the uncertainty introduced by the undefined RSI value."
+    },
+    {
+      "input": {
+        "rsi": 33.07,
+        "trend": 1,
+        "price": 3208.06,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 33.43,
+        "trend": 1,
+        "price": 93999.1,
+        "symbol": "cmt_btcusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Risk Manager's 'BUY' vote takes precedence over Neural Core's 'HOLD' vote, and Strategic Analyst's 'BUY' vote has a moderate confidence score."
+    },
+    {
+      "input": {
+        "rsi": 33.07,
+        "trend": 1,
+        "price": 3204.83,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Risk Manager's decision prioritized over abstaining Quantitative Analyst and Neural Core, with caution due to undefined RSI value."
+    }
+  ]
+}

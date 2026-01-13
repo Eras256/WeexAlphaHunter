@@ -27,7 +27,9 @@
         "verify:base-sepolia": "hardhat run scripts/verify.js --network baseSepolia",
         "trade:live": "tsx packages/engine-backtest/src/simple-executor.ts",
         "trade:titan": "tsx packages/engine-backtest/src/titan-executor.ts",
-        "register:strategies": "tsx packages/engine-backtest/src/register-strategies.ts"
+        "register:strategies": "tsx packages/engine-backtest/src/register-strategies.ts",
+        "generate:dataset": "tsx scripts/generate-golden-dataset.ts",
+        "train:brain": "tsx scripts/train-brain.ts"
     },
     "devDependencies": {
         "@google/generative-ai": "^0.24.1",
