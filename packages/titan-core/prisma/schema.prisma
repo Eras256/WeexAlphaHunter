@@ -1,5 +1,5 @@
 // =============================================================================
-// TITAN CRDT LOCAL LEDGER SCHEMA
+// TITAN CRDT LOCAL LEDGER SCHEMA (SQLite Compatible)
 // =============================================================================
 // Conflict-free Replicated Data Type (CRDT) schema for offline resilience.
 // Allows autonomous operation when cloud connection is severed, with automatic
@@ -9,6 +9,8 @@
 // - Immutable audit trail for all decisions
 // - Human oversight interface
 // - Kill switch state tracking
+//
+// NOTE: SQLite doesn't support native enums, so we use String with comments
 
 generator client {
   provider = "prisma-client-js"
@@ -18,7 +20,7 @@ generator client {
 datasource db {
   // SQLite for local-first operation (can sync to PostgreSQL via CRDT)
   provider = "sqlite"
-  url      = "file:./titan-ledger.db"
+  url      = env("DATABASE_URL")
 }
 
 // =============================================================================
@@ -30,10 +32,12 @@ model Decision {
   id              String   @id @default(cuid())
   
   // Decision details
-  action          Action
+  // action: BUY | SELL | HOLD | HALT
+  action          String
   confidence      Float
   reasoning       String
-  source          SignalSource
+  // source: MATH_GUARDIAN | NEURAL_CORTEX | SYMBOLIC_CONSENSUS | EMERGENCY_HALT | MOA_CONSENSUS
+  source          String
   proofHash       String   @unique
   
   // Market context at decision time
@@ -45,18 +49,19 @@ model Decision {
   trendStrength   Float?
   
   // Neural input (if available)
-  neuralAction    Action?
+  neuralAction    String?
   neuralConfidence Float?
   
   // Execution status
-  canExecute      Bool     @default(false)
-  wasExecuted     Bool     @default(false)
+  canExecute      Boolean  @default(false)
+  wasExecuted     Boolean  @default(false)
   executedOrderId String?
   
   // CRDT fields for offline sync
   vectorClock     Int      @default(0)
   nodeId          String   @default("local")
-  syncStatus      SyncStatus @default(PENDING)
+  // syncStatus: PENDING | SYNCED | CONFLICT | LOCAL_ONLY
+  syncStatus      String   @default("PENDING")
   
   // Timestamps
   createdAt       DateTime @default(now())
@@ -82,7 +87,8 @@ model Execution {
   // Exchange details
   exchangeOrderId String
   symbol          String
-  side            Action
+  // side: BUY | SELL | HOLD | HALT
+  side            String
   quantity        Float
   entryPrice      Float
   
@@ -91,7 +97,8 @@ model Execution {
   takeProfitPrice Float?
   
   // Outcome tracking
-  status          ExecutionStatus @default(PENDING)
+  // status: PENDING | FILLED | PARTIALLY_FILLED | CANCELLED | CLOSED_TP | CLOSED_SL | CLOSED_MANUAL | FAILED
+  status          String   @default("PENDING")
   exitPrice       Float?
   realizedPnl     Float?
   closedAt        DateTime?
@@ -104,7 +111,7 @@ model Execution {
   // CRDT fields
   vectorClock     Int      @default(0)
   nodeId          String   @default("local")
-  syncStatus      SyncStatus @default(PENDING)
+  syncStatus      String   @default("PENDING")
   
   // Timestamps
   createdAt       DateTime @default(now())
@@ -120,7 +127,8 @@ model Position {
   
   // Position details
   symbol          String   @unique
-  side            Action
+  // side: BUY | SELL | HOLD | HALT
+  side            String
   entryPrice      Float
   currentQuantity Float
   averagePrice    Float
@@ -144,7 +152,7 @@ model Position {
 model KillSwitch {
   id              String   @id @default("singleton")
   
-  isActive        Bool     @default(false)
+  isActive        Boolean  @default(false)
   activatedBy     String?
   activationReason String?
   activatedAt     DateTime?
@@ -163,8 +171,10 @@ model AuditLog {
   id              String   @id @default(cuid())
   
   // Event details
-  eventType       AuditEventType
-  severity        AuditSeverity
+  // eventType: DECISION_MADE | TRADE_EXECUTED | KILL_SWITCH_ACTIVATED | KILL_SWITCH_DEACTIVATED | NEURAL_VETO | MATH_OVERRIDE | LATENCY_HALT | VOLATILITY_HALT | SYNC_CONFLICT | SYSTEM_ERROR
+  eventType       String
+  // severity: DEBUG | INFO | WARN | ERROR | CRITICAL
+  severity        String
   message         String
   metadata        String?          // JSON blob
   
@@ -191,8 +201,10 @@ model AgentVote {
   id              String   @id @default(cuid())
   
   // Vote details
-  agentType       AgentType
-  action          Action
+  // agentType: TREND_AGENT | VOLATILITY_AGENT | SENTIMENT_AGENT | QUANT_AGENT | RISK_AGENT | META_AGGREGATOR
+  agentType       String
+  // action: BUY | SELL | HOLD | HALT
+  action          String
   confidence      Float
   reasoning       String
   
@@ -218,77 +230,10 @@ model NetworkHealth {
   aiLatencyMs       Int?
   
   // Status
-  isHealthy       Bool     @default(true)
+  isHealthy       Boolean  @default(true)
   haltReason      String?
   
   createdAt       DateTime @default(now())
   
   @@index([createdAt])
-}
-
-// =============================================================================
-// ENUMS
-// =============================================================================
-
-enum Action {
-  BUY
-  SELL
-  HOLD
-  HALT
-}
-
-enum SignalSource {
-  MATH_GUARDIAN
-  NEURAL_CORTEX
-  SYMBOLIC_CONSENSUS
-  EMERGENCY_HALT
-  MOA_CONSENSUS
-}
-
-enum SyncStatus {
-  PENDING      // Awaiting sync to cloud
-  SYNCED       // Successfully synced
-  CONFLICT     // Conflict detected, needs resolution
-  LOCAL_ONLY   // Marked as local-only (won't sync)
-}
-
-enum ExecutionStatus {
-  PENDING
-  FILLED
-  PARTIALLY_FILLED
-  CANCELLED
-  CLOSED_TP      // Closed by Take Profit
-  CLOSED_SL      // Closed by Stop Loss
-  CLOSED_MANUAL  // Closed manually
-  FAILED
-}
-
-enum AuditEventType {
-  DECISION_MADE
-  TRADE_EXECUTED
-  KILL_SWITCH_ACTIVATED
-  KILL_SWITCH_DEACTIVATED
-  NEURAL_VETO
-  MATH_OVERRIDE
-  LATENCY_HALT
-  VOLATILITY_HALT
-  SYNC_CONFLICT
-  SYSTEM_ERROR
-}
-
-enum AuditSeverity {
-  DEBUG
-  INFO
-  WARN
-  ERROR
-  CRITICAL
-}
-
-enum AgentType {
-  TREND_AGENT
-  VOLATILITY_AGENT
-  SENTIMENT_AGENT
-  QUANT_AGENT
-  RISK_AGENT
-  META_AGGREGATOR
 }

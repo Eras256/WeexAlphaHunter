@@ -9,3 +9,4 @@ export * from './local-ai.js';
 export * from './neural-ai.js';
 export * from './titan-engine.js';
 export * from './local-llm-hub.js';
+export * from './titan-v3.js';

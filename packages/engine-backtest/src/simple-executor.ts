@@ -1,4 +1,4 @@
-import { createBlockchainClient, createGeminiClient, createConsensusEngine, generateUUID, logger, sleep, TitanEngine, twitterClient } from "../../core/src/index.js";
+import { createBlockchainClient, createGeminiClient, createConsensusEngine, generateUUID, logger, sleep, TitanEngine, twitterClient, TitanV3Core, titanV3 } from "../../core/src/index.js";
 import { runMoA, Signal } from "./moa-engine.js";
 
 import { ethers } from "ethers";
@@ -47,6 +47,16 @@ export async function runTradeExecutor() {
 
     const titan = new TitanEngine(gemini); // Initialize Titan V2 (2025 Architecture)
 
+    // TITAN V3: Neuro-Symbolic Core with Kill Switch
+    await titanV3.initialize();
+
+    // Listen for critical events
+    titanV3.on('killSwitch', (data: any) => {
+        if (data.activated) {
+            logger.error(`🛑 TITAN V3 EMERGENCY HALT: ${data.reason}`);
+        }
+    });
+
     // DUAL CHAIN ARCHITECTURE: Base L2 (Primary) + Eth L1 (Settlement)
     const blockchainBase = createBlockchainClient('baseSepolia');
     const blockchainEth = createBlockchainClient('sepolia');
@@ -60,6 +70,7 @@ export async function runTradeExecutor() {
     }
 
     logger.info("✅ Systems Initialized:");
+    logger.info("   • Titan V3 Neuro-Symbolic Core (Kill Switch: Ready)");
     logger.info("   • Consensus AI (Titan MoA: Gemini 2.5 + DeepSeek + Llama + Mistral)");
     logger.info("   • Blockchain L2: Base Sepolia ✓");
     logger.info(`   • Blockchain L1: Ethereum Sepolia ${blockchainEth ? '✓' : '✗'}`);
@@ -387,6 +398,56 @@ export async function runTradeExecutor() {
                     } else {
                         logger.info(`  ⏸️  Consensus is HOLD. Waiting for better opportunity.`);
                         continue;
+                    }
+                }
+
+                // ═══════════════════════════════════════════════════════════════════
+                // TITAN V3: NEURO-SYMBOLIC GUARDIAN (Final Judge)
+                // This layer validates MoA decisions using pattern matching
+                // Can VETO risky trades or HALT on extreme conditions
+                // ═══════════════════════════════════════════════════════════════════
+                const titanV3MarketData = {
+                    symbol,
+                    price: currentPrice,
+                    rsi: rsiValue,
+                    ofi: imbalance,
+                    volatility: Math.abs(imbalance) * 3, // Approximate volatility from order flow
+                    trendStrength: imbalance,
+                    fearGreed: fearGreedIndex,
+                    trend: trend
+                };
+
+                const titanV3Verdict = await titanV3.generateConsensus(titanV3MarketData, 50);
+
+                logger.info(`  🦁 TITAN V3 Validation: ${titanV3Verdict.finalAction} (${titanV3Verdict.source})`);
+                logger.info(`     ${titanV3Verdict.reasoning}`);
+
+                // TITAN V3 CAN OVERRIDE:
+                // 1. If HALT - emergency stop all trading
+                // 2. If MoA says BUY but Titan says SELL/HOLD - VETO
+                // 3. If low confidence in both - HOLD
+
+                if (titanV3Verdict.finalAction === 'HALT') {
+                    logger.error(`  🛑 TITAN V3 EMERGENCY HALT! Skipping trade and pausing for 30s...`);
+                    await sleep(30000);
+                    continue;
+                }
+
+                if (!titanV3Verdict.canExecute) {
+                    logger.warn(`  ⚠️ TITAN V3 VETO: Not safe to execute. Reason: ${titanV3Verdict.reasoning}`);
+                    continue;
+                }
+
+                // Check for disagreement (MoA vs TitanV3)
+                if (signal.action !== titanV3Verdict.finalAction && titanV3Verdict.finalAction !== 'HOLD') {
+                    // If TitanV3 confidence is higher, override
+                    if (titanV3Verdict.finalConfidence > signal.confidence) {
+                        logger.info(`  🔄 TITAN V3 OVERRIDE: Changing ${signal.action} → ${titanV3Verdict.finalAction}`);
+                        signal.action = titanV3Verdict.finalAction;
+                        signal.reasoning = `[TitanV3 Override] ${titanV3Verdict.reasoning}`;
+                        signal.modelUsed = `Titan_V3_${titanV3Verdict.source}`;
+                    } else {
+                        logger.info(`  ✅ MoA signal confirmed (higher confidence than TitanV3)`);
                     }
                 }
 
