@@ -69,31 +69,49 @@ export async function runTitanExecutor() {
         }
     } catch (e) { }
 
-    // Fetch Initial Balance
-    try {
-        logger.info("📊 Fetching account balance from WEEX...");
-        const account = await exchange.getAccountInfo();
-        logger.info(`📊 Account Response: ${JSON.stringify(account).substring(0, 200)}`);
+    // Fetch Initial Balance with Retries
+    let balanceRetries = 0;
+    const maxBalanceRetries = 10; // Try for ~20 seconds
 
-        if (Array.isArray(account)) {
-            const usdt = account.find((a: any) => a.asset === 'USDT' || a.currency === 'USDT' || a.coinName === 'USDT');
-            logger.info(`📊 USDT Object Found: ${JSON.stringify(usdt)}`);
-            if (usdt) {
-                initialEquity = parseFloat(usdt.equity || usdt.available || '0');
-                availableBalance = parseFloat(usdt.available || '0');
-                logger.info(`📊 Parsed Equity: $${initialEquity}`);
+    while (balanceRetries < maxBalanceRetries) {
+        try {
+            logger.info(`📊 Fetching account balance from WEEX (Attempt ${balanceRetries + 1}/${maxBalanceRetries})...`);
+            const account = await exchange.getAccountInfo();
+            // logger.info(`📊 Account Response: ${JSON.stringify(account).substring(0, 200)}`); // Reduce noise
+
+            if (Array.isArray(account)) {
+                const usdt = account.find((a: any) => a.asset === 'USDT' || a.currency === 'USDT' || a.coinName === 'USDT');
+                if (usdt) {
+                    initialEquity = parseFloat(usdt.equity || usdt.available || '0');
+                    availableBalance = parseFloat(usdt.available || '0');
+                    logger.info(`📊 Parsed Equity: $${initialEquity} | Available: $${availableBalance}`);
+                }
+            } else if ((account as any)?.account_equity) {
+                initialEquity = parseFloat((account as any).account_equity);
+                if ((account as any).available) availableBalance = parseFloat((account as any).available);
             }
-        } else if (account?.account_equity) {
-            initialEquity = parseFloat(account.account_equity);
-            if (account.available) availableBalance = parseFloat(account.available);
+
+            if (initialEquity > 0) {
+                currentEquity = initialEquity;
+                logger.info(`💰 Initial Equity Confirmed: $${initialEquity.toFixed(2)}`);
+                useShadowLedger = false;
+                break; // Success
+            } else {
+                logger.warn(`⚠️ Balance 0 or parse failed. Retrying...`);
+            }
+        } catch (e: any) {
+            logger.warn(`⚠️ Failed to fetch equity: ${e.message}`);
         }
 
-        if (initialEquity < 10) throw new Error(`Balance too low: $${initialEquity}`);
-        currentEquity = initialEquity;
-        logger.info(`💰 Initial Equity: $${initialEquity.toFixed(2)}`);
-    } catch (e: any) {
-        logger.warn(`⚠️ Failed to fetch equity: ${e.message}`);
-        logger.warn(`⚠️ Using Shadow Ledger ($1000).`);
+        balanceRetries++;
+        await sleep(2000);
+    }
+
+    // Critical Failure Fallback
+    if (initialEquity <= 0) {
+        logger.error(`❌ CRITICAL: Could not fetch REAL balance after ${maxBalanceRetries} attempts.`);
+        logger.warn(`⚠️ ACTIVATING SHADOW LEDGER ($1000) AS FALLBACK.`);
+        logger.warn(`⚠️ ORDERS WILL NOT BE SENT TO EXCHANGE.`);
         initialEquity = 1000.0;
         currentEquity = 1000.0;
         useShadowLedger = true;
@@ -122,23 +140,34 @@ export async function runTitanExecutor() {
                 if (usdt) {
                     currentEquity = parseFloat(usdt.equity || usdt.available);
                     availableBalance = parseFloat(usdt.available || '0');
-                } else if (typeof account?.account_equity !== 'undefined') {
-                    currentEquity = parseFloat(account.account_equity);
+                } else if (typeof (account as any)?.account_equity !== 'undefined') {
+                    currentEquity = parseFloat((account as any).account_equity);
                     // If available not explicitly provided in this format, assume it equals equity for now or 0 if unknown
-                    if (typeof account?.available !== 'undefined') availableBalance = parseFloat(account.available);
+                    if (typeof (account as any)?.available !== 'undefined') availableBalance = parseFloat((account as any).available);
                 }
             } catch (e) { }
         }
 
         const pnl = currentEquity - initialEquity;
-        const pnlPercent = ((currentEquity - initialEquity) / initialEquity) * 100;
-        const durationMin = (Date.now() - startTime) / 60000;
+        const pnlPercent = (initialEquity > 0) ? (pnl / initialEquity) * 100 : 0;
+        const durationMin = ((Date.now() - startTime) / 60000).toFixed(1);
+
+        // Fun gamification status
+        let goalStatus = "QUALIFYING";
+        if (pnlPercent > 50) goalStatus = "FINALIST 🏆";
+        else if (pnlPercent > 100) goalStatus = "WINNER 🏎️";
+        else if (pnlPercent < -50) goalStatus = "REKT 💀";
+
+        const projectedAnnualROI = (pnlPercent / (Math.max(0.1, parseFloat(durationMin)) / (60 * 24 * 365))).toFixed(0);
 
         console.log(`
 ╔════════════════════════════════════════════════════════════════════════╗
-║ ⚡ TITAN PURE (OFFLINE MODE) - 100% LOCAL EXECUTION                    ║
+║ 🏎️  WEEX AI WARS: RACE TO THE BENTLEY (TITAN PURE EDITION)           
+                      ║
 ╠════════════════════════════════════════════════════════════════════════╣
-║ 💰 $${currentEquity.toFixed(2)} (${pnl >= 0 ? '+' : ''}${pnl.toFixed(2)})   ║   🧠 Model: Local Neural + Math V1      ║
+║ 💰 Initial: $${initialEquity.toFixed(2)}      💰 Current: $${currentEquity.toFixed(2)} (${pnl >= 0 ? '+' : ''}${pnl.toFixed(2)})     ║
+║ 📈 PnL: ${pnl >= 0 ? '+' : ''}${pnlPercent.toFixed(4)}%          🚀 Annual ROI: ${projectedAnnualROI}%             ║
+║ 🏆 Goal: ${goalStatus}            ⏳ Runtime: ${durationMin}m                ║
 ╚════════════════════════════════════════════════════════════════════════╝`);
 
         for (const symbol of SYMBOLS) {

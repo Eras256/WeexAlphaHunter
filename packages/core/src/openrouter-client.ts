@@ -21,13 +21,14 @@ export class OpenRouterClient {
         }
         this.model = model;
         this.http = axios.create({
-            baseURL: 'https://openrouter.ai/api/v1',
+            baseURL: 'https://openrouter.ai/api/v1', // Ensure this is correct
             headers: {
                 Authorization: `Bearer ${apiKey}`,
                 'Content-Type': 'application/json',
-                // optional: you can set "HTTP-Referer" or "X-Title" for better routing
+                'HTTP-Referer': 'https://github.com/AlphaHunter', // OpenRouter often requires these
+                'X-Title': 'AlphaHunter'
             },
-            timeout: 15000, // 15 s network timeout
+            timeout: 15000,
         });
     }
 
@@ -40,12 +41,18 @@ export class OpenRouterClient {
             model: this.model,
             messages: [{ role: 'user', content: params.prompt }],
         };
-        const resp = await this.http.post('/chat/completions', payload);
-        // OpenRouter follows OpenAI schema: choices[0].message.content
-        const content = resp.data?.choices?.[0]?.message?.content;
-        if (!content) {
-            throw new Error('Empty response from OpenRouter');
+        try {
+            const resp = await this.http.post('/chat/completions', payload);
+            const content = resp.data?.choices?.[0]?.message?.content;
+            if (!content) throw new Error('Empty response');
+            return content.trim();
+        } catch (e: any) {
+            // Enhanced debug logging
+            const status = e.response?.status;
+            const data = JSON.stringify(e.response?.data || {});
+            console.error(`[OpenRouter] Error (${this.model}): Status ${status} | Data: ${data}`);
+            throw e;
         }
-        return content.trim();
     }
+
 }

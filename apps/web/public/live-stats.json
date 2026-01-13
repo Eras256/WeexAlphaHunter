@@ -1,3663 +1,755 @@
 {
-  "initialEquity": 2100.02718191,
-  "currentEquity": 1955.08171554,
-  "pnl": -144.95,
-  "pnlPercent": -6.9021,
-  "roi": "-53509.65",
-  "runtime": 67.8,
-  "timestamp": 1767597631962,
+  "initialEquity": 994.06768961,
+  "currentEquity": 994.98657739,
+  "pnl": 0.92,
+  "pnlPercent": 0.0924,
+  "roi": 1724.41,
+  "runtime": 28.2,
+  "timestamp": 1768267469625,
   "recentActivity": [
     {
-      "hash": "0x6fdb575e825a6cca259a349b9e6d9c71466e5b21e06f91e815c1b5adec70039f",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767597602617,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x6fdb575e825a6cca259a349b9e6d9c71466e5b21e06f91e815c1b5adec70039f",
-      "strategy": "L2 Order Flow Scalper",
-      "pnl": 0
-    },
-    {
-      "hash": "0x0712f7538e7b1d9e794df64f02aa04ee89a316d77efb47d4786ebc6b9a9f66c0",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767597586364,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x0712f7538e7b1d9e794df64f02aa04ee89a316d77efb47d4786ebc6b9a9f66c0",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0xad626eb0949e346a712de556158f3a3aa5a872bdc0b71b77d5d766ac1eb05b84",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767597574448,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xad626eb0949e346a712de556158f3a3aa5a872bdc0b71b77d5d766ac1eb05b84",
-      "strategy": "L2 Order Flow Scalper",
-      "pnl": 0
-    },
-    {
-      "hash": "0x09b688a11dc5cb41e736f959f522514889222d1a9110147395753f596bbff38b",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767597456436,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x09b688a11dc5cb41e736f959f522514889222d1a9110147395753f596bbff38b",
-      "strategy": "L2 Order Flow Scalper",
-      "pnl": 0
-    },
-    {
-      "hash": "0x110fa35e6c20d383777968d4ab8d50c26f0174a21c446dbe89af9c30c8b69ce0",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767597428786,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x110fa35e6c20d383777968d4ab8d50c26f0174a21c446dbe89af9c30c8b69ce0",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0xd5af02f55ea3a2847544776f10b9c531a7d57a140e5e71d50648d683841ed422",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767597322355,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xd5af02f55ea3a2847544776f10b9c531a7d57a140e5e71d50648d683841ed422",
-      "strategy": "L2 Order Flow Scalper",
-      "pnl": 0
-    },
-    {
-      "hash": "0x268ad6b04dc5da45e58a15a738c6cbf6909f06b42bc4709873f7572f38848ea9",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767597305775,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x268ad6b04dc5da45e58a15a738c6cbf6909f06b42bc4709873f7572f38848ea9",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0x5d58a89a1b83a100fd7f69d958d8e52a85bc6b67250f36c5ec815b92d14be5dd",
-      "action": "MATH_EXEC",
-      "details": "SELL SOLUSDT",
-      "timestamp": 1767597285221,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x5d58a89a1b83a100fd7f69d958d8e52a85bc6b67250f36c5ec815b92d14be5dd",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0xa1aac285d6e9cc14d0a7ebc388a896174abee050858b1a42fb40a71d61e83af0",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767597174446,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xa1aac285d6e9cc14d0a7ebc388a896174abee050858b1a42fb40a71d61e83af0",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0x48ec2b46be0b397f975761ef0b069e1696685fa6fb7fad05445746334fbbb69f",
-      "action": "MATH_EXEC",
-      "details": "SELL SOLUSDT",
-      "timestamp": 1767597086436,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x48ec2b46be0b397f975761ef0b069e1696685fa6fb7fad05445746334fbbb69f",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0xd56b43ef29feba2222e72c484891e30e037266187583e62aedadad45d0785410",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767596971129,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xd56b43ef29feba2222e72c484891e30e037266187583e62aedadad45d0785410",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0xbef61f9d7969dc4316b262400366ab827364ee25c3a2790677d4423a596b12d3",
-      "action": "MATH_EXEC",
-      "details": "SELL SOLUSDT",
-      "timestamp": 1767596891065,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xbef61f9d7969dc4316b262400366ab827364ee25c3a2790677d4423a596b12d3",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0xa52ed12ff66d5455cf94b3dbe53838e722537326d1b707cfe94cbefd5ee1ecd0",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767596790491,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xa52ed12ff66d5455cf94b3dbe53838e722537326d1b707cfe94cbefd5ee1ecd0",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0x3d19452f07b61212a5bfc01fb6719810afd04acad4fac1c853bc6290a7e4d971",
-      "action": "MATH_EXEC",
-      "details": "SELL SOLUSDT",
-      "timestamp": 1767596763209,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x3d19452f07b61212a5bfc01fb6719810afd04acad4fac1c853bc6290a7e4d971",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0x7d281827897b30518e04fd7d12dfd8800528f3563b222d02fab9742f81c75a78",
-      "action": "MATH_EXEC",
-      "details": "SELL SOLUSDT",
-      "timestamp": 1767596642779,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x7d281827897b30518e04fd7d12dfd8800528f3563b222d02fab9742f81c75a78",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0xa834684c039d33704f5278adbbd51b23ff1bb759ca06e030ee7ea3d2502a5ffc",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767596633822,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xa834684c039d33704f5278adbbd51b23ff1bb759ca06e030ee7ea3d2502a5ffc",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0x08a81bc03b69d5e9827b98fd851447c3ce5f73e2aa1bcdc9320ad1e3ec2af530",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767596464044,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x08a81bc03b69d5e9827b98fd851447c3ce5f73e2aa1bcdc9320ad1e3ec2af530",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0x7d2e2e93d98674f498e8014fa9d56eddfad8b2e70ff58507bbc03185bf293a07",
-      "action": "MATH_EXEC",
-      "details": "SELL SOLUSDT",
-      "timestamp": 1767596443708,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x7d2e2e93d98674f498e8014fa9d56eddfad8b2e70ff58507bbc03185bf293a07",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0x9c95eceab0f9ea5f94ba2a660e3517c2e3fb6c5687d99f1c1bee6b4e24da32d7",
-      "action": "MATH_EXEC",
-      "details": "SELL SOLUSDT",
-      "timestamp": 1767596318755,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x9c95eceab0f9ea5f94ba2a660e3517c2e3fb6c5687d99f1c1bee6b4e24da32d7",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0xeec0a5ac0b86caf24ca37f69a3abe664ac6cf729bebf3e50803256a39d29db0e",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767596309777,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xeec0a5ac0b86caf24ca37f69a3abe664ac6cf729bebf3e50803256a39d29db0e",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0xf822491c215bfee1a6f73c3eb019d957a066757e4686eb857410e0df76f44ce8",
-      "action": "MATH_EXEC",
-      "details": "SELL BTCUSDT",
-      "timestamp": 1767596195324,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xf822491c215bfee1a6f73c3eb019d957a066757e4686eb857410e0df76f44ce8",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0xbd166e6a621e18aa3d01aec0ec8e920cf272a7c0c69ff1794da825f80ad37dce",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767596070338,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xbd166e6a621e18aa3d01aec0ec8e920cf272a7c0c69ff1794da825f80ad37dce",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0x5101a36bcd29e1bc31bc89a188412c3257ce48424db775b70c00d3e1a9b7ac6c",
-      "action": "MATH_EXEC",
-      "details": "SELL SOLUSDT",
-      "timestamp": 1767596001971,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x5101a36bcd29e1bc31bc89a188412c3257ce48424db775b70c00d3e1a9b7ac6c",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0x2fb11795663a93f81191622d6fd9f094e584d7e67f685acfad0159a28d0c0f71",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767595893990,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x2fb11795663a93f81191622d6fd9f094e584d7e67f685acfad0159a28d0c0f71",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0x29f6637fe35a2c6d4836ade3dcfb8afe3cfb7a87e0a84012db9b3f8ca7ac4f79",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767595761657,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x29f6637fe35a2c6d4836ade3dcfb8afe3cfb7a87e0a84012db9b3f8ca7ac4f79",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0xd695d10e60a069590d0667f36f6219335630ca39b8ddb006643063c5641320f4",
-      "action": "MATH_EXEC",
-      "details": "SELL SOLUSDT",
-      "timestamp": 1767595700043,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xd695d10e60a069590d0667f36f6219335630ca39b8ddb006643063c5641320f4",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0xc070e6a4ad2883a457da3ff4ee4af5f64975a5a2d9828d9f8b315ac5007e73d7",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767595646162,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xc070e6a4ad2883a457da3ff4ee4af5f64975a5a2d9828d9f8b315ac5007e73d7",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0xb021c24b75be0c71de5676a09b9e5ba29aa0469a312241c04d85444f7e077de7",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767595395689,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xb021c24b75be0c71de5676a09b9e5ba29aa0469a312241c04d85444f7e077de7",
-      "strategy": "L2 Order Flow Scalper",
-      "pnl": 0
-    },
-    {
-      "hash": "0x057609ce76db7bbfa9cb68214c8d844cff7fc51bc6694bd6ee3229a42400a7e0",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767595356297,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x057609ce76db7bbfa9cb68214c8d844cff7fc51bc6694bd6ee3229a42400a7e0",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0x346fa80f1a7818ae33bf0611a52e0256ffd2dd9ee185ca470bca73cf8f948f7b",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767595223701,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x346fa80f1a7818ae33bf0611a52e0256ffd2dd9ee185ca470bca73cf8f948f7b",
-      "strategy": "L2 Order Flow Scalper",
-      "pnl": 0
-    },
-    {
-      "hash": "0x7f173395087735d1a0e2d3304f22422d80fd6b6ac40a2fd329f3aaacd2ded998",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767595173544,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x7f173395087735d1a0e2d3304f22422d80fd6b6ac40a2fd329f3aaacd2ded998",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0x231bf1bd6eefaa8acb13f2b039976a752a66d4e6dbb6742e97e1335876302da9",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767595081172,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x231bf1bd6eefaa8acb13f2b039976a752a66d4e6dbb6742e97e1335876302da9",
-      "strategy": "L2 Order Flow Scalper",
-      "pnl": 0
-    },
-    {
-      "hash": "0x1622b3441c4d05a180ca80a92c66725d120e56bee0680894c8d88ecebf2fc305",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767595027146,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x1622b3441c4d05a180ca80a92c66725d120e56bee0680894c8d88ecebf2fc305",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0x26fe4aa0fa2a5f63bcbbcfa5a6c4165730932675be451f81b8362fdbac095f43",
-      "action": "MATH_EXEC",
-      "details": "SELL SOLUSDT",
-      "timestamp": 1767595003707,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x26fe4aa0fa2a5f63bcbbcfa5a6c4165730932675be451f81b8362fdbac095f43",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0x1464b39bd0ab43f9e666d476a8b76081910c6fc455e1bcce7c201e481ea09ce7",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767594879201,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x1464b39bd0ab43f9e666d476a8b76081910c6fc455e1bcce7c201e481ea09ce7",
-      "strategy": "L2 Order Flow Scalper",
-      "pnl": 0
-    },
-    {
-      "hash": "0x1d529008389110ddcf35304f9c5a581de90871bfcf6da62caf976cd259bcf84b",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767594824422,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x1d529008389110ddcf35304f9c5a581de90871bfcf6da62caf976cd259bcf84b",
-      "strategy": "Vortex Mean Reversion",
-      "pnl": 0
-    },
-    {
-      "hash": "0xde188c6c65433e97ee1fe6eb58ccb9eb19055a7c94d264bdc96ddb960e82824e",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767594755188,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xde188c6c65433e97ee1fe6eb58ccb9eb19055a7c94d264bdc96ddb960e82824e",
-      "strategy": "L2 Order Flow Scalper",
-      "pnl": 0
-    },
-    {
-      "hash": "0xe4a584df0af834cd2e3bf2b6994f08d1298f3c1bc2fe58441bd7638b56ab5974",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767581865262,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xe4a584df0af834cd2e3bf2b6994f08d1298f3c1bc2fe58441bd7638b56ab5974",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xaaf4ddbea70d4063cdb0bd46f205ba1c30905c3580689200a6f5d305504babbc",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767581852023,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xaaf4ddbea70d4063cdb0bd46f205ba1c30905c3580689200a6f5d305504babbc",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x83ba1c49f52f3771781c5895400cf9cf8df33b5adcf94c73fecf8107983833ea",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767581837789,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x83ba1c49f52f3771781c5895400cf9cf8df33b5adcf94c73fecf8107983833ea",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xd4407741e12382daa751fc0075e8b9571478cc242782fb7f868329c047494ff9",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767581731629,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xd4407741e12382daa751fc0075e8b9571478cc242782fb7f868329c047494ff9",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x3f24e4e703fb5f1e2f61a2496199ac52769a2280200d21ab6388225eea773d86",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767581717208,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x3f24e4e703fb5f1e2f61a2496199ac52769a2280200d21ab6388225eea773d86",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x98ae4a0907742e9827cc4c42264edf3c738200842399568c0994f81fa0d741a7",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767581673789,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x98ae4a0907742e9827cc4c42264edf3c738200842399568c0994f81fa0d741a7",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x16829a8cccb791fa8f9157f7be5d08ecfd511711739489581b365dcfc4b13171",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767581599248,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x16829a8cccb791fa8f9157f7be5d08ecfd511711739489581b365dcfc4b13171",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xe737e844a167c10abef52721498a2f1e53a5d0360c6f2979dd273014ea69bb73",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767581589158,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xe737e844a167c10abef52721498a2f1e53a5d0360c6f2979dd273014ea69bb73",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x53055a9d3fa983e1d2e56bf2286de143063d4c9435144448a75fb6d146c08c42",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767581533193,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x53055a9d3fa983e1d2e56bf2286de143063d4c9435144448a75fb6d146c08c42",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xae20a81df3d075ae230f03da0a3ea3961e50ea4aadb6e79ee8522185fb7ec885",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767581478155,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xae20a81df3d075ae230f03da0a3ea3961e50ea4aadb6e79ee8522185fb7ec885",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x39510a9e884ca0a3276e7de2a9c08ee6862d70f40c99158c8e1b585c4d4917bc",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767581467636,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x39510a9e884ca0a3276e7de2a9c08ee6862d70f40c99158c8e1b585c4d4917bc",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x8077a96647c85b57c1c457c137a4ab1834f2398b01e9c9d8a5035416d001570e",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767581359193,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x8077a96647c85b57c1c457c137a4ab1834f2398b01e9c9d8a5035416d001570e",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x60585a1b4585b59889de129c476c86806940e5bf17b0c8864a07bf9166cd775c",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767581342667,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x60585a1b4585b59889de129c476c86806940e5bf17b0c8864a07bf9166cd775c",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x0bb7e0ea6f9d8efba8af4fcf403e89303c7233e6bc4d9a24c4c9ff4e2d4235e2",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767581322030,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x0bb7e0ea6f9d8efba8af4fcf403e89303c7233e6bc4d9a24c4c9ff4e2d4235e2",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x94f1e203e7478e7cba8551fbb2c98e8add7e5e9dd7fd5b0145dc99dd2f0746b8",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767581217752,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x94f1e203e7478e7cba8551fbb2c98e8add7e5e9dd7fd5b0145dc99dd2f0746b8",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xeefa01d203e49549c335729eb7388fc0fa930d7b2879be4c4989f7d9858aeb14",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767581191351,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xeefa01d203e49549c335729eb7388fc0fa930d7b2879be4c4989f7d9858aeb14",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x61a32d1035cae016501cfc937a76d55bf31dc126d6d0ed5bb34611cb95eae19b",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767581170458,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x61a32d1035cae016501cfc937a76d55bf31dc126d6d0ed5bb34611cb95eae19b",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x6b36e3504dcb3c003cbc5d4d7fed04df106c6bf3ad9ed5126bae82bd205fc8f1",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767581086918,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x6b36e3504dcb3c003cbc5d4d7fed04df106c6bf3ad9ed5126bae82bd205fc8f1",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x20dc7786364b2fbdeb8999e6b5964ff3d7b3cfaced87a439704e720557423939",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767581060800,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x20dc7786364b2fbdeb8999e6b5964ff3d7b3cfaced87a439704e720557423939",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x57098b3f5380ade1c04680b208c15a9b0d279ebbfb93f79b35f44bf1309de9e5",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767581043878,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x57098b3f5380ade1c04680b208c15a9b0d279ebbfb93f79b35f44bf1309de9e5",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x0ce65174857bd9c2a0ec9c2b90e3fb7c5bcc06c37199ab8b24f164e9094db66e",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767580964844,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x0ce65174857bd9c2a0ec9c2b90e3fb7c5bcc06c37199ab8b24f164e9094db66e",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xabbfec135e3ff7b01d02adc6a2b1b4e03b93ca561f779b47958a797fbe558414",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767580938811,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xabbfec135e3ff7b01d02adc6a2b1b4e03b93ca561f779b47958a797fbe558414",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xc802ce07b5ff375edb1bef1a22a9a0bbaae8917f222610e44cec45aa3e242d99",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767580917749,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xc802ce07b5ff375edb1bef1a22a9a0bbaae8917f222610e44cec45aa3e242d99",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x0a87a45005323381c6566b22b5418d2b42d89b9da2f9f960f597c0ff42c31fad",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767580838634,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x0a87a45005323381c6566b22b5418d2b42d89b9da2f9f960f597c0ff42c31fad",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xead7c640b81fd1a3ebd95da353fefd91a263df7d9244f5ebc46c798d432f8c16",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767580808790,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xead7c640b81fd1a3ebd95da353fefd91a263df7d9244f5ebc46c798d432f8c16",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x5e1893aae8cf97dafad2e0baefdc577eeb7d815d5381c04f8ec63261b550a8fb",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767580792394,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x5e1893aae8cf97dafad2e0baefdc577eeb7d815d5381c04f8ec63261b550a8fb",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x5b13fd5ac0d1ed8dd8e677e04cd3240683ccdbc155e5b67eb74872618bc1edef",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767580690567,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x5b13fd5ac0d1ed8dd8e677e04cd3240683ccdbc155e5b67eb74872618bc1edef",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x8c48e002b2198a5bac2e0254fe52a453d014bf0c297a8d77858ad3880b4916be",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767580657334,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x8c48e002b2198a5bac2e0254fe52a453d014bf0c297a8d77858ad3880b4916be",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x2c61c7a9d4daa6418f27ce4273b20558a62f6f19db3d39c71e0c888a2d8968fb",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767580641131,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x2c61c7a9d4daa6418f27ce4273b20558a62f6f19db3d39c71e0c888a2d8968fb",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x328daed1af134c6076cfbd33d149aaa8fbab2ca01c832de0a40079771cd7654a",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767580566569,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x328daed1af134c6076cfbd33d149aaa8fbab2ca01c832de0a40079771cd7654a",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xe0ef4cf20656a272307d41ecfb8f1e087df3d21e7b6272af0ba5a083a52b4d49",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767580533181,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xe0ef4cf20656a272307d41ecfb8f1e087df3d21e7b6272af0ba5a083a52b4d49",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xdeb9001987b5036e5456e5bd2cd7784e12661918591677bbf3486a720fb684c8",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767580501063,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xdeb9001987b5036e5456e5bd2cd7784e12661918591677bbf3486a720fb684c8",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xbba85dbe86b2f1c5f0240d2bbbec19b13a2b5a5a607b4de3d9b30688fe044889",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767580441715,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xbba85dbe86b2f1c5f0240d2bbbec19b13a2b5a5a607b4de3d9b30688fe044889",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x46d05fdd2b5b9bba62f5dc9e3ae617f99de0b2e2875b24895bb8a7893c9a230c",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767580384600,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x46d05fdd2b5b9bba62f5dc9e3ae617f99de0b2e2875b24895bb8a7893c9a230c",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xe565638f324791a36224932df0e2fe22608f0b657bb95862910da8c623d8c03b",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767580371729,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xe565638f324791a36224932df0e2fe22608f0b657bb95862910da8c623d8c03b",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x3dc1bfdac00a6d0d078f2188e0b4afcf973d785b7d3eed7f2ec001c8406960b3",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767580319814,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x3dc1bfdac00a6d0d078f2188e0b4afcf973d785b7d3eed7f2ec001c8406960b3",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x251f297c8c52b4d6c867b2e58645a1f3073cf832e689f7afc4e7fbb6882d1a97",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767580254053,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x251f297c8c52b4d6c867b2e58645a1f3073cf832e689f7afc4e7fbb6882d1a97",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xb8a8e73a09ae2f28665a10a003d6d22d6b215947500f89e38053827f9331b0f0",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767580240752,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xb8a8e73a09ae2f28665a10a003d6d22d6b215947500f89e38053827f9331b0f0",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xea7aeed4873f17069aa648d462e9157a1da03facd347b3e04df7505b4326d243",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767580189051,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xea7aeed4873f17069aa648d462e9157a1da03facd347b3e04df7505b4326d243",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x0a5177c4ad267da29145d64574e63f52b9a7db573b090802d1aab7652233f1d5",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767580121828,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x0a5177c4ad267da29145d64574e63f52b9a7db573b090802d1aab7652233f1d5",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x08ef026450378dd5ba4cd563f305bf45dad890fc44f0909c3859c41ebe4b5e03",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767580077913,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x08ef026450378dd5ba4cd563f305bf45dad890fc44f0909c3859c41ebe4b5e03",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x5277e000e131b2f2b54aff2a63f2473d0a0d21800eae2752977683f060390dbd",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767580059917,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x5277e000e131b2f2b54aff2a63f2473d0a0d21800eae2752977683f060390dbd",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x56775deb9d4503ba8b22dce2d6f2924b22f8936ea5ed5c124329fdd720efe10f",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767579999813,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x56775deb9d4503ba8b22dce2d6f2924b22f8936ea5ed5c124329fdd720efe10f",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x7980d9de121b5d72f56a48c45c3f2e28ecce61d336b51ab2edb55bf43a90dbbb",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767579940446,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x7980d9de121b5d72f56a48c45c3f2e28ecce61d336b51ab2edb55bf43a90dbbb",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xd33523036e7d170003ce8f9b8f506b916d43ea1a15fa106a1ae78fc15f545596",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767579899028,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xd33523036e7d170003ce8f9b8f506b916d43ea1a15fa106a1ae78fc15f545596",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x9e7d8455dd36ba5bd54240ad881229ed2a7c8fb51d0b4dddbb9875da1cf880b1",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767579813868,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x9e7d8455dd36ba5bd54240ad881229ed2a7c8fb51d0b4dddbb9875da1cf880b1",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x9c731ec555fa0b2da7d1bd61b78638f4d92e7715e0a53ec69006df4e8ffd7686",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767579772054,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x9c731ec555fa0b2da7d1bd61b78638f4d92e7715e0a53ec69006df4e8ffd7686",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x6e86a4037783ab2a9152ef2464524ac75ba1fad1f4fa75cb6333a3bd06a34cff",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767579763045,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x6e86a4037783ab2a9152ef2464524ac75ba1fad1f4fa75cb6333a3bd06a34cff",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x9994a1a2c2f8a5e961ecbaebc8dd17273a1acc89181d458ed0c3f8c97d9313d7",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767579685180,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x9994a1a2c2f8a5e961ecbaebc8dd17273a1acc89181d458ed0c3f8c97d9313d7",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x517f553e325f83cdcaf682cd28482c3a1326f95efd3049c3ddda9ae8557a6dbc",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767579569913,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x517f553e325f83cdcaf682cd28482c3a1326f95efd3049c3ddda9ae8557a6dbc",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x9b2a96266bce1a27d64743245f21d6663280b5e309b4b43d72d010db4dbe85ee",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767579551901,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x9b2a96266bce1a27d64743245f21d6663280b5e309b4b43d72d010db4dbe85ee",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x28fac3f5702483c5f0ca582630cfe2f96578de31587b3ee6d8646e0ed496ba92",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767579539416,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x28fac3f5702483c5f0ca582630cfe2f96578de31587b3ee6d8646e0ed496ba92",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x2fb25818215e02fdc1a4cb396050758a4962a52a6f06ff23cf07007fb72b8d8b",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767579446198,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x2fb25818215e02fdc1a4cb396050758a4962a52a6f06ff23cf07007fb72b8d8b",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xe703e0cc16b175cc62aa1744be138351012a82397570059ac8ac03ce960fc478",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767579431050,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xe703e0cc16b175cc62aa1744be138351012a82397570059ac8ac03ce960fc478",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x3df9e9f2b4535dbd5c604934867220f0c57393928e879ec153b80f7b8cfc69b8",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767579368009,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x3df9e9f2b4535dbd5c604934867220f0c57393928e879ec153b80f7b8cfc69b8",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x64f525029140eee351d3d251c25fd4760a8bc25de04d30e1c0018f4362656da3",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767579313108,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x64f525029140eee351d3d251c25fd4760a8bc25de04d30e1c0018f4362656da3",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xf8e6f7cf17fa334ad77f12546157f7c8d70ebbe79aa36065b265fc1063b6ab72",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767579306413,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xf8e6f7cf17fa334ad77f12546157f7c8d70ebbe79aa36065b265fc1063b6ab72",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xcee4b4e3aeee74438e5ffa206653a5692e036680d75f52810d53d522f94927ea",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767579227129,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xcee4b4e3aeee74438e5ffa206653a5692e036680d75f52810d53d522f94927ea",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xfbb5dab0019c3882f6c9453c82b5b904db02d5d71a282119751edab7cc031995",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767579183675,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xfbb5dab0019c3882f6c9453c82b5b904db02d5d71a282119751edab7cc031995",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xe7f6725fa389e22d1c1efd7a3b31031d1b7026b05a22691355a1b4409aab7aaa",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767579176800,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xe7f6725fa389e22d1c1efd7a3b31031d1b7026b05a22691355a1b4409aab7aaa",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x897d9714d42c5d9b35efb79827f5b7f94880bdb663e85d4f25455bd3bed2e69a",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767579063709,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x897d9714d42c5d9b35efb79827f5b7f94880bdb663e85d4f25455bd3bed2e69a",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xf33493f63240c0474a17ca5b93e5569d43541bfbc56cdee4943f38c54ef42154",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767579043049,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xf33493f63240c0474a17ca5b93e5569d43541bfbc56cdee4943f38c54ef42154",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x9c3ca5f0920c569a1f34f2f52a2e091c73851a60135a440baa930e7b198be256",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767578981932,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x9c3ca5f0920c569a1f34f2f52a2e091c73851a60135a440baa930e7b198be256",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x56b46e726802e1b3b8977a191006b7aa57aa46103420002027ec0ec1516f8279",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767578938045,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x56b46e726802e1b3b8977a191006b7aa57aa46103420002027ec0ec1516f8279",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x1d8a8cd40494b8978c3112c08172f77995384683ef3fc88923fb262a1c7aa981",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767578917572,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x1d8a8cd40494b8978c3112c08172f77995384683ef3fc88923fb262a1c7aa981",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xa07f5f918a0aca5626e00abfa88d52c1fe271da95affff62b8dad090722e2991",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767578841671,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xa07f5f918a0aca5626e00abfa88d52c1fe271da95affff62b8dad090722e2991",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xa2bd698d5bccc03f6096abd58d4dc99626924f607aa24ae0cceacbf19c006566",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767578821175,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xa2bd698d5bccc03f6096abd58d4dc99626924f607aa24ae0cceacbf19c006566",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x45d199b2dc4b8f829a24c4b76465d0acc4aa0676d47cfaeda04bc0a671457954",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767578792329,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x45d199b2dc4b8f829a24c4b76465d0acc4aa0676d47cfaeda04bc0a671457954",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x812d03fa9f1bf4509e5f24e03030ddeb264c6e29ce028fd86a160ee15abad05a",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767578696827,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x812d03fa9f1bf4509e5f24e03030ddeb264c6e29ce028fd86a160ee15abad05a",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x364639e46c62e5e2d970c6f1a8c688d4e635330d3a6e5ba35c9d9b018353366f",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767578687766,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x364639e46c62e5e2d970c6f1a8c688d4e635330d3a6e5ba35c9d9b018353366f",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xfc324acef06b26928cbb2b5c9a2babece8691b308d4a2fcad3680d2163ffe6ee",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767578666798,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xfc324acef06b26928cbb2b5c9a2babece8691b308d4a2fcad3680d2163ffe6ee",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x7bbb1eaa85853dfb161957a4105af88047097d9b1851ae2e1684600ed3a1e330",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767578579452,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x7bbb1eaa85853dfb161957a4105af88047097d9b1851ae2e1684600ed3a1e330",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x6694f8322288b8c85bee324c8686992b95fa8448d1341aabe58ae6e4a5c3a563",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767578566207,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x6694f8322288b8c85bee324c8686992b95fa8448d1341aabe58ae6e4a5c3a563",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xa6791eab2ce77962e6efa4c7f687a07c33158bf71ef41d34be818c0ccfe36f4b",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767578534491,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xa6791eab2ce77962e6efa4c7f687a07c33158bf71ef41d34be818c0ccfe36f4b",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xcf1bfffd2ea9c294d65df07242586196f3a6e34e643ffcbbe7f380c032b237ac",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767578442370,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xcf1bfffd2ea9c294d65df07242586196f3a6e34e643ffcbbe7f380c032b237ac",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x02b3542c30504cd3e27fa2ac40dd373354e716dc76cb08ab8fb60e6a0bca50ab",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767578417429,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x02b3542c30504cd3e27fa2ac40dd373354e716dc76cb08ab8fb60e6a0bca50ab",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x1282e7c9aed8e974d0756f3668486589d61e0891253dbfd81123d688909b7487",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767578408697,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x1282e7c9aed8e974d0756f3668486589d61e0891253dbfd81123d688909b7487",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x149678ab08e7aade9a7c0f9b17c5913b5a3c326806aa26110216a9b13a242490",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767578261086,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x149678ab08e7aade9a7c0f9b17c5913b5a3c326806aa26110216a9b13a242490",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x0ab9a6497e4cbcb1d2256e283647cf347332cee3cdce7c3f9c627b40da46f76f",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767578245013,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x0ab9a6497e4cbcb1d2256e283647cf347332cee3cdce7c3f9c627b40da46f76f",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x73541d3967522b483cf50748e191ba40dfc9f7d6672d9dc720239f1fe55967d0",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767578173960,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x73541d3967522b483cf50748e191ba40dfc9f7d6672d9dc720239f1fe55967d0",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x1e3ee2db49c532045860b47b1e1faa18a1a3c88f7b91c25b78cf0789b02eb3b3",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767578141667,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x1e3ee2db49c532045860b47b1e1faa18a1a3c88f7b91c25b78cf0789b02eb3b3",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xade15878691b1fab98fb4352d3549c89a470b78d4d355b659911e159cc2407b5",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767578110189,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xade15878691b1fab98fb4352d3549c89a470b78d4d355b659911e159cc2407b5",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x8cf7f379f58b5d8bd1a452a65e692ef185198d4688be117e82fba5c03bcc252e",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767578057392,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x8cf7f379f58b5d8bd1a452a65e692ef185198d4688be117e82fba5c03bcc252e",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xe657a0dd59efdf3637627a04cdb3f7c01b90861a83f74b2a52bf0d6cd4e996bf",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767577998721,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xe657a0dd59efdf3637627a04cdb3f7c01b90861a83f74b2a52bf0d6cd4e996bf",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x44d3f269962f56943ed2d0d366825a10c0709b241475d49d7be9ada3c5702d47",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767577985505,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x44d3f269962f56943ed2d0d366825a10c0709b241475d49d7be9ada3c5702d47",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x72957074d9dcf17262b1b09e5fd01342d00d81f9d525600b5ac69aa0bb79c032",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767577931778,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x72957074d9dcf17262b1b09e5fd01342d00d81f9d525600b5ac69aa0bb79c032",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x91f0bfe51f87961a3f8caaebdc1f29774074b350b8545b332bd7d66ddc8ef743",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767577797732,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x91f0bfe51f87961a3f8caaebdc1f29774074b350b8545b332bd7d66ddc8ef743",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x02b7468bebc000f1bc427a58ba0ae835d61f71351a41e8188bada4510390f119",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767577788756,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x02b7468bebc000f1bc427a58ba0ae835d61f71351a41e8188bada4510390f119",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x72171cacdb12ed0094a7d10b8734edf58bd5de4efde563118bad23a5712dd3a9",
-      "action": "MATH_EXEC",
-      "details": "SELL ETHUSDT",
-      "timestamp": 1767577664917,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x72171cacdb12ed0094a7d10b8734edf58bd5de4efde563118bad23a5712dd3a9",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xdd5584ce6f91dfe2d8042913995e9066f318ca9078200c29fe9a090086a55056",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767577629270,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xdd5584ce6f91dfe2d8042913995e9066f318ca9078200c29fe9a090086a55056",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x9ff732fe9a0af75aeb23a127e4483a655fe229c8a321239001ecf9c65d9dc3f3",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767577618941,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x9ff732fe9a0af75aeb23a127e4483a655fe229c8a321239001ecf9c65d9dc3f3",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x6925f4101a3ff41c282165632cbec87a6dfb601db1522d6695805258e16df486",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767577501858,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x6925f4101a3ff41c282165632cbec87a6dfb601db1522d6695805258e16df486",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xb310305109517eceb546ae869f4f428c8229e3b5a8e99bdd178406b9b620e73c",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767577485113,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xb310305109517eceb546ae869f4f428c8229e3b5a8e99bdd178406b9b620e73c",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xbae5202c8b0c22baaeae5839c2b8dbcac361e8799569bb1e2c728867574272d0",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767577441278,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xbae5202c8b0c22baaeae5839c2b8dbcac361e8799569bb1e2c728867574272d0",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xbb334413540c1bcbd9bf406c02f111b17cb66a32d427f319d387b84efff07497",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767577376257,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xbb334413540c1bcbd9bf406c02f111b17cb66a32d427f319d387b84efff07497",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xc237b4b2dcacdd052fefc53c4cd3ecf89ee1608ee23b26775ce2d520516215f5",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767577359560,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xc237b4b2dcacdd052fefc53c4cd3ecf89ee1608ee23b26775ce2d520516215f5",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xb51d3db8e00d6478f5436248b8fe15aa8a9be8cceb54667eb2a7c188cbea9611",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767577315741,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xb51d3db8e00d6478f5436248b8fe15aa8a9be8cceb54667eb2a7c188cbea9611",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x8bbff753d71e3c8666838215d5ba76a81b3d844941119e195cebfc983802198b",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767577253472,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x8bbff753d71e3c8666838215d5ba76a81b3d844941119e195cebfc983802198b",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x064097f2b8ada1111444a33af80429f1238ffb4eeb715e94acbc895c83a815fc",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767577236767,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x064097f2b8ada1111444a33af80429f1238ffb4eeb715e94acbc895c83a815fc",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x499fbddf6c89dfc7e1be8fd508cf676754dbfec0ac7cebf94e34f1c1981f835c",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767577193191,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x499fbddf6c89dfc7e1be8fd508cf676754dbfec0ac7cebf94e34f1c1981f835c",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x36101f39ca8e8d79d769271e2eb577cc49a5994e0ad9c2546f9869c0f7dc9146",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767577131684,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x36101f39ca8e8d79d769271e2eb577cc49a5994e0ad9c2546f9869c0f7dc9146",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xa5b9a5eaa0cf8f39970e0ad4c112c8d5d3e627a6be972b63476371e4f7e3497c",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767577098923,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xa5b9a5eaa0cf8f39970e0ad4c112c8d5d3e627a6be972b63476371e4f7e3497c",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xe2345f3415dcb028b756e79a452e0fcae1c723eb35b41c0b3c891136c1b8b09f",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767577071021,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xe2345f3415dcb028b756e79a452e0fcae1c723eb35b41c0b3c891136c1b8b09f",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x54ea39a426a0f479bb5382079953c7a0e716a5be1717229df1d82c1e3b31b2f2",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767576998060,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x54ea39a426a0f479bb5382079953c7a0e716a5be1717229df1d82c1e3b31b2f2",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x6f1293045b7519d289456569111543a9a1fb728a1d387aceafa112bcd7c3ffd9",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767576962457,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x6f1293045b7519d289456569111543a9a1fb728a1d387aceafa112bcd7c3ffd9",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x2bc76c2b5822147fa7a15e59f5a5de4f829860b14f3d53e2cb9b6e4a556b61ac",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767576938402,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x2bc76c2b5822147fa7a15e59f5a5de4f829860b14f3d53e2cb9b6e4a556b61ac",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x71983321bb996f5d032acbd10b06715edd30f49c91724d340feaabbbcb2828a1",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767576884729,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x71983321bb996f5d032acbd10b06715edd30f49c91724d340feaabbbcb2828a1",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x11076df4dbf1f4bc7c8ad47c7a231b91b57b6492eeeec1397d01ae38291ba9be",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767576840659,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x11076df4dbf1f4bc7c8ad47c7a231b91b57b6492eeeec1397d01ae38291ba9be",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xd53d4a45d75504fda6e2d8a033a43923408e5b8e3bdaa14f51abd8315263272f",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767576812785,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xd53d4a45d75504fda6e2d8a033a43923408e5b8e3bdaa14f51abd8315263272f",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xf676ca9e2084ced73e170b42d722f20a6149365da1849ecdba859eea5a27f905",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767576755806,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xf676ca9e2084ced73e170b42d722f20a6149365da1849ecdba859eea5a27f905",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xfdc87c74e0524e38cc16d0220607bf2de84601d3a6a67ad901a30f3b1ba6ffcb",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767576696050,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xfdc87c74e0524e38cc16d0220607bf2de84601d3a6a67ad901a30f3b1ba6ffcb",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x7c480e395089760047462887b6212481797d9e068727dd1791e9b0dc8a6700a0",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767576679719,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x7c480e395089760047462887b6212481797d9e068727dd1791e9b0dc8a6700a0",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x3bba039101e34940f97ae34be1fd24aa0368f5afd203c4cd453292fecf187fd0",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767576629940,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x3bba039101e34940f97ae34be1fd24aa0368f5afd203c4cd453292fecf187fd0",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x1d67c37297f2d834a78b607b9aca8c632221f3f3b3b8aa5e703d36f508731545",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767576546013,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x1d67c37297f2d834a78b607b9aca8c632221f3f3b3b8aa5e703d36f508731545",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xae5fd757660e8634e7b97e8968ac6fa2fd145814c366ae16c4e1cf7edc852cc9",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767576517741,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xae5fd757660e8634e7b97e8968ac6fa2fd145814c366ae16c4e1cf7edc852cc9",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x5256bf6360901d0159da050d5c10eb3e23f35198fd0c9a83e5683ffdc22bda00",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767576504389,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x5256bf6360901d0159da050d5c10eb3e23f35198fd0c9a83e5683ffdc22bda00",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xf8345acd0cb0ee9707c65b28fbe5a14b8eb459f50afa305b63fd5c35fd5dd2cd",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767576427678,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xf8345acd0cb0ee9707c65b28fbe5a14b8eb459f50afa305b63fd5c35fd5dd2cd",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xc7fa9cd49b6aa79e3b15df8a31fd540fd10a39084d3e7e46d98d5f7170265ac5",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767576384578,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xc7fa9cd49b6aa79e3b15df8a31fd540fd10a39084d3e7e46d98d5f7170265ac5",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x0039ad903131e54ad0dea448a019e0ddf9c6f87f5c8a7e8d3200fbb9054ccd6b",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767576332967,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x0039ad903131e54ad0dea448a019e0ddf9c6f87f5c8a7e8d3200fbb9054ccd6b",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xa40f6a15a63030370b3d6a20a9ed0bfbdbaf60c8307d648c39c44095a2c307c4",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767576299701,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xa40f6a15a63030370b3d6a20a9ed0bfbdbaf60c8307d648c39c44095a2c307c4",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xd0a7091efe45733d6c11123c55b910551059bff6b529a515c98d3068710a8923",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767576267265,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xd0a7091efe45733d6c11123c55b910551059bff6b529a515c98d3068710a8923",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xfd435b310c5d207e635baed5a146ad994c723d6fff3a3147e8e9d5d77a4223ed",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767576195957,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xfd435b310c5d207e635baed5a146ad994c723d6fff3a3147e8e9d5d77a4223ed",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xf836aaf35c40f3532efb6992d8d659baf71fcbbc3efbf7387428fa74e800e3cf",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767576170228,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xf836aaf35c40f3532efb6992d8d659baf71fcbbc3efbf7387428fa74e800e3cf",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x5cbcd370f136aa53148f586bee507653f379c0fe75c986dd155720bbbbdd876a",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767576138529,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x5cbcd370f136aa53148f586bee507653f379c0fe75c986dd155720bbbbdd876a",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x341726defeefdcaa89fabc1a7f86008fc4b599c32604c11e79f1570b39e55a99",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767576048881,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x341726defeefdcaa89fabc1a7f86008fc4b599c32604c11e79f1570b39e55a99",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x46db37d566201109057a21d6c6cdd6c041f776f691bb69bf04d6c6d595857937",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767576023024,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x46db37d566201109057a21d6c6cdd6c041f776f691bb69bf04d6c6d595857937",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x7cbfaf0c8f348c642d19896a834fbb8c86175d06dcd41c8dc7a14e05456f26c3",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767576013813,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x7cbfaf0c8f348c642d19896a834fbb8c86175d06dcd41c8dc7a14e05456f26c3",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x65351f31d5a5e3db3288720b276922209e538a5299205a019c04cf02940b7e2f",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767572379666,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x65351f31d5a5e3db3288720b276922209e538a5299205a019c04cf02940b7e2f",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x2755e528ee89d9a2740b9c07297c88efc0054eeb48589875b3c746cd1b4f5886",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767572152252,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x2755e528ee89d9a2740b9c07297c88efc0054eeb48589875b3c746cd1b4f5886",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x03489f1fc9b3fd6b66f87654be18b9ed6e6c3fe75c2f78676b5022d739edb2db",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767572139970,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x03489f1fc9b3fd6b66f87654be18b9ed6e6c3fe75c2f78676b5022d739edb2db",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x5b2a7d1c01323613877aea7cc332c83c30c045fa427e5c39b7778c3acdfbfe90",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767572118076,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x5b2a7d1c01323613877aea7cc332c83c30c045fa427e5c39b7778c3acdfbfe90",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xe1b851b1bbaf2305132bbbeac33c9cd30a1b788ba843e9c4ee42ac7c923fc336",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767572109458,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xe1b851b1bbaf2305132bbbeac33c9cd30a1b788ba843e9c4ee42ac7c923fc336",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x3025705909ef50659bd74a8493ed47a1e8310ca145a2501064e6e3a42c28784d",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767572074351,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x3025705909ef50659bd74a8493ed47a1e8310ca145a2501064e6e3a42c28784d",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x6942c154784309998231c35f2bb5564219a89ffc55594d488f79d3b73046f67b",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767572051778,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x6942c154784309998231c35f2bb5564219a89ffc55594d488f79d3b73046f67b",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x0668fb9df1b5343e6a20c2b3b0f07779a28d04a163d0a7fa44b238e03e7e2c6a",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767572037542,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x0668fb9df1b5343e6a20c2b3b0f07779a28d04a163d0a7fa44b238e03e7e2c6a",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x19c78ed7f9cba97ace72489d79c6df0725b1958020a69866af601042dbe50051",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767572028850,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x19c78ed7f9cba97ace72489d79c6df0725b1958020a69866af601042dbe50051",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x5c2c371e764c242536f295d3cbee805e75713b0b01916af38a389b16cd9a01bb",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767572023967,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x5c2c371e764c242536f295d3cbee805e75713b0b01916af38a389b16cd9a01bb",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x5511253744a6d319cfd0469d4e9bb6b982fb1cfe9d715b54be1b525e2f225ace",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767572001357,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x5511253744a6d319cfd0469d4e9bb6b982fb1cfe9d715b54be1b525e2f225ace",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x086794b5abc16f60f4d70fd7da1f1f6463069eeda2c1dd2d40b4c71feaaecb0e",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767571982850,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x086794b5abc16f60f4d70fd7da1f1f6463069eeda2c1dd2d40b4c71feaaecb0e",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x73578a12c53ca6d5ce0f378f8f3a39bd620f8bae41d156210a522e30c3371506",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571969417,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x73578a12c53ca6d5ce0f378f8f3a39bd620f8bae41d156210a522e30c3371506",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x0180bdf42f90440ac9ac36dc2acb13018c10c617b4eef9c6e261f6d7b9f40785",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571960489,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x0180bdf42f90440ac9ac36dc2acb13018c10c617b4eef9c6e261f6d7b9f40785",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xf821442ef6b1dadbd4ab490f46624740dd915b971ca8085773608cc2ac8fd574",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767571942042,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xf821442ef6b1dadbd4ab490f46624740dd915b971ca8085773608cc2ac8fd574",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x0f82cafb260eab3fe377811d75f4f56c98aeb38031f70da3d9ba63da3dcb7206",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571931101,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x0f82cafb260eab3fe377811d75f4f56c98aeb38031f70da3d9ba63da3dcb7206",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x7dc0180e4261eee0a785dd23f2aede90c76a7e7a6cb685be0144d23f1ca985e7",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571908496,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x7dc0180e4261eee0a785dd23f2aede90c76a7e7a6cb685be0144d23f1ca985e7",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xea7b1650cc553ddb5c3079b33e8b5253429c0b818aea01499a0fbb0ac3b40238",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571887777,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xea7b1650cc553ddb5c3079b33e8b5253429c0b818aea01499a0fbb0ac3b40238",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xab43a3e45d497f7fee33dcb3779b07be85077940e82425a80dfc5c27479edf6d",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571878746,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xab43a3e45d497f7fee33dcb3779b07be85077940e82425a80dfc5c27479edf6d",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x6dfaba53b448b92d5c30bd067bacb4d93cd1e83f218c608e1b84155cecf7c97e",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571858238,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x6dfaba53b448b92d5c30bd067bacb4d93cd1e83f218c608e1b84155cecf7c97e",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xf518929663b6b66b6a8bed835fdb215dc5e4006d7d3b8f04010a318f1822b6ff",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571853836,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xf518929663b6b66b6a8bed835fdb215dc5e4006d7d3b8f04010a318f1822b6ff",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xd2480707ddfeb64dcf3a8b415397def4d19787affdcece0434fc4a1e0fec97c6",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767571843838,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xd2480707ddfeb64dcf3a8b415397def4d19787affdcece0434fc4a1e0fec97c6",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x55d24dda3d659e5187f92e61a70837c00a86afb85ee79698b420339231ae52b3",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571837068,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x55d24dda3d659e5187f92e61a70837c00a86afb85ee79698b420339231ae52b3",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x791a711f7a869dd27b6dbfff0c8c9bd182634f9da62f8372ae5e2300d8ed51ac",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767571822809,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x791a711f7a869dd27b6dbfff0c8c9bd182634f9da62f8372ae5e2300d8ed51ac",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xac8743aff39e4008f422a973631ed9d343d27c7c5a1e984eef7adc512b30d779",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571811902,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xac8743aff39e4008f422a973631ed9d343d27c7c5a1e984eef7adc512b30d779",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xf79a91d26ef8946874e56b792299378945f87b6a8fd6a2b181055924111cb7b7",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571783807,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xf79a91d26ef8946874e56b792299378945f87b6a8fd6a2b181055924111cb7b7",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x083a53f7677b2e3c5b615418df535bc1d09baca0e01b6cc2b6acc957a88d0e7f",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571779396,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x083a53f7677b2e3c5b615418df535bc1d09baca0e01b6cc2b6acc957a88d0e7f",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xd3d3aaea49457e05a275bd825266fe500fe7936dcb03d57992db5eab4c2ae8ab",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571767422,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xd3d3aaea49457e05a275bd825266fe500fe7936dcb03d57992db5eab4c2ae8ab",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x7838f5ef18387ab776101a5c31e25d0bfedb8e51eea1eef4894e7c7b507ce711",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571762994,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x7838f5ef18387ab776101a5c31e25d0bfedb8e51eea1eef4894e7c7b507ce711",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x61327f22b68365dd770aa2e68b3be92370b3d1375f3d1b339a79c90a93769d1c",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571750687,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x61327f22b68365dd770aa2e68b3be92370b3d1375f3d1b339a79c90a93769d1c",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x88726f895babb5b949298331b186ac2a80e4fbae50be6200ef58c76e16ae9d63",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571737442,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x88726f895babb5b949298331b186ac2a80e4fbae50be6200ef58c76e16ae9d63",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x5aec6f3da96e72cfa6c5d28f1fa97ab380004d5aed02f0afa7431d61149991fd",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571719435,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x5aec6f3da96e72cfa6c5d28f1fa97ab380004d5aed02f0afa7431d61149991fd",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xbb6fc93fe7627b7ff42442b47b10fd11d6db77cc53aa23877331f7d0e1812659",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571707285,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xbb6fc93fe7627b7ff42442b47b10fd11d6db77cc53aa23877331f7d0e1812659",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xbeaf024286bc1c22e566057d4f55e2440c941137d0580ad48ccf2a8ac20ebccf",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571702447,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xbeaf024286bc1c22e566057d4f55e2440c941137d0580ad48ccf2a8ac20ebccf",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x639146c20bdc339a48fd70d639207cca2cb77a3a43e61bf829a38eebdaad291c",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767571688197,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x639146c20bdc339a48fd70d639207cca2cb77a3a43e61bf829a38eebdaad291c",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x9fb32f4006b24d6d66e897ec4ab341819da9208afe56da163587094c40aa013b",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571681427,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x9fb32f4006b24d6d66e897ec4ab341819da9208afe56da163587094c40aa013b",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xe7b9f05374739c04763a463096ec9f5d6f7478d050098fc0eed94e3ce1ed1a3c",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767571667131,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xe7b9f05374739c04763a463096ec9f5d6f7478d050098fc0eed94e3ce1ed1a3c",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xf22f608819155c84f074d9a8677157b588cd8df51e5f6e3e96e51c24b1a07f94",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571653425,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xf22f608819155c84f074d9a8677157b588cd8df51e5f6e3e96e51c24b1a07f94",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x64f4424eb47cf2ab344f06e2a419efc795063c039bec8d6a900faa981b473ef1",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571644305,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x64f4424eb47cf2ab344f06e2a419efc795063c039bec8d6a900faa981b473ef1",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x49400c714752d76d2a8953cc309fa30d6d72f501567feea9aba6de3705178669",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571620167,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x49400c714752d76d2a8953cc309fa30d6d72f501567feea9aba6de3705178669",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x67078a37bf6f257aa056cf703da8f51b15e25eeddead84b1d2436dc9892e9ad6",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571606000,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x67078a37bf6f257aa056cf703da8f51b15e25eeddead84b1d2436dc9892e9ad6",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xa0294f0b3bf54dce7612d9d68635de2a36da7ccbe1b69da566c9e05ec961c085",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571593490,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xa0294f0b3bf54dce7612d9d68635de2a36da7ccbe1b69da566c9e05ec961c085",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xbf4fd410c0e303f75c3ad2f8cd388d65840985340b3aee56a5cc743e84e39ad0",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571580166,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xbf4fd410c0e303f75c3ad2f8cd388d65840985340b3aee56a5cc743e84e39ad0",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x05c3f83222d333dbead753f47eddb2f0f61d19cdab34b47f79c0f52241091570",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571564039,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x05c3f83222d333dbead753f47eddb2f0f61d19cdab34b47f79c0f52241091570",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xe15c37ef51131e399a410f342b02ea4c32887f87e8d9182148557894f2ffc828",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571559124,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xe15c37ef51131e399a410f342b02ea4c32887f87e8d9182148557894f2ffc828",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xaaf294262a44e9ecfabe468b68402e9d6ea4c8945342c6b1d50f9b845d1075a9",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767571540539,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xaaf294262a44e9ecfabe468b68402e9d6ea4c8945342c6b1d50f9b845d1075a9",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x217d59c5238b63c8c7d354b7ab77c0aad422350d5e172fa829c23298f3d73abd",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571527046,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x217d59c5238b63c8c7d354b7ab77c0aad422350d5e172fa829c23298f3d73abd",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x9d0ed1227ffef7d0483cf7b6fca346a1f073486376702c2b23e5c90381b640b9",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571518412,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x9d0ed1227ffef7d0483cf7b6fca346a1f073486376702c2b23e5c90381b640b9",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x651f8711f2923d122be5c7523217898e3628877f7ee00625308fbf37aea2972e",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571506439,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x651f8711f2923d122be5c7523217898e3628877f7ee00625308fbf37aea2972e",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x508af98ef01b6bb6f5b8aff3d7f50208c0cedab82719c9355aec81ffa1b89e26",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571492417,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x508af98ef01b6bb6f5b8aff3d7f50208c0cedab82719c9355aec81ffa1b89e26",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xbdfccd84f06f1502448c0c94c3ec8668e36459c057fdbf49f8aff02688098caa",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571487541,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xbdfccd84f06f1502448c0c94c3ec8668e36459c057fdbf49f8aff02688098caa",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x8bee6b3a58ae57e360a541b1e25086bdf77223d579ac44c53db131d71ff24402",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571464788,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x8bee6b3a58ae57e360a541b1e25086bdf77223d579ac44c53db131d71ff24402",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x4882fc8ca3ce8e8df5fa3649bdc9ad553dc8bca1e6e62b7a77ceb521a33fceb6",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571442067,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x4882fc8ca3ce8e8df5fa3649bdc9ad553dc8bca1e6e62b7a77ceb521a33fceb6",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xaaf9fcf57adba79522f214351dc895f9389ce6261523ac6e1b04ded4947e360e",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571428854,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xaaf9fcf57adba79522f214351dc895f9389ce6261523ac6e1b04ded4947e360e",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x4435feeaf650d3cf8e2ec1dfb74697c230a838537c534383b463044c3f160d24",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571412295,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x4435feeaf650d3cf8e2ec1dfb74697c230a838537c534383b463044c3f160d24",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x135cf54e62ce9c028ea21aede5019d643a83b32acacf696539695ab51a1c8359",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571398801,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x135cf54e62ce9c028ea21aede5019d643a83b32acacf696539695ab51a1c8359",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x8039b2351c430d156abdb8d8a78c5a881a0f043fd713697b5580db6502158d03",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571382242,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x8039b2351c430d156abdb8d8a78c5a881a0f043fd713697b5580db6502158d03",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x74dc8b809a645a004dc8f5db6a763d1023ec79a3543994ef6ecd224ff08d0e29",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571373632,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x74dc8b809a645a004dc8f5db6a763d1023ec79a3543994ef6ecd224ff08d0e29",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x815e63c2e85c7400c6a24da2b9ed8c468869138109278f1de988a32ee87a36c8",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767571363556,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x815e63c2e85c7400c6a24da2b9ed8c468869138109278f1de988a32ee87a36c8",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xea0579d87032685c285f26de917f2ae639e0d8a221710632a61455549a3f1b68",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571354473,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xea0579d87032685c285f26de917f2ae639e0d8a221710632a61455549a3f1b68",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xc5146dd20d75f15576adff82c4fe16581c5344138a464510de53d8b12bc80922",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571341138,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xc5146dd20d75f15576adff82c4fe16581c5344138a464510de53d8b12bc80922",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x423813af884f4a50940f162e62a18403930b3ca4ec1f020d353d9d8a8682a88e",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767571326557,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x423813af884f4a50940f162e62a18403930b3ca4ec1f020d353d9d8a8682a88e",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x2dd09c2c4301a95bf37e685f6a4e48d236e1e7c9bc55c2fe6f53d509b81d17ff",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571317553,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x2dd09c2c4301a95bf37e685f6a4e48d236e1e7c9bc55c2fe6f53d509b81d17ff",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x4e681b778a11c2875b016c06c7c2d893f710de01504089021052da115204d8ef",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571308474,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x4e681b778a11c2875b016c06c7c2d893f710de01504089021052da115204d8ef",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x46738ed744954b9900b9e9a9de44de6c50b0e80407c0ae5dcd9b817cc69b619d",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571287528,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x46738ed744954b9900b9e9a9de44de6c50b0e80407c0ae5dcd9b817cc69b619d",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xc986e3da16ae00623965e99e6cb564b3ac4150b25b4de6106140dfc340681002",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571278814,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xc986e3da16ae00623965e99e6cb564b3ac4150b25b4de6106140dfc340681002",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x6e46619087e19ec96df794b0c0c37583d5c500afb748593c2ad788dc1256fc86",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571266447,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x6e46619087e19ec96df794b0c0c37583d5c500afb748593c2ad788dc1256fc86",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x72cb816f57beb97dcffc75250e2a0b294f5864529be1652224ba258b4aeeea43",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571257253,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x72cb816f57beb97dcffc75250e2a0b294f5864529be1652224ba258b4aeeea43",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x4a82d6fa575e92e3646e82b8e9b626bed4b7712d40a4b77cc3de56c6fb76f7e3",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767571238830,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x4a82d6fa575e92e3646e82b8e9b626bed4b7712d40a4b77cc3de56c6fb76f7e3",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xfb2b4fdc41325057f0774b599e7d41fc68b2655ab4e237ff26fd9c80dc32d989",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571233952,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xfb2b4fdc41325057f0774b599e7d41fc68b2655ab4e237ff26fd9c80dc32d989",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xa2abda264f40977b6e539ebb82816e9fb079a39e9e9f5826d54c6c7f050e3342",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571220166,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xa2abda264f40977b6e539ebb82816e9fb079a39e9e9f5826d54c6c7f050e3342",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x97b95aae5a5267d249d0d06ad8950d3bcdb0ff17f2fbe9aa9a20d79635dea9ef",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571198299,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x97b95aae5a5267d249d0d06ad8950d3bcdb0ff17f2fbe9aa9a20d79635dea9ef",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x3b7eb5c1572966aacf4f9acf84d5dacbca7d2cdc911c807a965854eceb8dcf1f",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767571179908,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x3b7eb5c1572966aacf4f9acf84d5dacbca7d2cdc911c807a965854eceb8dcf1f",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x58dc5925be5fffc7ce416b2a5bfaa62df31482d48565e2a34acb77b4127b5526",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767571170701,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x58dc5925be5fffc7ce416b2a5bfaa62df31482d48565e2a34acb77b4127b5526",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xe2ff158988e4073ac04b23ebcd30cb75f429de57dc86dfddc21c1da2b39e27e0",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571161644,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xe2ff158988e4073ac04b23ebcd30cb75f429de57dc86dfddc21c1da2b39e27e0",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x1dd0700a388473b8ec73bc96bf99379aa86358d761472166156af6dcf1f3b64c",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767571143035,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x1dd0700a388473b8ec73bc96bf99379aa86358d761472166156af6dcf1f3b64c",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xd9e7b217126fe17fcdcd9f2188872108f93fb364702866efdcd26cf41d94e2de",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767149413549,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xd9e7b217126fe17fcdcd9f2188872108f93fb364702866efdcd26cf41d94e2de",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xd7a09acb8cc3161c68b11a9041768c6dc06b1759844fb9ed2e77e69b75081fa1",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767149404927,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xd7a09acb8cc3161c68b11a9041768c6dc06b1759844fb9ed2e77e69b75081fa1",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x0ac237a5956939502aa0a83bd12cdeb959cfab0da74686405d64a3246c0528aa",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767149393185,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x0ac237a5956939502aa0a83bd12cdeb959cfab0da74686405d64a3246c0528aa",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x4fafbc3dd0b54c0525e320512d496b81312ee1190c6579bc60227638682538b4",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767149381909,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x4fafbc3dd0b54c0525e320512d496b81312ee1190c6579bc60227638682538b4",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xaeb347436119fe00ce9e3ab961052b4d4143425f59c93b03bb36a4df2cef9bd9",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767149367837,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xaeb347436119fe00ce9e3ab961052b4d4143425f59c93b03bb36a4df2cef9bd9",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xd6a96f113ebddf8a0f71db56506bd6c778a94e3b2922945e8ece51ed1791ed5c",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767149354994,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xd6a96f113ebddf8a0f71db56506bd6c778a94e3b2922945e8ece51ed1791ed5c",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x4d008672a90c24baff63154a663749c8d929153ae528b0cf5b1f05e6d3dda5a0",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767149342973,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x4d008672a90c24baff63154a663749c8d929153ae528b0cf5b1f05e6d3dda5a0",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xca786291696c32a74b188f5a768cb187e9673d47e366ed51347cbb95e3a432d7",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767149329698,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xca786291696c32a74b188f5a768cb187e9673d47e366ed51347cbb95e3a432d7",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x2baefe7070cd0f3be1a6f1dcd5920a1c42d1794bbe46d977a765ef1fa7f4169b",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767149316432,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x2baefe7070cd0f3be1a6f1dcd5920a1c42d1794bbe46d977a765ef1fa7f4169b",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x12cd3dfcde4526e9803b4aa398b67973f25b15c5ca8d88386547ace4558d9df1",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767148990655,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x12cd3dfcde4526e9803b4aa398b67973f25b15c5ca8d88386547ace4558d9df1",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x82206c82cfff0c75118da4fe37924c684ecf20bff145116ff01270b8a0083bb1",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767148976443,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x82206c82cfff0c75118da4fe37924c684ecf20bff145116ff01270b8a0083bb1",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x3e78733048a7cc8779ce8f165c76c4d4569936ccf4a67db9d3e759c0a2c7a99e",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767148953138,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x3e78733048a7cc8779ce8f165c76c4d4569936ccf4a67db9d3e759c0a2c7a99e",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x1196dd7b4b20800c2a250911fb2146696b7eaa1cccc5183a19fa6dd40549c406",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767148936319,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x1196dd7b4b20800c2a250911fb2146696b7eaa1cccc5183a19fa6dd40549c406",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x312dbda98aee0b027cacff64069ce3dbd9eb21ae4763b6574969f6e0995660ba",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767148930583,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x312dbda98aee0b027cacff64069ce3dbd9eb21ae4763b6574969f6e0995660ba",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x9beea131321a5f006dfdff1d44794ef5bb4a7ef57ddc4f398550c05c72b062de",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767148925151,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x9beea131321a5f006dfdff1d44794ef5bb4a7ef57ddc4f398550c05c72b062de",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x2a41d0d57be8e17e3aeb88e667322ebe464d943a56315dfccd0d3c64be6effed",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767148911657,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x2a41d0d57be8e17e3aeb88e667322ebe464d943a56315dfccd0d3c64be6effed",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xc6af2c93d97afbd64c1e5f9ac896e67184c76a8e0bb26e42aa72db51b2fec09b",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767148901653,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xc6af2c93d97afbd64c1e5f9ac896e67184c76a8e0bb26e42aa72db51b2fec09b",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x4bdc5901f1606c8911fdea13a9d82d776dfd5c8424f9268d037966982b895402",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767147252950,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x4bdc5901f1606c8911fdea13a9d82d776dfd5c8424f9268d037966982b895402",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x40fbf7aea8f915514f8ff983d85535a306cef2f526c1e39a70dbc745e0ce871b",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767147239877,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x40fbf7aea8f915514f8ff983d85535a306cef2f526c1e39a70dbc745e0ce871b",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x3708e5a34cc586b6ea3116e8957161311bd10f89c55c58245b82e255a2a5e0d2",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767147231481,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x3708e5a34cc586b6ea3116e8957161311bd10f89c55c58245b82e255a2a5e0d2",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x3b3ec58e33b16c092eb2b5a0270073b6ea8ec73ad8e0eb101161f397509d9970",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767147221812,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x3b3ec58e33b16c092eb2b5a0270073b6ea8ec73ad8e0eb101161f397509d9970",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x812bec08821e6409da2986c71b0d2c47cd685b9850f874fe431a0ee19f8e2719",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767147211150,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x812bec08821e6409da2986c71b0d2c47cd685b9850f874fe431a0ee19f8e2719",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x282493f00b9c1e47d99586b1caacfce311009aba3491cb22b549a045ef8d9019",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767147193079,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x282493f00b9c1e47d99586b1caacfce311009aba3491cb22b549a045ef8d9019",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x80b73c6d5e81da18ed3bcbecb0225fdf06f1401e3a2a5b5901dc493b108bf90e",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767147188432,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x80b73c6d5e81da18ed3bcbecb0225fdf06f1401e3a2a5b5901dc493b108bf90e",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x4eedddbc14e8ae7d288f411e9f9281f994dd111a9b6370bd2f5e8863e14b373b",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767147179598,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x4eedddbc14e8ae7d288f411e9f9281f994dd111a9b6370bd2f5e8863e14b373b",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x50da910ad5af6d4f4bafcd7ab3550228591efe558647e2f25f5df071621273c0",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767147165688,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x50da910ad5af6d4f4bafcd7ab3550228591efe558647e2f25f5df071621273c0",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x897f3decd86024d95897733f91e93007af2ce989beaec0f08b5982e9cf814f4f",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767147156828,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x897f3decd86024d95897733f91e93007af2ce989beaec0f08b5982e9cf814f4f",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xcb4dd6a954bc23d884a5d6a83cca8457d54831c5cf4060c44bdc3c19821ea1e1",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767147147992,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xcb4dd6a954bc23d884a5d6a83cca8457d54831c5cf4060c44bdc3c19821ea1e1",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x1c98f89090fbaf6213d2aa2045058eea4a83c07db1eeadde176bae08d1305c6a",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767147129914,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x1c98f89090fbaf6213d2aa2045058eea4a83c07db1eeadde176bae08d1305c6a",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x192d1557bb33057daf7d66386dbbbf62d7d6f6161b8ba0a76550827b6c5e9b9e",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767147119198,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x192d1557bb33057daf7d66386dbbbf62d7d6f6161b8ba0a76550827b6c5e9b9e",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x4eed456b014c9a5580e39ce0a54971cdb40b667d08500693e5cea2e7c03addd1",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767147100881,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x4eed456b014c9a5580e39ce0a54971cdb40b667d08500693e5cea2e7c03addd1",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xc25aa6bb01e3029265a52802467e8f454292e1fa1504bc43913a9e56e54049f1",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767147088272,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xc25aa6bb01e3029265a52802467e8f454292e1fa1504bc43913a9e56e54049f1",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x8eecc522e929bc89c9f9c71840f5ea8241bbbb3fddd56260fa9bc0ecc89b6615",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767147083637,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x8eecc522e929bc89c9f9c71840f5ea8241bbbb3fddd56260fa9bc0ecc89b6615",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x19979dfb2b1ebcb74ad2b31f4a6beb482edfc662848f7724af27d9aa4e418987",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767147065652,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x19979dfb2b1ebcb74ad2b31f4a6beb482edfc662848f7724af27d9aa4e418987",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xc35ae494acaba4680d0c14dfcee70e765060fab7c5de8b65f70fc3d31eb947b5",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767147056789,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xc35ae494acaba4680d0c14dfcee70e765060fab7c5de8b65f70fc3d31eb947b5",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xb6805780040b5d8b18abf5bb14ad36583e41aae0ee74fb6efe2156cba1417a7b",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767147043513,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xb6805780040b5d8b18abf5bb14ad36583e41aae0ee74fb6efe2156cba1417a7b",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xea9336b237f2f85688151ccca676184d90cb55ed9c3c237d514055a214b81367",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767147025458,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xea9336b237f2f85688151ccca676184d90cb55ed9c3c237d514055a214b81367",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x64c7bd2161640a3493d860652a25e7482e83f4d4d7143bc47e8f18676f3086ce",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767147021140,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x64c7bd2161640a3493d860652a25e7482e83f4d4d7143bc47e8f18676f3086ce",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x903eaef74313a21f965771fe3b417b4c509d9814b54c5d91d6059b84459aeb7d",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767147016402,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x903eaef74313a21f965771fe3b417b4c509d9814b54c5d91d6059b84459aeb7d",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x0aaede6069ecb2b91050b135e1f8ac8815df13b90896ee0b4e5960a44c4dffa1",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767146998283,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x0aaede6069ecb2b91050b135e1f8ac8815df13b90896ee0b4e5960a44c4dffa1",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x0f8658eca54f84a14ce56ff59c7ce76c8bb162db993b6ddc5a76133db1a7507a",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767146993623,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x0f8658eca54f84a14ce56ff59c7ce76c8bb162db993b6ddc5a76133db1a7507a",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x182800e3c9460e2f6dce51bc42ac2c8dc4ebca1dfb927e9b2aa99b29cd4c69b2",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767146984743,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x182800e3c9460e2f6dce51bc42ac2c8dc4ebca1dfb927e9b2aa99b29cd4c69b2",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x167f338de09ecd16e6368f89ab1dab14b09f1ab7cbed28321321159f83f28d27",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767146966424,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x167f338de09ecd16e6368f89ab1dab14b09f1ab7cbed28321321159f83f28d27",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x6c6b455588917a69f02925a5c278b4afdc84e01cbe142cedbef2b548dc3713d5",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767146957623,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x6c6b455588917a69f02925a5c278b4afdc84e01cbe142cedbef2b548dc3713d5",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x7823e67029c15cb729615719eb493879571307cd1bacd93ec7eeb7b1f0cbf895",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767146944636,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x7823e67029c15cb729615719eb493879571307cd1bacd93ec7eeb7b1f0cbf895",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xfef1cb32aa6e318804cc39ea16cc770daedcf8b948582b6a8e62db6420c2b516",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767146930731,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xfef1cb32aa6e318804cc39ea16cc770daedcf8b948582b6a8e62db6420c2b516",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x2662c632344a936303bc90e331e97fb9a286d4350c66d686726e03be6b57264f",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767146915595,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x2662c632344a936303bc90e331e97fb9a286d4350c66d686726e03be6b57264f",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xf0c59a906358852e722985933e4fe8ee809367ef6c6e3189c812b6cc241ee02b",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767146897542,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xf0c59a906358852e722985933e4fe8ee809367ef6c6e3189c812b6cc241ee02b",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x6286c579b878a0009163f610b88d830e48377450813d1800afba3dbe82e702cf",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767146884548,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x6286c579b878a0009163f610b88d830e48377450813d1800afba3dbe82e702cf",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xc24d453cd23bf426864ab9d8db8fd2af9fb48570cd78e14e1def1e0ccbdf19cc",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767146871545,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xc24d453cd23bf426864ab9d8db8fd2af9fb48570cd78e14e1def1e0ccbdf19cc",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x77e4125cc09bbf6d838a2d3f4f602be730442b20b632cfa460e553759ec010b5",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767146853483,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x77e4125cc09bbf6d838a2d3f4f602be730442b20b632cfa460e553759ec010b5",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xc438f2d09a0de572bd6378a187fb39722e7d783bd4ae56de5d42db7adf9ba1bd",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767146848863,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xc438f2d09a0de572bd6378a187fb39722e7d783bd4ae56de5d42db7adf9ba1bd",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x805e8e9d0fd2d1dcbaee62a8aac594327015618cd06861acdc361b8ca2b42cdd",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767146840443,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x805e8e9d0fd2d1dcbaee62a8aac594327015618cd06861acdc361b8ca2b42cdd",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xbaac09bf4ddacd9664859454dc915f3ab5a3ef72a931428fff31c63b9f72b33c",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767146830745,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xbaac09bf4ddacd9664859454dc915f3ab5a3ef72a931428fff31c63b9f72b33c",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x83502a3d113bd45368e1fac3d027b364e6dab1d3924f3859cea703ecb170a42d",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767146817718,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x83502a3d113bd45368e1fac3d027b364e6dab1d3924f3859cea703ecb170a42d",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x7835da276e85903a5859e757efc91617bc700bd1f798f83074f291e373977836",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767146808924,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x7835da276e85903a5859e757efc91617bc700bd1f798f83074f291e373977836",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xf5f8f1db1a4a9ef6dc79fc2cd0d0314519dc10c490f883e05f1b1788397d0222",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767146790839,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xf5f8f1db1a4a9ef6dc79fc2cd0d0314519dc10c490f883e05f1b1788397d0222",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x8da44299bc3857161517b4edb0aa62c6d62aec5cf3c36975c3c4757e53bf0158",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767146780465,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x8da44299bc3857161517b4edb0aa62c6d62aec5cf3c36975c3c4757e53bf0158",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xaa868a02f39fa99067e8e0d23aae1a805171b7fd36aaf12719cd3c1a657bd6f6",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767146770785,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xaa868a02f39fa99067e8e0d23aae1a805171b7fd36aaf12719cd3c1a657bd6f6",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x80b6b39e0e900e368815ccc6860e0e5a55fdaa88959aeefd9ddb30dec5ec4ddf",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767146761967,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x80b6b39e0e900e368815ccc6860e0e5a55fdaa88959aeefd9ddb30dec5ec4ddf",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x82c041a666bf40908ea329e50a60d1f4f9c6ca877206e15b0dd2812b8cadc4a5",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767146748931,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x82c041a666bf40908ea329e50a60d1f4f9c6ca877206e15b0dd2812b8cadc4a5",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x1b837a42e3a7be5919f0d198a296b184985411624ec71310cd3a71fa8973b252",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767146730855,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x1b837a42e3a7be5919f0d198a296b184985411624ec71310cd3a71fa8973b252",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x1df1d06596840a35321f9d20ef226724a61fa72228102787d047a98bb73094e0",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767146722473,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x1df1d06596840a35321f9d20ef226724a61fa72228102787d047a98bb73094e0",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xbca8bbf7b5683816a112690661661cd275a433aa7277f721a8f6346e633e06d9",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767146718250,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xbca8bbf7b5683816a112690661661cd275a433aa7277f721a8f6346e633e06d9",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x0e96014077e7b345776d71510e55cdca541baa24ddf1492c649393886030837f",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767146708359,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x0e96014077e7b345776d71510e55cdca541baa24ddf1492c649393886030837f",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x670b264d8ed3c4367baa1b027dd8aa1b6beb80d53853a192f41c4620150eb9a5",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767146695263,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x670b264d8ed3c4367baa1b027dd8aa1b6beb80d53853a192f41c4620150eb9a5",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x3fdf7830f15be962ef61352934b2d28edd6e2c0593770041b7d874e68598e787",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767146686425,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x3fdf7830f15be962ef61352934b2d28edd6e2c0593770041b7d874e68598e787",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x2eb8c0f5b18160c41ec8f37984247a34f0fd6dd0053a4db7ad2bf552351f8c1e",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767146672541,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x2eb8c0f5b18160c41ec8f37984247a34f0fd6dd0053a4db7ad2bf552351f8c1e",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x4891d3137861596114b95f9f2b2f35c80bb92a3cd1e97081012b622d797b3c92",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767146659543,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x4891d3137861596114b95f9f2b2f35c80bb92a3cd1e97081012b622d797b3c92",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x46243307aeae90bf14621dd17fada1546d59a8977359c907368fdd2e98415754",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767146651128,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x46243307aeae90bf14621dd17fada1546d59a8977359c907368fdd2e98415754",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x16ad6ed208c306aead3e1b0dc4a07f4f458225c1d16e36d50e29248bd0bca31e",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767146641340,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x16ad6ed208c306aead3e1b0dc4a07f4f458225c1d16e36d50e29248bd0bca31e",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xc0776790ca3de6d2518141744df666a77732dda916cb267694672612e3d3b9cc",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767146628357,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xc0776790ca3de6d2518141744df666a77732dda916cb267694672612e3d3b9cc",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x7cbc6f226a44b86d7612d13d7c88ca41eb67eb421097b8874dc6b88cd1e14256",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767146615393,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x7cbc6f226a44b86d7612d13d7c88ca41eb67eb421097b8874dc6b88cd1e14256",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x115f0275075316a210f873b9cdbdbda75e1d44d962edd3b2154165f2acd9e61a",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767146597316,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x115f0275075316a210f873b9cdbdbda75e1d44d962edd3b2154165f2acd9e61a",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x84458ec745b58c9800639f9810a5ca82b36bc729d16c0cc64083059f66cbe8d6",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767146584268,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x84458ec745b58c9800639f9810a5ca82b36bc729d16c0cc64083059f66cbe8d6",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x00748756039e3ed51175e98a6408a612e92e7175bf2e7214f3e463aeb4a3a090",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767146575839,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x00748756039e3ed51175e98a6408a612e92e7175bf2e7214f3e463aeb4a3a090",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0xf40cfa294119d5632799a98ed501b950532fff0fa10f8d4bc7bd84a1d4e201ef",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767146565868,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xf40cfa294119d5632799a98ed501b950532fff0fa10f8d4bc7bd84a1d4e201ef",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x1f151174317f01446c7602d8e7ffa5655a60598272e68d88256773ccc6b1d1a4",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767146561171,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x1f151174317f01446c7602d8e7ffa5655a60598272e68d88256773ccc6b1d1a4",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xb44a6beb5d042a65349f15e6b35f83295d08863047c8e1d1dd2850256d07300b",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767146548475,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xb44a6beb5d042a65349f15e6b35f83295d08863047c8e1d1dd2850256d07300b",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0x963f92721b5f9d7ec4da4a002ba0cf0ae57309e0048afd6e36fc52ba7cc8309f",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767146538760,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x963f92721b5f9d7ec4da4a002ba0cf0ae57309e0048afd6e36fc52ba7cc8309f",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xed9d22e87e0d06cdbff2202b21a5aeb92aac122c71ed5d5ce6f578c7efe1b8c4",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767146525718,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xed9d22e87e0d06cdbff2202b21a5aeb92aac122c71ed5d5ce6f578c7efe1b8c4",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x0ba365ecc70a7ef1bc8f71ff2498bd891de24613e97535bc5f39a0cf9b8bb032",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767146513036,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x0ba365ecc70a7ef1bc8f71ff2498bd891de24613e97535bc5f39a0cf9b8bb032",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xdaef3e2ca7cf82eb99eea60db334739d3e95d599205eea1d1a2c73e355649bce",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767146279332,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xdaef3e2ca7cf82eb99eea60db334739d3e95d599205eea1d1a2c73e355649bce",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x9d89767b7288e9af03263685f368e78ea90975a295c92c18a53a1b2e78cd817c",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767146265898,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x9d89767b7288e9af03263685f368e78ea90975a295c92c18a53a1b2e78cd817c",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x720e07c8e7324aa2edee9289f2e9089721b353c69d833b1e3431b1a07e2a2a8d",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767146253019,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x720e07c8e7324aa2edee9289f2e9089721b353c69d833b1e3431b1a07e2a2a8d",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xcdb0ddd3b49a4f06a0708229e915ca6c8502f9894d1e87e5bcdf1c55a92adbe8",
-      "action": "MATH_EXEC",
-      "details": "BUY SOLUSDT",
-      "timestamp": 1767146205288,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xcdb0ddd3b49a4f06a0708229e915ca6c8502f9894d1e87e5bcdf1c55a92adbe8",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x4f86208c954bed619d1fc675df93ce1ac67537dfdc3a312fb63ea35826083de8",
-      "action": "MATH_EXEC",
-      "details": "BUY ETHUSDT",
-      "timestamp": 1767146200820,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x4f86208c954bed619d1fc675df93ce1ac67537dfdc3a312fb63ea35826083de8",
-      "strategy": "Titan Neural Local",
-      "pnl": 0
-    },
-    {
-      "hash": "0x12f314ff3b1416483f0d1297181a66d545a787956295e7a1bc8546e0a68f6e80",
-      "action": "MATH_EXEC",
-      "details": "BUY BTCUSDT",
-      "timestamp": 1767146195949,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x12f314ff3b1416483f0d1297181a66d545a787956295e7a1bc8546e0a68f6e80",
-      "strategy": "Titan Pure Math",
-      "pnl": 0
-    },
-    {
-      "hash": "0xf8385ff130a459359bb29ee1b39f47b7e9a3a03b14438dc0fffc9c841a6cb862",
-      "action": "ANCHOR_DECISION",
-      "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1767121933490,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0xf8385ff130a459359bb29ee1b39f47b7e9a3a03b14438dc0fffc9c841a6cb862"
-    },
-    {
-      "hash": "0xcf6a2e1abc6f6ca4d202968486bf0f547176a7474eab75ea88c39b3c17bf36c4",
-      "action": "EXECUTE_TRADE",
-      "details": "BUY SOLUSDT @ 124.04",
-      "timestamp": 1767121920565,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xcf6a2e1abc6f6ca4d202968486bf0f547176a7474eab75ea88c39b3c17bf36c4"
-    },
-    {
-      "hash": "0xc15cd332dcd2562108b5a12a05566f042fa8a55afc6dc3168424fdd97cd3ad3d",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: BUY (Confidence 0.5%)",
-      "timestamp": 1767121915825,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xc15cd332dcd2562108b5a12a05566f042fa8a55afc6dc3168424fdd97cd3ad3d"
-    },
-    {
-      "hash": "0xe202d7a4514997c6d86269fc110077a1e1cfcee32a85155de54786e60889ba71",
-      "action": "ANCHOR_DECISION",
-      "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1767121720770,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0xe202d7a4514997c6d86269fc110077a1e1cfcee32a85155de54786e60889ba71"
-    },
-    {
-      "hash": "0x542963cdac9020f1efc78337a830cac82fbcc9b5cdaac58392c3e7eb915f62ba",
-      "action": "EXECUTE_TRADE",
-      "details": "BUY ETHUSDT @ 2953.44",
-      "timestamp": 1767121695495,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x542963cdac9020f1efc78337a830cac82fbcc9b5cdaac58392c3e7eb915f62ba"
-    },
-    {
-      "hash": "0xb274680ddf60c205845df23a7c69be9dd8368c399fe6bd60a5b48348288c7b4d",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: BUY (Confidence 0.5%)",
-      "timestamp": 1767121694921,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xb274680ddf60c205845df23a7c69be9dd8368c399fe6bd60a5b48348288c7b4d"
-    },
-    {
-      "hash": "0xf9a7625924b0e43a352a2ff19da9f8f5fe1fe994fbcc7ef2e7cde9dc398c7db6",
-      "action": "SETTLE_TRADE",
-      "details": "L1 Verified: BUY SOLUSDT",
-      "timestamp": 1767121649285,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0xf9a7625924b0e43a352a2ff19da9f8f5fe1fe994fbcc7ef2e7cde9dc398c7db6"
-    },
-    {
-      "hash": "0x36aa50e769e539e064107feb313f776c5d409469aa70175f22eab31bcb75876c",
-      "action": "ANCHOR_DECISION",
-      "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1767121624239,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x36aa50e769e539e064107feb313f776c5d409469aa70175f22eab31bcb75876c"
-    },
-    {
-      "hash": "0x4bb4719d48a54daebfe690ebb308c9d7580071240213779e229d57594a9e9dd9",
-      "action": "EXECUTE_TRADE",
-      "details": "BUY SOLUSDT @ 123.83",
-      "timestamp": 1767121607269,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x4bb4719d48a54daebfe690ebb308c9d7580071240213779e229d57594a9e9dd9"
-    },
-    {
-      "hash": "0xfa2ce4f79608d002b6bbd46610f63fb323684decabc44fdf64b413f3b4a823c7",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: BUY (Confidence 0.5%)",
-      "timestamp": 1767121602498,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xfa2ce4f79608d002b6bbd46610f63fb323684decabc44fdf64b413f3b4a823c7"
-    },
-    {
-      "hash": "0xd5bf09a88d6a5c2862a186c20172e81ed36e6d2b28b441cf8659510b38d5a7ed",
-      "action": "EXECUTE_TRADE",
-      "details": "BUY ETHUSDT @ 2954.64",
-      "timestamp": 1767121591451,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xd5bf09a88d6a5c2862a186c20172e81ed36e6d2b28b441cf8659510b38d5a7ed"
-    },
-    {
-      "hash": "0xd00c6054767b134bce2041c56bb9e375c35cce4258646c3cb2eadff17beab9b2",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: BUY (Confidence 0.5%)",
-      "timestamp": 1767121586681,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xd00c6054767b134bce2041c56bb9e375c35cce4258646c3cb2eadff17beab9b2"
-    },
-    {
-      "hash": "0x46da6df0b087b1b31f2c080dce364afaf9d36dd32261f9add09dc4240025a574",
-      "action": "SETTLE_TRADE",
-      "details": "L1 Verified: BUY ETHUSDT",
-      "timestamp": 1767114891696,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x46da6df0b087b1b31f2c080dce364afaf9d36dd32261f9add09dc4240025a574"
-    },
-    {
-      "hash": "0x3ce9c8016dc379e4289f15ec828dd8326de9e2bdbeda47b5503a20026af9c10a",
-      "action": "ANCHOR_DECISION",
-      "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1767114882957,
-      "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x3ce9c8016dc379e4289f15ec828dd8326de9e2bdbeda47b5503a20026af9c10a"
-    },
-    {
-      "hash": "0xb009da66532d76d5f38d28e7ef0c86b5cfce2f39f9ea940756ddbc2ba995dc8c",
-      "action": "EXECUTE_TRADE",
-      "details": "BUY ETHUSDT @ 2985.38",
-      "timestamp": 1767114833334,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xb009da66532d76d5f38d28e7ef0c86b5cfce2f39f9ea940756ddbc2ba995dc8c"
-    },
-    {
-      "hash": "0x9e0f0ab89670f3c1be8a57602fc0398f0625acfdd03c96a4e590eebd8a67e8e1",
-      "action": "SIGNAL_GEN",
-      "details": "Consensus: BUY (Confidence 0.5%)",
-      "timestamp": 1767114828565,
-      "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x9e0f0ab89670f3c1be8a57602fc0398f0625acfdd03c96a4e590eebd8a67e8e1"
-    },
-    {
-      "hash": "0x71bd12a5bc609f5dcfe0daf9b09c96a9d86000a10cf28c0b62672125098f6c62",
+      "hash": "0x6124ccaa25cdbd795d88b8913076dbcf280ff6a97af2baa52c88acfb1e1f53ca",
       "action": "SETTLE_TRADE",
       "details": "L1 Verified: BUY BTCUSDT",
-      "timestamp": 1767114795531,
+      "timestamp": 1768267460139,
       "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x71bd12a5bc609f5dcfe0daf9b09c96a9d86000a10cf28c0b62672125098f6c62"
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x6124ccaa25cdbd795d88b8913076dbcf280ff6a97af2baa52c88acfb1e1f53ca",
+      "strategy": "Gemini Sentiment",
+      "pnl": 0
     },
     {
-      "hash": "0x1f3058fa963f7c5ac080f525686582389dfeeb5b9f0c94b8daa63443221f94c9",
+      "hash": "0x899ce4131a8afdad60b225a89dfb97d984c218d7dc772c702423691264c8a28f",
       "action": "ANCHOR_DECISION",
       "details": "L1 Settlement: Decision Logged",
-      "timestamp": 1767114762355,
+      "timestamp": 1768267435101,
       "chain": "Ethereum Sepolia",
-      "explorerUrl": "https://sepolia.etherscan.io/tx/0x1f3058fa963f7c5ac080f525686582389dfeeb5b9f0c94b8daa63443221f94c9"
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x899ce4131a8afdad60b225a89dfb97d984c218d7dc772c702423691264c8a28f",
+      "strategy": "Gemini Sentiment",
+      "pnl": 0
     },
     {
-      "hash": "0xe4c4732ff3380a8447537ec83cf82d8465239bff2af58752e55a82137f4b2cba",
+      "hash": "0x6c811f500570c9cc8c6a498e1162d7c532c7c1373ab461000b29bc3500b7de38",
       "action": "EXECUTE_TRADE",
-      "details": "BUY BTCUSDT @ 88873.39",
-      "timestamp": 1767114745060,
+      "details": "BUY BTCUSDT @ 91368.8",
+      "timestamp": 1768267426240,
       "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0xe4c4732ff3380a8447537ec83cf82d8465239bff2af58752e55a82137f4b2cba"
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x6c811f500570c9cc8c6a498e1162d7c532c7c1373ab461000b29bc3500b7de38",
+      "strategy": "Gemini Sentiment",
+      "pnl": -97.66
     },
     {
-      "hash": "0x7c8671ea35bb8b6b205fe4a588ece5bccad500530bdf5a47bfad7c445bdf8f14",
+      "hash": "0xf006f7c68e3af0ac58ba8a1d1382862bcbbdc4d2f402e1c7058c4dcab533bedb",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: BUY (Confidence 0.6%)",
+      "timestamp": 1768267421440,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xf006f7c68e3af0ac58ba8a1d1382862bcbbdc4d2f402e1c7058c4dcab533bedb",
+      "strategy": "Gemini Sentiment",
+      "pnl": 0
+    },
+    {
+      "hash": "0x314135f69afb42953702704a7b4db386f66c0e8a93ee63b49b26cac2660324cb",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: BUY BTCUSDT",
+      "timestamp": 1768267373213,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x314135f69afb42953702704a7b4db386f66c0e8a93ee63b49b26cac2660324cb",
+      "strategy": "Quantum Arbitrage Sniper",
+      "pnl": 0
+    },
+    {
+      "hash": "0xdf84ccb9c530ea595bd57c8dfbb0cf030d7a9416a0ce9e4963b1fc4fe6a7fc2b",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768267360413,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0xdf84ccb9c530ea595bd57c8dfbb0cf030d7a9416a0ce9e4963b1fc4fe6a7fc2b",
+      "strategy": "Quantum Arbitrage Sniper",
+      "pnl": 0
+    },
+    {
+      "hash": "0xf0507b44af38ba7e2384552830761798326b5d97d9f6741d9b8ff9e4d2a9b6fb",
+      "action": "EXECUTE_TRADE",
+      "details": "BUY BTCUSDT @ 91372.8",
+      "timestamp": 1768267335257,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xf0507b44af38ba7e2384552830761798326b5d97d9f6741d9b8ff9e4d2a9b6fb",
+      "strategy": "Quantum Arbitrage Sniper",
+      "pnl": 89.81
+    },
+    {
+      "hash": "0x0d0d5414e3ec5ec9f3ddcab656a0a27df9dbf9037f12b57c7f41a69c1e8d909c",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: BUY (Confidence 0.54%)",
+      "timestamp": 1768267334679,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x0d0d5414e3ec5ec9f3ddcab656a0a27df9dbf9037f12b57c7f41a69c1e8d909c",
+      "strategy": "Quantum Arbitrage Sniper",
+      "pnl": 0
+    },
+    {
+      "hash": "0xb061112e1a349efbc67040f69bf9914b83f7c60ca420979657cca8409952612e",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: BUY ETHUSDT",
+      "timestamp": 1768267279774,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0xb061112e1a349efbc67040f69bf9914b83f7c60ca420979657cca8409952612e",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x751bc998cb7fc5a88823774c55a7c6443b56b017c393c6830c482a4021db04fd",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768267266988,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x751bc998cb7fc5a88823774c55a7c6443b56b017c393c6830c482a4021db04fd",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x341a388770355d6df7c0180c8afc3c6352682fab142f02564049ee82833c3740",
+      "action": "EXECUTE_TRADE",
+      "details": "BUY ETHUSDT @ 3107.83",
+      "timestamp": 1768267258160,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x341a388770355d6df7c0180c8afc3c6352682fab142f02564049ee82833c3740",
+      "strategy": "MetaPredict V1",
+      "pnl": -61.09
+    },
+    {
+      "hash": "0x7b8bd7efec955c94cbf6f896ab414bb038bc1f3a5a749ae7df9946f5d5ded8ae",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: BUY (Confidence 0.75%)",
+      "timestamp": 1768267257564,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x7b8bd7efec955c94cbf6f896ab414bb038bc1f3a5a749ae7df9946f5d5ded8ae",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x1f42e4dbff14f84223a22b11288b428cab5cd55db8f42e2a48807b3938545800",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: BUY ETHUSDT",
+      "timestamp": 1768267208757,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x1f42e4dbff14f84223a22b11288b428cab5cd55db8f42e2a48807b3938545800",
+      "strategy": "Neural Scalp V5",
+      "pnl": 0
+    },
+    {
+      "hash": "0xde6f325fb5f35755496b09333fddc68d719c2b55b4b5ebf041ad2fbe239eae22",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768267191898,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0xde6f325fb5f35755496b09333fddc68d719c2b55b4b5ebf041ad2fbe239eae22",
+      "strategy": "Neural Scalp V5",
+      "pnl": 0
+    },
+    {
+      "hash": "0x2e55494618a010d39523cfdf661932855744f1f5b7b33c2e365b7a3b56a44572",
+      "action": "EXECUTE_TRADE",
+      "details": "BUY ETHUSDT @ 3105.59",
+      "timestamp": 1768267166718,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x2e55494618a010d39523cfdf661932855744f1f5b7b33c2e365b7a3b56a44572",
+      "strategy": "Neural Scalp V5",
+      "pnl": -85.9
+    },
+    {
+      "hash": "0x7b25912c573d2644de0d9139b5d0482641a12a59c40c6f4a34e4f50ad53ec04f",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: BUY (Confidence 0.64%)",
+      "timestamp": 1768267161963,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x7b25912c573d2644de0d9139b5d0482641a12a59c40c6f4a34e4f50ad53ec04f",
+      "strategy": "Neural Scalp V5",
+      "pnl": 0
+    },
+    {
+      "hash": "0x3cddc4f2f484733c03ab055a68e2da57deafdc6ca9b891e80b19e9ddfe2ba153",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: SELL ETHUSDT",
+      "timestamp": 1768267096964,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x3cddc4f2f484733c03ab055a68e2da57deafdc6ca9b891e80b19e9ddfe2ba153",
+      "strategy": "Gemini Sentiment",
+      "pnl": 0
+    },
+    {
+      "hash": "0xad64105407914a91d6597e36b29493dbc6af6fed4edddb14f9112b3bebca37a7",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768267086534,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0xad64105407914a91d6597e36b29493dbc6af6fed4edddb14f9112b3bebca37a7",
+      "strategy": "Gemini Sentiment",
+      "pnl": 0
+    },
+    {
+      "hash": "0x5c9e2cd52b5fcd7501f33a7644a829f92ab84059a506907acf3adaead623d65b",
+      "action": "EXECUTE_TRADE",
+      "details": "SELL ETHUSDT @ 3109.57",
+      "timestamp": 1768267073601,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x5c9e2cd52b5fcd7501f33a7644a829f92ab84059a506907acf3adaead623d65b",
+      "strategy": "Gemini Sentiment",
+      "pnl": -53.34
+    },
+    {
+      "hash": "0x9bbb66dc1379e817e8a843fb8c739ab4a5720647d528f332407c37b945e1ec66",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: SELL (Confidence 0.7%)",
+      "timestamp": 1768267068758,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x9bbb66dc1379e817e8a843fb8c739ab4a5720647d528f332407c37b945e1ec66",
+      "strategy": "Gemini Sentiment",
+      "pnl": 0
+    },
+    {
+      "hash": "0x5871dc8bfc6030f0a0bb91113990cb5ea985e8a8be427140ce0d4f6a0b494faf",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: BUY BTCUSDT",
+      "timestamp": 1768267016449,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x5871dc8bfc6030f0a0bb91113990cb5ea985e8a8be427140ce0d4f6a0b494faf",
+      "strategy": "DeepSeek Momentum Alpha",
+      "pnl": 0
+    },
+    {
+      "hash": "0x951ac8c5a51aea59287abe17721fd10010d00936d0ef6388e66cde1e94c683c1",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768267001813,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x951ac8c5a51aea59287abe17721fd10010d00936d0ef6388e66cde1e94c683c1",
+      "strategy": "DeepSeek Momentum Alpha",
+      "pnl": 0
+    },
+    {
+      "hash": "0x11b687d94b3bedf4c97382f614da1a7ce7172dd1749cd66e1f735f5cbd5db13c",
+      "action": "EXECUTE_TRADE",
+      "details": "BUY BTCUSDT @ 91395.8",
+      "timestamp": 1768266983973,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x11b687d94b3bedf4c97382f614da1a7ce7172dd1749cd66e1f735f5cbd5db13c",
+      "strategy": "DeepSeek Momentum Alpha",
+      "pnl": 50.49
+    },
+    {
+      "hash": "0x2d8c8514f566d5fd297e2eb8df0c0267747ae595d0e81e47a02c5f8fdd238ec5",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: BUY (Confidence 0.6%)",
+      "timestamp": 1768266979192,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x2d8c8514f566d5fd297e2eb8df0c0267747ae595d0e81e47a02c5f8fdd238ec5",
+      "strategy": "DeepSeek Momentum Alpha",
+      "pnl": 0
+    },
+    {
+      "hash": "0x6b0f70944ec691b0885b5934ca101910ab1c26424b1d23e93a62dd6f0abd65c3",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: BUY BTCUSDT",
+      "timestamp": 1768266920530,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x6b0f70944ec691b0885b5934ca101910ab1c26424b1d23e93a62dd6f0abd65c3",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0xc1a8dc7c24a3788eb3cc485f20a64e59e311fb40ba9469956a70f45daf8d458d",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768266895516,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0xc1a8dc7c24a3788eb3cc485f20a64e59e311fb40ba9469956a70f45daf8d458d",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x50d9882e3e8cb561feabede5abe86cc58198b93b69b6bcb64a4804c102230f13",
+      "action": "EXECUTE_TRADE",
+      "details": "BUY BTCUSDT @ 91414.6",
+      "timestamp": 1768266878523,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x50d9882e3e8cb561feabede5abe86cc58198b93b69b6bcb64a4804c102230f13",
+      "strategy": "MetaPredict V1",
+      "pnl": -51.5
+    },
+    {
+      "hash": "0x1c0192c82df3f5ea4c95f7eac00a358a33381488916e209e36cc26f6b4f06c2c",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: BUY (Confidence 0.71%)",
+      "timestamp": 1768266873769,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x1c0192c82df3f5ea4c95f7eac00a358a33381488916e209e36cc26f6b4f06c2c",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x10f881dedc665a320c7ad5d0e155488c0fefebe3697455b7bd0bdc4fd7c90727",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: BUY ETHUSDT",
+      "timestamp": 1768266714114,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x10f881dedc665a320c7ad5d0e155488c0fefebe3697455b7bd0bdc4fd7c90727",
+      "strategy": "Gemini Sentiment",
+      "pnl": 0
+    },
+    {
+      "hash": "0x036c66106ec560d95f0ce22b746931bbe7c241f75d2aa27908f351e0eb82b1a1",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768266689076,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x036c66106ec560d95f0ce22b746931bbe7c241f75d2aa27908f351e0eb82b1a1",
+      "strategy": "Gemini Sentiment",
+      "pnl": 0
+    },
+    {
+      "hash": "0xd6d6e180f2b803f2ee5d1be72c6328efce8afe037e7f48b11324d253a7f21c83",
+      "action": "EXECUTE_TRADE",
+      "details": "BUY ETHUSDT @ 3110.54",
+      "timestamp": 1768266680228,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xd6d6e180f2b803f2ee5d1be72c6328efce8afe037e7f48b11324d253a7f21c83",
+      "strategy": "Gemini Sentiment",
+      "pnl": -31.5
+    },
+    {
+      "hash": "0xddcb6028dc93fa6aaad3c928e5cf126107185fd2a1752abaa1f3bcbc0eaaa71c",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: BUY (Confidence 0.75%)",
+      "timestamp": 1768266679643,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xddcb6028dc93fa6aaad3c928e5cf126107185fd2a1752abaa1f3bcbc0eaaa71c",
+      "strategy": "Gemini Sentiment",
+      "pnl": 0
+    },
+    {
+      "hash": "0x4da26594f53f8e02dee38327c8ce00bc41d6bc1758485b688e01b608d69ceff1",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: BUY ETHUSDT",
+      "timestamp": 1768266559713,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x4da26594f53f8e02dee38327c8ce00bc41d6bc1758485b688e01b608d69ceff1",
+      "strategy": "Neural Scalp V5",
+      "pnl": 0
+    },
+    {
+      "hash": "0x5e99806619fd01f557356a1136fff223f73a433f28663619fff534824f4cf27b",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768266546924,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x5e99806619fd01f557356a1136fff223f73a433f28663619fff534824f4cf27b",
+      "strategy": "Neural Scalp V5",
+      "pnl": 0
+    },
+    {
+      "hash": "0x0d396724b664432476b13252fb919b3230e3029ecc498ea3a3ede2cf95652610",
+      "action": "EXECUTE_TRADE",
+      "details": "BUY ETHUSDT @ 3111.75",
+      "timestamp": 1768266525845,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x0d396724b664432476b13252fb919b3230e3029ecc498ea3a3ede2cf95652610",
+      "strategy": "Neural Scalp V5",
+      "pnl": 54.77
+    },
+    {
+      "hash": "0x01a6109c8b067bc0be55c8d4b21bce3c51cef7c4968f115b02612d537f4b5b9a",
       "action": "SIGNAL_GEN",
       "details": "Consensus: BUY (Confidence 0.5%)",
-      "timestamp": 1767114744469,
+      "timestamp": 1768266525282,
       "chain": "Base Sepolia",
-      "explorerUrl": "https://sepolia.basescan.org/tx/0x7c8671ea35bb8b6b205fe4a588ece5bccad500530bdf5a47bfad7c445bdf8f14"
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x01a6109c8b067bc0be55c8d4b21bce3c51cef7c4968f115b02612d537f4b5b9a",
+      "strategy": "Neural Scalp V5",
+      "pnl": 0
+    },
+    {
+      "hash": "0x04af6f9b594b194ed99561341b99ddecbe07310e987590275b2d194f7b2e4391",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: BUY BTCUSDT",
+      "timestamp": 1768266484290,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x04af6f9b594b194ed99561341b99ddecbe07310e987590275b2d194f7b2e4391",
+      "strategy": "Neural Scalp V5",
+      "pnl": 0
+    },
+    {
+      "hash": "0x22c96aafaa8df12df5aeb565a01782a40c7af5609b722fcacb70ad1516f99412",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768266451124,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x22c96aafaa8df12df5aeb565a01782a40c7af5609b722fcacb70ad1516f99412",
+      "strategy": "Neural Scalp V5",
+      "pnl": 0
+    },
+    {
+      "hash": "0xd64a1e664011f9d27103a5aea97c0b5b2faffbfd262ce5f84b7734a250fcfe94",
+      "action": "EXECUTE_TRADE",
+      "details": "BUY BTCUSDT @ 91448",
+      "timestamp": 1768266442260,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xd64a1e664011f9d27103a5aea97c0b5b2faffbfd262ce5f84b7734a250fcfe94",
+      "strategy": "Neural Scalp V5",
+      "pnl": -54.22
+    },
+    {
+      "hash": "0xc5d2f1b692ee23b9f9c57e51c56a6218dea90016943a909c75946e547f67fe75",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: BUY (Confidence 0.7%)",
+      "timestamp": 1768266437455,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xc5d2f1b692ee23b9f9c57e51c56a6218dea90016943a909c75946e547f67fe75",
+      "strategy": "Neural Scalp V5",
+      "pnl": 0
+    },
+    {
+      "hash": "0x05b7a4a6d8cb9046b015706dbe82ead97d21c1fa5bb7da0f530e41dae72bfa05",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: SELL ETHUSDT",
+      "timestamp": 1768266378372,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x05b7a4a6d8cb9046b015706dbe82ead97d21c1fa5bb7da0f530e41dae72bfa05",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x49eea12dd6ae6a34308355d6c6e91ac8ccb0484d7ce26f815b124b756fb140cd",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768266365884,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x49eea12dd6ae6a34308355d6c6e91ac8ccb0484d7ce26f815b124b756fb140cd",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x737d57953cede6a0aa8b4af01e244de816553bf320d77c2ba2b3d9f9cb6441a4",
+      "action": "EXECUTE_TRADE",
+      "details": "SELL ETHUSDT @ 3108",
+      "timestamp": 1768266355537,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x737d57953cede6a0aa8b4af01e244de816553bf320d77c2ba2b3d9f9cb6441a4",
+      "strategy": "MetaPredict V1",
+      "pnl": -46.32
+    },
+    {
+      "hash": "0x660aa91268882821840d7eaad0e19872060f84102a57aa20dc4ddb7bba590de5",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: SELL (Confidence 0.7%)",
+      "timestamp": 1768266350716,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x660aa91268882821840d7eaad0e19872060f84102a57aa20dc4ddb7bba590de5",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x7029220581a6f02fa9e3678df681b6d96d098a0fedaa3a61e5f02d010f79ca22",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: SELL BTCUSDT",
+      "timestamp": 1768266306017,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x7029220581a6f02fa9e3678df681b6d96d098a0fedaa3a61e5f02d010f79ca22",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x6961dd3e337e948be7f8c9bf8f8c98097d36f08746fca25644fb90021c3409d5",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768266285070,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x6961dd3e337e948be7f8c9bf8f8c98097d36f08746fca25644fb90021c3409d5",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x9d5c70c4d251f69f927215f33cbdf4906cf23c6a7a801366f3eaa629e6bd9b95",
+      "action": "EXECUTE_TRADE",
+      "details": "SELL BTCUSDT @ 91359.2",
+      "timestamp": 1768266255830,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x9d5c70c4d251f69f927215f33cbdf4906cf23c6a7a801366f3eaa629e6bd9b95",
+      "strategy": "MetaPredict V1",
+      "pnl": 86.63
+    },
+    {
+      "hash": "0x5de01aeb80a6988c75def33fe1d52e068fdaa88552ee6a71b334867a2e85965c",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: SELL (Confidence 0.8%)",
+      "timestamp": 1768266255251,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x5de01aeb80a6988c75def33fe1d52e068fdaa88552ee6a71b334867a2e85965c",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x5368c58aa1ea7f97ff9e6a868cfc8daaab25ebbdef34660ec78c03fed183917a",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: BUY BTCUSDT",
+      "timestamp": 1768266198311,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x5368c58aa1ea7f97ff9e6a868cfc8daaab25ebbdef34660ec78c03fed183917a",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x8506ce45aa98ef6482b7d171b9ba90ffffd6047290a2491743f6658667782701",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768266173306,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x8506ce45aa98ef6482b7d171b9ba90ffffd6047290a2491743f6658667782701",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x9000879ae5904215632b2ae2de43aeaec5e114c38eeb869a6512caa62f222e6a",
+      "action": "EXECUTE_TRADE",
+      "details": "BUY BTCUSDT @ 91430",
+      "timestamp": 1768266152207,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x9000879ae5904215632b2ae2de43aeaec5e114c38eeb869a6512caa62f222e6a",
+      "strategy": "MetaPredict V1",
+      "pnl": 94.5
+    },
+    {
+      "hash": "0x2c02b76e472253c7dd28ce2740a75225f231314fd721204b091d7cec90a121ba",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: BUY (Confidence 0.7%)",
+      "timestamp": 1768266147353,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x2c02b76e472253c7dd28ce2740a75225f231314fd721204b091d7cec90a121ba",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0xf0ba83618cad2f79d43c5cadb8496d4ac8c0383533c37fe0a8d47563dc03e4f9",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: BUY SOLUSDT",
+      "timestamp": 1768266067782,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0xf0ba83618cad2f79d43c5cadb8496d4ac8c0383533c37fe0a8d47563dc03e4f9",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x094f32872870ae3c153e04ad63cae7c934df9625b9909a3db80920e46c0018ca",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768266054994,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x094f32872870ae3c153e04ad63cae7c934df9625b9909a3db80920e46c0018ca",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x733f1cb350926edf2b5a9eab1cc504fbd269762210eb68085689c30b2ebfbca0",
+      "action": "EXECUTE_TRADE",
+      "details": "BUY SOLUSDT @ 139.25",
+      "timestamp": 1768266046158,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x733f1cb350926edf2b5a9eab1cc504fbd269762210eb68085689c30b2ebfbca0",
+      "strategy": "MetaPredict V1",
+      "pnl": 40.86
+    },
+    {
+      "hash": "0xf6408c7b5167c81dc30a52912b51539efed3b2148386d31abb1dc5a51f3b553a",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: BUY (Confidence 0.6%)",
+      "timestamp": 1768266041422,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0xf6408c7b5167c81dc30a52912b51539efed3b2148386d31abb1dc5a51f3b553a",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0xa7d60ca0ba96ea16fbe04e8d5ec5bbda3e57ca115b864d3fa9ca19a26da06e19",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: SELL SOLUSDT",
+      "timestamp": 1768265995291,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0xa7d60ca0ba96ea16fbe04e8d5ec5bbda3e57ca115b864d3fa9ca19a26da06e19",
+      "strategy": "DeepSeek Momentum Alpha",
+      "pnl": 0
+    },
+    {
+      "hash": "0xdd44f5f9bce611d702f2ebb5d06857005b207b287924ef37d78079a8e435b537",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768265982508,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0xdd44f5f9bce611d702f2ebb5d06857005b207b287924ef37d78079a8e435b537",
+      "strategy": "DeepSeek Momentum Alpha",
+      "pnl": 0
+    },
+    {
+      "hash": "0x57cf754cbe6b1f85df71394768ba0667d3b84f0631891a3d65295c6611488f8c",
+      "action": "EXECUTE_TRADE",
+      "details": "SELL SOLUSDT @ 139.26",
+      "timestamp": 1768265961424,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x57cf754cbe6b1f85df71394768ba0667d3b84f0631891a3d65295c6611488f8c",
+      "strategy": "DeepSeek Momentum Alpha",
+      "pnl": 39.76
+    },
+    {
+      "hash": "0x6d231411960cdfbe5cdf4224cfb37cfc57ae7906a3c9e8e15cc0bd7104aeba32",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: SELL (Confidence 0.85%)",
+      "timestamp": 1768265960832,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x6d231411960cdfbe5cdf4224cfb37cfc57ae7906a3c9e8e15cc0bd7104aeba32",
+      "strategy": "DeepSeek Momentum Alpha",
+      "pnl": 0
+    },
+    {
+      "hash": "0x1b7be23ef3ec9b81a22f8a6f78b5e55552491f81c0e2de6f7d2339b4eb080800",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: BUY BTCUSDT",
+      "timestamp": 1768265934505,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x1b7be23ef3ec9b81a22f8a6f78b5e55552491f81c0e2de6f7d2339b4eb080800",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x721f4e5e495d08a7e92f14ad0ddd080567d013c732e55a671848d409bff17b4d",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768265909505,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x721f4e5e495d08a7e92f14ad0ddd080567d013c732e55a671848d409bff17b4d",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0x4e8797e35b41224fad56a18156b7dcd510ff249dd5d1426b0be3ff2e059889aa",
+      "action": "EXECUTE_TRADE",
+      "details": "BUY BTCUSDT @ 91451",
+      "timestamp": 1768265896595,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x4e8797e35b41224fad56a18156b7dcd510ff249dd5d1426b0be3ff2e059889aa",
+      "strategy": "MetaPredict V1",
+      "pnl": -86.65
+    },
+    {
+      "hash": "0x70aef0dae08dba6699289ef7a64c01a1ce5b783dd5b2d7d6bc8c0042ce3b09d9",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: BUY (Confidence 0.6%)",
+      "timestamp": 1768265891766,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x70aef0dae08dba6699289ef7a64c01a1ce5b783dd5b2d7d6bc8c0042ce3b09d9",
+      "strategy": "MetaPredict V1",
+      "pnl": 0
+    },
+    {
+      "hash": "0xf4120f88b4b64e2c6101f886002dc65c3ddcfa9cdaa976f4f0c83accc2bb04c1",
+      "action": "SETTLE_TRADE",
+      "details": "L1 Verified: SELL BTCUSDT",
+      "timestamp": 1768265826358,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0xf4120f88b4b64e2c6101f886002dc65c3ddcfa9cdaa976f4f0c83accc2bb04c1",
+      "strategy": "Quantum Arbitrage Sniper",
+      "pnl": 0
+    },
+    {
+      "hash": "0x83ebc98223a2c79bd66c25d295ad3a26ee4d4fd808f2b4b4fa475dbe2aeaac3a",
+      "action": "ANCHOR_DECISION",
+      "details": "L1 Settlement: Decision Logged",
+      "timestamp": 1768265801355,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/tx/0x83ebc98223a2c79bd66c25d295ad3a26ee4d4fd808f2b4b4fa475dbe2aeaac3a",
+      "strategy": "Quantum Arbitrage Sniper",
+      "pnl": 0
+    },
+    {
+      "hash": "0x5f3d2ff0990f2f0f0cad1afa982e4154f2f34728d762260328c176170a3fcd08",
+      "action": "EXECUTE_TRADE",
+      "details": "SELL BTCUSDT @ 91352.1",
+      "timestamp": 1768265784369,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x5f3d2ff0990f2f0f0cad1afa982e4154f2f34728d762260328c176170a3fcd08",
+      "strategy": "Quantum Arbitrage Sniper",
+      "pnl": 46.03
+    },
+    {
+      "hash": "0x93d33b41592c29b2a482dc4210826bc8b5cdfb9c5701f111b8021c08b216a0ed",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: SELL (Confidence 0.6%)",
+      "timestamp": 1768265783785,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/tx/0x93d33b41592c29b2a482dc4210826bc8b5cdfb9c5701f111b8021c08b216a0ed",
+      "strategy": "Quantum Arbitrage Sniper",
+      "pnl": 0
+    },
+    {
+      "hash": "0x7f2a...39d1",
+      "action": "EXECUTE_TRADE",
+      "details": "BUY BTC/USDT @ 95,230",
+      "timestamp": 1768265767534,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/"
+    },
+    {
+      "hash": "0x1a4b...8c2e",
+      "action": "SIGNAL_GEN",
+      "details": "Consensus: STRONG BUY (Confidence 0.94)",
+      "timestamp": 1768265734534,
+      "chain": "Base Sepolia",
+      "explorerUrl": "https://sepolia.basescan.org/"
+    },
+    {
+      "hash": "0x5e2d...9f1a",
+      "action": "L1_ANCHOR",
+      "details": "Settlement on Ethereum",
+      "timestamp": 1768265749534,
+      "chain": "Ethereum Sepolia",
+      "explorerUrl": "https://sepolia.etherscan.io/"
+    },
+    {
+      "hash": "0x9c3d...2a1f",
+      "action": "RISK_CHECK",
+      "details": "Approved. Leverage capped at 5x.",
+      "timestamp": 1768265719534,
+      "chain": "Internal",
+      "explorerUrl": "#"
     }
   ],
+  "activeStrategy": {
+    "name": "Gemini Sentiment",
+    "risk": "MEDIUM",
+    "winRate": 0.6
+  },
   "activeStrategiesList": [
     {
-      "name": "Titan Pure Math",
+      "name": "MetaPredict V1",
+      "risk": "MEDIUM",
+      "winRate": 0.65
+    },
+    {
+      "name": "Quantum Arbitrage Sniper",
       "risk": "LOW",
-      "winRate": 0.85
+      "winRate": 0.92
     },
     {
-      "name": "Titan Neural Local",
+      "name": "DeepSeek Momentum Alpha",
       "risk": "HIGH",
+      "winRate": 0.45
+    },
+    {
+      "name": "Neural Scalp V5",
+      "risk": "HIGH",
+      "winRate": 0.55
+    },
+    {
+      "name": "Gemini Sentiment",
+      "risk": "MEDIUM",
       "winRate": 0.6
-    },
-    {
-      "name": "Quantum Momentum",
-      "risk": "MED",
-      "winRate": 0.72
-    },
-    {
-      "name": "Vortex Mean Reversion",
-      "risk": "MED",
-      "winRate": 0.68
-    },
-    {
-      "name": "L2 Order Flow Scalper",
-      "risk": "HIGH",
-      "winRate": 0.75
     }
-  ],
-  "marketData": {
-    "symbol": "cmt_solusdt",
-    "price": 135.27,
-    "depth": {
-      "asks": [
-        [
-          "135.27",
-          "2463.7"
-        ],
-        [
-          "135.29",
-          "2762.8"
-        ],
-        [
-          "135.30",
-          "2578.3"
-        ],
-        [
-          "135.32",
-          "2463.9"
-        ],
-        [
-          "135.34",
-          "2700.9"
-        ],
-        [
-          "135.36",
-          "2690.6"
-        ],
-        [
-          "135.38",
-          "429.5"
-        ],
-        [
-          "135.40",
-          "2416.4"
-        ],
-        [
-          "135.41",
-          "2581.0"
-        ],
-        [
-          "135.42",
-          "2446.3"
-        ],
-        [
-          "135.43",
-          "489.3"
-        ],
-        [
-          "135.45",
-          "500.0"
-        ],
-        [
-          "135.46",
-          "326.9"
-        ],
-        [
-          "135.47",
-          "551.4"
-        ],
-        [
-          "135.48",
-          "547.6"
-        ]
-      ],
-      "bids": [
-        [
-          "135.26",
-          "2580.7"
-        ],
-        [
-          "135.25",
-          "2996.5"
-        ],
-        [
-          "135.23",
-          "2736.0"
-        ],
-        [
-          "135.22",
-          "2937.7"
-        ],
-        [
-          "135.21",
-          "2597.0"
-        ],
-        [
-          "135.20",
-          "524.7"
-        ],
-        [
-          "135.18",
-          "2458.5"
-        ],
-        [
-          "135.17",
-          "457.7"
-        ],
-        [
-          "135.16",
-          "324.5"
-        ],
-        [
-          "135.15",
-          "438.4"
-        ],
-        [
-          "135.13",
-          "293.5"
-        ],
-        [
-          "135.12",
-          "447.5"
-        ],
-        [
-          "135.11",
-          "504.5"
-        ],
-        [
-          "135.09",
-          "443.3"
-        ],
-        [
-          "135.07",
-          "372.9"
-        ]
-      ],
-      "timestamp": "1767597629028"
-    },
-    "candles": [
-      [
-        "1767510900000",
-        "133.84",
-        "133.91",
-        "133.61",
-        "133.82",
-        "31914.1",
-        "4270213.347"
-      ],
-      [
-        "1767510000000",
-        "133.70",
-        "133.95",
-        "133.59",
-        "133.84",
-        "39672.8",
-        "5308667.609"
-      ],
-      [
-        "1767509100000",
-        "133.82",
-        "133.98",
-        "133.62",
-        "133.70",
-        "36414.2",
-        "4873738.828"
-      ],
-      [
-        "1767508200000",
-        "134.36",
-        "134.54",
-        "133.70",
-        "133.82",
-        "33041.6",
-        "4431980.665"
-      ],
-      [
-        "1767507300000",
-        "134.52",
-        "134.94",
-        "134.21",
-        "134.36",
-        "33202.2",
-        "4467999.911"
-      ]
-    ]
-  },
-  "latestSignal": {
-    "symbol": "cmt_solusdt",
-    "action": "HOLD",
-    "confidence": 0.5,
-    "reasoning": "Trend Bullish, Math Neutral",
-    "timestamp": 1767597630955
-  }
+  ]
 }

@@ -144,11 +144,43 @@ export class WeexClient {
         }
 
         try {
-            const endpoint = "/capi/v2/account/assets";
-            const response = await this.sendSignedRequest('GET', endpoint);
-            return response.data;
+            // Updated: Try multiple endpoints as per user reports in chat
+            const endpoints = [
+                "/capi/v2/account/assets"
+                // "/capi/v1/account/assets" // REHEMOVED: Causing 521 errors repeatedly
+            ];
+
+            let lastError;
+
+            for (const endpoint of endpoints) {
+                try {
+                    logger.info(`[WEEX] Trying to fetch balance from: ${endpoint}`);
+                    const response = await this.sendSignedRequest('GET', endpoint);
+
+                    // Log RAW response for Debugging (Critical for user diagnosis)
+                    logger.info(`[WEEX] Balance Response RAW (${endpoint}): ${JSON.stringify(response.data)}`);
+
+                    let finalData = null;
+                    if (Array.isArray(response.data)) {
+                        finalData = response.data;
+                    } else if (response.data && (response.data.data || response.data.user_assets)) {
+                        finalData = response.data.data || response.data.user_assets;
+                    }
+
+                    if (Array.isArray(finalData) && finalData.length > 0) {
+                        return finalData;
+                    }
+                } catch (e: any) {
+                    lastError = e;
+                    logger.warn(`[WEEX] Endpoint ${endpoint} failed: ${e.message}`);
+                }
+            }
+
+            if (lastError) throw lastError;
+            return [];
+
         } catch (error: any) {
-            logger.error(`[WEEX] Get Account Failed: ${error.message}`);
+            logger.error(`[WEEX] Get Account Failed (All Endpoints): ${error.message}`);
             if (axios.isAxiosError(error)) {
                 logger.error(`Response Data: ${JSON.stringify(error.response?.data)}`);
             }

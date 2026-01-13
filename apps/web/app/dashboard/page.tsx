@@ -90,7 +90,7 @@ export default function DashboardPage() {
                                 </span>
                             </div>
                             <p className="text-gray-400 max-w-xl">
-                                Orchestrating <span className="text-white font-semibold">Titan Neural Engine</span> & <span className="text-white font-semibold">Hybrid Math Modules</span>. Executing across Base L2 and Ethereum Sepolia L1.
+                                Orchestrating <span className="text-white font-semibold">Titan Mixture-of-Agents (Llama 3.1) on Groq LPU</span> & <span className="text-white font-semibold">Local Neural Core</span>. Executing across Base L2 and Ethereum Sepolia L1.
                             </p>
                         </div>
                         <div className="flex items-center gap-4">
@@ -164,8 +164,21 @@ export default function DashboardPage() {
                             <ModelStatusBadge name="Math Module" role="Technical" status="online" ping="1ms" />
                             <ModelStatusBadge name="DeepSeek" role="Logic" status="standby" ping="120ms" />
                             <ModelStatusBadge name="Gemini" role="Context" status="standby" ping="85ms" />
-                            <ModelStatusBadge name="Llama 3.1" role="Speed" status="standby" ping="15ms" />
+                            <ModelStatusBadge name="Llama 3.1" role="Speed" status="online" ping="15ms" />
                             <ModelStatusBadge name="Qwen 2.5" role="Backup" status="standby" ping="110ms" />
+                        </div>
+
+                        <div className="mt-6 pt-6 border-t border-white/5">
+                            <h4 className="text-xs text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                <Zap className="w-3 h-3 text-orange-400" />
+                                Active Groq LPU Swarm (Llama 3.1)
+                            </h4>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <ModelStatusBadge name="Quant Agent" role="Technical" status="online" ping="142ms" />
+                                <ModelStatusBadge name="Macro Strategy" role="Strategic" status="online" ping="138ms" />
+                                <ModelStatusBadge name="Risk Guardian" role="Safety" status="online" ping="145ms" />
+                                <ModelStatusBadge name="MoA Consensus" role="Aggregator" status="online" ping="155ms" />
+                            </div>
                         </div>
                     </div>
 
@@ -206,14 +219,11 @@ export default function DashboardPage() {
                                 ) : (
                                     // Fallback / Loading State
                                     <>
-                                        <div className="flex justify-between items-center text-xs">
-                                            <span className="text-white">Titan Pure Neural</span>
-                                            <span className="text-green-400 font-mono">ACTIVE</span>
-                                        </div>
-                                        <div className="flex justify-between items-center text-xs">
-                                            <span className="text-white">Math Verification</span>
-                                            <span className="text-green-400 font-mono">ACTIVE</span>
-                                        </div>
+                                        <StrategyRow name="Titan Neural" status="ACTIVE" color="text-green-400" />
+                                        <StrategyRow name="Quant Llama 3.1" status="ACTIVE" color="text-green-400" />
+                                        <StrategyRow name="Macro Strategy 3.1" status="ACTIVE" color="text-green-400" />
+                                        <StrategyRow name="Risk Guardian 3.1" status="ACTIVE" color="text-green-400" />
+                                        <StrategyRow name="MoA Consensus" status="ACTIVE" color="text-purple-400" />
                                     </>
                                 )}
                             </div>
@@ -253,7 +263,7 @@ export default function DashboardPage() {
                         </div>
                     </div>
 
-                    {/* X Sentiment Analysis */}
+                    {/* X Sentiment Analysis (Restored) */}
                     <div className="bg-black border border-white/10 rounded-xl overflow-hidden">
                         <div className="bg-white/5 px-6 py-4 border-b border-white/10 flex justify-between items-center">
                             <span className="font-bold">X (Twitter) Sentiment</span>
@@ -282,6 +292,44 @@ export default function DashboardPage() {
                                     <p className="text-xs text-gray-500">2 minutes ago • Impact Score: Low</p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    {/* Live AI Reasoning Stream */}
+                    <div className="bg-black border border-white/10 rounded-xl overflow-hidden flex flex-col">
+                        <div className="bg-white/5 px-6 py-4 border-b border-white/10 flex justify-between items-center">
+                            <span className="font-bold flex items-center gap-2">
+                                <Brain className="w-4 h-4 text-purple-400" />
+                                Neural Engine Reasoning
+                            </span>
+                            <span className="text-xs text-gray-500 font-mono">LIVE STREAM</span>
+                        </div>
+                        <div className="p-6 flex-1 flex flex-col justify-center">
+                            {latestSignal?.reasoning ? (
+                                <div className="space-y-4 animate-in fade-in duration-500">
+                                    <div className="flex gap-4">
+                                        <div className="min-w-[4px] bg-gradient-to-b from-purple-500 to-blue-500 rounded-full"></div>
+                                        <div>
+                                            <p className="text-sm text-gray-300 italic leading-relaxed">
+                                                "{latestSignal.reasoning}"
+                                            </p>
+                                            <div className="mt-3 flex items-center gap-3">
+                                                <span className="text-[10px] uppercase font-bold text-gray-500 bg-white/5 px-2 py-1 rounded">
+                                                    Confidence: {(latestSignal.confidence * 100).toFixed(0)}%
+                                                </span>
+                                                <span className="text-[10px] uppercase font-bold text-gray-500 bg-white/5 px-2 py-1 rounded">
+                                                    Model: {latestSignal.modelUsed || 'Titan_Ensemble_v1'}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="flex items-center justify-center h-full gap-2 text-gray-600">
+                                    <div className="w-2 h-2 bg-purple-500 rounded-full animate-ping"></div>
+                                    <span className="text-sm font-mono">Awaiting Consensus...</span>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -457,6 +505,15 @@ function ActivityRow({ hash, action, details, timestamp, status, url, chain, str
                 <div className="text-xs font-medium text-green-400">{status}</div>
                 <div className="text-[10px] text-gray-500">{timeAgo}s ago</div>
             </div>
+        </div>
+    );
+}
+
+function StrategyRow({ name, status, color }: any) {
+    return (
+        <div className="flex justify-between items-center text-xs py-1">
+            <span className="text-white font-medium">{name}</span>
+            <span className={`${color} font-mono font-bold text-[10px]`}>{status}</span>
         </div>
     );
 }

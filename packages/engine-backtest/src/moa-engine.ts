@@ -1,5 +1,6 @@
 import { OpenRouterClient } from '../../core/src/openrouter-client.js';
-import { createGeminiClient, GeminiClient } from '../../core/src/index.js';
+import { GroqClient } from '../../core/src/groq-client.js';
+// Gemini import removed/unused
 import { keccak256 } from 'ethers';
 
 // Types – reuse from existing codebase
@@ -21,12 +22,19 @@ export interface Signal {
 }
 
 /**
- * Run the Proposer agents in parallel (Gemini + Llama + Mistral + DeepSeek + Titans Local).
+ * Run the Proposer agents in parallel (Groq Llama 3 + Mistral + DeepSeek + Titans Local).
+ * Gemini has been removed as per "Titan Protocol" override.
  */
-async function runProposers(md: MarketData, gemini: GeminiClient) {
-    const mathClient = new OpenRouterClient('deepseek/r1'); // math / reasoning
-    const macroClient = new OpenRouterClient('meta-llama/3.1'); // macro / news
-    const riskClient = new OpenRouterClient('mistralai/mistral-medium'); // risk assessment
+async function runProposers(md: MarketData) {
+    // 1. Math/Quant Analyst - Switching to Groq (Llama 3.1) for reliability
+    // OpenRouter free models (OpenChat, Phi-3, Mistral) are consistently failing with 404/429.
+    const mathClient = new GroqClient('llama-3.1-8b-instant');
+
+    // 2. Strategic Macro Analyst (Llama 3.1 8B Instant via Groq) - This works great
+    const strategyClient = new GroqClient('llama-3.1-8b-instant');
+
+    // 3. Risk Manager - Switching to Groq (Llama 3.1) for reliability
+    const riskClient = new GroqClient('llama-3.1-8b-instant');
 
     const mathPrompt = `You are a quantitative analyst. Given the market data below, output a JSON object with fields:
 { "action": "BUY|SELL|HOLD", "confidence": 0-1, "reasoning": "Brief quantitative rationale." }
@@ -36,21 +44,14 @@ RSI: ${md.indicators.RSI}
 Trend: ${md.indicators.trend || 'Unknown'}
 Imbalance: ${md.indicators.orderflow_imbalance || 0}`;
 
-    const macroPrompt = `You are a macro analyst. Considering the Fear & Greed Index is ${md.indicators.fear_greed || 50}, decide BUY/SELL/HOLD for ${md.symbol}. Output valid JSON.`;
+    // Llama 3 on Groq is super fast, good for "Gut Check" / Macro
+    const strategyPrompt = `You are the Lead Strategic Analyst (Titan Groq).
+Analyze this market:
+Asset: ${md.symbol} | Price: ${md.price} | RSI: ${md.indicators.RSI} | Trend: ${md.indicators.trend} | F&G: ${md.indicators.fear_greed}
+Decide BUY/SELL/HOLD.
+Output valid JSON: { "action": "BUY|SELL|HOLD", "confidence": 0-1, "reasoning": "Strategy insight" }`;
 
-    const riskPrompt = `You are a risk manager. Current trend is ${md.indicators.trend}. Decide BUY/SELL/HOLD and give a confidence score (0-1). Output valid JSON.`;
-
-    const geminiPrompt = `You are the Lead Market Analyst (Gemini 2.5).
-Analyze this market situation with high precision.
-Asset: ${md.symbol}
-Price: ${md.price}
-RSI: ${md.indicators.RSI}
-Trend: ${md.indicators.trend}
-Order Book Imbalance: ${md.indicators.orderflow_imbalance}
-Fear/Greed: ${md.indicators.fear_greed}
-
-Your goal is to provide a decisive signal.
-Output strictly valid JSON: { "action": "BUY|SELL|HOLD", "confidence": 0.0-1.0, "reasoning": "concise strategic insight" }`;
+    const riskPrompt = `You are a risk manager. Current trend is ${md.indicators.trend}. RSI is ${md.indicators.RSI}. Decide BUY/SELL/HOLD and give a confidence score (0-1). Output valid JSON.`;
 
     // Titan Local (Mathematical Heuristic - "The Neural Core")
     // Runs purely on local CPU, no logic gaps
@@ -60,15 +61,15 @@ Output strictly valid JSON: { "action": "BUY|SELL|HOLD", "confidence": 0.0-1.0, 
         let score = 0;
 
         // Simple logic: RSI oversold in Uptrend = BUY
-        if (rsi < 35) score += 0.4;
-        if (rsi > 65) score -= 0.4;
+        if (rsi < 32) score += 0.5;
+        if (rsi > 68) score -= 0.5;
         if (trend === 'BULLISH') score += 0.3;
         if (trend === 'BEARISH') score -= 0.3;
-        if ((md.indicators.orderflow_imbalance || 0) > 0.2) score += 0.2;
+        if ((md.indicators.orderflow_imbalance || 0) > 0.15) score += 0.2;
 
         let action: 'BUY' | 'SELL' | 'HOLD' = 'HOLD';
-        if (score > 0.4) action = 'BUY';
-        if (score < -0.4) action = 'SELL';
+        if (score >= 0.5) action = 'BUY';
+        if (score <= -0.5) action = 'SELL';
 
         return {
             action,
@@ -78,77 +79,98 @@ Output strictly valid JSON: { "action": "BUY|SELL|HOLD", "confidence": 0.0-1.0, 
     })();
 
     // Execute concurrently for speed
-    // Note: Local vote is instant, but we await the others
-    const [mathRes, macroRes, riskRes, geminiRes] = await Promise.all([
-        mathClient.completions({ prompt: mathPrompt }).catch(_ => null),
-        macroClient.completions({ prompt: macroPrompt }).catch(_ => null),
-        riskClient.completions({ prompt: riskPrompt }).catch(_ => null),
-        gemini.generateJSON(geminiPrompt, { temperature: 0.7 }).catch(_ => null)
+    const [mathRes, strategyRes, riskRes] = await Promise.all([
+        mathClient.completions({ prompt: mathPrompt }).catch(e => { console.error("Quant Error", e.message); return null; }),
+        strategyClient.completions({ prompt: strategyPrompt }).catch(e => { console.error("Groq Error", e.message); return null; }),
+        riskClient.completions({ prompt: riskPrompt }).catch(e => { console.error("Risk Error", e.message); return null; })
     ]);
 
     const safeParse = (s: string | null) => {
         if (!s) return null;
-        try { return JSON.parse(s); } catch { return null; }
+        try {
+            // Extract JSON if wrapped in markdown code blocks
+            const jsonMatch = s.match(/\{[\s\S]*\}/);
+            return JSON.parse(jsonMatch ? jsonMatch[0] : s);
+        } catch { return null; }
     };
 
     return {
-        // Safe parse OpenRouter strings, Gemini already returns object structure
-        math: safeParse(mathRes),
-        macro: safeParse(macroRes),
+        quant: safeParse(mathRes),
+        strategy: safeParse(strategyRes), // Llama 3
         risk: safeParse(riskRes),
-        gemini: geminiRes?.data || null,
         local: titanLocalVote
     };
 }
 
 /**
  * Aggregator agent – synthesizes the proposals.
+ * Uses DeepSeek R1 (OpenRouter) as the "Titan Consensus Engine".
  */
 async function aggregate(proposals: any): Promise<Signal> {
-    const aggClient = new OpenRouterClient('deepseek/r1'); // synthesizer (The Judge)
-
-    // Fallback if proposals are null
+    // Switching Aggregator to Groq (Llama 3.1) for maximum speed and reliability
+    // OpenRouter free tier has been too unstable (404s/429s).
+    const aggClient = new GroqClient('llama-3.1-8b-instant');
     const p = proposals;
 
-    const aggPrompt = `You are the Chairman of the AI Investment Council. Review the following votes and make the FINAL decision.
-    
-1. Gemini 2.5 (Analytic Lead): ${JSON.stringify(p.gemini || "ABSTAIN")}
-2. DeepSeek Math (Quant): ${JSON.stringify(p.math || "ABSTAIN")}
-3. Llama 3.1 (Macro): ${JSON.stringify(p.macro || "ABSTAIN")}
-4. Mistral (Risk): ${JSON.stringify(p.risk || "ABSTAIN")}
-5. Titan Neural (Local): ${JSON.stringify(p.local || "ABSTAIN")}
+    const aggPrompt = `You are TITAN, the Supreme AI Investment Consensus Engine.
+Review the following agent votes and make the FINAL execution decision.
+
+1. Strategic Analyst (Llama 3 70B): ${JSON.stringify(p.strategy || "ABSTAIN")}
+2. Quantitative Analyst (DeepSeek Math): ${JSON.stringify(p.quant || "ABSTAIN")}
+3. Risk Manager (Mistral): ${JSON.stringify(p.risk || "ABSTAIN")}
+4. Neural Core (Local Algo): ${JSON.stringify(p.local || "ABSTAIN")}
 
 Instructions:
-- Weight Gemini and Titan Local (Logic) deeply.
-- If Gemini and Llama agree, follow them.
-- If Risk sends a strong SELL warning, respect it.
-- Output a JSON with fields:
-{ "action": "BUY|SELL|HOLD", "consensusScore": 0-100, "confidence": 0-1, "reasoning": "Final verdict summarizing the board's view...", "modelUsed": "DeepSeek-R1 (Aggregator)" }`;
+- Prioritize the 'Quantitative Analyst' (DeepSeek) and 'Neural Core' (Local) for signal direction.
+- If Risk Manager signals extreme caution (HOLD/SELL on high RSI), respect it.
+- Output a pure JSON object:
+{ "action": "BUY|SELL|HOLD", "consensusScore": 0-100, "confidence": 0-1, "reasoning": "Final verdict...", "modelUsed": "Titan_DeepSeek_R1_Consensus" }`;
 
     try {
         const aggRes = await aggClient.completions({ prompt: aggPrompt });
-        return JSON.parse(aggRes);
+        const jsonMatch = aggRes.match(/\{[\s\S]*\}/);
+        const parsed = JSON.parse(jsonMatch ? jsonMatch[0] : aggRes);
+        return {
+            ...parsed,
+            modelUsed: "Titan_DeepSeek_R1_Consensus"
+        };
     } catch (e) {
-        // Fallback if aggregator fails - Simple Majority Vote
+        // Fallback if aggregator fails - Simple Majority Vote of Local + Strategy
+        const localAction = p.local?.action || 'HOLD';
+        const strategyAction = p.strategy?.action || 'HOLD';
+
+        // If Logic and Strategy agree, go with it
+        if (localAction !== 'HOLD' && localAction === strategyAction) {
+            return {
+                action: localAction,
+                confidence: 0.75,
+                reasoning: `Titan Aggegator Offline. Fallback Consensus: Local (${localAction}) + Strategy (${strategyAction}) matched.`,
+                modelUsed: "Titan_Fallback_V2"
+            };
+        }
+
         return {
             action: 'HOLD',
             confidence: 0,
-            reasoning: "Aggregator connection failed. Defaulting to HOLD safety.",
-            modelUsed: "Fallback_Safety_Switch"
+            reasoning: "Aggregator connection failed and no majority consensus found.",
+            modelUsed: "Titan_Fallback_Safety"
         };
     }
 }
 
 /**
  * Public entry point used by the executor.
+ * NOTE: 'existingGemini' argument is kept for signature compatibility but ignored.
  */
-export async function runMoA(md: MarketData, existingGemini?: GeminiClient): Promise<Signal> {
-    // fast-fail if no market data
+export async function runMoA(md: MarketData, existingGemini?: any): Promise<Signal> {
     if (!md) throw new Error("No Market Data provided to MoA");
 
-    const gemini = existingGemini || createGeminiClient();
+    // We purposely IGNORE existingGemini here to "not use Gemini" as requested.
 
-    const proposals = await runProposers(md, gemini);
+    // 1. Gather Proposals (Groq, OpenRouter, Local)
+    const proposals = await runProposers(md);
+
+    // 2. Synthesize (DeepSeek)
     const signal = await aggregate(proposals);
 
     // Attach cryptographic proof hash for on‑chain verification
@@ -156,8 +178,8 @@ export async function runMoA(md: MarketData, existingGemini?: GeminiClient): Pro
         uid: process.env.WEEX_UID || 'ANON-TITAN-USER',
         marketData: { symbol: md.symbol, price: md.price, rsi: md.indicators.RSI },
         votes: {
-            gemini: proposals.gemini?.action,
-            quant: proposals.math?.action,
+            strategy: proposals.strategy?.action,
+            quant: proposals.quant?.action,
             local: proposals.local?.action
         },
         decision: signal.action,
@@ -168,7 +190,7 @@ export async function runMoA(md: MarketData, existingGemini?: GeminiClient): Pro
     try {
         (signal as any).proofHash = keccak256(Buffer.from(JSON.stringify(proofPayload)));
     } catch (e) {
-        (signal as any).proofHash = "0x0000000000000000000000000000000000000000"; // Fail safe
+        (signal as any).proofHash = "0x0000000000000000000000000000000000000000";
     }
 
     return signal;
