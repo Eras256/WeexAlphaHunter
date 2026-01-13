@@ -1,0 +1,294 @@
+// =============================================================================
+// TITAN CRDT LOCAL LEDGER SCHEMA
+// =============================================================================
+// Conflict-free Replicated Data Type (CRDT) schema for offline resilience.
+// Allows autonomous operation when cloud connection is severed, with automatic
+// reconciliation when connection is restored.
+//
+// EU AI Act Article 14 Compliance:
+// - Immutable audit trail for all decisions
+// - Human oversight interface
+// - Kill switch state tracking
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma-client"
+}
+
+datasource db {
+  // SQLite for local-first operation (can sync to PostgreSQL via CRDT)
+  provider = "sqlite"
+  url      = "file:./titan-ledger.db"
+}
+
+// =============================================================================
+// CORE TRADING MODELS
+// =============================================================================
+
+/// Immutable record of every AI trading decision
+model Decision {
+  id              String   @id @default(cuid())
+  
+  // Decision details
+  action          Action
+  confidence      Float
+  reasoning       String
+  source          SignalSource
+  proofHash       String   @unique
+  
+  // Market context at decision time
+  symbol          String
+  price           Float
+  rsi             Float?
+  ofi             Float?
+  volatility      Float?
+  trendStrength   Float?
+  
+  // Neural input (if available)
+  neuralAction    Action?
+  neuralConfidence Float?
+  
+  // Execution status
+  canExecute      Bool     @default(false)
+  wasExecuted     Bool     @default(false)
+  executedOrderId String?
+  
+  // CRDT fields for offline sync
+  vectorClock     Int      @default(0)
+  nodeId          String   @default("local")
+  syncStatus      SyncStatus @default(PENDING)
+  
+  // Timestamps
+  createdAt       DateTime @default(now())
+  syncedAt        DateTime?
+  
+  // Relations
+  execution       Execution?
+  auditLog        AuditLog[]
+  
+  @@index([createdAt])
+  @@index([syncStatus])
+  @@index([symbol])
+}
+
+/// Trade execution record with blockchain proof
+model Execution {
+  id              String   @id @default(cuid())
+  
+  // Link to decision
+  decisionId      String   @unique
+  decision        Decision @relation(fields: [decisionId], references: [id])
+  
+  // Exchange details
+  exchangeOrderId String
+  symbol          String
+  side            Action
+  quantity        Float
+  entryPrice      Float
+  
+  // Risk management
+  stopLossPrice   Float?
+  takeProfitPrice Float?
+  
+  // Outcome tracking
+  status          ExecutionStatus @default(PENDING)
+  exitPrice       Float?
+  realizedPnl     Float?
+  closedAt        DateTime?
+  
+  // Blockchain verification
+  txHashL2        String?          // Base Sepolia
+  txHashL1        String?          // Ethereum Sepolia
+  blockNumber     Int?
+  
+  // CRDT fields
+  vectorClock     Int      @default(0)
+  nodeId          String   @default("local")
+  syncStatus      SyncStatus @default(PENDING)
+  
+  // Timestamps
+  createdAt       DateTime @default(now())
+  
+  @@index([symbol])
+  @@index([status])
+  @@index([createdAt])
+}
+
+/// Position tracking for portfolio management
+model Position {
+  id              String   @id @default(cuid())
+  
+  // Position details
+  symbol          String   @unique
+  side            Action
+  entryPrice      Float
+  currentQuantity Float
+  averagePrice    Float
+  
+  // Unrealized PnL (updated on each tick)
+  currentPrice    Float?
+  unrealizedPnl   Float?
+  
+  // Risk limits
+  maxQuantity     Float    @default(1.0)
+  stopLossPrice   Float?
+  
+  // CRDT fields
+  vectorClock     Int      @default(0)
+  lastUpdated     DateTime @updatedAt
+  
+  @@index([symbol])
+}
+
+/// Kill switch state (EU AI Act compliance)
+model KillSwitch {
+  id              String   @id @default("singleton")
+  
+  isActive        Bool     @default(false)
+  activatedBy     String?
+  activationReason String?
+  activatedAt     DateTime?
+  
+  deactivatedBy   String?
+  deactivatedAt   DateTime?
+  
+  // Audit trail
+  activationCount Int      @default(0)
+  
+  updatedAt       DateTime @updatedAt
+}
+
+/// Immutable audit log (EU AI Act Article 14)
+model AuditLog {
+  id              String   @id @default(cuid())
+  
+  // Event details
+  eventType       AuditEventType
+  severity        AuditSeverity
+  message         String
+  metadata        String?          // JSON blob
+  
+  // Context
+  decisionId      String?
+  decision        Decision? @relation(fields: [decisionId], references: [id])
+  
+  // Source identification
+  source          String   // e.g., "WASM_MATH_GUARDIAN", "NEURAL_CORTEX"
+  nodeId          String   @default("local")
+  
+  // CRDT (append-only, no conflicts)
+  vectorClock     Int      @default(0)
+  
+  createdAt       DateTime @default(now())
+  
+  @@index([eventType])
+  @@index([createdAt])
+  @@index([severity])
+}
+
+/// Micro-agent votes for MoA consensus
+model AgentVote {
+  id              String   @id @default(cuid())
+  
+  // Vote details
+  agentType       AgentType
+  action          Action
+  confidence      Float
+  reasoning       String
+  
+  // Context
+  symbol          String
+  price           Float
+  timestamp       DateTime @default(now())
+  
+  // Link to final decision (many votes -> one decision)
+  decisionId      String?
+  
+  @@index([timestamp])
+  @@index([agentType])
+}
+
+/// Network health metrics for latency monitoring
+model NetworkHealth {
+  id              String   @id @default(cuid())
+  
+  // Latency measurements
+  exchangeLatencyMs Int
+  rpcLatencyMs      Int?
+  aiLatencyMs       Int?
+  
+  // Status
+  isHealthy       Bool     @default(true)
+  haltReason      String?
+  
+  createdAt       DateTime @default(now())
+  
+  @@index([createdAt])
+}
+
+// =============================================================================
+// ENUMS
+// =============================================================================
+
+enum Action {
+  BUY
+  SELL
+  HOLD
+  HALT
+}
+
+enum SignalSource {
+  MATH_GUARDIAN
+  NEURAL_CORTEX
+  SYMBOLIC_CONSENSUS
+  EMERGENCY_HALT
+  MOA_CONSENSUS
+}
+
+enum SyncStatus {
+  PENDING      // Awaiting sync to cloud
+  SYNCED       // Successfully synced
+  CONFLICT     // Conflict detected, needs resolution
+  LOCAL_ONLY   // Marked as local-only (won't sync)
+}
+
+enum ExecutionStatus {
+  PENDING
+  FILLED
+  PARTIALLY_FILLED
+  CANCELLED
+  CLOSED_TP      // Closed by Take Profit
+  CLOSED_SL      // Closed by Stop Loss
+  CLOSED_MANUAL  // Closed manually
+  FAILED
+}
+
+enum AuditEventType {
+  DECISION_MADE
+  TRADE_EXECUTED
+  KILL_SWITCH_ACTIVATED
+  KILL_SWITCH_DEACTIVATED
+  NEURAL_VETO
+  MATH_OVERRIDE
+  LATENCY_HALT
+  VOLATILITY_HALT
+  SYNC_CONFLICT
+  SYSTEM_ERROR
+}
+
+enum AuditSeverity {
+  DEBUG
+  INFO
+  WARN
+  ERROR
+  CRITICAL
+}
+
+enum AgentType {
+  TREND_AGENT
+  VOLATILITY_AGENT
+  SENTIMENT_AGENT
+  QUANT_AGENT
+  RISK_AGENT
+  META_AGGREGATOR
+}

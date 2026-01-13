@@ -1,0 +1,70 @@
+{
+    "name": "@wah/titan-core",
+    "version": "3.0.0",
+    "description": "TITAN v3: Neuro-Symbolic Trading Core with WASM Math Guardian",
+    "type": "module",
+    "main": "dist/titan-core.js",
+    "types": "dist/titan-core.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/titan-core.js",
+            "types": "./dist/titan-core.d.ts"
+        },
+        "./wasm": {
+            "import": "./pkg/titan_math_guardian.js"
+        }
+    },
+    "scripts": {
+        "build": "tsc",
+        "build:wasm": "wasm-pack build --target web --out-dir pkg",
+        "build:all": "npm run build:wasm && npm run build",
+        "test": "vitest",
+        "test:wasm": "cargo test",
+        "prisma:generate": "prisma generate",
+        "prisma:migrate": "prisma migrate dev",
+        "clean": "rimraf dist pkg"
+    },
+    "dependencies": {
+        "events": "^3.3.0",
+        "ts-pattern": "^5.6.0"
+    },
+    "devDependencies": {
+        "@prisma/client": "^7.2.0",
+        "@types/node": "^20.10.0",
+        "prisma": "^5.22.0",
+        "rimraf": "^5.0.5",
+        "typescript": "^5.3.3",
+        "vitest": "^1.2.0"
+    },
+    "peerDependencies": {
+        "onnxruntime-node": "^1.16.0"
+    },
+    "peerDependenciesMeta": {
+        "onnxruntime-node": {
+            "optional": true
+        }
+    },
+    "files": [
+        "dist",
+        "pkg",
+        "prisma/schema.prisma"
+    ],
+    "keywords": [
+        "trading",
+        "ai",
+        "neuro-symbolic",
+        "wasm",
+        "rust",
+        "moa",
+        "consensus"
+    ],
+    "author": "Titan Quant Team",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Eras256/WeexAlphaHunter"
+    },
+    "engines": {
+        "node": ">=20.0.0"
+    }
+}
