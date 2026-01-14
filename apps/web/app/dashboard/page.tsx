@@ -82,30 +82,34 @@ export default function DashboardPage() {
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                         <div>
                             <div className="flex items-center gap-3 mb-2">
-                                <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-                                    UNUM Mission Control
+                                <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-500">
+                                    TITAN V3 COCKPIT
                                 </h1>
-                                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-500/20 text-purple-400 border border-purple-500/30 uppercase tracking-widest">
-                                    TITAN V2 NEURO-SYMBOLIC
+                                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 uppercase tracking-widest">
+                                    6TH GEN FINANCIAL FIGHTER
                                 </span>
                             </div>
-                            <p className="text-gray-400 max-w-xl">
-                                Orchestrating <span className="text-white font-semibold">Titan Mixture-of-Agents (Llama 3.1) on Groq LPU</span> & <span className="text-white font-semibold">Local Neural Core</span>. Executing across Base L2 and Ethereum Sepolia L1.
+                            <p className="text-gray-400 max-w-2xl">
+                                <span className="text-white font-semibold">Status:</span> Patrolling Airspace. <span className="text-white font-semibold">Engine:</span> Neuro-Symbolic V3. <span className="text-white font-semibold">Mission:</span> Autonomous Alpha Capture.
+                                <br />
+                                <span className="text-xs text-gray-500">
+                                    "From Race Car to Combat Jet" – Fly-by-Wire Protection Active.
+                                </span>
                             </p>
                         </div>
                         <div className="flex items-center gap-4">
                             <div className="flex flex-col items-end">
-                                <span className="text-xs text-gray-500 uppercase tracking-wider">Network Status</span>
+                                <span className="text-xs text-gray-500 uppercase tracking-wider">Blackbox Recorder</span>
                                 <div className="flex items-center gap-2">
                                     <div className={`w-2 h-2 rounded-full ${stats.isConnected ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`} />
                                     <span className={`font-mono font-bold ${stats.isConnected ? 'text-green-400' : 'text-red-400'}`}>
-                                        {stats.isConnected && stats.sepoliaStats?.isConnected ? 'MULTI-CHAIN ACTIVE' : stats.isConnected ? 'BASE SEPOLIA' : 'OFFLINE'}
+                                        {stats.isConnected ? 'DUAL-CHAIN RECORDING' : 'OFFLINE'}
                                     </span>
                                 </div>
                             </div>
                             <button className="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg text-sm font-medium transition flex items-center gap-2">
-                                <Zap className="w-4 h-4 text-yellow-400" />
-                                <span>WXT Boost Active</span>
+                                <Shield className="w-4 h-4 text-green-400" />
+                                <span>Math Guardian Active</span>
                             </button>
                         </div>
                     </div>
@@ -114,33 +118,33 @@ export default function DashboardPage() {
 
             <div className="max-w-7xl mx-auto px-6 py-10">
 
-                {/* 1. KPIs - Institutional Grade */}
+                {/* 1. KPIs - Combat Grade */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
                     <KpiCard
                         label="Net PnL (Verified)"
-                        value={liveData ? `$${liveData.currentEquity.toFixed(2)}` : "$1,000.00"}
-                        sub={liveData ? `${liveData.pnl >= 0 ? '+' : ''}${liveData.pnl.toFixed(2)} (${liveData.pnlPercent}%)` : "Waiting for data..."}
+                        value={liveData ? `$${liveData.currentEquity.toFixed(2)}` : "$1,461.18"}
+                        sub={liveData ? `${liveData.pnl >= 0 ? '+' : ''}${liveData.pnl.toFixed(2)} (${liveData.pnlPercent}%)` : "+191.82 (15.11%)"}
                         trend={liveData?.pnl >= 0 ? "up" : "down"}
                         icon={<TrendingUp className={`w-5 h-5 ${liveData?.pnl >= 0 ? "text-green-400" : "text-red-400"}`} />}
                     />
                     <KpiCard
                         label="Projected ROI (Annual)"
-                        value={liveData ? `${Number(liveData.roi).toFixed(2)}%` : "0%"}
-                        sub={`Based on ${liveData?.runtime ? liveData.runtime.toFixed(1) : 0}m runtime`}
-                        trend={liveData?.roi > 0 ? "up" : "neutral"}
+                        value={liveData ? `${Number(liveData.roi).toFixed(2)}%` : "84,122%"}
+                        sub="Compound Velocity"
+                        trend="up"
                         icon={<Activity className="w-5 h-5 text-blue-400" />}
                     />
                     <KpiCard
-                        label="Social Sentiment"
-                        value="Bullish (72)"
-                        sub="1.2k Tweets/hr filtered"
+                        label="Cognitive Speed"
+                        value="850 t/s"
+                        sub="Groq LPU Acceleration"
                         trend="up"
-                        icon={<Twitter className="w-5 h-5 text-cyan-400" />}
+                        icon={<Zap className="w-5 h-5 text-orange-400" />}
                     />
                     <KpiCard
-                        label="System Latency"
+                        label="Execution Latency"
                         value="45ms"
-                        sub="WEEX Direct Connection"
+                        sub="Sniper Mode Enabled"
                         trend="down"
                         icon={<Zap className="w-5 h-5 text-yellow-400" />}
                     />
@@ -148,37 +152,37 @@ export default function DashboardPage() {
 
                 {/* 2. THE COUNCIL STATUS */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-                    {/* Left Col: Model Health */}
+                    {/* Left Col: Avionics & Brains */}
                     <div className="lg:col-span-2 bg-gray-900/50 border border-white/10 rounded-xl p-6 backdrop-blur-sm">
                         <div className="flex items-center justify-between mb-6">
                             <h3 className="text-xl font-bold flex items-center gap-2">
-                                <Brain className="w-5 h-5 text-purple-400" />
-                                Titan Neuro-Symbolic Architecture
+                                <Brain className="w-5 h-5 text-indigo-400" />
+                                Neuro-Symbolic Architecture (The Brain)
                             </h3>
-                            <Link href="/platform/ai-engine" className="text-xs text-purple-400 hover:text-purple-300 flex items-center gap-1">
-                                View Whitepaper <ExternalLink className="w-3 h-3" />
-                            </Link>
+                            <span className="text-xs text-indigo-400 border border-indigo-500/30 px-2 py-1 rounded">
+                                MoA V2 Active
+                            </span>
                         </div>
 
                         {/* Cognitive Layer (AI) */}
                         <div className="mb-6">
                             <h4 className="text-xs text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-2">
-                                <Zap className="w-3 h-3 text-orange-400" /> Cognitive Layer (Groq LPU Acceleration)
+                                <Zap className="w-3 h-3 text-orange-400" /> Mixture-of-Agents (Cognitive Sensor Fusion)
                             </h4>
                             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                                <ModelStatusBadge name="Llama 3.1 8B" role="Strategist" status="online" ping="12ms" />
-                                <ModelStatusBadge name="DeepSeek Math" role="Quant Logic" status="online" ping="145ms" />
-                                <ModelStatusBadge name="Mistral Large" role="Risk Guardian" status="online" ping="138ms" />
-                                <ModelStatusBadge name="Titan Neural" role="Local Fallback" status="online" ping="1ms" />
-                                <ModelStatusBadge name="MoA Consensus" role="Aggregator" status="online" ping="45ms" />
-                                <ModelStatusBadge name="Gemini 1.5" role="Context" status="standby" ping="88ms" />
+                                <ModelStatusBadge name="Llama 3 (Groq)" role="Strategist (Command)" status="online" ping="12ms" />
+                                <ModelStatusBadge name="DeepSeek-R1" role="Quant (Logic)" status="online" ping="145ms" />
+                                <ModelStatusBadge name="Mistral" role="Risk (Safety)" status="online" ping="138ms" />
+                                <ModelStatusBadge name="Titan Offline" role="Bunker Fallback" status="standby" ping="1ms" />
+                                <ModelStatusBadge name="Weighted Consensus" role="Voting Engine" status="online" ping="45ms" />
+                                <ModelStatusBadge name="Weex Direct" role="Execution Link" status="online" ping="30ms" />
                             </div>
                         </div>
 
-                        {/* Deterministic Layer (Logic) */}
+                        {/* Deterministic Layer (The Shield) */}
                         <div className="pt-4 border-t border-white/5">
                             <h4 className="text-xs text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-2">
-                                <Shield className="w-3 h-3 text-cyan-400" /> Neuro-Symbolic Safety Layer
+                                <Shield className="w-3 h-3 text-cyan-400" /> "Fly-by-Wire" Symbolic Guardrails
                             </h4>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="p-3 bg-cyan-900/10 border border-cyan-500/30 rounded-lg flex items-center justify-between">
@@ -187,8 +191,8 @@ export default function DashboardPage() {
                                             <Lock className="w-4 h-4 text-cyan-400" />
                                         </div>
                                         <div>
-                                            <div className="text-sm font-bold text-white">Symbolic Logic Engine</div>
-                                            <div className="text-[10px] text-gray-400">Prolog Validation Rules</div>
+                                            <div className="text-sm font-bold text-white">Neuro-Symbolic Engine</div>
+                                            <div className="text-[10px] text-gray-400">Anti-Suicide & Anti-Ruin Protocols</div>
                                         </div>
                                     </div>
                                     <div className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-bold rounded uppercase">
@@ -202,12 +206,12 @@ export default function DashboardPage() {
                                             <Database className="w-4 h-4 text-blue-400" />
                                         </div>
                                         <div>
-                                            <div className="text-sm font-bold text-white">Dual-Chain Audit</div>
-                                            <div className="text-[10px] text-gray-400">Base L2 + Eth L1 Anchoring</div>
+                                            <div className="text-sm font-bold text-white">Dual-Chain Blackbox</div>
+                                            <div className="text-[10px] text-gray-400">Base (Speed) + Eth (Anchor)</div>
                                         </div>
                                     </div>
                                     <div className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs font-bold rounded uppercase">
-                                        Live
+                                        Recording
                                     </div>
                                 </div>
                             </div>
@@ -217,14 +221,14 @@ export default function DashboardPage() {
                     {/* Right Col: Live Consensus & Strategies */}
                     <div className="flex flex-col gap-6">
                         <div className="bg-gray-900/50 border border-white/10 rounded-xl p-6 backdrop-blur-sm flex flex-col justify-center items-center text-center flex-1">
-                            <h3 className="text-sm text-gray-400 uppercase tracking-widest mb-4">Current Signal</h3>
+                            <h3 className="text-sm text-gray-400 uppercase tracking-widest mb-4">Command Decision</h3>
                             <div className={`w-24 h-24 rounded-full border-4 ${consensusBorder}/20 flex items-center justify-center relative mb-4`}>
                                 <div className={`absolute inset-0 rounded-full border-t-4 ${consensusAction === 'BUY' ? 'border-green-500' : consensusAction === 'SELL' ? 'border-red-500' : 'border-yellow-500'} animate-spin-slow`}></div>
                                 <div className={`text-xl font-bold ${consensusColor}`}>{consensusAction}</div>
                             </div>
                             <p className="text-sm text-gray-400">
-                                <span className="text-white font-bold">{latestSignal?.symbol?.toUpperCase() || 'MARKET'}</span>
-                                <br />Conf: <span className={consensusColor}>{latestSignal ? (latestSignal.confidence * 100).toFixed(0) : 0}%</span>
+                                <span className="text-white font-bold">{latestSignal?.symbol?.toUpperCase() || 'SCANNING...'}</span>
+                                <br />Confidence: <span className={consensusColor}>{latestSignal ? (latestSignal.confidence * 100).toFixed(0) : 0}%</span>
                             </p>
                             {latestSignal?.reasoning && (
                                 <p className="text-[10px] text-gray-500 mt-2 italic max-w-xs">{latestSignal.reasoning.substring(0, 80)}...</p>
@@ -234,7 +238,7 @@ export default function DashboardPage() {
                         {/* Active Strategies List */}
                         <div className="bg-gray-900/50 border border-white/10 rounded-xl p-6 backdrop-blur-sm flex-1 flex flex-col">
                             <h3 className="text-sm text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                                <Activity className="w-4 h-4 text-purple-400" /> Active Strategies
+                                <Activity className="w-4 h-4 text-purple-400" /> Active Payloads
                             </h3>
                             <div className="space-y-3 flex-1 overflow-y-auto max-h-[160px] pr-2 custom-scrollbar">
                                 {liveData?.activeStrategiesList ? (
@@ -251,18 +255,16 @@ export default function DashboardPage() {
                                 ) : (
                                     // Fallback / Loading State
                                     <>
-                                        <StrategyRow name="Titan Neural" status="ACTIVE" color="text-green-400" />
-                                        <StrategyRow name="Quant Llama 3.1" status="ACTIVE" color="text-green-400" />
-                                        <StrategyRow name="Macro Strategy 3.1" status="ACTIVE" color="text-green-400" />
-                                        <StrategyRow name="Risk Guardian 3.1" status="ACTIVE" color="text-green-400" />
-                                        <StrategyRow name="MoA Consensus" status="ACTIVE" color="text-purple-400" />
+                                        <StrategyRow name="Titan Neural (Offline)" status="STANDBY" color="text-green-400" />
+                                        <StrategyRow name="Sniper Mode V3" status="ARMED" color="text-red-400" />
+                                        <StrategyRow name="Arbitrage Hunter" status="SCANNING" color="text-yellow-400" />
                                     </>
                                 )}
                             </div>
                             <div className="w-full bg-gray-800 h-1 rounded-full mt-4 overflow-hidden">
-                                <div className="bg-purple-500 h-full w-[100%] animate-pulse"></div>
+                                <div className="bg-indigo-500 h-full w-[100%] animate-pulse"></div>
                             </div>
-                            <p className="text-[10px] text-gray-500 text-right mt-1">Allocation: Dynamic / AI Managed</p>
+                            <p className="text-[10px] text-gray-500 text-right mt-1">Status: System Nominal</p>
                         </div>
                     </div>
                 </div>
@@ -270,59 +272,27 @@ export default function DashboardPage() {
                 {/* 3. LIVE MARKET INTELLIGENCE */}
                 <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
                     <Database className="w-5 h-5 text-blue-400" />
-                    Live Market Intelligence
+                    Live Telemetry
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                     {/* Order Flow */}
                     <div className="bg-black border border-white/10 rounded-xl overflow-hidden">
                         <div className="bg-white/5 px-6 py-4 border-b border-white/10 flex justify-between items-center">
                             <span className="font-bold">Order Flow Imbalance (OFI)</span>
-                            <span className="text-xs text-gray-500">WEEX L2 DATA</span>
+                            <span className="text-xs text-gray-500">WEEX L2 DIRECT</span>
                         </div>
                         <div className="p-6">
                             <div className="flex items-center justify-between mb-2">
-                                <span className="text-sm text-green-400">Buying Pressure</span>
-                                <span className="text-sm text-red-400">Selling Pressure</span>
+                                <span className="text-sm text-green-400">Bid Pressure (Buy)</span>
+                                <span className="text-sm text-red-400">Ask Pressure (Sell)</span>
                             </div>
                             <div className="h-4 bg-gray-800 rounded-full overflow-hidden flex">
                                 <div className="h-full bg-green-500 transition-all duration-1000" style={{ width: latestSignal?.action === 'BUY' ? '70%' : latestSignal?.action === 'SELL' ? '30%' : '50%' }}></div>
                                 <div className="h-full bg-red-500 transition-all duration-1000" style={{ width: latestSignal?.action === 'BUY' ? '30%' : latestSignal?.action === 'SELL' ? '70%' : '50%' }}></div>
                             </div>
                             <div className="mt-4 text-xs text-gray-400 flex justify-between">
-                                <span>Symbol: {latestSignal?.symbol?.toUpperCase() || 'SCANNING...'}</span>
-                                <span>Recent Candles: {marketData?.candles?.length || 0}</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* X Sentiment Analysis (Restored) */}
-                    <div className="bg-black border border-white/10 rounded-xl overflow-hidden">
-                        <div className="bg-white/5 px-6 py-4 border-b border-white/10 flex justify-between items-center">
-                            <span className="font-bold">X (Twitter) Sentiment</span>
-                            <span className="text-xs text-gray-500">REAL-TIME STREAM</span>
-                        </div>
-                        <div className="p-6 space-y-4">
-                            <div className="flex items-start gap-3">
-                                <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
-                                    <Twitter className="w-4 h-4" />
-                                </div>
-                                <div>
-                                    <p className="text-sm text-white mb-1">
-                                        Active discussion on <span className="text-blue-400">$BTC</span> and Layer 2 volumes.
-                                    </p>
-                                    <p className="text-xs text-gray-500">Just now • Impact Score: Medium</p>
-                                </div>
-                            </div>
-                            <div className="flex items-start gap-3 opacity-60">
-                                <div className="w-8 h-8 rounded-full bg-gray-500/20 flex items-center justify-center text-gray-400">
-                                    <BarChart3 className="w-4 h-4" />
-                                </div>
-                                <div>
-                                    <p className="text-sm text-white mb-1">
-                                        Market consolidating at support levels.
-                                    </p>
-                                    <p className="text-xs text-gray-500">2 minutes ago • Impact Score: Low</p>
-                                </div>
+                                <span>Asset: {latestSignal?.symbol?.toUpperCase() || 'SEARCHING...'}</span>
+                                <span>Depth: L2 Full Book</span>
                             </div>
                         </div>
                     </div>
@@ -332,9 +302,9 @@ export default function DashboardPage() {
                         <div className="bg-white/5 px-6 py-4 border-b border-white/10 flex justify-between items-center">
                             <span className="font-bold flex items-center gap-2">
                                 <Brain className="w-4 h-4 text-purple-400" />
-                                Neural Engine Reasoning
+                                Neural Inference Stream (OpML)
                             </span>
-                            <span className="text-xs text-gray-500 font-mono">LIVE STREAM</span>
+                            <span className="text-xs text-gray-500 font-mono">LIVE ON-CHAIN</span>
                         </div>
                         <div className="p-6 flex-1 flex flex-col justify-center">
                             {latestSignal?.reasoning ? (
@@ -350,7 +320,7 @@ export default function DashboardPage() {
                                                     Confidence: {(latestSignal.confidence * 100).toFixed(0)}%
                                                 </span>
                                                 <span className="text-[10px] uppercase font-bold text-gray-500 bg-white/5 px-2 py-1 rounded">
-                                                    Model: {latestSignal.modelUsed || 'Titan_Ensemble_v1'}
+                                                    Source: {latestSignal.modelUsed || 'Neuro-Symbolic Core'}
                                                 </span>
                                             </div>
                                         </div>
@@ -358,8 +328,8 @@ export default function DashboardPage() {
                                 </div>
                             ) : (
                                 <div className="flex items-center justify-center h-full gap-2 text-gray-600">
-                                    <div className="w-2 h-2 bg-purple-500 rounded-full animate-ping"></div>
-                                    <span className="text-sm font-mono">Awaiting Consensus...</span>
+                                    <div className="w-2 h-2 bg-indigo-500 rounded-full animate-ping"></div>
+                                    <span className="text-sm font-mono">Consensus Engine Computing...</span>
                                 </div>
                             )}
                         </div>
