@@ -1,0 +1,12 @@
+{
+    "name": "@titan/neural",
+    "version": "1.0.0",
+    "main": "inference.ts",
+    "dependencies": {
+        "onnxruntime-node": "^1.23.0"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0",
+        "@types/node": "^20.0.0"
+    }
+}

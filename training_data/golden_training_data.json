@@ -1,13 +1,13 @@
 {
-  "generated": "2026-01-13T20:15:20.806Z",
+  "generated": "2026-01-14T02:45:22.240Z",
   "stats": {
-    "goldExamples": 48,
-    "silverExamples": 107,
-    "totalTrainingExamples": 155
+    "goldExamples": 49,
+    "silverExamples": 120,
+    "totalTrainingExamples": 169
   },
   "patterns": {
     "sniperSell": 0,
-    "deepValueBuy": 6,
+    "deepValueBuy": 7,
     "momentumBuy": 17
   },
   "examples": [
@@ -682,6 +682,20 @@
       },
       "quality": "GOLD",
       "reasoning": "Respected Risk Manager's decision with cautionary views from other agents"
+    },
+    {
+      "input": {
+        "rsi": 22.91,
+        "trend": 1,
+        "price": 3333.99,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.7
+      },
+      "quality": "GOLD",
+      "reasoning": "Based on the consensus from the Strategic Analyst (Llama 3 70B) and Risk Manager (Mistral), we recommend a BUY action with 70% consensus score and 70% confidence."
     },
     {
       "input": {
@@ -2180,6 +2194,188 @@
       },
       "quality": "SILVER",
       "reasoning": "Risk Manager's decision prioritized over abstaining Quantitative Analyst and Neural Core, with caution due to undefined RSI value."
+    },
+    {
+      "input": {
+        "rsi": 51.72,
+        "trend": 1,
+        "price": 143.66,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 41.76,
+        "trend": 1,
+        "price": 144,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 25.45,
+        "trend": 1,
+        "price": 147.24,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 28.11,
+        "trend": 1,
+        "price": 146.72,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 28.11,
+        "trend": 1,
+        "price": 146.86,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 27.02,
+        "trend": 1,
+        "price": 147.12,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 27.02,
+        "trend": 1,
+        "price": 146.91,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 29.37,
+        "trend": 1,
+        "price": 147.15,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 27.38,
+        "trend": 1,
+        "price": 146.66,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 45.7,
+        "trend": 1,
+        "price": 145.07,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 45.8,
+        "trend": 1,
+        "price": 145.25,
+        "symbol": "cmt_solusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
+    },
+    {
+      "input": {
+        "rsi": 22.91,
+        "trend": 1,
+        "price": 3333.23,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.6
+      },
+      "quality": "SILVER",
+      "reasoning": "Respected Risk Manager's BUY signal due to absence of clear opposing signals from other analysts and conservative approach suggested by Strategic Analyst."
+    },
+    {
+      "input": {
+        "rsi": 22.91,
+        "trend": 1,
+        "price": 3333.59,
+        "symbol": "cmt_ethusdt"
+      },
+      "output": {
+        "action": 1,
+        "confidence": 0.75
+      },
+      "quality": "SILVER",
+      "reasoning": "Titan Aggregator Offline. Fallback Consensus: Local (BUY) + Strategy (BUY) matched."
     }
   ]
 }

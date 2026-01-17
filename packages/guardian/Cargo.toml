@@ -1,0 +1,39 @@
+[package]
+name = "titan-guardian"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+# NAPI-RS Interface
+napi = { version = "2.12", features = ["async", "napi4", "tokio_rt"] }
+napi-derive = "2.12"
+
+# Async Runtime
+tokio = { version = "1", features = ["full"] }
+
+# Datalog Engine (Logic Programming for Risk)
+crepe = "0.1.6"
+
+# Data Science & Math
+polars = { version = "0.36", features = ["lazy", "simd"] } # Time-series analysis
+rust_decimal = "1.33"
+rust_decimal_macros = "1.33"
+
+# Utilities
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = "1.0"
+loro = "1.0" # CRDT State Management
+
+[build-dependencies]
+napi-build = "2.0"
+
+[profile.release]
+lto = "fat"       # Link Time Optimization máximo
+opt-level = 3     # Optimización O3
+codegen-units = 1 # Mejor optimización, compilación más lenta
+panic = "abort"   # Sin unwinding para menor binario
+strip = true      # Quitar símbolos de debug

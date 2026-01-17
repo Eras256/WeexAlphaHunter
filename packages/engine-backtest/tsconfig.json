@@ -17,6 +17,8 @@
     "include": [
         "src/**/*",
         "../engine-compliance/src/**/*",
-        "../core/src/**/*"
+        "../core/src/**/*",
+        "../guardian/**/*",
+        "../neural/**/*"
     ]
 }

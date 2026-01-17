@@ -428,7 +428,7 @@ impl SiliconMathGuardian {
         // =====================================================================
         // DETERMINISTIC SCORING LOGIC (Golden Dataset Optimized)
         // =====================================================================
-        let mut score = 0.0;
+        let mut score: f64 = 0.0;
         let mut reasons: Vec<String> = Vec::new();
 
         // RSI Logic

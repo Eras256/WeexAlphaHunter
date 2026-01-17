@@ -1,0 +1,13 @@
+{
+    "name": "@titan/audit",
+    "version": "1.0.0",
+    "main": "ledger.ts",
+    "dependencies": {
+        "viem": "^2.0.0",
+        "dotenv": "^16.0.0"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0",
+        "@types/node": "^20.0.0"
+    }
+}

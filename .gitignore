@@ -41,3 +41,9 @@ package-lock.json
 *.md
 !README.md
 !docs/*.md
+
+# Large models and build artifacts
+models/
+venv/
+target/
+packages/*/target/

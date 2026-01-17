@@ -1,0 +1,18 @@
+{
+    "name": "@wah/memory",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "RAG Memory System for Titan V5 - Trade Pattern Recall",
+    "main": "src/index.ts",
+    "scripts": {
+        "build": "tsc",
+        "test": "vitest"
+    },
+    "dependencies": {
+        "chromadb": "^1.9.2",
+        "@xenova/transformers": "^2.17.2"
+    },
+    "devDependencies": {
+        "typescript": "^5.3.0"
+    }
+}

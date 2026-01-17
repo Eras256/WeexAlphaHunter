@@ -1,0 +1,14 @@
+{
+    "name": "@wah/whale-tracker",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "On-Chain Whale Activity Tracker for Titan V5",
+    "main": "src/index.ts",
+    "scripts": {
+        "build": "tsc",
+        "test": "vitest"
+    },
+    "devDependencies": {
+        "typescript": "^5.3.0"
+    }
+}

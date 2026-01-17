@@ -1,0 +1,152 @@
+[
+  {
+    "id": "WIN_1",
+    "type": "POSITIVE",
+    "input": "RSI=50.0, Trend=NEUTRAL, OFI=0.00",
+    "action": "SELL",
+    "confidence": 0.7,
+    "profit": "+-0.13%",
+    "lesson": "When RSI=50 in NEUTRAL trend with OFI=0.00, SELL worked well."
+  },
+  {
+    "id": "WIN_2",
+    "type": "POSITIVE",
+    "input": "RSI=50.0, Trend=NEUTRAL, OFI=0.00",
+    "action": "SELL",
+    "confidence": 0.4,
+    "profit": "+-0.31%",
+    "lesson": "When RSI=50 in NEUTRAL trend with OFI=0.00, SELL worked well."
+  },
+  {
+    "id": "WIN_3",
+    "type": "POSITIVE",
+    "input": "RSI=50.0, Trend=NEUTRAL, OFI=0.00",
+    "action": "BUY",
+    "confidence": 0.6,
+    "profit": "+0.12%",
+    "lesson": "When RSI=50 in NEUTRAL trend with OFI=0.00, BUY worked well."
+  },
+  {
+    "id": "WIN_4",
+    "type": "POSITIVE",
+    "input": "RSI=50.0, Trend=NEUTRAL, OFI=0.00",
+    "action": "SELL",
+    "confidence": 0.8,
+    "profit": "+-0.51%",
+    "lesson": "When RSI=50 in NEUTRAL trend with OFI=0.00, SELL worked well."
+  },
+  {
+    "id": "WIN_5",
+    "type": "POSITIVE",
+    "input": "RSI=50.0, Trend=BEARISH, OFI=0.00",
+    "action": "BUY",
+    "confidence": 0.57,
+    "profit": "+0.14%",
+    "lesson": "When RSI=50 in BEARISH trend with OFI=0.00, BUY worked well."
+  },
+  {
+    "id": "LOSS_1",
+    "type": "NEGATIVE",
+    "input": "RSI=50.0, Trend=BEARISH, OFI=0.00",
+    "bad_action": "SELL",
+    "confidence": 0.6,
+    "loss": "0.11%",
+    "lesson": "AVOID SELL when RSI=50 in BEARISH trend. Should have been HOLD."
+  },
+  {
+    "id": "LOSS_2",
+    "type": "NEGATIVE",
+    "input": "RSI=50.0, Trend=NEUTRAL, OFI=0.00",
+    "bad_action": "BUY",
+    "confidence": 0.6,
+    "loss": "-0.19%",
+    "lesson": "AVOID BUY when RSI=50 in NEUTRAL trend. Should have been HOLD."
+  },
+  {
+    "id": "LOSS_3",
+    "type": "NEGATIVE",
+    "input": "RSI=50.0, Trend=NEUTRAL, OFI=0.00",
+    "bad_action": "SELL",
+    "confidence": 0.7,
+    "loss": "0.12%",
+    "lesson": "AVOID SELL when RSI=50 in NEUTRAL trend. Should have been HOLD."
+  },
+  {
+    "id": "LOSS_4",
+    "type": "NEGATIVE",
+    "input": "RSI=50.0, Trend=BULLISH, OFI=0.00",
+    "bad_action": "BUY",
+    "confidence": 0.6,
+    "loss": "-0.13%",
+    "lesson": "AVOID BUY when RSI=50 in BULLISH trend. Should have been HOLD."
+  },
+  {
+    "id": "LOSS_5",
+    "type": "NEGATIVE",
+    "input": "RSI=50.0, Trend=NEUTRAL, OFI=0.00",
+    "bad_action": "BUY",
+    "confidence": 0.66,
+    "loss": "-0.16%",
+    "lesson": "AVOID BUY when RSI=50 in NEUTRAL trend. Should have been HOLD."
+  },
+  {
+    "id": "WIN_OVERNIGHT_1",
+    "type": "POSITIVE",
+    "input": "RSI=35.0, Trend=BULLISH, ADX=45, OFI=0.25, MTF=ALIGNED",
+    "action": "BUY",
+    "confidence": 0.85,
+    "profit": "+$93",
+    "strategy": "DeepSeek Momentum Alpha",
+    "lesson": "DeepSeek + Strong ADX (>40) + Positive OFI + MTF Aligned = HIGH WIN RATE. Trust this setup!"
+  },
+  {
+    "id": "WIN_OVERNIGHT_2",
+    "type": "POSITIVE",
+    "input": "RSI=42.0, Trend=BULLISH, ADX=52, OFI=0.18, MTF=ALIGNED",
+    "action": "BUY",
+    "confidence": 0.78,
+    "profit": "+$63",
+    "strategy": "DeepSeek Momentum Alpha",
+    "lesson": "When DeepSeek sees strong trend (ADX>50) with buy wall (OFI>0.15), go aggressive."
+  },
+  {
+    "id": "WIN_OVERNIGHT_3",
+    "type": "POSITIVE",
+    "input": "RSI=55.0, Trend=BULLISH, ADX=38, OFI=0.12, MTF=ALIGNED",
+    "action": "BUY",
+    "confidence": 0.72,
+    "profit": "+$22",
+    "strategy": "DeepSeek Momentum Alpha",
+    "lesson": "Even moderate ADX (35-40) with aligned MTF produces consistent small wins."
+  },
+  {
+    "id": "LOSS_OVERNIGHT_1",
+    "type": "NEGATIVE",
+    "input": "RSI=48.0, Trend=BEARISH, ADX=28, OFI=-0.15, MTF=CONFLICTING",
+    "bad_action": "SELL",
+    "confidence": 0.65,
+    "loss": "-$70",
+    "strategy": "Gemini Sentiment",
+    "lesson": "CRITICAL: NEVER SHORT when MTF is CONFLICTING. Gemini Sentiment fails in choppy markets. AVOID!"
+  },
+  {
+    "id": "LOSS_OVERNIGHT_2",
+    "type": "NEGATIVE",
+    "input": "RSI=52.0, Trend=BULLISH, ADX=22, OFI=-0.08, MTF=CONFLICTING",
+    "bad_action": "SELL",
+    "confidence": 0.58,
+    "loss": "-$21",
+    "strategy": "Neural Scalp V5",
+    "lesson": "Low ADX (<25) + MTF Conflict = CHOP ZONE. Neural Scalp loses here. Stay cash!"
+  },
+  {
+    "id": "LOSS_OVERNIGHT_3",
+    "type": "NEGATIVE",
+    "input": "RSI=45.0, Trend=BEARISH, ADX=35, OFI=-0.22, MTF=CONFLICTING, Symbol=LTCUSDT",
+    "bad_action": "SELL",
+    "confidence": 0.70,
+    "loss": "-$80",
+    "strategy": "General",
+    "lesson": "LTC SHORT DISASTER: Even with negative OFI, MTF conflict killed us. NEVER force shorts against hourly trend!"
+  }
+]

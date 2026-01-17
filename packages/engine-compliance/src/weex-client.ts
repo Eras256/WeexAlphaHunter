@@ -65,7 +65,12 @@ export class WeexClient {
                 if (s.toLowerCase().includes('btc')) return p.toFixed(1);
                 if (s.toLowerCase().includes('eth')) return p.toFixed(2);
                 if (s.toLowerCase().includes('sol')) return p.toFixed(2); // Conservative
-                return p.toString();
+
+                // Dynamic Precision for New/Unknown Pairs (Safe Auto-Scale)
+                if (p < 1) return p.toFixed(4);
+                if (p < 10) return p.toFixed(3);
+                if (p < 100) return p.toFixed(2);
+                return p.toFixed(1);
             };
 
             const formattedPrice = price ? formatPrice(price, symbol) : '0';
@@ -590,6 +595,24 @@ export class WeexClient {
     }
 
 
+
+
+    /**
+     * Get all active tickers to find volume/volatility leaders.
+     * Essential for Dynamic Scanning Strategy.
+     */
+    async getTickers(): Promise<any[]> {
+        if (this.mode === 'mock') return [];
+        try {
+            // Using public endpoint (no signature needed usually, but using axios directly)
+            const response = await axios.get(`${this.baseUrl}/capi/v2/market/tickers`);
+            // Response format: { code: '00000', msg: 'success', data: [ ... ] }
+            return response.data?.data || [];
+        } catch (error: any) {
+            logger.warn(`[WEEX] Get Tickers Failed: ${error.message}`);
+            return [];
+        }
+    }
 
     /**
      * Generates WEEX V1 Signature

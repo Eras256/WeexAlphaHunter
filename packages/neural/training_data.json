@@ -1,0 +1,74 @@
+[
+  {
+    "prompt": "Market Analysis: Symbol=cmt_btcusdt, Price=91362.4, RSI=59.5, Trend=BEARISH. Action?",
+    "completion": "Action: SELL. Reasoning: The consensus engine prioritized the signal direction of the 'Quantitative Analyst' and 'Neural Core', but took into account the Risk Manager's caution. The final decision is a SELL action with a moderate confidence level."
+  },
+  {
+    "prompt": "Market Analysis: Symbol=cmt_btcusdt, Price=91290.8, RSI=59.5, Trend=BEARISH. Action?",
+    "completion": "Action: SELL. Reasoning: Following Risk Manager's extreme caution signal due to high confidence and bearish trend."
+  },
+  {
+    "prompt": "Market Analysis: Symbol=cmt_btcusdt, Price=91282.2, RSI=63.41, Trend=BEARISH. Action?",
+    "completion": "Action: SELL. Reasoning: Risk Manager's signal of extreme caution with a 'SELL' action takes precedence over abstained vote and 'HOLD' action from other agents."
+  },
+  {
+    "prompt": "Market Analysis: Symbol=cmt_btcusdt, Price=91288.6, RSI=63.41, Trend=BEARISH. Action?",
+    "completion": "Action: SELL. Reasoning: Quantitative Analyst's bearish sentiment and slight bias towards selling outweighs Risk Manager's caution due to undefined RSI. The bearish trend and imbalance support the decision to SELL."
+  },
+  {
+    "prompt": "Market Analysis: Symbol=cmt_solusdt, Price=139.26, RSI=67.51, Trend=BEARISH. Action?",
+    "completion": "Action: SELL. Reasoning: Based on the current BEARISH trend and high imbalance (0.6976379889804172), it is likely that the price will continue to fall."
+  },
+  {
+    "prompt": "Market Analysis: Symbol=cmt_btcusdt, Price=91359.2, RSI=58.95, Trend=BULLISH. Action?",
+    "completion": "Action: SELL. Reasoning: Quantitative Analyst's high confidence in a reversal and undefined RSI data indicate a potential market correction."
+  },
+  {
+    "prompt": "Market Analysis: Symbol=cmt_ethusdt, Price=3105.22, RSI=50.4, Trend=BULLISH. Action?",
+    "completion": "Action: BUY. Reasoning: Majority of non-abstaining agents (Strategic Analyst and Neural Core) voted to BUY, and the Risk Manager's caution signal is not extreme."
+  },
+  {
+    "prompt": "Market Analysis: Symbol=cmt_ethusdt, Price=3099.96, RSI=50.4, Trend=BULLISH. Action?",
+    "completion": "Action: BUY. Reasoning: The majority of the agents recommend a BUY action, prioritizing the signal direction from the Quantitative Analyst (DeepSeek) and Neural Core (Local). Although the Risk Manager and Strategic Analyst have some concerns, the overall consensus points towards a buying opportunity."
+  },
+  {
+    "prompt": "Market Analysis: Symbol=cmt_solusdt, Price=138.55, RSI=61.25, Trend=BEARISH. Action?",
+    "completion": "Action: SELL. Reasoning: Risk Manager's caution signal takes precedence, citing uncertainty surrounding RSI and unclear F&G metric."
+  },
+  {
+    "prompt": "Market Analysis: Symbol=cmt_btcusdt, Price=91165.5, RSI=57.73, Trend=BEARISH. Action?",
+    "completion": "Action: SELL. Reasoning: The Quantitative Analyst's high confidence score in recommending a SELL, combined with the Neural Core's HOLD recommendation and the bearish market trend, indicate a potential short-term sell opportunity."
+  },
+  {
+    "prompt": "Market Analysis: Symbol=cmt_btcusdt, Price=91369.7, RSI=49.48, Trend=BULLISH. Action?",
+    "completion": "Action: BUY. Reasoning: Weighted voting system indicates a strong consensus for a BUY signal. The 'Strategic Analyst' and 'Risk Manager' signals are prioritized, while the 'Neural Core' is considered for caution. The 'Quantitative Analyst' abstained from voting."
+  },
+  {
+    "prompt": "Market Analysis: Symbol=cmt_solusdt, Price=138.48, RSI=59.34, Trend=BEARISH. Action?",
+    "completion": "Action: SELL. Reasoning: The majority of agents agree on a bearish trend, with the Quantitative Analyst and Neural Core indicating a strong downward pressure. Although the Strategic Analyst expresses uncertainty, the Quantitative Analyst's high confidence in a sell signal takes precedence."
+  },
+  {
+    "prompt": "Market Analysis: Symbol=cmt_solusdt, Price=138.29, RSI=59.34, Trend=BEARISH. Action?",
+    "completion": "Action: SELL. Reasoning: Based on the prioritized votes from Quantitative Analyst (DeepSeek) and Neural Core (Local), the final verdict is to SELL, indicating a bearish market trend and cautionary signals."
+  },
+  {
+    "prompt": "Market Analysis: Symbol=cmt_solusdt, Price=138.72, RSI=55.69, Trend=BEARISH. Action?",
+    "completion": "Action: BUY. Reasoning: Risk Manager's signal takes precedence, indicating a favorable market condition despite concerns from other agents."
+  },
+  {
+    "prompt": "Market Analysis: Symbol=cmt_btcusdt, Price=91324.6, RSI=47.79, Trend=BULLISH. Action?",
+    "completion": "Action: BUY. Reasoning: Majority opinion from Risk Manager and Strategic Analyst, and abstention from Quantitative Analyst considered as a neutral vote."
+  },
+  {
+    "prompt": "Market Analysis: Symbol=cmt_ethusdt, Price=3126.95, RSI=36.03, Trend=BULLISH. Action?",
+    "completion": "Action: BUY. Reasoning: All three models are signaling a 'BUY' action, with a consensus score of 80 based on the confidence scores."
+  },
+  {
+    "prompt": "Market Analysis: Symbol=cmt_btcusdt, Price=93473.4, RSI=28.38, Trend=BULLISH. Action?",
+    "completion": "Action: BUY. Reasoning: Strong buying signals from Strategic Analyst and Risk Manager, with caution from Neural Core."
+  },
+  {
+    "prompt": "Market Analysis: Symbol=cmt_solusdt, Price=143.48, RSI=49.7, Trend=BULLISH. Action?",
+    "completion": "Action: BUY. Reasoning: Risk Manager's higher confidence decision and Quantitative Analyst and Neural Core's aligned moderate confidence recommendations balance out to a BUY action, with caution due to undefined RSI values."
+  }
+]

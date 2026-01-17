@@ -1,0 +1,889 @@
+{
+  "metadata": {
+    "generated_at": "2026-01-14T12:59:19.334Z",
+    "total_trades": 445,
+    "wins": 88,
+    "losses": 73,
+    "win_rate": 54.6583850931677
+  },
+  "positive_examples": [
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 3109.57,
+        "symbol": "cmt_ethusdt"
+      },
+      "expected_output": {
+        "action": "SELL",
+        "confidence": 0.7
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": -0.12799197316670852
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 138.98,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "SELL",
+        "confidence": 0.4
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": -0.3093970355446672
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 3092.85,
+        "symbol": "cmt_ethusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.6
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.12060074041741495
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 138.55,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "SELL",
+        "confidence": 0.8
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": -0.5052327679538196
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "BEARISH",
+        "ofi": 0,
+        "price": 3096.01,
+        "symbol": "cmt_ethusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.57
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.14437937861957162
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 3104.83,
+        "symbol": "cmt_ethusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.75
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.12206787489169983
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 91250.7,
+        "symbol": "cmt_btcusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.7
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.1304099584989485
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "BEARISH",
+        "ofi": 0,
+        "price": 138.48,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "SELL",
+        "confidence": 0.85
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": -0.11554015020219281
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 3115.14,
+        "symbol": "cmt_ethusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.5
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.3791161873944653
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 91324.6,
+        "symbol": "cmt_btcusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.8
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.1573508123769467
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 138.84,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.6
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.10083549409391124
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 138.98,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.7
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.17988199740969923
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 91475.8,
+        "symbol": "cmt_btcusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.6
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.10931853014677106
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 91575.8,
+        "symbol": "cmt_btcusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.45
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.14086691025358228
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 138.87,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.725
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.36724994599264843
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 139.38,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.65
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.17936576266322285
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 91704.8,
+        "symbol": "cmt_btcusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.7
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.21274786052637515
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 3129.56,
+        "symbol": "cmt_ethusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.55
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.35340431242730436
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 139.63,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.55
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.2578242498030607
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 3140.62,
+        "symbol": "cmt_ethusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.55
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.1085772872872334
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 139.62,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.55
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.14324595330181109
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 139.82,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.55
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.12873694750393852
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 140,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.55
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.11428571428571184
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 91895.1,
+        "symbol": "cmt_btcusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.55
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.22231870904976256
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 140.12,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "BUY",
+        "confidence": 0.55
+      },
+      "label": "GOOD_TRADE",
+      "profit_delta": 0.16414501855551653
+    }
+  ],
+  "negative_examples": [
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "BEARISH",
+        "ofi": 0,
+        "price": 91352.1,
+        "symbol": "cmt_btcusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "SELL",
+        "confidence": 0.6
+      },
+      "loss_delta": 0.10826242637004971
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 139.25,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "BUY",
+        "confidence": 0.6
+      },
+      "loss_delta": -0.19389587073609352
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 3108,
+        "symbol": "cmt_ethusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "SELL",
+        "confidence": 0.7
+      },
+      "loss_delta": 0.12065637065637065
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "BULLISH",
+        "ofi": 0,
+        "price": 3104.15,
+        "symbol": "cmt_ethusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "BUY",
+        "confidence": 0.6
+      },
+      "loss_delta": -0.1349805904998165
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 91297.8,
+        "symbol": "cmt_btcusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "BUY",
+        "confidence": 0.66
+      },
+      "loss_delta": -0.1566302802477168
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 3099,
+        "symbol": "cmt_ethusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "BUY",
+        "confidence": 0.6
+      },
+      "loss_delta": -0.1984511132623456
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "BEARISH",
+        "ofi": 0,
+        "price": 91165.5,
+        "symbol": "cmt_btcusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "SELL",
+        "confidence": 0.83
+      },
+      "loss_delta": 0.10990999884824533
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 137.85,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "SELL",
+        "confidence": 0.65
+      },
+      "loss_delta": 0.5368153790351898
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "BEARISH",
+        "ofi": 0,
+        "price": 138.29,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "SELL",
+        "confidence": 0.8
+      },
+      "loss_delta": 0.17354834044400108
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "BEARISH",
+        "ofi": 0,
+        "price": 138.53,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "SELL",
+        "confidence": 0.7
+      },
+      "loss_delta": 0.19490363098246608
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 91265.1,
+        "symbol": "cmt_btcusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "SELL",
+        "confidence": 0.6
+      },
+      "loss_delta": 0.1266639712222868
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 138.88,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "BUY",
+        "confidence": 0.635
+      },
+      "loss_delta": -0.11520737327188695
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 3117.79,
+        "symbol": "cmt_ethusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "BUY",
+        "confidence": 0.65
+      },
+      "loss_delta": -0.18731216663085537
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 138.72,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "BUY",
+        "confidence": 0.8
+      },
+      "loss_delta": -0.20905420991925608
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 138.35,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "SELL",
+        "confidence": 0.7
+      },
+      "loss_delta": 0.29634983736898923
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 139.23,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "BUY",
+        "confidence": 0.76
+      },
+      "loss_delta": -0.2585649644473068
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 3144.03,
+        "symbol": "cmt_ethusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "BUY",
+        "confidence": 0.55
+      },
+      "loss_delta": -0.10241632554397555
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 3140.81,
+        "symbol": "cmt_ethusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "BUY",
+        "confidence": 0.55
+      },
+      "loss_delta": -0.18530251750345178
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 139.92,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "BUY",
+        "confidence": 0.55
+      },
+      "loss_delta": -0.2072612921669469
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 3133.71,
+        "symbol": "cmt_ethusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "BUY",
+        "confidence": 0.55
+      },
+      "loss_delta": -0.19816766707832045
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "BULLISH",
+        "ofi": 0,
+        "price": 93677,
+        "symbol": "cmt_btcusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "BUY",
+        "confidence": 0.7
+      },
+      "loss_delta": -0.11400877483267281
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "BULLISH",
+        "ofi": 0,
+        "price": 143.78,
+        "symbol": "cmt_solusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "BUY",
+        "confidence": 0.7
+      },
+      "loss_delta": -0.34775351231047436
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 3203.25,
+        "symbol": "cmt_ethusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "BUY",
+        "confidence": 0.6
+      },
+      "loss_delta": -0.10832747990321705
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 3200.82,
+        "symbol": "cmt_ethusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "BUY",
+        "confidence": 0.7
+      },
+      "loss_delta": -0.2974237851550534
+    },
+    {
+      "input": {
+        "rsi": 50,
+        "trend": "NEUTRAL",
+        "ofi": 0,
+        "price": 3208.06,
+        "symbol": "cmt_ethusdt"
+      },
+      "expected_output": {
+        "action": "HOLD",
+        "confidence": 0.3
+      },
+      "label": "BAD_TRADE_AVOID",
+      "actual_bad_action": {
+        "action": "BUY",
+        "confidence": 0.75
+      },
+      "loss_delta": -0.10068390242077824
+    }
+  ],
+  "optimal_thresholds": {
+    "rsi_buy_zone": {
+      "min": 35,
+      "max": 46
+    },
+    "rsi_sell_zone": {
+      "min": 59,
+      "max": 75
+    },
+    "ofi_buy_threshold": 0.15,
+    "ofi_sell_threshold": -0.007636363636363637,
+    "avoid_patterns": [
+      {
+        "description": "BUY in strong BEARISH with OFI < -0.2",
+        "action": "HOLD"
+      },
+      {
+        "description": "SELL in strong BULLISH with OFI > 0.2",
+        "action": "HOLD"
+      },
+      {
+        "description": "Trade with confidence < 0.5",
+        "action": "HOLD"
+      }
+    ]
+  }
+}
